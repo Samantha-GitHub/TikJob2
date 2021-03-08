@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-profesional-formulario',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfesionalFormularioComponent implements OnInit {
 
-  constructor() { }
+  closeResult: string;
 
-  ngOnInit(): void {
+
+  constructor(private modalService: NgbModal) { }
+
+  ngOnInit(): void { }
+
+  openXl(content) {
+    this.modalService.open(content, { size: 'xl' });
   }
 
+  openVerticallyCentered(content) {
+    this.modalService.open(content, { centered: true });
+  }
+
+  public isCollapsed = true;
 }
