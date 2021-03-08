@@ -1,1 +1,101 @@
-<p>contact works!</p>
+<div class="container my-3 my-sm-5">
+    <h1 class="text-center mb-sm-4 display-1 p-5">Contact</h1>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <h2>Address:</h2>
+            <address>
+                <strong>TikJobs</strong><br />
+                Plaza Espana, 80<br />
+                28039 and Madrid<br />
+                <i class="fas fa-fw fa-phone"></i>
+                <a href="tel:+34 4567890">(34) 456-7890</a><br />
+                <i class="fas fa-fw fa-envelope"></i>
+                <a href="mailto:info@domain.com">tikjobs@domain.com</a>
+            </address>
+        </div>
+        <div class="col-12 col-md-6">
+            <h2>Opening hours:</h2>
+            <p>
+                Monday-Thursday: <span class="float-end">10 am - 6 pm</span><br />
+                Friday-Saturday: <span class="float-end">10 am - 10 pm</span><br />
+                Sunday: <span class="float-end">10 am - 8 pm</span><br />
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-6 mb-3">
+            <h2>Send us a message:</h2>
+            <form>
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input type="text" id="name" class="form-control" name="name" placeholder="Name"
+                                    required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                <input type="email" id="email" class="form-control" name="email"
+                                    placeholder="example@email.com" required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="mb-3">
+                            <label for="telephone" class="form-label">Telephone</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                <input type="tel" id="telephone" class="form-control" name="telephone"
+                                    placeholder="0123456789" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="mb-3">
+                            <label for="department" class="form-label">Department:</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-home"></i></span>
+                                <select id="department" class="form-select" name="department"
+                                    aria-describedby="department-help-block" required>
+                                    <option value="">- select here -</option>
+                                    <option value="business">Business</option>
+                                    <option value="sale">Sale</option>
+                                    <option value="support">Support</option>
+                                </select>
+                            </div>
+                            <small id="department-help-block" class="form-text">Please select the recipient of your
+                                message.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message:</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
+                        <textarea id="message" class="form-control" name="message" rows="5"
+                            placeholder="Write your message here..." required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary m-1">Submit</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </form>
+        </div>
+        <div class="col-12 col-lg-6">
+            <h2>Where to find us:</h2>
+            <div class="ratio ratio-4x3">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12149.258451787355!2d-3.67246595!3d40.424031899999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ses!4v1615114523806!5m2!1sen!2ses"
+                    width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
