@@ -1,0 +1,30 @@
+.navbar {
+  //   background: linear-gradient(to right, #36d1dc, #5b86e5) !important;
+  background: linear-gradient(to right, #021b79, #0575e6);
+  z-index: 2;
+}
+
+.logo {
+  font-family: Lobster;
+  font-size: 2rem;
+  color: white;
+  flex: 3;
+  position: relative;
+  z-index: 3;
+  // text-shadow: 0 0 2px #fff, -1px -1px 0 hsl(80, 70%, 35%),
+  //   -2px -2px 1px hsl(80, 70%, 35%), -2px -2px 2px hsl(80, 10%, 15%);
+  text-shadow: 0px 2px 3px #666;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 3;
+    left: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: #f54538;
+    border-radius: 50%;
+    transform: translate(-10%, -20%);
+    mix-blend-mode: screen;
+    margin-top: 0.4rem;
+  }
+}
