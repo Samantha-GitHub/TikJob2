@@ -1,4 +1,4 @@
-<div class="clientes">
+<!-- <div class="clientes">
 
     <div class="cliente" *ngFor="let profesional of arrProfesionales">
         <h3>{{ profesional.name }}</h3>
@@ -8,4 +8,18 @@
         <p>Website: {{ profesional.website }}</p>
 
     </div>
+</div> -->
+
+<div class="servicesContainer">
+  <h1 class="servicesH1">Companies</h1>
+  <div class="servicesWrapper">
+    <div class="servicesCard" *ngFor="let profesional of arrProfesionales">
+      <img src="../../../assets/images/svg-6.svg" class="servicesIcon" />
+      <h2 class="servicesH2">{{ profesional.name }}</h2>
+      <p class="serviceP">
+        {{ profesional.country }}
+      </p>
+      <p>{{ profesional.email }}</p>
+    </div>
+  </div>
 </div>

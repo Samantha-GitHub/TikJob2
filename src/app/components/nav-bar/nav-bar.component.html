@@ -4,54 +4,78 @@
 </nav> -->
 
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark info-color  mb-10">
-    <!-- fixed-top -->
-    <!-- Navbar brand -->
-    <a class="navbar-brand logo" [routerLink]="['/home']"><strong>TikJobs</strong>
-    </a>
+<nav class="navbar navbar-expand-lg navbar-dark info-color mb-10">
+  <!-- fixed-top -->
+  <!-- Navbar brand -->
+  <a class="navbar-brand logo" [routerLink]="['/home']"
+    ><strong>TikJobs</strong>
+  </a>
 
-    <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-        aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+  <!-- Collapse button -->
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#basicExampleNav"
+    aria-controls="basicExampleNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="basicExampleNav">
-        <!-- Links -->
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" [routerLink]="['/home']">Home
-                    <span class="sr-only">(current)</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/user']">Usuarios</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/profesional']">Profesionales</a>
-            </li>
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse text-start" id="basicExampleNav">
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/home']"
+          >Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/freelance']">Usuarios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/profesional']">Profesionales</a>
+      </li>
 
-            <!-- Dropdown -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Forms</a>
-                <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" [routerLink]="['/form_profesional']">Form Profesional</a>
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          id="navbarDropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Forms</a
+        >
+        <div
+          class="dropdown-menu dropdown-secondary"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <a class="dropdown-item" [routerLink]="['/form_profesional']"
+            >Form Profesional</a
+          >
 
-                    <a class="dropdown-item" [routerLink]="['/form_user']">Form User</a>
-                    <a class="dropdown-item" [routerLink]="['/312']">404</a>
-                    <a class="dropdown-item" [routerLink]="['/contact']">Contact</a>
-                </div>
-            </li>
-        </ul>
-        <!-- Links -->
+          <a class="dropdown-item" [routerLink]="['/form_user']">Form User</a>
+          <a class="dropdown-item" [routerLink]="['/312']">404</a>
+          <a class="dropdown-item" [routerLink]="['/contact']">Contact</a>
+        </div>
+      </li>
+    </ul>
+    <!-- Search BAR -->
 
-        <form class="form-inline">
-            <div class="md-form my-0">
-                <input class="form-control mr-sm-2 text-white" type="text" placeholder="Search" aria-label="Search" />
-            </div>
-        </form>
-    </div>
-    <!-- Collapsible content -->
+    <form class="d-flex">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button class="btn btn-success ml-1" type="submit">Search</button>
+    </form>
+  </div>
+  <!-- Collapsible content -->
 </nav>
