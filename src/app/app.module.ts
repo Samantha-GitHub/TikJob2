@@ -13,6 +13,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProfesionalFormularioComponent } from './components/profesionales/profesional-formulario/profesional-formulario.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserFormularioComponent } from './components/users/user-formulario/user-formulario.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -33,7 +34,8 @@ import { UserFormularioComponent } from './components/users/user-formulario/user
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
