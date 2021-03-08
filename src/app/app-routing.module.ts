@@ -11,17 +11,16 @@ import { UsersComponent } from './components/users/users.component';
 
 const routes: Routes = [
 
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: 'home', component: HomeComponent },
-  { path: 'home', component: HeroComponent },
-  { path: 'user', component: UsersComponent },
-  { path: 'form_user', component: UserFormularioComponent },
+  { path: "", pathMatch: "full", redirectTo: 'home' },
+  { path: "home", component: HomeComponent },
+  { path: "home", component: HeroComponent },
+  { path: "freelance", component: UsersComponent },
+  { path: "form_freelance", component: UserFormularioComponent },
+  { path: "profesional", component: ProfesionalesComponent },
+  { path: "form_profesional", component: ProfesionalFormularioComponent },
+  { path: "contact", component: ContactComponent },
+  { path: "**", component: NotFoundComponent }
 
-  { path: 'profesional', component: ProfesionalesComponent },
-  { path: 'form_profesional', component: ProfesionalFormularioComponent },
-  { path: 'contact', component: ContactComponent },
-
-  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
