@@ -7,13 +7,13 @@ import { AppComponent } from './app.component';
 import { ProfesionalesComponent } from './components/profesionales/profesionales.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HeroComponent } from './components/hero/hero.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProfesionalFormularioComponent } from './components/profesionales/profesional-formulario/profesional-formulario.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserFormularioComponent } from './components/users/user-formulario/user-formulario.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HeroComponent } from './components/hero/hero.component';
 
 
 
