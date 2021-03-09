@@ -1,1 +1,547 @@
-<p>user-formulario works!</p>
+<div class="servicesContainer">
+    <!-- <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Modal title</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">
+        Close
+      </button>
+    </div>
+  </ng-template>
+
+  <ng-template #longContent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Modal title</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+      <p>
+        Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+      </p>
+      <p>
+        Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
+        magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
+        ullamcorper nulla non metus auctor fringilla.
+      </p>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">
+        Close
+      </button>
+    </div>
+  </ng-template>
+
+  <button class="btn btn-outline-primary mb-2 mr-2" (click)="openXl(content)">
+    Extra large modal
+  </button>
+  <button class="btn btn-outline-primary mb-2 mr-2" (click)="openVerticallyCentered(content)">
+    Modal vertically centered
+  </button> -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <p>
+                    <button type="button" class="btn btn-outline-primary" (click)="collapse.toggle()"
+                        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                        Personal Details
+                    </button>
+                </p>
+                <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Default form register -->
+                            <form class="text-center border border-light p-5">
+
+                                <h2>PERSONAL DETAILS</h2>
+
+                                <div class="form-row mb-4">
+
+                                    <div class="col">
+                                        <!-- First name -->
+                                        <input type="text" id="defaultRegisterFormFirstName" class="form-control"
+                                            placeholder="First name" />
+                                    </div>
+                                    <div class="col">
+                                        <!-- Last name -->
+                                        <input type="text" id="defaultRegisterFormLastName" class="form-control"
+                                            placeholder="Last name" />
+                                    </div>
+                                </div>
+
+                                <!-- E-mail -->
+                                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4"
+                                    placeholder="E-mail" />
+
+                                <!-- Phone number -->
+                                <input type="text" id="defaultRegisterPhonePassword" class="form-control"
+                                    placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock" />
+
+
+                                <div class="col mb-4">
+                                    <!-- Photo -->
+                                    <label>Add your Picture</label>
+                                    <input type="file" id="defaultPhoto" class="form-control" placeholder="Photo" />
+                                </div>
+
+                                <!-- Street -->
+                                <input type="text" id="defaultStreet" class="form-control mb-4"
+                                    placeholder="Enter Street" />
+
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm">
+                                            <!-- Postcode -->
+                                            <input type="number" id="defaultStreet" class="form-control mb-4"
+                                                placeholder="Enter Postcode" />
+                                        </div>
+                                        <div class="col-sm">
+                                            <!-- City -->
+                                            <input type="text" id="defaultStreet" class="form-control mb-4"
+                                                placeholder="Enter City" />
+                                        </div>
+                                        <div class="col-sm">
+                                            <!-- Country -->
+                                            <input type="text" id="defaultStreet" class="form-control mb-4"
+                                                placeholder="Enter Country" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Nationality -->
+                                <input type="text" id="defaultNationality" class="form-control mb-4"
+                                    placeholder="Nationality" />
+
+                                <!-- JobTitle -->
+                                <input type="text" id="defaultJobTitle" class="form-control mb-4"
+                                    placeholder="Job Title" />
+
+                                <!-- Website -->
+                                <input type="url" id="defaultWebSite" class="form-control mb-4"
+                                    placeholder="Enter your Website" />
+
+                                <!-- LinkedIn -->
+                                <input type="url" id="defaultLinkedIn" class="form-control mb-4"
+                                    placeholder="LinkedIn" />
+
+                                <!-- Sign up button -->
+                                <button mdbBtn color="info" block="true" class="my-4" type="submit">
+                                    Save
+                                </button>
+
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm">
+
+                <p>
+                    <button type="button" class="btn btn-outline-primary" (click)="collapse.toggle()"
+                        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                        Profile
+                    </button>
+                </p>
+                <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Default form register -->
+                            <form class="text-center border border-light p-5">
+
+                                <h2>PROFILE</h2>
+
+                                <div class="form-row mb-4">
+
+                                    <div class="col">
+                                        <!-- First name -->
+                                        <label>Write your profile here</label>
+                                        <textarea id="defaultTextProfile" class="form-control">
+                    </textarea>
+                                    </div>
+
+                                </div>
+
+                                <!-- Sign up button -->
+                                <button mdbBtn color="info" block="true" class="my-4" type="submit">
+                                    Save
+                                </button>
+
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm">
+                <p>
+                    <button type="button" class="btn btn-outline-primary" (click)="collapse.toggle()"
+                        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                        Education
+                    </button>
+                </p>
+                <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Default form register -->
+                            <form class="text-center border border-light p-5">
+                                <h2>EDUCATION</h2>
+                                <div class="form-row mb-4">
+
+                                    <div class="col">
+                                        <!-- Degree -->
+                                        <input type="text" id="defaultRegisterFormFirstName" class="form-control"
+                                            placeholder="Degree" />
+                                    </div>
+                                    <div class="col">
+                                        <!-- School -->
+                                        <input type="text" id="defaultRegisterFormLastName" class="form-control"
+                                            placeholder="School" />
+                                    </div>
+                                </div>
+                                <div class="form-row mb-4">
+
+                                    <div class="col">
+                                        <!-- City -->
+                                        <input type="text" id="defaultRegisterFormFirstName" class="form-control"
+                                            placeholder="City" />
+                                    </div>
+                                    <div class="col">
+                                        <!-- Country -->
+                                        <input type="text" id="defaultRegisterFormLastName" class="form-control"
+                                            placeholder="Country" />
+                                    </div>
+                                </div>
+
+                                <div class="form-row mb-4">
+
+                                    <div class="col">
+                                        <!-- Start Date -->
+                                        <label for="start">Start date:</label>
+                                        <hr>
+
+                                        <input type="date" id="start" name="trip-start" value="2018-07-22"
+                                            min="2018-01-01" max="2018-12-31">
+
+                                    </div>
+                                    <div class="col">
+                                        <!-- End Date -->
+                                        <label for="start">End date:</label>
+                                        <hr>
+
+                                        <input type="date" id="end" name="trip-start" value="2018-07-22"
+                                            min="2018-01-01" max="2018-12-31">
+                                    </div>
+                                </div>
+
+                                <!-- Add button -->
+                                <button mdbBtn color="success" block="true" class="my-4" type="submit">
+                                    + Add
+                                </button>
+
+                                <!-- Delete button -->
+                                <button mdbBtn color="danger" block="true" class="my-4" type="submit">
+                                    - Delete
+                                </button>
+
+                                <!-- Sign up button -->
+                                <button mdbBtn color="info" block="true" class="my-4" type="submit">
+                                    Save
+                                </button>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+            <div class="col-sm">
+                <p>
+                    <button type="button" class="btn btn-outline-primary" (click)="collapse.toggle()"
+                        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                        Course
+                    </button>
+                </p>
+                <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Default form register -->
+                            <form class="text-center border border-light p-5">
+                                <h2>Course</h2>
+                                <div class="form-row mb-4">
+
+                                    <div class="col">
+                                        <!-- Title -->
+                                        <input type="text" id="defaultRegisterFormFirstName" class="form-control"
+                                            placeholder="Course title" />
+                                    </div>
+                                    <div class="col">
+                                        <!-- Institution -->
+                                        <input type="text" id="defaultRegisterFormLastName" class="form-control"
+                                            placeholder="Institution" />
+                                    </div>
+                                </div>
+                                <div class="form-row mb-4">
+
+                                    <div class="col">
+                                        <!-- City -->
+                                        <input type="text" id="defaultRegisterFormFirstName" class="form-control"
+                                            placeholder="City" />
+                                    </div>
+                                    <div class="col">
+                                        <!-- Country -->
+                                        <input type="text" id="defaultRegisterFormLastName" class="form-control"
+                                            placeholder="Country" />
+                                    </div>
+                                </div>
+
+                                <div class="form-row mb-4">
+
+                                    <div class="col">
+                                        <!-- Start Date -->
+                                        <label for="start">Start date:</label>
+                                        <hr>
+
+                                        <input type="date" id="start" name="trip-start" value="2018-07-22"
+                                            min="2018-01-01" max="2018-12-31">
+
+                                    </div>
+                                    <div class="col">
+                                        <!-- End Date -->
+                                        <label for="start">End date:</label>
+                                        <hr>
+
+                                        <input type="date" id="end" name="trip-start" value="2018-07-22"
+                                            min="2018-01-01" max="2018-12-31">
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <!-- Curse link -->
+                                    <input type="url" id="defaultRegisterFormFirstName" class="form-control"
+                                        placeholder="Course link" />
+                                </div>
+
+                                <!-- Add button -->
+                                <button mdbBtn color="success" block="true" class="my-4" type="submit">
+                                    + Add
+                                </button>
+
+                                <!-- Delete button -->
+                                <button mdbBtn color="danger" block="true" class="my-4" type="submit">
+                                    - Delete
+                                </button>
+
+                                <!-- Sign up button -->
+                                <button mdbBtn color="info" block="true" class="my-4" type="submit">
+                                    Save
+                                </button>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm">
+                <p>
+                    <button type="button" class="btn btn-outline-primary" (click)="collapse.toggle()"
+                        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                        Professional Experience
+                    </button>
+                </p>
+                <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Default form register -->
+                            <form class="text-center border border-light p-5">
+                                <h2>PROFESSIONAL EXPERIENCE</h2>
+                                <div class="form-row mb-4">
+
+                                    <div class="col">
+                                        <!-- Employer -->
+                                        <input type="text" id="defaultRegisterFormFirstName" class="form-control"
+                                            placeholder="Employer" />
+                                    </div>
+                                    <div class="col">
+                                        <!-- Job Title -->
+                                        <input type="text" id="defaultRegisterFormLastName" class="form-control"
+                                            placeholder="Job Title" />
+                                    </div>
+                                </div>
+                                <div class="form-row mb-4">
+
+                                    <div class="col">
+                                        <!-- City -->
+                                        <input type="text" id="defaultRegisterFormFirstName" class="form-control"
+                                            placeholder="City" />
+                                    </div>
+                                    <div class="col">
+                                        <!-- Country -->
+                                        <input type="text" id="defaultRegisterFormLastName" class="form-control"
+                                            placeholder="Country" />
+                                    </div>
+                                </div>
+
+                                <div class="form-row mb-4">
+
+                                    <div class="col">
+                                        <!-- Start Date -->
+                                        <label for="start">Start date:</label>
+                                        <hr>
+
+                                        <input type="date" id="start" name="trip-start" value="2018-07-22"
+                                            min="2018-01-01" max="2018-12-31">
+
+                                    </div>
+                                    <div class="col">
+                                        <!-- End Date -->
+                                        <label for="start">End date:</label>
+                                        <hr>
+
+                                        <input type="date" id="end" name="trip-start" value="2018-07-22"
+                                            min="2018-01-01" max="2018-12-31">
+                                    </div>
+                                </div>
+
+                                <!-- Curse link -->
+                                <input type="url" id="defaultRegisterFormFirstName" class="form-control"
+                                    placeholder="Course link" />
+
+                                <label> Description</label>
+                                <textarea id="" class="form-control">
+                </textarea>
+
+                                <!-- Add button -->
+                                <button mdbBtn color="success" block="true" class="my-4" type="submit">
+                                    + Add
+                                </button>
+
+                                <!-- Delete button -->
+                                <button mdbBtn color="danger" block="true" class="my-4" type="submit">
+                                    - Delete
+                                </button>
+
+
+                                <!-- Sign up button -->
+                                <button mdbBtn color="info" block="true" class="my-4" type="submit">
+                                    Save
+                                </button>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+            <div class="col-sm">
+                <p>
+                    <button type="button" class="btn btn-outline-primary" (click)="collapse.toggle()"
+                        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                        Skills
+                    </button>
+                </p>
+                <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Default form register -->
+                            <form class="text-center border border-light p-5">
+                                <h2>SKILLS</h2>
+
+
+                                <div class="col">
+                                    <!-- Skils -->
+                                    <input type="text" id="defaultRegisterFormFirstName" class="form-control"
+                                        placeholder="Skill" />
+                                </div>
+                                <div class="col">
+                                    <!--Skils's informations-->
+                                    <label> Description</label>
+                                    <textarea id="" class="form-control"></textarea>
+                                </div>
+
+
+                                <!-- Add button -->
+                                <button mdbBtn color="success" block="true" class="my-4" type="submit">
+                                    + Add
+                                </button>
+
+                                <!-- Delete button -->
+                                <button mdbBtn color="danger" block="true" class="my-4" type="submit">
+                                    - Delete
+                                </button>
+
+
+                                <!-- Sign up button -->
+                                <button mdbBtn color="info" block="true" class="my-4" type="submit">
+                                    Save
+                                </button>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
