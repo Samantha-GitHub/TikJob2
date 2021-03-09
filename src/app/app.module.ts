@@ -14,8 +14,7 @@ import { ProfesionalFormularioComponent } from './components/profesionales/profe
 import { UsersComponent } from './components/users/users.component';
 import { UserFormularioComponent } from './components/users/user-formulario/user-formulario.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,15 +28,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ProfesionalFormularioComponent,
     UsersComponent,
     UserFormularioComponent,
-
+    HomeComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    NgbModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
