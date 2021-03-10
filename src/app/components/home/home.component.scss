@@ -139,7 +139,7 @@ img {
 
 }
 
-  .grid{
+.grid{
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -147,11 +147,11 @@ img {
 
     article{
     position: relative;
-    height: 355px;
+    height: 350px;
     overflow: hidden;
     cursor: pointer;
     figure{
-      height: 355px;
+      height: 350px;
       display: flex;
       justify-content: center;
     
@@ -169,14 +169,25 @@ img {
         font-weight: 600;
         margin-left: -360px;
         transition: 1s;
+
+      /* $h3Hover:'true'; */
+      
     }
     &:hover h3{
       margin-left: 0px;
 
     }
-  }
-  
+  }  
 }
+
+/*  .hidden{
+
+  @if $h3Hover = true{
+
+    visibility: hidden
+  }
+
+  }; */
 
 
 

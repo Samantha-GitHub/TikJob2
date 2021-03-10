@@ -14,6 +14,7 @@ import { UserFormularioComponent } from './components/users/user-formulario/user
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeroComponent } from './components/hero/hero.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProfesionalViewComponent } from './components/profesionales/profesional-view/profesional-view.component';
 
 
 
@@ -30,6 +31,7 @@ import { HomeComponent } from './components/home/home.component';
     UsersComponent,
     UserFormularioComponent,
     HomeComponent,
+    ProfesionalViewComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
   providers: [],
