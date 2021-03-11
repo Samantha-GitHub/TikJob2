@@ -15,11 +15,10 @@ export class ProfesionalesComponent implements OnInit {
 
   async ngOnInit() {
     try {
+
       const response = await this.profesionalesService.getAll();
       this.arrProfesionales = response['data'];
-      console.log(this.arrProfesionales);
-
-
+      /* console.log(this.arrProfesionales); */
 
     } catch (err) {
       console.log(err);
