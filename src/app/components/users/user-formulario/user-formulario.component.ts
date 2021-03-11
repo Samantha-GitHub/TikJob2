@@ -4,25 +4,22 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-user-formulario',
   templateUrl: './user-formulario.component.html',
-  styleUrls: ['./user-formulario.component.scss']
+  styleUrls: ['./user-formulario.component.scss'],
 })
 export class UserFormularioComponent implements OnInit {
-
   closeResult: string;
 
+  constructor(private modalService: NgbModal) {}
 
-  constructor(private modalService: NgbModal) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void { }
+  // openXl(content) {
+  //   this.modalService.open(content, { size: 'xl' });
+  // }
 
-  openXl(content) {
-    this.modalService.open(content, { size: 'xl' });
-  }
+  // openVerticallyCentered(content) {
+  //   this.modalService.open(content, { centered: true });
+  // }
 
-  openVerticallyCentered(content) {
-    this.modalService.open(content, { centered: true });
-  }
-
-  public isCollapsed = true;
-
+  active = 1;
 }
