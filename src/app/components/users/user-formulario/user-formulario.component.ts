@@ -12,14 +12,25 @@ export class UserFormularioComponent implements OnInit {
   constructor(private modalService: NgbModal) {}
 
   ngOnInit(): void {}
+<<<<<<< Features
 
   openXl(content) {
     this.modalService.open(content, { size: 'xl' });
   }
+=======
+>>>>>>> changed the dropdowns from formulario to responsive nav
 
-  openVerticallyCentered(content) {
-    this.modalService.open(content, { centered: true });
-  }
+  // openXl(content) {
+  //   this.modalService.open(content, { size: 'xl' });
+  // }
 
+<<<<<<< Features
   public isCollapsed = true;
+=======
+  // openVerticallyCentered(content) {
+  //   this.modalService.open(content, { centered: true });
+  // }
+
+  active = 1;
+>>>>>>> changed the dropdowns from formulario to responsive nav
 }
