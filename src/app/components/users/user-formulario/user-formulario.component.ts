@@ -4,16 +4,14 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-user-formulario',
   templateUrl: './user-formulario.component.html',
-  styleUrls: ['./user-formulario.component.scss']
+  styleUrls: ['./user-formulario.component.scss'],
 })
 export class UserFormularioComponent implements OnInit {
-
   closeResult: string;
 
+  constructor(private modalService: NgbModal) {}
 
-  constructor(private modalService: NgbModal) { }
-
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   openXl(content) {
     this.modalService.open(content, { size: 'xl' });
@@ -24,5 +22,4 @@ export class UserFormularioComponent implements OnInit {
   }
 
   public isCollapsed = true;
-
 }

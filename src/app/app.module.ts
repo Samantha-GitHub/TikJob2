@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+// COMPONENTS
 import { AppComponent } from './app.component';
 import { ProfesionalesComponent } from './components/profesionales/profesionales.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -15,8 +17,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeroComponent } from './components/hero/hero.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProfesionalViewComponent } from './components/profesionales/profesional-view/profesional-view.component';
-
-
+import { LogincompanyComponent } from './components/login/logincompany/logincompany.component';
+import { LoginfreelancerComponent } from './components/login/loginfreelancer/loginfreelancer.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +34,17 @@ import { ProfesionalViewComponent } from './components/profesionales/profesional
     UserFormularioComponent,
     HomeComponent,
     ProfesionalViewComponent,
+    LogincompanyComponent,
+    LoginfreelancerComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule,
+    FontAwesomeModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
