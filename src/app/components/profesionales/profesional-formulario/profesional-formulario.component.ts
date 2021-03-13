@@ -9,9 +9,9 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class ProfesionalFormularioComponent implements OnInit {
   closeResult: string;
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   // openXl(content) {
   //   this.modalService.open(content, { size: 'xl' });
