@@ -7,7 +7,7 @@ import { LogincompanyComponent } from './components/login/logincompany/logincomp
 import { LoginfreelancerComponent } from './components/login/loginfreelancer/loginfreelancer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProfesionalFormularioComponent } from './components/profesionales/profesional-formulario/profesional-formulario.component';
-import { ProfesionalViewComponent } from './components/profesionales/profesional-view/profesional-view.component';
+/* import { ProfesionalViewComponent } from './components/profesionales/profesional-view/profesional-view.component';*/
 import { ProfesionalesComponent } from './components/profesionales/profesionales.component';
 import { UserFormularioComponent } from './components/users/user-formulario/user-formulario.component';
 import { UsersComponent } from './components/users/users.component';
