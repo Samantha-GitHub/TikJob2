@@ -10,14 +10,15 @@ export class UsersService {
 
   baseUrl: string;
 
-  constructor(private httpCliente: HttpClient) {
 
-    this.baseUrl = 'http://localhost:3000/api/freelancers'
+  constructor(private httpClient: HttpClient) {
+
+    this.baseUrl = 'http://localhost:3000/api/freelancers';
   }
 
 
   getAll(): Promise<Freelance[]> {
 
-    return this.httpCliente.get<Freelance[]>(this.baseUrl).toPromise();
+    return this.httpClient.get<Freelance[]>(this.baseUrl).toPromise();
   };
 }

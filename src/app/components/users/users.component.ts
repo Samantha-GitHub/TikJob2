@@ -9,18 +9,18 @@ import { UsersService } from '../../services/users.service';
 })
 export class UsersComponent implements OnInit {
 
-  allFreelances: Freelance[];
+  allFreelancers: Freelance[];
 
   constructor(private usersService: UsersService) {
 
-    this.allFreelances = [];
+    this.allFreelancers = [];
   }
 
   async ngOnInit() {
 
     try {
-      this.allFreelances = await this.usersService.getAll();
-      console.log(this.allFreelances);
+      this.allFreelancers = await this.usersService.getAll();
+      console.log(this.allFreelancers);
 
     } catch (error) {
 

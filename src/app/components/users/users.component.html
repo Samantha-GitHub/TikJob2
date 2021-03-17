@@ -1,10 +1,10 @@
 <div class="servicesContainer">
   <h1 class="servicesH1">Users</h1>
-  <div class="servicesWrapper">
+  <div class="servicesWrapper" *ngFor="let freelance of allFreelancers">
     <div class="servicesCard">
       <img src="../../../../assets/images/svg-8.svg" class="servicesIcon" />
-      <h2 class="servicesH2">User name</h2>
-      <p class="serviceP">User info</p>
+      <h2 class="servicesH2">{{freelance.firstname}}</h2>
+      <p class="serviceP">{{freelance.profile}}</p>
     </div>
   </div>
   <div class="container-fluid">
