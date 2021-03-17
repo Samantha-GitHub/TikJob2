@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Freelance } from '../interfaces/freelance';
 
@@ -11,6 +11,7 @@ export class UsersService {
   baseUrl: string;
 
 
+
   constructor(private httpClient: HttpClient) {
 
     this.baseUrl = 'http://localhost:3000/api/freelancers';
@@ -19,6 +20,8 @@ export class UsersService {
 
   getAll(): Promise<Freelance[]> {
 
-    return this.httpClient.get<Freelance[]>(this.baseUrl).toPromise();
+    const httpOptions = { headers: new HttpHeaders() };
+
+    return this.httpClient.get<Freelance[]>(this.baseUrl, httpOptions).toPromise();
   };
 }
