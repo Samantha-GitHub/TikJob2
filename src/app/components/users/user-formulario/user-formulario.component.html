@@ -1,11 +1,6 @@
 <div class="servicesContainer justify-content-center">
   <!-- collapse -->
-  <ul
-    ngbNav
-    #nav="ngbNav"
-    [(activeId)]="active"
-    class="nav-tabs justify-content-center"
-  >
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs justify-content-center">
     <li [ngbNavItem]="1">
       <a ngbNavLink>Personal Details</a>
       <ng-template ngbNavContent>
@@ -91,7 +86,7 @@
           /> -->
 
           <!-- LinkedIn -->
-          <input type="url" id="defaultLinkedIn" class="form-control mb-4" placeholder="LinkedIn" />
+          <input type="url" id="defaultWebsite" class="form-control mb-4" placeholder="Website" />
 
           <!-- Save button -->
           <button color="info" block="true" class="btn btn-info" type="submit">
