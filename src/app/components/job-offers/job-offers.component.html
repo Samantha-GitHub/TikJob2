@@ -1,15 +1,15 @@
 <div class="servicesContainer">
-    <h1 class="servicesH1">Users</h1>
-    <div class="servicesWrapper" *ngFor="let jobOffer of allJobOffers ">
-        <div class="servicesCard">
-            <img src="../../../../assets/images/svg-8.svg" class="servicesIcon" />
-            <h2 class="servicesH2">{{jobOffer.function_department}}</h2>
-            <p class="serviceP">{{jobOffer.city}}</p>
-            <p class="serviceP">{{jobOffer.country}}</p>
-
-        </div>
+  <h1 class="servicesH1">Job Offers</h1>
+  <div class="servicesWrapper">
+    <div class="servicesCard" *ngFor="let jobOffer of allJobOffers">
+      <img src="../../../../assets/images/svg-8.svg" class="servicesIcon" />
+      <h2 class="servicesH2">{{ jobOffer.function_department }}</h2>
+      <p class="serviceP">
+        {{ jobOffer.city }}
+      </p>
+      <p class="serviceP">
+        {{ jobOffer.country }}
+      </p>
     </div>
-    <div class="container-fluid">
-        <hr />
-    </div>
+  </div>
 </div>

@@ -1,4 +1,4 @@
-<div class="servicesContainer">
+<!-- <div class="servicesContainer">
   <h1 class="servicesH1">Users</h1>
   <div class="servicesWrapper" *ngFor="let freelance of allFreelancers">
     <div class="servicesCard">
@@ -9,5 +9,21 @@
   </div>
   <div class="container-fluid">
     <hr />
+  </div>
+</div> -->
+
+<div class="servicesContainer">
+  <h1 class="servicesH1">Freelancers</h1>
+  <div class="servicesWrapper">
+    <div class="servicesCard" *ngFor="let freelance of allFreelancers">
+      <img src="{{ freelance.image }}" class="servicesIcon" />
+      <h2 class="servicesH2">{{ freelance.firstname }}</h2>
+      <p class="serviceP">
+        {{ freelance.city }}
+      </p>
+      <p class="serviceP">
+        {{ freelance.country }}
+      </p>
+    </div>
   </div>
 </div>

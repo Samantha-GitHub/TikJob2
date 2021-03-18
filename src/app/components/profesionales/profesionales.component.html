@@ -2,15 +2,14 @@
   <h1 class="servicesH1">Companies</h1>
   <div class="servicesWrapper">
     <div class="servicesCard" *ngFor="let company of allCompanies">
-      <img src="{{company.image}}" class="servicesIcon" />
+      <img src="{{ company.image }}" class="servicesIcon" />
       <h2 class="servicesH2">{{ company.name_company }}</h2>
       <p class="serviceP">
-        {{ company.city}}
+        {{ company.city }}
       </p>
       <p class="serviceP">
-        {{ company.country}}
+        {{ company.country }}
       </p>
-
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 .servicesContainer {
-  height: auto;
+  height: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,7 +8,7 @@
 }
 
 .servicesWrapper {
-  max-width: 1000px;
+  max-width: 1500px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

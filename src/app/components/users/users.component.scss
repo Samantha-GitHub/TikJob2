@@ -1,5 +1,6 @@
 .servicesContainer {
   height: 800px;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,10 +9,10 @@
 }
 
 .servicesWrapper {
-  max-width: 1000px;
+  max-width: 1500px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center;
   grid-gap: 16px;
   padding: 0 50px;
@@ -56,4 +57,3 @@
   font-size: 1rem;
   text-align: center;
 }
-
