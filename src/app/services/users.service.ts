@@ -24,4 +24,10 @@ export class UsersService {
 
     return this.httpClient.get<Freelance[]>(this.baseUrl, httpOptions).toPromise();
   };
+
+  getById(pId): Promise<Freelance> {
+    const httpOptions = { headers: new HttpHeaders() };
+    return this.httpClient.get<Freelance>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
+
+  }
 }
