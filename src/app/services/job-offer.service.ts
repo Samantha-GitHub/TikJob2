@@ -12,7 +12,7 @@ export class JobOfferService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://localhost:3000/api/job-offers';
+    this.baseUrl = 'http://localhost:3000/api/job_offers';
   }
 
 
