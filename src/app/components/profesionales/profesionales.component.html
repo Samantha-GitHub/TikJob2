@@ -1,25 +1,16 @@
-<!-- <div class="clientes">
-
-    <div class="cliente" *ngFor="let profesional of arrProfesionales">
-        <h3>{{ profesional.name }}</h3>
-        <p>Email: {{ profesional.email }}</p>
-        <p>Direccion: {{ profesional.country }}| {{ profesional.country }}</p>
-        <p>Telefono: {{ profesional.phone }}</p>
-        <p>Website: {{ profesional.website }}</p>
-
-    </div>
-</div> -->
-
 <div class="servicesContainer">
   <h1 class="servicesH1">Companies</h1>
   <div class="servicesWrapper">
-    <div class="servicesCard" *ngFor="let profesional of arrProfesionales">
-      <img src="../../../assets/images/svg-6.svg" class="servicesIcon" />
-      <h2 class="servicesH2">{{ profesional.name }}</h2>
+    <div class="servicesCard" *ngFor="let company of allCompanies">
+      <img src="{{company.image}}" class="servicesIcon" />
+      <h2 class="servicesH2">{{ company.name_company }}</h2>
       <p class="serviceP">
-        {{ profesional.country }}
+        {{ company.city}}
       </p>
-      <p>{{ profesional.email }}</p>
+      <p class="serviceP">
+        {{ company.country}}
+      </p>
+
     </div>
   </div>
 </div>

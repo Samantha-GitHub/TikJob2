@@ -1,17 +1,25 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Company } from '../interfaces/company';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProfesionalesService {
   baseUrl: string;
-  arrProfesionales: any[];
+
+
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'https://fakerapi.it/api/v1/companies?_quantity=10';
+
+    this.baseUrl = 'http://localhost:3000/api/companies';
   }
-  getAll() {
-    return this.httpClient.get(this.baseUrl).toPromise();
-  }
+
+
+  getAll(): Promise<[Company]> {
+
+    const httpOptions = { headers: new HttpHeaders() };
+
+    return this.httpClient.get<[Company]>(this.baseUrl, httpOptions).toPromise();
+  };
 }
