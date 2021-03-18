@@ -28,78 +28,19 @@
             <div class="left-column">
                 <div class="experience">
                     <header>
-                        <h2>Experience</h2>
+                        <h2>Profesional Experience</h2>
                     </header>
-                    <div class="riser">
-                        <img class="ac-logo" src="https://i.imgur.com/rZ06QuQ.png" />
+                    <div class="riser" *ngFor="let experience of profesional_experience">
+                        <!-- <img class="ac-logo" src="https://i.imgur.com/rZ06QuQ.png" /> -->
                         <!-- bold -->
-                        <h3>AncestorCloud</h3>
-                        <h4>April 2015 - Present</h4>
-                        <ul>
-                            <li>
-                                Created user personas, designed for those personas and assisted
-                                in implementing those designs.
-                            </li>
-                            <li>
-                                Determined user flows, onboarding processes and UI design for
-                                both user groups.
-                            </li>
-                            <li>
-                                Wireframed, designed and generated content for investor slide
-                                deck presentations.
-                            </li>
-                        </ul>
+                        <h3>{{experience.job_title}}</h3>
+                        <h3>{{experience.employer}} </h3>
+                        <h4>{{experience?.company_link}} </h4>
+                        <h4>{{experience.start_date}} / {{experience.end_date}}</h4>
+                        <h4>{{experience?.city}} / {{experience?.country}}</h4>
+                        <p>{{experience.description}}</p>
                     </div>
-                    <div class="riser">
-                        <img class="riser-logo" src="https://i.imgur.com/ZhSvPoL.png" />
-                        <!-- bold -->
-                        <h3>Riser Design Agency</h3>
-                        <h4>May 2014 - December 2014</h4>
-                        <ul>
-                            <li>Designed and illustrated several drawings for Google.</li>
-                            <li>Created several landing pages for ABC.</li>
-                            <li>Assisted in the branding process of multiple companies.</li>
-                        </ul>
-                    </div>
-                    <div class="byu">
-                        <img class="byu-logo" src="https://i.imgur.com/2JdJghU.png" />
-                        <!-- bold -->
-                        <h3>
-                            BYU, Mueseum of Art & The Center for Teaching and Learning, UX/UI
-                        </h3>
-                        <h4>July 2013 - April 2014</h4>
-                        <ul>
-                            <li>
-                                Designed the interface & navigation for the
-                                <a href="https://itunes.apple.com/us/app/sacred-gifts-brigham-young/id723165787?mt=8"
-                                    target="blank">Sacred Gifts iPad app.</a>
-                            </li>
-                            <li>
-                                Collaborated with department heads, project managers and iOS
-                                developers.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="vivint">
-                        <img class="vivint-logo" src="https://i.imgur.com/TOGws6b.png" />
-                        <!-- bold -->
-                        <h3>Vivint, Sales</h3>
-                        <h4>April 2012 - July 2013</h4>
-                        <ul>
-                            <li>
-                                Top first-year representative in the Northern California office
-                                for sales production.
-                            </li>
-                            <li>
-                                Provided security, medical, & smart home solutions to over 70
-                                families.
-                            </li>
-                            <li>
-                                Built successful referral system through positive customer
-                                relations.
-                            </li>
-                        </ul>
-                    </div>
+
                 </div>
 
             </div>
@@ -152,26 +93,10 @@
                     <header>
                         <h2>Skills</h2>
                     </header>
-                    <div class="skill-lists">
+                    <div class="skill-lists" *ngFor="let skill of skills">
                         <ul class="left">
-                            <li>Sketch</li>
-                            <li>Adobe Photoshop</li>
-                            <li>Adobe Illustrator</li>
-                            <li>UI Design</li>
-                            <li>Slack</li>
-                            <li>Adobe InDesign</li>
-                            <li>User Research</li>
-                            <li>Branding</li>
-                        </ul>
-                        <ul class="right">
-                            <li>UX Design</li>
-                            <li>Basic HTML/CSS</li>
-                            <li>Web Design</li>
-                            <li>Laser Engraving</li>
-                            <li>Illustration</li>
-                            <li>Storyboarding</li>
-                            <li>Basic 3D Printing</li>
-                            <li>Public Speaking</li>
+                            <li>{{skill.skill}}</li>
+
                         </ul>
                     </div>
                 </div>

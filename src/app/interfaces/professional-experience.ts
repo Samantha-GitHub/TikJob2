@@ -1,4 +1,4 @@
-export interface ProfesionaExperience {
+export interface ProfesionalExperience {
   employer: string;
   job_title: string;
   city: number;

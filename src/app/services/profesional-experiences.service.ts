@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ProfesionaExperience } from '../interfaces/professional-experience';
+import { ProfesionalExperience } from '../interfaces/professional-experience';
 
 @Injectable({
   providedIn: 'root',
@@ -12,11 +12,17 @@ export class ProfesionalExperienceService {
     this.baseUrl = 'http://localhost:3000/api/profesional_experience';
   }
 
-  getAll(): Promise<ProfesionaExperience[]> {
+  getAll(): Promise<ProfesionalExperience[]> {
     const httpOptions = { headers: new HttpHeaders() };
 
     return this.httpClient
-      .get<ProfesionaExperience[]>(this.baseUrl, httpOptions)
+      .get<ProfesionalExperience[]>(this.baseUrl, httpOptions)
       .toPromise();
+  }
+
+  getProfesionalExperienceByIdFreelance(pId): Promise<ProfesionalExperience[]> {
+    const httpOptions = { headers: new HttpHeaders() };
+    return this.httpClient.get<ProfesionalExperience[]>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
+
   }
 }
