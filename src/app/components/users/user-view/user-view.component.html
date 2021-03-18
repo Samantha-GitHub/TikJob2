@@ -101,25 +101,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="personal-experience">
-                    <header>
-                        <h2>Personal Experience</h2>
-                    </header>
-                    <div class="waya">
-                        <img class="waya-logo" src="https://i.imgur.com/Vdzz2UG.png" />
-                        <div class="waya-text">
-                            <h3>WAYA: Hardwood Headphone Wrapper</h3>
-                            <a href="http://kck.st/1yFQBO9" target="blank">http://kck.st/1yFQBO9</a>
-                        </div>
-                    </div>
-                    <div class="fpgc">
-                        <img class="fpgc-logo" src="https://i.imgur.com/cKYjhSw.png" />
-                        <div class="fpgc-text">
-                            <h3>Frying Pans & Garbage Cans</h3>
-                            <a href="http://kck.st/1oQnWpv" target="blank">http://kck.st/1oQnWpv</a>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div class="right-column">
                 <div class="education">
@@ -134,6 +116,23 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="education">
+                    <header>
+                        <h2>Courses</h2>
+                    </header>
+                    <div class="ed-info">
+                        <img src="https://i.imgur.com/2JdJghU.png" />
+                        <div class="info" *ngFor="let course of courses">
+                            <h3>{{course.course_title}}</h3>
+                            <h3>{{course.institution}} </h3>
+                            <h4>Start date:{{course.start_date}}/ End date: {{course.end_date}} </h4>
+                            <h4>{{course.city}} / {{course.country}} </h4>
+                            <h4>{{course?.course_link}} </h4>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="skills">
                     <header>
                         <h2>Skills</h2>

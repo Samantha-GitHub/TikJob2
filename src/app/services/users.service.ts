@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Course } from '../interfaces/course';
 import { Freelance } from '../interfaces/freelance';
 
 
@@ -30,4 +31,5 @@ export class UsersService {
     return this.httpClient.get<Freelance>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
 
   }
+
 }
