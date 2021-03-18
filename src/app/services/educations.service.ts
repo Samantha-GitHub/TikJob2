@@ -1,22 +1,21 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Company } from '../interfaces/company';
+import { Education } from '../interfaces/education';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ProfesionalesService {
+export class EducationsService {
   baseUrl: string;
-
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/companies';
+    this.baseUrl = 'http://localhost:3000/api/educations';
   }
 
-  getAll(): Promise<[Company]> {
+  getAll(): Promise<Education[]> {
     const httpOptions = { headers: new HttpHeaders() };
 
     return this.httpClient
-      .get<[Company]>(this.baseUrl, httpOptions)
+      .get<Education[]>(this.baseUrl, httpOptions)
       .toPromise();
   }
 }
