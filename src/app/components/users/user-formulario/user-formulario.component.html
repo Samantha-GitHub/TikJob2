@@ -1,6 +1,11 @@
-<div class="servicesContainer justify-content-center">
+<div class="servicesContainer justify-content-center mt-5">
   <!-- collapse -->
-  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs justify-content-center">
+  <ul
+    ngbNav
+    #nav="ngbNav"
+    [(activeId)]="active"
+    class="nav-tabs justify-content-center"
+  >
     <li [ngbNavItem]="1">
       <a ngbNavLink>Personal Details</a>
       <ng-template ngbNavContent>
@@ -10,17 +15,32 @@
           <div class="form-row mb-4">
             <div class="col">
               <!-- First name -->
-              <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name" />
+              <input
+                type="text"
+                id="defaultRegisterFormFirstName"
+                class="form-control"
+                placeholder="First name"
+              />
             </div>
             <div class="col">
               <!-- Last name -->
-              <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name" />
+              <input
+                type="text"
+                id="defaultRegisterFormLastName"
+                class="form-control"
+                placeholder="Last name"
+              />
             </div>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- E-mail -->
-              <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" />
+              <input
+                type="email"
+                id="defaultRegisterFormEmail"
+                class="form-control mb-4"
+                placeholder="E-mail"
+              />
             </div>
             <!-- SEXO -->
             <div class="col">
@@ -32,50 +52,89 @@
             </div>
           </div>
           <!-- Phone number -->
-          <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number"
-            aria-describedby="defaultRegisterFormPhoneHelpBlock" />
+          <input
+            type="text"
+            id="defaultRegisterPhonePassword"
+            class="form-control"
+            placeholder="Phone number"
+            aria-describedby="defaultRegisterFormPhoneHelpBlock"
+          />
           <div class="form-row mb-4">
             <!-- Photo -->
             <div class="col">
               <div class="custom-file mb-3 mt-3">
                 <input type="file" class="custom-file-input" id="customFile" />
-                <label class="custom-file-label" for="customFile">Choose picture</label>
+                <label class="custom-file-label" for="customFile"
+                  >Choose picture</label
+                >
               </div>
             </div>
             <!-- Video -->
             <div class="col">
               <div class="custom-file mb-3 mt-3">
                 <input type="file" class="custom-file-input" id="customFile" />
-                <label class="custom-file-label" for="customFile">Choose video</label>
+                <label class="custom-file-label" for="customFile"
+                  >Choose video</label
+                >
               </div>
             </div>
           </div>
           <div class="form-row mb-4">
             <!-- Street -->
             <div class="col">
-              <input type="text" id="defaultStreet" class="form-control mb-4" placeholder="Enter Street" />
+              <input
+                type="text"
+                id="defaultStreet"
+                class="form-control mb-4"
+                placeholder="Enter Street"
+              />
             </div>
             <!-- Postcode -->
             <div class="col">
-              <input type="number" id="defaultStreet" class="form-control mb-4" placeholder="Enter Postcode" />
+              <input
+                type="number"
+                id="defaultStreet"
+                class="form-control mb-4"
+                placeholder="Enter Postcode"
+              />
             </div>
           </div>
           <div class="form-row mb-4">
             <!-- City -->
             <div class="col">
-              <input type="text" id="defaultStreet" class="form-control mb-4" placeholder="Enter City" />
+              <input
+                type="text"
+                id="defaultStreet"
+                class="form-control mb-4"
+                placeholder="Enter City"
+              />
             </div>
             <!-- Country -->
             <div class="col">
-              <input type="text" id="defaultStreet" class="form-control mb-4" placeholder="Enter Country" />
+              <input
+                type="text"
+                id="defaultStreet"
+                class="form-control mb-4"
+                placeholder="Enter Country"
+              />
             </div>
           </div>
 
           <!-- Nationality -->
-          <input type="text" id="defaultNationality" class="form-control mb-4" placeholder="Nationality" />
+          <input
+            type="text"
+            id="defaultNationality"
+            class="form-control mb-4"
+            placeholder="Nationality"
+          />
 
           <!-- JobTitle -->
-          <input type="text" id="defaultJobTitle" class="form-control mb-4" placeholder="Job Title" />
+          <input
+            type="text"
+            id="defaultJobTitle"
+            class="form-control mb-4"
+            placeholder="Job Title"
+          />
 
           <!-- Website -->
           <!-- <input
@@ -86,7 +145,12 @@
           /> -->
 
           <!-- LinkedIn -->
-          <input type="url" id="defaultWebsite" class="form-control mb-4" placeholder="Website" />
+          <input
+            type="url"
+            id="defaultWebsite"
+            class="form-control mb-4"
+            placeholder="Website"
+          />
 
           <!-- Save button -->
           <button color="info" block="true" class="btn btn-info" type="submit">
@@ -106,7 +170,12 @@
             <div class="col">
               <!-- First name -->
               <label>Write your profile here</label>
-              <textarea cols="30" rows="15" id="defaultTextProfile" class="form-control">
+              <textarea
+                cols="30"
+                rows="15"
+                id="defaultTextProfile"
+                class="form-control"
+              >
               </textarea>
             </div>
           </div>
@@ -124,21 +193,41 @@
           <div class="form-row mb-4">
             <div class="col">
               <!-- Degree -->
-              <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Degree" />
+              <input
+                type="text"
+                id="defaultRegisterFormFirstName"
+                class="form-control"
+                placeholder="Degree"
+              />
             </div>
             <div class="col">
               <!-- School -->
-              <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="School" />
+              <input
+                type="text"
+                id="defaultRegisterFormLastName"
+                class="form-control"
+                placeholder="School"
+              />
             </div>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- City -->
-              <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="City" />
+              <input
+                type="text"
+                id="defaultRegisterFormFirstName"
+                class="form-control"
+                placeholder="City"
+              />
             </div>
             <div class="col">
               <!-- Country -->
-              <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Country" />
+              <input
+                type="text"
+                id="defaultRegisterFormLastName"
+                class="form-control"
+                placeholder="Country"
+              />
             </div>
           </div>
 
@@ -148,14 +237,28 @@
               <label for="start">Start date:</label>
               <hr />
 
-              <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+              <input
+                type="date"
+                id="start"
+                name="trip-start"
+                value="2018-07-22"
+                min="2018-01-01"
+                max="2018-12-31"
+              />
             </div>
             <div class="col">
               <!-- End Date -->
               <label for="start">End date:</label>
               <hr />
 
-              <input type="date" id="end" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+              <input
+                type="date"
+                id="end"
+                name="trip-start"
+                value="2018-07-22"
+                min="2018-01-01"
+                max="2018-12-31"
+              />
             </div>
           </div>
 
@@ -178,21 +281,41 @@
           <div class="form-row mb-4">
             <div class="col">
               <!-- Title -->
-              <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Course title" />
+              <input
+                type="text"
+                id="defaultRegisterFormFirstName"
+                class="form-control"
+                placeholder="Course title"
+              />
             </div>
             <div class="col">
               <!-- Institution -->
-              <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Institution" />
+              <input
+                type="text"
+                id="defaultRegisterFormLastName"
+                class="form-control"
+                placeholder="Institution"
+              />
             </div>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- City -->
-              <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="City" />
+              <input
+                type="text"
+                id="defaultRegisterFormFirstName"
+                class="form-control"
+                placeholder="City"
+              />
             </div>
             <div class="col">
               <!-- Country -->
-              <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Country" />
+              <input
+                type="text"
+                id="defaultRegisterFormLastName"
+                class="form-control"
+                placeholder="Country"
+              />
             </div>
           </div>
 
@@ -202,20 +325,39 @@
               <label for="start">Start date:</label>
               <hr />
 
-              <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+              <input
+                type="date"
+                id="start"
+                name="trip-start"
+                value="2018-07-22"
+                min="2018-01-01"
+                max="2018-12-31"
+              />
             </div>
             <div class="col">
               <!-- End Date -->
               <label for="start">End date:</label>
               <hr />
 
-              <input type="date" id="end" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+              <input
+                type="date"
+                id="end"
+                name="trip-start"
+                value="2018-07-22"
+                min="2018-01-01"
+                max="2018-12-31"
+              />
             </div>
           </div>
 
           <div class="col">
             <!-- Course link -->
-            <input type="url" id="defaultRegisterFormFirstName" class="form-control" placeholder="Course link" />
+            <input
+              type="url"
+              id="defaultRegisterFormFirstName"
+              class="form-control"
+              placeholder="Course link"
+            />
           </div>
 
           <!-- Add button -->
@@ -237,21 +379,41 @@
           <div class="form-row mb-4">
             <div class="col">
               <!-- Employer -->
-              <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Employer" />
+              <input
+                type="text"
+                id="defaultRegisterFormFirstName"
+                class="form-control"
+                placeholder="Employer"
+              />
             </div>
             <div class="col">
               <!-- Job Title -->
-              <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Job Title" />
+              <input
+                type="text"
+                id="defaultRegisterFormLastName"
+                class="form-control"
+                placeholder="Job Title"
+              />
             </div>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- City -->
-              <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="City" />
+              <input
+                type="text"
+                id="defaultRegisterFormFirstName"
+                class="form-control"
+                placeholder="City"
+              />
             </div>
             <div class="col">
               <!-- Country -->
-              <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Country" />
+              <input
+                type="text"
+                id="defaultRegisterFormLastName"
+                class="form-control"
+                placeholder="Country"
+              />
             </div>
           </div>
 
@@ -261,18 +423,37 @@
               <label for="start">Start date:</label>
               <hr />
 
-              <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+              <input
+                type="date"
+                id="start"
+                name="trip-start"
+                value="2018-07-22"
+                min="2018-01-01"
+                max="2018-12-31"
+              />
             </div>
             <div class="col">
               <!-- End Date -->
               <label for="start">End date:</label>
               <hr />
 
-              <input type="date" id="end" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+              <input
+                type="date"
+                id="end"
+                name="trip-start"
+                value="2018-07-22"
+                min="2018-01-01"
+                max="2018-12-31"
+              />
             </div>
           </div>
           <!-- Company link -->
-          <input type="url" id="defaultRegisterFormFirstName" class="form-control" placeholder="Company link" />
+          <input
+            type="url"
+            id="defaultRegisterFormFirstName"
+            class="form-control"
+            placeholder="Company link"
+          />
           <!-- Jobs description -->
           <div class="mt-3 mb-3">
             <label> Description</label>
@@ -297,7 +478,12 @@
 
           <div class="col">
             <!-- Skils -->
-            <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Skill" />
+            <input
+              type="text"
+              id="defaultRegisterFormFirstName"
+              class="form-control"
+              placeholder="Skill"
+            />
           </div>
 
           <!-- Add button -->

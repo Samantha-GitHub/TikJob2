@@ -1,22 +1,22 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Joboffer } from '../interfaces/job_offer';
+import { Language } from '../interfaces/language';
 
 @Injectable({
   providedIn: 'root',
 })
-export class JobOfferService {
+export class LanguagesService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/job_offers';
+    this.baseUrl = 'http://localhost:3000/api/languages';
   }
 
-  getAll(): Promise<Joboffer[]> {
+  getAll(): Promise<Language[]> {
     const httpOptions = { headers: new HttpHeaders() };
 
     return this.httpClient
-      .get<Joboffer[]>(this.baseUrl, httpOptions)
+      .get<Language[]>(this.baseUrl, httpOptions)
       .toPromise();
   }
 }

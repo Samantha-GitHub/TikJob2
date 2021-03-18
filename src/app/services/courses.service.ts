@@ -1,22 +1,20 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Joboffer } from '../interfaces/job_offer';
+import { Course } from '../interfaces/course';
 
 @Injectable({
   providedIn: 'root',
 })
-export class JobOfferService {
+export class CoursesService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/job_offers';
+    this.baseUrl = 'http://localhost:3000/api/courses';
   }
 
-  getAll(): Promise<Joboffer[]> {
+  getAll(): Promise<Course[]> {
     const httpOptions = { headers: new HttpHeaders() };
 
-    return this.httpClient
-      .get<Joboffer[]>(this.baseUrl, httpOptions)
-      .toPromise();
+    return this.httpClient.get<Course[]>(this.baseUrl, httpOptions).toPromise();
   }
 }

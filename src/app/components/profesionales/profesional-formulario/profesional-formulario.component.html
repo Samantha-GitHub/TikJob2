@@ -1,6 +1,11 @@
-<div class="servicesContainer justify-content-center">
+<div class="servicesContainer justify-content-center mt-5">
   <!-- collapse -->
-  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs justify-content-center">
+  <ul
+    ngbNav
+    #nav="ngbNav"
+    [(activeId)]="active"
+    class="nav-tabs justify-content-center"
+  >
     <li [ngbNavItem]="1">
       <a ngbNavLink>Company Details</a>
       <ng-template ngbNavContent>
@@ -10,35 +15,64 @@
           <div class="form-row mb-4">
             <div class="col">
               <!-- Company name -->
-              <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Company name" />
+              <input
+                type="text"
+                id="defaultRegisterFormFirstName"
+                class="form-control"
+                placeholder="Company name"
+              />
             </div>
             <div class="col">
               <!-- Vat -->
-              <input type="number" id="defaultRegisterFormLastName" class="form-control" placeholder="Vat" />
+              <input
+                type="number"
+                id="defaultRegisterFormLastName"
+                class="form-control"
+                placeholder="Vat"
+              />
             </div>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- E-mail -->
-              <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" />
+              <input
+                type="email"
+                id="defaultRegisterFormEmail"
+                class="form-control mb-4"
+                placeholder="E-mail"
+              />
             </div>
             <!-- Employees number -->
             <div class="col">
-              <input type="number" id="employeesNumber" class="form-control mb-4" placeholder="Number of employees">
+              <input
+                type="number"
+                id="employeesNumber"
+                class="form-control mb-4"
+                placeholder="Number of employees"
+              />
             </div>
           </div>
 
           <div class="form-row mb-4">
             <div class="col">
               <!-- Year founded -->
-              <input type="number" id="yearFounded" class="form-control mb-4" placeholder="Year Founded" />
+              <input
+                type="number"
+                id="yearFounded"
+                class="form-control mb-4"
+                placeholder="Year Founded"
+              />
             </div>
             <div class="col">
               <!-- Phone number -->
-              <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number"
-                aria-describedby="defaultRegisterFormPhoneHelpBlock" />
-              <div class="form-row mb-4">
-              </div>
+              <input
+                type="text"
+                id="defaultRegisterPhonePassword"
+                class="form-control"
+                placeholder="Phone number"
+                aria-describedby="defaultRegisterFormPhoneHelpBlock"
+              />
+              <div class="form-row mb-4"></div>
             </div>
           </div>
           <div class="form-row mb-4">
@@ -46,14 +80,20 @@
             <div class="col">
               <div class="custom-file mb-3 mt-3">
                 <input type="file" class="custom-file-input" id="customFile" />
-                <label class="custom-file-label" for="customFile">Choose picture</label>
+                <label class="custom-file-label" for="customFile"
+                  >Choose picture</label
+                >
               </div>
             </div>
             <!-- Website -->
             <div class="col">
               <div class="custom-file mb-3 mt-3">
-                <input type="url" placeholder="Add your website here" class="form-control" id="" />
-
+                <input
+                  type="url"
+                  placeholder="Add your website here"
+                  class="form-control"
+                  id=""
+                />
               </div>
             </div>
           </div>
@@ -61,24 +101,43 @@
           <div class="form-row mb-4">
             <!-- Street -->
             <div class="col">
-              <input type="text" id="defaultStreet" class="form-control mb-4" placeholder="Enter Street" />
+              <input
+                type="text"
+                id="defaultStreet"
+                class="form-control mb-4"
+                placeholder="Enter Street"
+              />
             </div>
             <!-- Postcode -->
             <div class="col">
-              <input type="number" id="defaultStreet" class="form-control mb-4" placeholder="Enter Postcode" />
+              <input
+                type="number"
+                id="defaultStreet"
+                class="form-control mb-4"
+                placeholder="Enter Postcode"
+              />
             </div>
           </div>
           <div class="form-row mb-4">
             <!-- City -->
             <div class="col">
-              <input type="text" id="defaultStreet" class="form-control mb-4" placeholder="Enter City" />
+              <input
+                type="text"
+                id="defaultStreet"
+                class="form-control mb-4"
+                placeholder="Enter City"
+              />
             </div>
             <!-- Country -->
             <div class="col">
-              <input type="text" id="defaultStreet" class="form-control mb-4" placeholder="Enter Country" />
+              <input
+                type="text"
+                id="defaultStreet"
+                class="form-control mb-4"
+                placeholder="Enter Country"
+              />
             </div>
           </div>
-
 
           <!-- Save button -->
           <button color="info" block="true" class="btn btn-info" type="submit">
@@ -98,7 +157,12 @@
             <div class="col">
               <!-- Profile -->
               <label>Write your profile here</label>
-              <textarea cols="30" rows="15" id="defaultTextProfile" class="form-control">
+              <textarea
+                cols="30"
+                rows="15"
+                id="defaultTextProfile"
+                class="form-control"
+              >
               </textarea>
             </div>
           </div>
@@ -119,22 +183,34 @@
 
           <div class="col">
             <!-- Function department -->
-            <input type="text" id="department" class="form-control" placeholder="Department" />
+            <input
+              type="text"
+              id="department"
+              class="form-control"
+              placeholder="Department"
+            />
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- Profile -->
               <label>Write your offer here</label>
-              <textarea rows="10" id="defaultTextProfile" class="form-control"></textarea>
+              <textarea
+                rows="10"
+                id="defaultTextProfile"
+                class="form-control"
+              ></textarea>
             </div>
           </div>
 
-
           <div class="col">
             <!-- Location -->
-            <input type="text" id="location" class="form-control" placeholder="Location" />
+            <input
+              type="text"
+              id="location"
+              class="form-control"
+              placeholder="Location"
+            />
           </div>
-
 
           <div class="form-row mb-4">
             <div class="col">
@@ -142,21 +218,36 @@
               <label for="starting_date">Starting date:</label>
               <hr />
 
-              <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+              <input
+                type="date"
+                id="start"
+                name="trip-start"
+                value="2018-07-22"
+                min="2018-01-01"
+                max="2018-12-31"
+              />
             </div>
-
           </div>
 
           <div class="form-row mb-4">
-
             <div class="col">
               <!-- Hour week -->
-              <input type="number" id="Hour_week" class="form-control" placeholder="Hours per week" />
+              <input
+                type="number"
+                id="Hour_week"
+                class="form-control"
+                placeholder="Hours per week"
+              />
             </div>
 
             <div class="col">
               <!-- Skils -->
-              <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Skill" />
+              <input
+                type="text"
+                id="defaultRegisterFormFirstName"
+                class="form-control"
+                placeholder="Skill"
+              />
             </div>
           </div>
 
@@ -171,8 +262,6 @@
         </form>
       </ng-template>
     </li>
-
-
   </ul>
 
   <div [ngbNavOutlet]="nav" class="mt-2"></div>
