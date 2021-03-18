@@ -18,4 +18,10 @@ export class EducationsService {
       .get<Education[]>(this.baseUrl, httpOptions)
       .toPromise();
   }
+
+  getEducationsByIdFreelance(pId): Promise<Education[]> {
+    const httpOptions = { headers: new HttpHeaders() };
+    return this.httpClient.get<Education[]>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
+
+  }
 }

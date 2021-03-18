@@ -19,4 +19,10 @@ export class LanguagesService {
       .get<Language[]>(this.baseUrl, httpOptions)
       .toPromise();
   }
+
+  getLanguagesByIdFreelance(pId): Promise<Language[]> {
+    const httpOptions = { headers: new HttpHeaders() };
+    return this.httpClient.get<Language[]>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
+
+  }
 }
