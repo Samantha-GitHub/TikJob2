@@ -156,7 +156,10 @@
 
             <div class="col">
               <!-- Skils -->
-              <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Skill" />
+              <select class="skillsSelect">
+                <option value="">Select your skills</option>
+                <option value="" *ngFor="let skill of allSkills">{{skill.skill}}</option>
+              </select>
             </div>
           </div>
 

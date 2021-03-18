@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfesionalesService } from 'src/app/services/profesionales.service';
 
 @Component({
   selector: 'app-user-view',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private profesionalService: ProfesionalesService) { }
 
   ngOnInit(): void {
   }
