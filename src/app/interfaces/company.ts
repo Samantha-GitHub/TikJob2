@@ -10,5 +10,5 @@ export interface Company {
   image: string;
   email: string;
   employees_number: number;
-  year_founded: Date;
+  year_founded: string;
 }

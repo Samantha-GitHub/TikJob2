@@ -14,7 +14,7 @@
 }
 
 h1 {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 600;
   font-size: 26pt;
   color: #fff;
@@ -22,7 +22,7 @@ h1 {
 }
 
 h4 {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 300;
   font-size: 8pt;
   color: #5d5d5d;
@@ -40,7 +40,7 @@ h4 {
 }
 
 .upper-quarter {
-  background-image: url('https://i.imgur.com/hoj35P6.jpg');
+  background-image: url("https://i.imgur.com/hoj35P6.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -49,10 +49,10 @@ h4 {
 }
 
 .upper-quarter h3 {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 300;
   font-size: 12pt;
-  color: #FFF;
+  color: #fff;
 }
 
 .content {
@@ -117,11 +117,10 @@ h4 {
 }
 
 .lower-three-quarters h3 {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 600;
   font-size: 12pt;
   color: #5d5d5d;
-
 }
 
 .left-column {
@@ -138,7 +137,7 @@ h4 {
 }
 
 .left-column h2 {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 600;
   font-size: 22pt;
   color: white;
@@ -158,17 +157,17 @@ h4 {
   font-size: 14px;
 }
 
-			.left-column li{
-				font-family: 'Open Sans';
-				font-weight: 300;
-				font-size: 12pt;
-				color: #5d5d5d;
-				padding-top: 5px;
-				padding-bottom: 5px;
-				line-height: 20px;
-				margin-left: 35px;
-				list-style-type: circle;
-				}
+.left-column li {
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 12pt;
+  color: #5d5d5d;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  margin-left: 35px;
+  list-style-type: circle;
+}
 
 .experience {
   border: 2px solid #0070ef;
@@ -193,7 +192,7 @@ h4 {
 }
 
 .experience a:active {
-  color: #0000FF;
+  color: #0000ff;
 }
 
 .ac-logo {
@@ -212,7 +211,7 @@ h4 {
 
 .byu {
   padding: 0px 10px 0px 10px;
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 
 .byu-logo {
@@ -242,19 +241,19 @@ h4 {
 }
 
 .personal-experience h3 {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 300;
   font-size: 12pt;
-  color: #FFF;
+  color: #fff;
   width: 300px;
   padding-bottom: 5px;
 }
 
 .personal-experience a {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 300;
   font-size: 12pt;
-  color: #FFF;
+  color: #fff;
   width: 300px;
   padding-bottom: 5px;
   padding-left: 15px;
@@ -316,7 +315,7 @@ h4 {
 }
 
 .right-column h2 {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 600;
   font-size: 22pt;
   color: #5d5d5d;
@@ -366,10 +365,10 @@ h4 {
 
 .skills li {
   list-style-type: none;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 300;
   font-size: 12pt;
-  color: #FFF;
+  color: #fff;
   background-color: #0070ef;
   padding: 12px 60px 12px 30px;
   margin-left: 0px;
@@ -408,7 +407,7 @@ h4 {
 
 .traits-hobbies li {
   list-style-type: none;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 300;
   font-size: 12pt;
   color: #535353;
@@ -451,7 +450,7 @@ h4 {
 .Awards {
   background-color: #f2f2f2;
   border: 2px solid #0070ef;
-  margin-top:25px;
+  margin-top: 25px;
   padding-bottom: 40px;
   -webkit-box-shadow: 0px 22px 87px -24px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 22px 87px -24px rgba(0, 0, 0, 0.75);
@@ -460,111 +459,111 @@ h4 {
 
 .crocker-text {
   display: inline-block;
-  padding-left:20px;
-  padding-top:35px;
+  padding-left: 20px;
+  padding-top: 35px;
 }
 .Awards a {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 300;
   font-size: 12pt;
   color: #0070ef;
   width: 300px;
   padding-bottom: 20px;
-  padding-top:5px;
+  padding-top: 5px;
   display: inline-block;
 }
 
-/* @media only screen and (max-width: 1649px) {
-  .page {
-    background-color: #f3f4ed;
-    margin: auto;
-    max-width: 1650px;
-    -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
-    margin-bottom: 0px;
-  }
-  @media only screen and (max-width: 1140px) {
-    .skills li {
-      display: block;
-    }
-    .skills li {
-      font-family: 'Open Sans';
-      font-weight: 300;
-      font-size: 12pt;
-      color: #FFF;
-      background-color: #0070ef;
-      padding: 12px 60px 12px 30px;
-      margin: 5%;
-    }
-    .skill-lists {
-      margin-top: 22px;
-      width: 100%;
-    }
-    .left {
-      margin-left: 0px;
-      display: inline-block;
-      background-color: #f2f2f2;
-      margin-bottom: -5%;
-      width: 100%;
-    }
-    .right {
-      margin-left: 0px;
-      display: inline-block;
-      width: 100%;
-      margin-bottom: 1.5%;
-    }
-    @media only screen and (max-width: 1050px) {
-      .lower-three-quarters {
-        width: 90%;
-        margin: auto;
-      }
-      .left-column {
-        width: 100%;
-        margin: auto;
-        margin-bottom: 25px;
-      }
-      .right-column {
-        width: 100%;
-        margin: auto;
-      }
-      .content {
-        width: 90%;
-      }
-      .contact-me {
-        width: 100%;
-        margin-left: 0px;
-      }
-      .fpgc {
-        width: 75%;
-      }
-      @media only screen and (max-width: 870px) {
-        .upper-quarter {
-          background-size: 130%;
-          height: 390px;
-        }
-      }
-      @media only screen and (max-width: 670px) {
-        .upper-quarter {
-          background-size: 150%;
-          height: 390px;
-        }
-      }
-      @media only screen and (max-width: 580px) {
-        .upper-quarter {
-          background-size: 170%;
-          height: 390px;
-        }
-      }
-      @media only screen and (max-width: 515px) {
-        .upper-quarter {
-          background-size: 190%;
-          height: 390px;
-        }
-      }
-      @media only screen and (max-width: 460px) {
-        .upper-quarter {
-          background-size: 220%;
-          height: 390px;
-        }
-      } */
+// @media only screen and (max-width: 1649px) {
+//   .page {
+//     background-color: #f3f4ed;
+//     margin: auto;
+//     max-width: 1650px;
+//     -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
+//     -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
+//     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
+//     margin-bottom: 0px;
+//   }
+//   @media only screen and (max-width: 1140px) {
+//     .skills li {
+//       display: block;
+//     }
+//     .skills li {
+//       font-family: 'Open Sans';
+//       font-weight: 300;
+//       font-size: 12pt;
+//       color: #FFF;
+//       background-color: #0070ef;
+//       padding: 12px 60px 12px 30px;
+//       margin: 5%;
+//     }
+//     .skill-lists {
+//       margin-top: 22px;
+//       width: 100%;
+//     }
+//     .left {
+//       margin-left: 0px;
+//       display: inline-block;
+//       background-color: #f2f2f2;
+//       margin-bottom: -5%;
+//       width: 100%;
+//     }
+//     .right {
+//       margin-left: 0px;
+//       display: inline-block;
+//       width: 100%;
+//       margin-bottom: 1.5%;
+//     }
+//     @media only screen and (max-width: 1050px) {
+//       .lower-three-quarters {
+//         width: 90%;
+//         margin: auto;
+//       }
+//       .left-column {
+//         width: 100%;
+//         margin: auto;
+//         margin-bottom: 25px;
+//       }
+//       .right-column {
+//         width: 100%;
+//         margin: auto;
+//       }
+//       .content {
+//         width: 90%;
+//       }
+//       .contact-me {
+//         width: 100%;
+//         margin-left: 0px;
+//       }
+//       .fpgc {
+//         width: 75%;
+//       }
+//       @media only screen and (max-width: 870px) {
+//         .upper-quarter {
+//           background-size: 130%;
+//           height: 390px;
+//         }
+//       }
+//       @media only screen and (max-width: 670px) {
+//         .upper-quarter {
+//           background-size: 150%;
+//           height: 390px;
+//         }
+//       }
+//       @media only screen and (max-width: 580px) {
+//         .upper-quarter {
+//           background-size: 170%;
+//           height: 390px;
+//         }
+//       }
+//       @media only screen and (max-width: 515px) {
+//         .upper-quarter {
+//           background-size: 190%;
+//           height: 390px;
+//         }
+//       }
+//       @media only screen and (max-width: 460px) {
+//         .upper-quarter {
+//           background-size: 220%;
+//           height: 390px;
+//         }
+//       }
