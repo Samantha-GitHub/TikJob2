@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfesionalesService } from 'src/app/services/profesionales.service';
+import { ActivatedRoute } from '@angular/router';
+import { CoursesService } from 'src/app/services/courses.service';
+import { LanguagesService } from 'src/app/services/languages.service';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-user-view',
@@ -9,7 +12,12 @@ import { ProfesionalesService } from 'src/app/services/profesionales.service';
 export class UserViewComponent implements OnInit {
 
   constructor(
-    private profesionalService: ProfesionalesService) { }
+    private activateRoute: ActivatedRoute,
+    private usersService: UsersService,
+    private coursesService: CoursesService,
+    private languagesService: LanguagesService,
+
+  ) { }
 
   ngOnInit(): void {
   }
