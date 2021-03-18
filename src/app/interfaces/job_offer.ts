@@ -1,7 +1,8 @@
 export interface Joboffer {
-  department: string;
+  function_department: string;
   responsabilities: string;
-  location: string;
-  starting_date: Date;
-  hour_week: string;
+  city: string;
+  country: string;
+  starting_date: string;
+  hour_week: number;
 }
