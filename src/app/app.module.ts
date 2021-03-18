@@ -19,6 +19,9 @@ import { HomeComponent } from './components/home/home.component';
 import { ProfesionalViewComponent } from './components/profesionales/profesional-view/profesional-view.component';
 import { LogincompanyComponent } from './components/login/logincompany/logincompany.component';
 import { LoginfreelancerComponent } from './components/login/loginfreelancer/loginfreelancer.component';
+import { UserViewComponent } from './components/users/user-view/user-view.component';
+import { JobOffersComponent } from './components/job-offers/job-offers.component';
+import { JobOfferViewComponent } from './components/job-offers/job-offer-view/job-offer-view.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,10 @@ import { LoginfreelancerComponent } from './components/login/loginfreelancer/log
     ProfesionalViewComponent,
     LogincompanyComponent,
     LoginfreelancerComponent,
+    UserViewComponent,
+    JobOffersComponent,
+    JobOfferViewComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -47,4 +54,4 @@ import { LoginfreelancerComponent } from './components/login/loginfreelancer/log
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
