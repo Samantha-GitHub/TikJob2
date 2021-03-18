@@ -11,6 +11,7 @@ import { ProfesionalFormularioComponent } from './components/profesionales/profe
 /* import { ProfesionalViewComponent } from './components/profesionales/profesional-view/profesional-view.component';*/
 import { ProfesionalesComponent } from './components/profesionales/profesionales.component';
 import { UserFormularioComponent } from './components/users/user-formulario/user-formulario.component';
+import { UserViewComponent } from './components/users/user-view/user-view.component';
 import { UsersComponent } from './components/users/users.component';
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'home', component: HeroComponent },
   { path: 'freelance', component: UsersComponent },
+  { path: 'freelance/:idFreelance', component: UserViewComponent },
   { path: 'loginfreelance', component: LoginfreelancerComponent },
   { path: 'form_freelance', component: UserFormularioComponent },
   { path: 'profesional', component: ProfesionalesComponent },

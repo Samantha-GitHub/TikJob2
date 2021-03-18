@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Skill } from 'src/app/interfaces/skill';
+import { SkillsService } from 'src/app/services/skills.service';
 
 @Component({
   selector: 'app-profesional-formulario',
@@ -7,19 +9,25 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./profesional-formulario.component.scss'],
 })
 export class ProfesionalFormularioComponent implements OnInit {
-  closeResult: string;
+  allSkills: Skill[];
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private skillService: SkillsService) {
 
-  ngOnInit(): void { }
+    this.allSkills = [];
+  }
 
-  // openXl(content) {
-  //   this.modalService.open(content, { size: 'xl' });
-  // }
+  async ngOnInit() {
 
-  // openVerticallyCentered(content) {
-  //   this.modalService.open(content, { centered: true });
-  // }
+    try {
+      this.allSkills = await this.skillService.getAll();
+      console.log(this.allSkills);
+
+    } catch (error) {
+
+      console.log(error);
+
+    }
+  }
 
   active = 1;
 }
