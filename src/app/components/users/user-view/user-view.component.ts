@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Course } from 'src/app/interfaces/course';
 import { Freelance } from 'src/app/interfaces/freelance';
 import { CoursesService } from 'src/app/services/courses.service';
 import { EducationsService } from 'src/app/services/educations.service';
@@ -14,6 +15,7 @@ import { UsersService } from 'src/app/services/users.service';
 export class UserViewComponent implements OnInit {
 
   freelance: Freelance;
+  courses: Course[];
 
   constructor(
     private activateRoute: ActivatedRoute,
@@ -31,7 +33,9 @@ export class UserViewComponent implements OnInit {
 
 
       this.freelance = await this.usersService.getById(params.idFreelance);
-      console.log(this.freelance);
+      this.courses = await this.coursesService.getCoursesByIdFreelance(params.idFreelance);
+
+
 
     })
   }

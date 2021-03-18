@@ -17,4 +17,10 @@ export class CoursesService {
 
     return this.httpClient.get<Course[]>(this.baseUrl, httpOptions).toPromise();
   }
+
+  getCoursesByIdFreelance(pId): Promise<Course[]> {
+    const httpOptions = { headers: new HttpHeaders() };
+    return this.httpClient.get<Course[]>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
+
+  }
 }
