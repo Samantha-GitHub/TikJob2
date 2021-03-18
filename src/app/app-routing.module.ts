@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from './components/contact/contact.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { HomeComponent } from './components/home/home.component';
+import { JobOffersComponent } from './components/job-offers/job-offers.component';
 import { LogincompanyComponent } from './components/login/logincompany/logincompany.component';
 import { LoginfreelancerComponent } from './components/login/loginfreelancer/loginfreelancer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'loginfreelance', component: LoginfreelancerComponent },
   { path: 'form_freelance', component: UserFormularioComponent },
   { path: 'profesional', component: ProfesionalesComponent },
+  { path: 'job_offers', component: JobOffersComponent },
   { path: 'logincompany', component: LogincompanyComponent },
   /*   { path: 'profesional/:profesional_vat', component: ProfesionalViewComponent },
    */ { path: 'form_profesional', component: ProfesionalFormularioComponent },
@@ -31,4 +33,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
