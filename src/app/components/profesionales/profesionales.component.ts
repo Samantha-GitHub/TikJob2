@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Company } from 'src/app/interfaces/company';
 import { ProfesionalesService } from 'src/app/services/profesionales.service';
 
 @Component({
@@ -7,21 +8,23 @@ import { ProfesionalesService } from 'src/app/services/profesionales.service';
   styleUrls: ['./profesionales.component.scss']
 })
 export class ProfesionalesComponent implements OnInit {
-  arrProfesionales: any;
+  allCompanies: Company[];
 
   constructor(private profesionalesService: ProfesionalesService) {
-    this.arrProfesionales = [];
+
+    this.allCompanies = [];
   }
 
   async ngOnInit() {
+
     try {
+      this.allCompanies = await this.profesionalesService.getAll();
+      console.log(this.allCompanies);
 
-      const response = await this.profesionalesService.getAll();
-      this.arrProfesionales = response['data'];
-      /* console.log(this.arrProfesionales); */
+    } catch (error) {
 
-    } catch (err) {
-      console.log(err);
+      console.log(error);
+
     }
   }
 
