@@ -497,6 +497,33 @@
         </form>
       </ng-template>
     </li>
+    <li [ngbNavItem]="7">
+      <a ngbNavLink>Languages</a>
+      <ng-template ngbNavContent>
+        <form class="text-center border border-light p-5">
+          <h2>Languages</h2>
+
+          <div class="col">
+            <!-- Skils -->
+            <select class="skillsSelect">
+              <option value="">Select your skills</option>
+              <option value="" *ngFor="let language of languages">
+                {{ language.language }}
+              </option>
+            </select>
+          </div>
+
+          <!-- Add button -->
+          <button class="btn btn-info" type="submit">+ Add</button>
+
+          <!-- Delete button -->
+          <button class="btn btn-danger m-1" type="submit">- Delete</button>
+
+          <!-- Save button -->
+          <button class="btn btn-success" type="submit">Save</button>
+        </form>
+      </ng-template>
+    </li>
   </ul>
 
   <div [ngbNavOutlet]="nav" class="mt-2"></div>
