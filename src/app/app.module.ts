@@ -22,6 +22,7 @@ import { LoginfreelancerComponent } from './components/login/loginfreelancer/log
 import { UserViewComponent } from './components/users/user-view/user-view.component';
 import { JobOffersComponent } from './components/job-offers/job-offers.component';
 import { JobOfferViewComponent } from './components/job-offers/job-offer-view/job-offer-view.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,6 @@ import { JobOfferViewComponent } from './components/job-offers/job-offer-view/jo
     UserViewComponent,
     JobOffersComponent,
     JobOfferViewComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -50,8 +50,9 @@ import { JobOfferViewComponent } from './components/job-offers/job-offer-view/jo
     HttpClientModule,
     NgbModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
