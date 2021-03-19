@@ -25,4 +25,6 @@ export class JobOfferService {
 
     return this.httpClient.get<Joboffer>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
   }
+
+
 }

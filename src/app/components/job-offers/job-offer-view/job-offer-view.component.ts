@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Joboffer } from 'src/app/interfaces/job_offer';
+import { Language } from 'src/app/interfaces/language';
 import { Skill } from 'src/app/interfaces/skill';
 import { JobOfferService } from 'src/app/services/job-offer.service';
+import { LanguagesService } from 'src/app/services/languages.service';
 import { SkillsService } from 'src/app/services/skills.service';
 
 @Component({
@@ -14,11 +16,13 @@ export class JobOfferViewComponent implements OnInit {
 
   jobOffer: Joboffer;
   skills: Skill[];
+  languages: Language[];
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private jobOfferService: JobOfferService,
-    private skillsService: SkillsService
+    private skillsService: SkillsService,
+    private languageService: LanguagesService
   ) { }
 
   ngOnInit(): void {
@@ -27,7 +31,8 @@ export class JobOfferViewComponent implements OnInit {
 
       this.jobOffer = await this.jobOfferService.getById(params.idJobOffer),
         this.skills = await this.skillsService.getSkillsByIdJobsOffers(params.idJobOffer),
-        console.log(this.skills);
+        this.languages = await this.languageService.getLanguagesByIdJobsOffers(params.idJobOffer)
+
 
 
     });

@@ -25,4 +25,10 @@ export class LanguagesService {
     return this.httpClient.get<Language[]>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
 
   }
+
+  getLanguagesByIdJobsOffers(pId): Promise<Language[]> {
+    const httpOptions = { headers: new HttpHeaders() };
+    return this.httpClient.get<Language[]>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
+
+  }
 }
