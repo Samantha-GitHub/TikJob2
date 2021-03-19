@@ -29,4 +29,10 @@ export class SkillsService {
     return this.httpClient.get<Skill[]>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
 
   }
+
+  getSkillsByIdJobsOffers(pId): Promise<Skill[]> {
+    const httpOptions = { headers: new HttpHeaders() };
+    return this.httpClient.get<Skill[]>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
+
+  }
 }
