@@ -74,7 +74,7 @@ export class ProfesionalFormularioComponent implements OnInit {
     });
   }
 
-  async ngOnInit() {
+  async ngOnInit(): Promise<void> {
     try {
       this.skills = await this.skillService.getAll();
       console.log(this.skills);
@@ -89,27 +89,26 @@ export class ProfesionalFormularioComponent implements OnInit {
     }
   }
 
-  async onSubmitCompany() {
-
+  async onSubmitCompany(): Promise<void> {
     /*    if (company.detalle == true) {
-   
+
          update
-         
+
        } else {
          create
        } */
     //   const response = await this.companyService.insert(this.formulario.value);
   }
 
-  async onSubmitJobOffer() {
+  async onSubmitJobOffer(): Promise<void> {
     //   const response = await this.jobOfferService.insert(this.formulario.value);
   }
 
-  async onSubmitSkill() {
+  async onSubmitSkill(): Promise<void> {
     //   const response = await this.skillService.insert(this.formulario.value);
   }
 
-  async onSubmitLanguage() {
+  async onSubmitLanguage(): Promise<void> {
     //   const response = await this.languageService.insert(this.formulario.value);
   }
 

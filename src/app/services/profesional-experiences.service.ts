@@ -22,7 +22,8 @@ export class ProfesionalExperienceService {
 
   getProfesionalExperienceByIdFreelance(pId): Promise<ProfesionalExperience[]> {
     const httpOptions = { headers: new HttpHeaders() };
-    return this.httpClient.get<ProfesionalExperience[]>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
-
+    return this.httpClient
+      .get<ProfesionalExperience[]>(`${this.baseUrl}/${pId}`, httpOptions)
+      .toPromise();
   }
 }
