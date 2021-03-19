@@ -19,4 +19,10 @@ export class ProfesionalesService {
       .get<[Company]>(this.baseUrl, httpOptions)
       .toPromise();
   }
+
+  /* getCompanyDetailByJobOffer(pId): Promise<Company> {
+    const httpOptions = { headers: new HttpHeaders() };
+    return this.httpClient.get<Company>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
+
+  } */
 }
