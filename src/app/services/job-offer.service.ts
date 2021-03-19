@@ -19,4 +19,10 @@ export class JobOfferService {
       .get<Joboffer[]>(this.baseUrl, httpOptions)
       .toPromise();
   }
+
+  getById(pId): Promise<Joboffer> {
+    const httpOptions = { headers: new HttpHeaders() };
+
+    return this.httpClient.get<Joboffer>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
+  }
 }
