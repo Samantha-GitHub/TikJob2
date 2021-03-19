@@ -90,6 +90,14 @@ export class ProfesionalFormularioComponent implements OnInit {
   }
 
   async onSubmitCompany() {
+
+    /*    if (company.detalle == true) {
+   
+         update
+         
+       } else {
+         create
+       } */
     //   const response = await this.companyService.insert(this.formulario.value);
   }
 
