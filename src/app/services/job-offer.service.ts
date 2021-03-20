@@ -31,4 +31,8 @@ export class JobOfferService {
   insert(formValues) {
     return this.httpClient.post(this.baseUrl, formValues).toPromise();
   }
+
+  // searchJobByCountry(pName): Promise<Joboffer[]> {
+  //   return this.httpClient.get<Joboffer[]>(`${this.baseUrl}Joboffer?contry=${pName}`).toPromise();
+  // }
 }

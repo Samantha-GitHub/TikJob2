@@ -12,7 +12,7 @@ export class SkillsService {
     this.baseUrl = 'http://localhost:3000/api/skills';
   }
 
-  getAll(): Promise<[Skill]> {
+  getAll(): Promise<Skill[]> {
     const httpOptions = { headers: new HttpHeaders() };
 
     return this.httpClient.get<[Skill]>(this.baseUrl, httpOptions).toPromise();
@@ -35,4 +35,8 @@ export class SkillsService {
   insert(formValues) {
     return this.httpClient.post(this.baseUrl, formValues).toPromise();
   }
+
+  // searchByName(pName): Promise<Skill[]> {
+  //   return this.httpClient.get<Skill[]>(`${this.baseUrl}skills?name=${pName}`).toPromise();
+  // }
 }
