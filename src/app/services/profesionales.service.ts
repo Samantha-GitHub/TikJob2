@@ -12,11 +12,11 @@ export class ProfesionalesService {
     this.baseUrl = 'http://localhost:3000/api/companies';
   }
 
-  getAll(): Promise<[Company]> {
+  getAll(): Promise<Company[]> {
     const httpOptions = { headers: new HttpHeaders() };
 
     return this.httpClient
-      .get<[Company]>(this.baseUrl, httpOptions)
+      .get<Company[]>(this.baseUrl, httpOptions)
       .toPromise();
   }
 
@@ -26,9 +26,9 @@ export class ProfesionalesService {
 
   } */
 
-  // insert(formValues) {
-  //   return this.httpClient.post(this.baseUrl, formValues, this.createHeaders()).toPromise();
-  // }
+  insert(formValues) {
+    return this.httpClient.post(this.baseUrl, formValues).toPromise();
+  }
 
   // createHeaders() {
   //   return {

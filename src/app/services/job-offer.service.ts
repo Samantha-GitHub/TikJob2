@@ -23,10 +23,12 @@ export class JobOfferService {
   getById(pId): Promise<Joboffer> {
     const httpOptions = { headers: new HttpHeaders() };
 
-    return this.httpClient.get<Joboffer>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
+    return this.httpClient
+      .get<Joboffer>(`${this.baseUrl}/${pId}`, httpOptions)
+      .toPromise();
   }
 
-
-
-
+  insert(formValues) {
+    return this.httpClient.post(this.baseUrl, formValues).toPromise();
+  }
 }

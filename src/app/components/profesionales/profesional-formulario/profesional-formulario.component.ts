@@ -57,8 +57,8 @@ export class ProfesionalFormularioComponent implements OnInit {
     this.formularioJobOffer = new FormGroup({
       function_department: new FormControl(),
       responsabilities: new FormControl(),
-      city_job: new FormControl(),
-      country_job: new FormControl(),
+      city: new FormControl(),
+      country: new FormControl(),
       starting_date: new FormControl(),
       hour_week: new FormControl(),
     });
@@ -97,19 +97,29 @@ export class ProfesionalFormularioComponent implements OnInit {
        } else {
          create
        } */
-    //   const response = await this.companyService.insert(this.formulario.value);
+    const response = await this.companyService.insert(
+      this.formularioCompany.value
+    );
+    console.log(response);
   }
 
   async onSubmitJobOffer(): Promise<void> {
-    //   const response = await this.jobOfferService.insert(this.formulario.value);
+    const response = await this.jobOfferService.insert(
+      this.formularioJobOffer.value
+    );
+    console.log(response);
   }
 
   async onSubmitSkill(): Promise<void> {
-    //   const response = await this.skillService.insert(this.formulario.value);
+    const response = await this.skillService.insert(this.formularioSkill.value);
+    console.log(response);
   }
 
   async onSubmitLanguage(): Promise<void> {
-    //   const response = await this.languageService.insert(this.formulario.value);
+    const response = await this.languageService.insert(
+      this.formularioLanguage.value
+    );
+    console.log(response);
   }
 
   active = 1;
