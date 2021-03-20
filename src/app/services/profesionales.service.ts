@@ -25,4 +25,16 @@ export class ProfesionalesService {
     return this.httpClient.get<Company>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
 
   } */
+
+  // insert(formValues) {
+  //   return this.httpClient.post(this.baseUrl, formValues, this.createHeaders()).toPromise();
+  // }
+
+  // createHeaders() {
+  //   return {
+  //     headers: new HttpHeaders({
+  //       'authorization': localStorage.getItem('token_gym')
+  //     })
+  //   }
+  // }
 }
