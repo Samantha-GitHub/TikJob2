@@ -9,6 +9,8 @@ import { UsersService } from '../../services/users.service';
 })
 export class UsersComponent implements OnInit {
 
+  public page: number;
+
   allFreelancers: Freelance[];
 
   constructor(private usersService: UsersService) {

@@ -9,6 +9,8 @@ import { JobOfferService } from 'src/app/services/job-offer.service';
 })
 export class JobOffersComponent implements OnInit {
 
+  public page: number;
+
   allJobOffers: Joboffer[];
 
   constructor(private jobOfferService: JobOfferService) {

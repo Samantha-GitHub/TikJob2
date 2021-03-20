@@ -8,6 +8,8 @@ import { ProfesionalesService } from 'src/app/services/profesionales.service';
   styleUrls: ['./profesionales.component.scss'],
 })
 export class ProfesionalesComponent implements OnInit {
+
+  public page: number;
   allCompanies: Company[];
 
   constructor(private profesionalesService: ProfesionalesService) {
