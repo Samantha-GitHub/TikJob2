@@ -106,13 +106,13 @@ export class UserFormularioComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     try {
       this.skills = await this.skillService.getAll();
-      console.log(this.skills);
+      // console.log(this.skills);
     } catch (error) {
       console.log(error);
     }
     try {
       this.languages = await this.languageService.getAll();
-      console.log(this.languages);
+      // console.log(this.languages);
     } catch (error) {
       console.log(error);
     }

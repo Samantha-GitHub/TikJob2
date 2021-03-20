@@ -43,9 +43,9 @@ export class ProfesionalFormularioComponent implements OnInit {
       phone: new FormControl(),
       vat: new FormControl(),
       street: new FormControl(),
-      city_company: new FormControl(),
+      city: new FormControl(),
       zip_code: new FormControl(),
-      country_company: new FormControl(),
+      country: new FormControl(),
       website: new FormControl(),
       image: new FormControl(),
       email: new FormControl(),
@@ -77,13 +77,13 @@ export class ProfesionalFormularioComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     try {
       this.skills = await this.skillService.getAll();
-      console.log(this.skills);
+      // console.log(this.skills);
     } catch (error) {
       console.log(error);
     }
     try {
       this.languages = await this.languageService.getAll();
-      console.log(this.languages);
+      // console.log(this.languages);
     } catch (error) {
       console.log(error);
     }
