@@ -1,25 +1,11 @@
-<!-- <div class="servicesContainer">
-  <h1 class="servicesH1">Users</h1>
-  <div class="servicesWrapper" *ngFor="let freelance of allFreelancers">
-    <div class="servicesCard">
-      <img src="../../../../assets/images/svg-8.svg" class="servicesIcon" />
-      <h2 class="servicesH2">{{freelance.firstname}}</h2>
-      <p class="serviceP">{{freelance.profile}}</p>
-    </div>
-  </div>
-  <div class="container-fluid">
-    <hr />
-  </div>
-</div> -->
-
-<div class="servicesContainer">
-  <h1 class="servicesH1">Freelancers</h1>
+<!-- <div class="servicesContainer mt-5">
+  <h1 class="servicesH1 mt-2">Freelancers</h1>
   <div class="servicesWrapper">
     <div
       class="servicesCard"
       *ngFor="
         let freelance of allFreelancers
-          | paginate: { itemsPerPage: 4, currentPage: page }
+          | paginate: { itemsPerPage: 8, currentPage: page }
       "
       (click)="getFreelance(freelance.id)"
     >
@@ -33,8 +19,71 @@
       </p>
     </div>
   </div>
-</div>
+</div> -->
+<div class="servicesContainer mt-5">
+  <div class="center servicesWrapper mt-3">
+    <div
+      class="card"
+      *ngFor="
+        let freelance of allFreelancers
+          | paginate: { itemsPerPage: 9, currentPage: page }
+      "
+      (click)="getFreelance(freelance.id)"
+    >
+      <div class="additional">
+        <div class="user-card">
+          <div class="level center">Level 13</div>
+          <div class="points center">{{ freelance.job_title }}</div>
 
+          <img
+            src="../../../../assets/images/svg-1.svg"
+            width="110"
+            height="110"
+            class="mt-5"
+          />
+        </div>
+        <div class="more-info">
+          <h1>{{ freelance.lastname }}</h1>
+          <div class="coords">
+            <span>Phone: {{ freelance.phone }}</span>
+            <span>Gender: {{ freelance.gender }}</span>
+          </div>
+          <div class="coords">
+            <span>Job: {{ freelance.job_title }}</span>
+            <span>Mail: {{ freelance.email }}</span>
+          </div>
+          <div class="stats">
+            <div>
+              <div class="title">Awards</div>
+              <i class="fa fa-trophy"></i>
+              <div class="value">2</div>
+            </div>
+            <div>
+              <div class="title">Matches</div>
+              <i class="fa fa-gamepad"></i>
+              <div class="value">27</div>
+            </div>
+            <div>
+              <div class="title">Pals</div>
+              <i class="fa fa-group"></i>
+              <div class="value">123</div>
+            </div>
+            <div>
+              <div class="title">Coffee</div>
+              <i class="fa fa-coffee"></i>
+              <div class="value infinity">∞</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="general">
+        <h1>{{ freelance.firstname }}</h1>
+        <p>{{ freelance.profile }}</p>
+        <span class="more">{{ freelance.city }}, {{ freelance.country }}</span>
+      </div>
+    </div>
+  </div>
+</div>
 <pagination-controls
   (pageChange)="page = $event"
   responsive=" true"
