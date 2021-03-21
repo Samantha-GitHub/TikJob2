@@ -26,8 +26,12 @@ export class ProfesionalesService {
 
   } */
 
-  insert(formValues) {
+  create(formValues) {
     return this.httpClient.post(this.baseUrl, formValues).toPromise();
+  }
+
+  update(pId, formValues) {
+    return this.httpClient.put(`${this.baseUrl}/${pId}`, formValues).toPromise();
   }
 
   // createHeaders() {

@@ -8,7 +8,7 @@
       <div class="me-img"></div>
 
       {{jobOffer.function_department}}/ {{jobOffer.country}}/ {{jobOffer.responsabilities}}
-      <p *ngFor="let skill of skills">{{skill.skill}}</p>
+      <p></p>
       <p *ngFor="let language of languages">{{language.language}}</p>
       <p></p>
 
@@ -77,13 +77,9 @@
       </section>
       <section>
         <h1>Personal Interests</h1>
-        <ul class="skill-set">
-          <li>Faith</li>
-          <li>Biblical Studies</li>
-          <li>Playing Guitar</li>
-          <li>Song Writing</li>
-          <li>Health & Nutrition</li>
-          <li>Reading</li>
+        <ul class="skill-set" *ngFor="let skill of skills">
+          <li>{{skill.skill}}</li>
+
         </ul>
       </section>
       <section>

@@ -32,7 +32,4 @@ export class SkillsService {
       .toPromise();
   }
 
-  insert(formValues) {
-    return this.httpClient.post(this.baseUrl, formValues).toPromise();
-  }
 }

@@ -10,6 +10,8 @@ import { LanguagesService } from 'src/app/services/languages.service';
 import { ProfesionalesService } from 'src/app/services/profesionales.service';
 import { SkillsService } from 'src/app/services/skills.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TbiSkillsUsuarioService } from 'src/app/services/tbi-skills-usuario.service';
+import { TbiSkillOfertasTrabajosService } from 'src/app/services/tbi-skill-ofertas-trabajos.service';
 
 @Component({
   selector: 'app-profesional-formulario',
@@ -27,12 +29,15 @@ export class ProfesionalFormularioComponent implements OnInit {
   company: Company;
   jobOffer: Joboffer[];
 
+  pId: number;
+
   constructor(
     private router: Router,
     private skillService: SkillsService,
     private companyService: ProfesionalesService,
     private jobOfferService: JobOfferService,
-    private languageService: LanguagesService
+    private languageService: LanguagesService,
+    private tbi_ofertas_skill_Service: TbiSkillOfertasTrabajosService
   ) {
     this.skills = [];
     this.languages = [];
@@ -72,18 +77,22 @@ export class ProfesionalFormularioComponent implements OnInit {
     this.formularioLanguage = new FormGroup({
       language: new FormControl(),
     });
+
+    this.pId = null;
+
+
   }
 
   async ngOnInit(): Promise<void> {
     try {
       this.skills = await this.skillService.getAll();
-      // console.log(this.skills);
+      console.log(this.skills);
     } catch (error) {
       console.log(error);
     }
     try {
       this.languages = await this.languageService.getAll();
-      // console.log(this.languages);
+      console.log(this.languages);
     } catch (error) {
       console.log(error);
     }
@@ -97,10 +106,16 @@ export class ProfesionalFormularioComponent implements OnInit {
        } else {
          create
        } */
-    const response = await this.companyService.insert(
+
+
+    const response = await this.companyService.create(
       this.formularioCompany.value
     );
     console.log(response);
+
+    /*     const update = await this.companyService.update(this.pId, this.formularioCompany.value);
+        console.log(update); */
+
   }
 
   async onSubmitJobOffer(): Promise<void> {
@@ -111,8 +126,8 @@ export class ProfesionalFormularioComponent implements OnInit {
   }
 
   async onSubmitSkill(): Promise<void> {
-    const response = await this.skillService.insert(this.formularioSkill.value);
-    console.log(response);
+    /* const response = await this.tbi_ofertas_skill_Service.insert(this.formularioSkill.value);
+    console.log(response); */
   }
 
   async onSubmitLanguage(): Promise<void> {
