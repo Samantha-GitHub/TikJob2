@@ -1,23 +1,27 @@
 <link
   href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic|Open+Sans:300,400,500,700|Waiting+for+the+Sunrise|Shadows+Into+Light"
-  rel="stylesheet"
-  type="text/css"
-/>
+  rel="stylesheet" type="text/css" />
 
 <div class="wrapper clearfix">
   <div class="left">
     <div class="name-hero">
       <div class="me-img"></div>
 
-      <div class="name-text">
-        <h1>
-          Department: <em>{{ jobOffer.function_department }}</em>
-        </h1>
-        <p>Country: {{ jobOffer.country }}</p>
-        <p>Responsabilities: {{ jobOffer.responsabilities }}</p>
-        <p>adamskianthony@gmail.com</p>
-        <p>(956) 500-5558</p>
-      </div>
+      <<<<<<< HEAD======={{jobOffer.function_department}}/ {{jobOffer.country}}/ {{jobOffer.responsabilities}} <p>
+        </p>
+        <p *ngFor="let language of languages">{{language.language}}</p>
+        <p></p>
+
+        >>>>>>> f-samantha
+        <div class="name-text">
+          <h1>
+            Department: <em>{{ jobOffer.function_department }}</em>
+          </h1>
+          <p>Country: {{ jobOffer.country }}</p>
+          <p>Responsabilities: {{ jobOffer.responsabilities }}</p>
+          <p>adamskianthony@gmail.com</p>
+          <p>(956) 500-5558</p>
+        </div>
     </div>
   </div>
   <div class="right">
