@@ -30,6 +30,11 @@ export class ProfesionalFormularioComponent implements OnInit {
   jobOffer: Joboffer[];
 
   pId: number;
+  newLanguage: Language;
+  newSkill: Skill;
+
+  arrLanguages: Language[];
+  arrskills: Skill[];
 
   constructor(
     private router: Router,
@@ -38,6 +43,8 @@ export class ProfesionalFormularioComponent implements OnInit {
     private jobOfferService: JobOfferService,
     private languageService: LanguagesService,
     private tbi_ofertas_skill_Service: TbiSkillOfertasTrabajosService
+
+
   ) {
     this.skills = [];
     this.languages = [];
@@ -81,6 +88,32 @@ export class ProfesionalFormularioComponent implements OnInit {
     this.pId = null;
 
 
+    //LocalStorage para arrLanguages
+
+    if (localStorage.getItem('arrLanguages')) {
+
+      const storageArray = localStorage.getItem('arrLanguages');
+      this.arrLanguages = JSON.parse(storageArray);
+
+    } else {
+
+      this.arrLanguages = new Array();
+    }
+
+    //LocalStorage para arrSkills
+
+
+    if (localStorage.getItem('arrSkills')) {
+
+      const storageArray = localStorage.getItem('arrSkills');
+      this.arrskills = JSON.parse(storageArray);
+
+    } else {
+
+      this.arrskills = [];
+    }
+
+
   }
 
   async ngOnInit(): Promise<void> {
@@ -107,14 +140,26 @@ export class ProfesionalFormularioComponent implements OnInit {
          create
        } */
 
+    /*   if (  = false) {
+        const response = await this.companyService.create(
+          this.formularioCompany.value
+        );
+        console.log(response);
+      } else {
+          const update = await this.companyService.update(this.pId, this.formularioCompany.value);
+          console.log(update);
+      } */
+
 
     const response = await this.companyService.create(
       this.formularioCompany.value
     );
     console.log(response);
 
-    /*     const update = await this.companyService.update(this.pId, this.formularioCompany.value);
-        console.log(update); */
+
+
+
+
 
   }
 
@@ -136,6 +181,28 @@ export class ProfesionalFormularioComponent implements OnInit {
     );
     console.log(response);
   }
+
+
+
+
+  onClick() {
+    console.log(this.newLanguage);
+
+    this.arrLanguages.push(this.newLanguage);
+    const arrToString = JSON.stringify(this.arrLanguages)
+    localStorage.setItem('arrLanguages', arrToString)
+
+
+    console.log(this.arrLanguages);
+
+    /*   localStorage.setItem('arrLanguages', JSON.stringify(this.arrLanguages)); */
+
+
+
+  };
+
+
+
 
   active = 1;
 }

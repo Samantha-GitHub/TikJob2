@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Language } from './interfaces/language';
+import { Skill } from './interfaces/skill';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'TikJob';
+
+
+
+  constructor() {
+
+
+  };
 }

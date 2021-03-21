@@ -11,20 +11,20 @@
                         </div>
                     </div>
                     <div class="contact">
-                        <h3>{{freelance.phone}}</h3>
-                        <h3 class="email">{{freelance.email}}</h3>
+                        <h3>Phone Number: {{freelance.phone}}</h3>
+                        <h3 class="email">Email: {{freelance.email}}</h3>
                         <h3>{{freelance.streetName}}</h3>
-                        <h3> {{freelance.zipcode}}/{{freelance.city}} </h3>
-                        <h3>{{freelance.country}} </h3>
-                        <h3>{{freelance.gender}} </h3>
-                        <h3>{{freelance?.website}} </h3>
-                        <h3>{{freelance.image}} </h3>
-                        <h3>{{freelance?.video}} </h3>
+                        <h3>ZipCode: {{freelance.zipcode}} </h3>
+                        <h3>City: {{freelance.city}}</h3>
+                        <h3>Country: {{freelance.country}} </h3>
+                        <h3>Website : {{freelance?.website}} </h3>
+                        <h3>Image: {{freelance.image}} </h3>
+                        <h3>Video: {{freelance?.video}} </h3>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="lower-three-quarters">
+        <div class="lower-three-quarters ">
             <div class="left-column">
                 <div class="experience">
                     <header>
@@ -44,62 +44,68 @@
                 </div>
 
             </div>
-            <div class="right-column">
-                <div class="education">
-                    <header>
-                        <h2>Education</h2>
-                    </header>
-                    <div class="ed-info">
-                        <img src="https://i.imgur.com/2JdJghU.png" />
-                        <div class="info" *ngFor="let education of educations">
-                            <h3>{{education.degree}}</h3>
-                            <h4>{{education.school}}</h4>
-                            <h4>Start date: {{education.start_date}} / End date: {{education.end_date}}</h4>
-                            <h4>{{education.city}}</h4>
-                            <h4>{{education.country}}</h4>
+
+            <div class="container">
+
+                <div class="right-column row justify-content-between">
+                    <div class="education col-lg-5">
+                        <header>
+                            <h2>Education</h2>
+                        </header>
+                        <div class="ed-info">
+                            <img src="https://i.imgur.com/2JdJghU.png" />
+                            <div class="info" *ngFor="let education of educations">
+                                <h3>{{education.degree}}</h3>
+                                <h4>{{education.school}}</h4>
+                                <h4>Start date: {{education.start_date}} / End date: {{education.end_date}}</h4>
+                                <h4>{{education.city}}</h4>
+                                <h4>{{education.country}}</h4>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="education">
-                    <header>
-                        <h2>Courses</h2>
-                    </header>
-                    <div class="ed-info">
-                        <img src="https://i.imgur.com/2JdJghU.png" />
-                        <div class="info" *ngFor="let course of courses">
-                            <h3>{{course.course_title}}</h3>
-                            <h3>{{course.institution}} </h3>
-                            <h4>Start date:{{course.start_date}}/ End date: {{course.end_date}} </h4>
-                            <h4>{{course.city}} / {{course.country}} </h4>
-                            <h4>{{course?.course_link}} </h4>
+                    <div class="education col-lg-5">
+                        <header>
+                            <h2>Courses</h2>
+                        </header>
+                        <div class="ed-info">
+                            <img src="https://i.imgur.com/2JdJghU.png" />
+                            <div class="info" *ngFor="let course of courses">
+                                <h3>{{course.course_title}}</h3>
+                                <h3>{{course.institution}} </h3>
+                                <h4>Start date:{{course.start_date}}/ End date: {{course.end_date}} </h4>
+                                <h4>{{course.city}} / {{course.country}} </h4>
+                                <h4>{{course?.course_link}} </h4>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="education">
-                    <header>
-                        <h2>Languages</h2>
-                    </header>
-                    <div class="ed-info">
-                        <div class="info" *ngFor="let language of languages">
-                            <h3>{{language.language}} </h3>
+                    <div class="education col-lg-5">
+                        <header>
+                            <h2>Languages</h2>
+                        </header>
+                        <div class="ed-info">
+                            <div class="info" *ngFor="let language of languages">
+                                <h3>{{language.language}} </h3>
 
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="skills">
-                    <header>
-                        <h2>Skills</h2>
-                    </header>
-                    <div class="skill-lists" *ngFor="let skill of skills">
-                        <ul class="left">
-                            <li>{{skill.skill}}</li>
+                    <div class="skills col-lg-5">
+                        <header>
+                            <h2>Skills</h2>
+                        </header>
+                        <div class="skill-lists container" *ngFor="let skill of skills">
+                            <ul class="left row">
+                                <li class="col-4">{{skill.skill}}</li>
 
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
+
                 </div>
+
 
             </div>
         </div>
