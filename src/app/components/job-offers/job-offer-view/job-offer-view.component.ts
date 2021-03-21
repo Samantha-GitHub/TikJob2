@@ -12,10 +12,9 @@ import { SkillsService } from 'src/app/services/skills.service';
 @Component({
   selector: 'app-job-offer-view',
   templateUrl: './job-offer-view.component.html',
-  styleUrls: ['./job-offer-view.component.scss']
+  styleUrls: ['./job-offer-view.component.scss'],
 })
 export class JobOfferViewComponent implements OnInit {
-
   jobOffer: Joboffer;
   skills: Skill[];
   languages: Language[];
@@ -27,24 +26,19 @@ export class JobOfferViewComponent implements OnInit {
     private skillsService: SkillsService,
     private languageService: LanguagesService,
     private companyService: ProfesionalesService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-
     this.activatedRoute.params.subscribe(async (params) => {
-
-      this.jobOffer = await this.jobOfferService.getById(params.idJobOffer),
-        this.skills = await this.skillsService.getSkillsByIdJobsOffers(params.idJobOffer),
-        this.languages = await this.languageService.getLanguagesByIdJobsOffers(params.idJobOffer)
+      (this.jobOffer = await this.jobOfferService.getById(params.idJobOffer)),
+        (this.skills = await this.skillsService.getSkillsByIdJobsOffers(
+          params.idJobOffer
+        )),
+        (this.languages = await this.languageService.getLanguagesByIdJobsOffers(
+          params.idJobOffer
+        ));
       /* this.company = await this.companyService.getCompanyDetailByJobOffer(params.idJobOffer),
       console.log(this.company); */
-
-
-
-
-
     });
-
   }
-
 }

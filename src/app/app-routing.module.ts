@@ -25,10 +25,10 @@ const routes: Routes = [
   { path: 'form_freelance', component: UserFormularioComponent },
   { path: 'profesional', component: ProfesionalesComponent },
   { path: 'job_offers', component: JobOffersComponent },
+  { path: 'search/:country', component: JobOffersComponent },
   { path: 'job_offers/:idJobOffer', component: JobOfferViewComponent },
   { path: 'logincompany', component: LogincompanyComponent },
-  /*   { path: 'profesional/:profesional_vat', component: ProfesionalViewComponent },
-   */ { path: 'form_profesional', component: ProfesionalFormularioComponent },
+  { path: 'form_profesional', component: ProfesionalFormularioComponent },
   { path: 'contact', component: ContactComponent },
   { path: '**', component: NotFoundComponent },
 ];

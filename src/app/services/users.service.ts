@@ -28,10 +28,10 @@ export class UsersService {
   }
 
   // searchFreelanceByCountry(pName): Promise<Freelance[]> {
-  //   return this.httpClient.get<Freelance[]>(`${this.baseUrl}freelance?country=${pName}`).toPromise();
+  //   return this.httpClient.get<Freelance[]>(`${this.baseUrl}/${pName}`).toPromise();
   // }
 
   // searchFreelanceByEducation(pName): Promise<Freelance[]> {
-  //   return this.httpClient.get<Freelance[]>(`${this.baseUrl}freelance?education=${pName}`).toPromise();
+  //   return this.httpClient.get<Freelance[]>(`${this.baseUrl}/${pName}`).toPromise();
   // }
 }

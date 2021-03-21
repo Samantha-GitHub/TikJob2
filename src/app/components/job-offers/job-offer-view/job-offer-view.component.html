@@ -1,20 +1,20 @@
 <link
   href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic|Open+Sans:300,400,500,700|Waiting+for+the+Sunrise|Shadows+Into+Light"
-  rel="stylesheet" type="text/css" />
+  rel="stylesheet"
+  type="text/css"
+/>
 
 <div class="wrapper clearfix">
   <div class="left">
     <div class="name-hero">
       <div class="me-img"></div>
 
-      {{jobOffer.function_department}}/ {{jobOffer.country}}/ {{jobOffer.responsabilities}}
-      <p *ngFor="let skill of skills">{{skill.skill}}</p>
-      <p *ngFor="let language of languages">{{language.language}}</p>
-      <p></p>
-
       <div class="name-text">
-        <h1>Anthony <em>Adamski</em></h1>
-        <p>10 Iroquois St Boston, MA 02120</p>
+        <h1>
+          Department: <em>{{ jobOffer.function_department }}</em>
+        </h1>
+        <p>Country: {{ jobOffer.country }}</p>
+        <p>Responsabilities: {{ jobOffer.responsabilities }}</p>
         <p>adamskianthony@gmail.com</p>
         <p>(956) 500-5558</p>
       </div>
@@ -52,18 +52,10 @@
         </p>
       </section>
       <section>
-        <h1>Technical Skills</h1>
-        <ul class="skill-set">
-          <li>Mobile Development</li>
-          <li>Xamarin</li>
-          <li>CSS3</li>
-          <li>Adobe Photoshop</li>
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>JQUERY</li>
-          <li>UI Design</li>
-          <li>Company Branding</li>
-          <li>Responsive Web Design</li>
+        <h1>Languages</h1>
+        <ul class="skill-set" *ngFor="let language of languages">
+          >
+          <li>{{ language.language }}</li>
         </ul>
       </section>
       <section>
@@ -77,13 +69,9 @@
       </section>
       <section>
         <h1>Personal Interests</h1>
-        <ul class="skill-set">
-          <li>Faith</li>
-          <li>Biblical Studies</li>
-          <li>Playing Guitar</li>
-          <li>Song Writing</li>
-          <li>Health & Nutrition</li>
-          <li>Reading</li>
+        <ul class="skill-set" *ngFor="let skill of skills">
+          >
+          <li>{{ skill.skill }}</li>
         </ul>
       </section>
       <section>

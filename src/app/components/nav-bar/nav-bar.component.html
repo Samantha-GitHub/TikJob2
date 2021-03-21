@@ -85,15 +85,22 @@
     </ul>
     <!-- Search BAR -->
 
-    <form class="d-flex">
+    <div class="d-flex">
       <input
         class="form-control me-2"
-        type="search"
+        type="text"
         placeholder="City / Freelance / Jobs"
         aria-label="Search"
+        [(ngModel)]="search"
       />
-      <button class="btn btn-success ml-1" type="submit">Search</button>
-    </form>
+      <button
+        (click)="searchTitle()"
+        class="btn btn-success ml-1"
+        type="button"
+      >
+        Search
+      </button>
+    </div>
   </div>
   <!-- Collapsible content -->
 </nav>

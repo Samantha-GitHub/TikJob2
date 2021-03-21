@@ -15,7 +15,7 @@ export class SkillsService {
   getAll(): Promise<Skill[]> {
     const httpOptions = { headers: new HttpHeaders() };
 
-    return this.httpClient.get<[Skill]>(this.baseUrl, httpOptions).toPromise();
+    return this.httpClient.get<Skill[]>(this.baseUrl, httpOptions).toPromise();
   }
 
   getSkillsByIdFreelance(pId): Promise<Skill[]> {
@@ -37,6 +37,6 @@ export class SkillsService {
   }
 
   // searchByName(pName): Promise<Skill[]> {
-  //   return this.httpClient.get<Skill[]>(`${this.baseUrl}skills?name=${pName}`).toPromise();
+  //   return this.httpClient.get<Skill[]>(`${this.baseUrl}/{pName}`).toPromise();
   // }
 }

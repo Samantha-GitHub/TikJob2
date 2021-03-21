@@ -1,8 +1,15 @@
 <div class="servicesContainer">
   <h1 class="servicesH1">Job Offers</h1>
   <div class="servicesWrapper">
-    <div class="servicesCard" *ngFor="let jobOffer of allJobOffers | paginate: { itemsPerPage: 3, currentPage: page}">
-      <img src="../../../../assets/images/svg-8.svg" class="servicesIcon" />
+    <div
+      class="servicesCard"
+      *ngFor="
+        let jobOffer of jobOffers
+          | paginate: { itemsPerPage: 3, currentPage: page }
+      "
+      (click)="getJobOffer(jobOffer.id)"
+    >
+      <img src="../../../../assets/images/svg-6.svg" class="servicesIcon" />
       <h2 class="servicesH2">{{ jobOffer.function_department }}</h2>
       <p class="serviceP">
         {{ jobOffer.city }}
@@ -14,6 +21,10 @@
   </div>
 </div>
 
-<pagination-controls (pageChange)="
-page = $event" responsive=" true" previousLabel="Previous" nextLabel="Next">
+<pagination-controls
+  (pageChange)="page = $event"
+  responsive=" true"
+  previousLabel="Previous"
+  nextLabel="Next"
+>
 </pagination-controls>
