@@ -43,8 +43,6 @@ export class ProfesionalFormularioComponent implements OnInit {
     private jobOfferService: JobOfferService,
     private languageService: LanguagesService,
     private tbi_ofertas_skill_Service: TbiSkillOfertasTrabajosService
-
-
   ) {
     this.skills = [];
     this.languages = [];
@@ -87,33 +85,23 @@ export class ProfesionalFormularioComponent implements OnInit {
 
     this.pId = null;
 
-
-    //LocalStorage para arrLanguages
+    // LocalStorage para arrLanguages
 
     if (localStorage.getItem('arrLanguages')) {
-
       const storageArray = localStorage.getItem('arrLanguages');
       this.arrLanguages = JSON.parse(storageArray);
-
     } else {
-
       this.arrLanguages = new Array();
     }
 
-    //LocalStorage para arrSkills
-
+    // LocalStorage para arrSkills
 
     if (localStorage.getItem('arrSkills')) {
-
       const storageArray = localStorage.getItem('arrSkills');
       this.arrskills = JSON.parse(storageArray);
-
     } else {
-
       this.arrskills = [];
     }
-
-
   }
 
   async ngOnInit(): Promise<void> {
@@ -150,17 +138,10 @@ export class ProfesionalFormularioComponent implements OnInit {
           console.log(update);
       } */
 
-
     const response = await this.companyService.create(
       this.formularioCompany.value
     );
     console.log(response);
-
-
-
-
-
-
   }
 
   async onSubmitJobOffer(): Promise<void> {
@@ -182,27 +163,17 @@ export class ProfesionalFormularioComponent implements OnInit {
     console.log(response);
   }
 
-
-
-
   onClick() {
     console.log(this.newLanguage);
 
     this.arrLanguages.push(this.newLanguage);
-    const arrToString = JSON.stringify(this.arrLanguages)
-    localStorage.setItem('arrLanguages', arrToString)
-
+    const arrToString = JSON.stringify(this.arrLanguages);
+    localStorage.setItem('arrLanguages', arrToString);
 
     console.log(this.arrLanguages);
 
     /*   localStorage.setItem('arrLanguages', JSON.stringify(this.arrLanguages)); */
-
-
-
-  };
-
-
-
+  }
 
   active = 1;
 }

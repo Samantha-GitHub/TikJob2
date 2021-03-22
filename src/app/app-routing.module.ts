@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'form_freelance', component: UserFormularioComponent },
   { path: 'profesional', component: ProfesionalesComponent },
   { path: 'job_offers', component: JobOffersComponent },
-  { path: 'search/:country', component: JobOffersComponent },
+  { path: 'search/:data', component: JobOffersComponent },
   { path: 'job_offers/:idJobOffer', component: JobOfferViewComponent },
   { path: 'logincompany', component: LogincompanyComponent },
   { path: 'form_profesional', component: ProfesionalFormularioComponent },

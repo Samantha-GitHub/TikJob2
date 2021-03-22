@@ -23,8 +23,10 @@ export class JobOffersComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(async (params) => {
+      console.log(params);
+
       if (Object.entries(params).length > 0) {
-        this.jobOffers = await this.jobOfferService.searchData(params.country);
+        this.jobOffers = await this.jobOfferService.searchData(params.data);
         console.log(params);
       } else {
         try {

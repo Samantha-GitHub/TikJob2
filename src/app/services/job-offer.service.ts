@@ -32,15 +32,15 @@ export class JobOfferService {
     return this.httpClient.post(this.baseUrl, formValues).toPromise();
   }
 
-  searchJobByCountry(pName): Promise<Joboffer[]> {
-    return this.httpClient
-      .get<Joboffer[]>(`${this.baseUrl}/joboffer?name=${pName}`)
-      .toPromise();
-  }
+  // searchJobByCountry(pName): Promise<Joboffer[]> {
+  //   return this.httpClient
+  //     .get<Joboffer[]>(`${this.baseUrl}/joboffer?name=${pName}`)
+  //     .toPromise();
+  // }
 
   searchData(pName): Promise<Joboffer[]> {
     return this.httpClient
-      .get<Joboffer[]>(`${this.baseUrl}?name=${pName}`)
+      .get<Joboffer[]>(`${this.baseUrl}/joboffer/${pName}`)
       .toPromise();
   }
 }
