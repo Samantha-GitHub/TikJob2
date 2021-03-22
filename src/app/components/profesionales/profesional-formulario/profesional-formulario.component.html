@@ -194,7 +194,7 @@
             </div>
           </div>
           <!-- Add button -->
-          <button class="btn btn-info" type="submit" (click)="onClick($event)">
+          <button class="btn btn-info" type="submit">
             + Add
           </button>
 
@@ -213,10 +213,11 @@
           <div class="form-row">
             <!-- Languages -->
             <div class="col">
-              <select class="form-control skillsSelect" formControlName="language" [(ngModel)]="newLanguage"
-                (change)="onClick($event)">
+              <select multiple class="form-control skillsSelect" formControlName="language" [(ngModel)]="newLanguage">
                 <option value="">Select your languages</option>
-                <option value="" *ngFor="let language of languages">
+                <option [value]="language" *ngFor="let language of languages">
+
+
                   {{ language.language }}
                 </option>
               </select>
