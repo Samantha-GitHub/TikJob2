@@ -24,6 +24,7 @@ import { UserViewComponent } from './components/users/user-view/user-view.compon
 import { JobOffersComponent } from './components/job-offers/job-offers.component';
 import { JobOfferViewComponent } from './components/job-offers/job-offer-view/job-offer-view.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OfertasFormularioComponent } from './components/profesionales/ofertas-formulario/ofertas-formulario.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UserViewComponent,
     JobOffersComponent,
     JobOfferViewComponent,
+    OfertasFormularioComponent,
   ],
   imports: [
     BrowserModule,
