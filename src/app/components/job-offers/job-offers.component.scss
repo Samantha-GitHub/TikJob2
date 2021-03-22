@@ -1,6 +1,6 @@
 .servicesContainer {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,8 +9,8 @@
 }
 
 .servicesWrapper {
-  height: auto;
-  max-width: 1400px;
+  height: 820px;
+  width: 1400px;
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -61,6 +61,12 @@
 
 // CODE PEN CARD
 
+html,
+body {
+  background: #fceeb5;
+  font-family: Abel, Arial, Verdana, sans-serif;
+}
+
 .center {
   position: absolute;
   top: 50%;
@@ -77,25 +83,21 @@
   border-radius: 6px;
   overflow: hidden;
   position: relative;
-  margin: 1.5rem;
+  margin: 0.5rem;
 }
 
-.card h1 {
+.card h2 {
   text-align: center;
-}
-
-.card .additional {
-  position: absolute;
-  width: 150px;
-  height: 100%;
-  background: linear-gradient(#de685e, #ee786e);
-  transition: width 0.4s;
-  overflow: hidden;
-  z-index: 2;
 }
 
 .card.green .additional {
   background: linear-gradient(#92bca6, #a2ccb6);
+  transition: width 0.4s;
+  overflow: hidden;
+  z-index: 2;
+  position: absolute;
+  width: 150px;
+  height: 100%;
 }
 
 .card:hover .additional {
@@ -125,7 +127,7 @@
   top: 15%;
   color: #fff;
   text-transform: uppercase;
-  font-size: 0.75em;
+  font-size: 0.55em;
   font-weight: bold;
   background: rgba(0, 0, 0, 0.15);
   padding: 0.125rem 0.75rem;
@@ -149,19 +151,9 @@
   height: 100%;
 }
 
-.card .additional .more-info h1 {
+.card.green .additional .more-info h2 {
   color: #fff;
   margin-bottom: 0;
-}
-
-.card.green .additional .more-info h1 {
-  color: #224c36;
-}
-
-.card .additional .coords {
-  margin: 0 1rem;
-  color: #fff;
-  font-size: 1rem;
 }
 
 .card.green .additional .coords {
@@ -172,7 +164,8 @@
   float: right;
 }
 
-.card .additional .stats {
+.card.green .additional .stats {
+  color: #325c46;
   font-size: 2rem;
   display: flex;
   position: absolute;
@@ -180,11 +173,6 @@
   left: 1rem;
   right: 1rem;
   top: auto;
-  color: #fff;
-}
-
-.card.green .additional .stats {
-  color: #325c46;
 }
 
 .card .additional .stats > div {

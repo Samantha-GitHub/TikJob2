@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Joboffer } from 'src/app/interfaces/job_offer';
+import { Company } from 'src/app/interfaces/company';
 import { JobOfferService } from 'src/app/services/job-offer.service';
+import { ProfesionalesService } from 'src/app/services/profesionales.service';
 
 @Component({
   selector: 'app-job-offers',
@@ -12,11 +14,13 @@ export class JobOffersComponent implements OnInit {
   public page: number;
 
   jobOffers: Joboffer[];
+  companies: Company[];
 
   constructor(
     private jobOfferService: JobOfferService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private companyService: ProfesionalesService
   ) {
     this.jobOffers = [];
   }
@@ -31,6 +35,7 @@ export class JobOffersComponent implements OnInit {
       } else {
         try {
           this.jobOffers = await this.jobOfferService.getAll();
+          this.companies = await this.companyService.getAll();
           // console.log(this.jobOffers);
         } catch (error) {
           console.log(error);
@@ -39,7 +44,7 @@ export class JobOffersComponent implements OnInit {
     });
   }
 
-  getJobOffer(pId) {
+  getJobOffer(pId): void {
     this.router.navigate(['job_offers', pId]);
   }
 }

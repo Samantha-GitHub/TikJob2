@@ -20,8 +20,9 @@
     </div>
   </div>
 </div> -->
-<div class="servicesContainer mt-5">
-  <div class="center servicesWrapper mt-5">
+<div class="servicesContainer">
+  <h2>Freelancers</h2>
+  <div class="center servicesWrapper">
     <div
       class="card"
       *ngFor="
@@ -79,7 +80,9 @@
       <div class="general">
         <h1>{{ freelance.firstname }}</h1>
         <p>{{ freelance.profile }}</p>
-        <span class="more">{{ freelance.city }}, {{ freelance.country }}</span>
+        <span class="more"
+          >{{ freelance.city }}, <strong>{{ freelance.country }}</strong></span
+        >
       </div>
     </div>
   </div>

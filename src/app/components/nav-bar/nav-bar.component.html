@@ -35,29 +35,14 @@
           >Freelancers
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link float-shadow" [routerLink]="['/profesional']"
-          >Companies
-        </a>
-      </li>
+
       <li class="nav-item">
         <a class="nav-link float-shadow" [routerLink]="['/job_offers']"
           >Jobs
         </a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link float-shadow" [routerLink]="['/loginfreelance']"
-          >Login freelancer
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/logincompany']"
-          >Login Company <labeL>|</labeL></a
-        >
-      </li>
-
-      <!-- Dropdown -->
+      <!-- Dropdown Forms -->
       <li class="nav-item dropdown">
         <a
           class="nav-link dropdown-toggle"
@@ -71,15 +56,37 @@
           class="dropdown-menu dropdown-secondary"
           aria-labelledby="navbarDropdownMenuLink"
         >
-          <a class="dropdown-item" [routerLink]="['/form_profesional']"
-            >Form Profesional</a
+          <a class="dropdown-item" [routerLink]="['/form_profesional']">
+            Company</a
           >
 
-          <a class="dropdown-item" [routerLink]="['/form_freelance']"
-            >Form User</a
+          <a class="dropdown-item" [routerLink]="['/form_freelance']">
+            Freelancer</a
           >
           <a class="dropdown-item" [routerLink]="['/312']">404</a>
-          <a class="dropdown-item" [routerLink]="['/contact']">Contact</a>
+        </div>
+      </li>
+      <!-- Dropdown Login -->
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          id="navbarDropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Login</a
+        >
+        <div
+          class="dropdown-menu dropdown-secondary"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <a class="dropdown-item" [routerLink]="['/logincompany']">
+            Company
+          </a>
+
+          <a class="dropdown-item" [routerLink]="['/loginfreelance']">
+            Freelancer
+          </a>
         </div>
       </li>
     </ul>
