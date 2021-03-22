@@ -107,7 +107,7 @@ export class ProfesionalFormularioComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     try {
       this.skills = await this.skillService.getAll();
-      console.log(this.skills);
+      // console.log(this.skills);
     } catch (error) {
       console.log(error);
     }
@@ -163,7 +163,7 @@ export class ProfesionalFormularioComponent implements OnInit {
     console.log(response);
   }
 
-  onClick() {
+  onClick(): void {
     console.log(this.newLanguage);
 
     this.arrLanguages.push(this.newLanguage);
