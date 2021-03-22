@@ -26,19 +26,22 @@ export class ProfesionalesService {
 
   } */
 
-  create(formValues) {
-    return this.httpClient.post(this.baseUrl, formValues).toPromise();
+  create(formValues): Promise<Company> {
+    return this.httpClient.post<Company>(this.baseUrl, formValues).toPromise();
   }
 
-  update(pId, formValues) {
-    return this.httpClient.put(`${this.baseUrl}/${pId}`, formValues).toPromise();
+  update(data): Promise<any> {
+    return this.httpClient
+      .put<any>(`${this.baseUrl}`, data, this.createHeaders())
+      .toPromise();
   }
 
-  // createHeaders() {
-  //   return {
-  //     headers: new HttpHeaders({
-  //       'authorization': localStorage.getItem('token_gym')
-  //     })
-  //   }
-  // }
+  createHeaders(): any {
+    return {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        // 'authorization': localStorage.getItem('token_gym')
+      }),
+    };
+  }
 }

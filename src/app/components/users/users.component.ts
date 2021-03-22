@@ -17,7 +17,7 @@ export class UsersComponent implements OnInit {
     this.allFreelancers = [];
   }
 
-  async ngOnInit() {
+  async ngOnInit(): Promise<void> {
     try {
       this.allFreelancers = await this.usersService.getAll();
       console.log(this.allFreelancers);
@@ -26,7 +26,7 @@ export class UsersComponent implements OnInit {
     }
   }
 
-  getFreelance(pId) {
+  getFreelance(pId): any {
     this.router.navigate(['freelance', pId]);
   }
 }
