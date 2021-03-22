@@ -1,86 +1,48 @@
 <div class="servicesContainer justify-content-center mt-5">
   <!-- collapse -->
-  <ul
-    ngbNav
-    #nav="ngbNav"
-    [(activeId)]="active"
-    class="nav-tabs justify-content-center"
-  >
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs justify-content-center">
     <li [ngbNavItem]="1">
       <a ngbNavLink>Company Details</a>
       <ng-template ngbNavContent>
-        <form
-          class="text-center border border-light p-5"
-          [formGroup]="formularioCompany"
-          (ngSubmit)="onSubmitCompany()"
-        >
+        <form class="text-center border border-light p-5" [formGroup]="formularioCompany"
+          (ngSubmit)="onSubmitCompany()">
           <h2>COMPANY DETAILS</h2>
 
           <div class="form-row mb-4">
             <div class="col">
               <!-- Company name -->
-              <input
-                type="text"
-                id="defaultRegisterFormFirstName"
-                class="form-control"
-                formControlName="name_company"
-                placeholder="Company name"
-              />
+              <input type="text" id="defaultRegisterFormFirstName" class="form-control" formControlName="name_company"
+                placeholder="Company name" />
             </div>
             <div class="col">
               <!-- Vat -->
-              <input
-                type="number"
-                id="defaultRegisterFormLastName"
-                class="form-control"
-                formControlName="vat"
-                placeholder="Vat"
-              />
+              <input type="number" id="defaultRegisterFormLastName" class="form-control" formControlName="vat"
+                placeholder="Vat" />
             </div>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- E-mail -->
-              <input
-                type="email"
-                id="defaultRegisterFormEmail"
-                class="form-control mb-4"
-                placeholder="E-mail"
-                formControlName="email"
-              />
+              <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail"
+                formControlName="email" />
             </div>
             <!-- Employees number -->
             <div class="col">
-              <input
-                type="number"
-                id="employeesNumber"
-                class="form-control mb-4"
-                formControlName="employees_number"
-                placeholder="Number of employees"
-              />
+              <input type="number" id="employeesNumber" class="form-control mb-4" formControlName="employees_number"
+                placeholder="Number of employees" />
             </div>
           </div>
 
           <div class="form-row mb-4">
             <div class="col">
               <!-- Year founded -->
-              <input
-                type="number"
-                id="yearFounded"
-                class="form-control mb-4"
-                formControlName="year_founded"
-                placeholder="Year Founded"
-              />
+              <input type="number" id="yearFounded" class="form-control mb-4" formControlName="year_founded"
+                placeholder="Year Founded" />
             </div>
             <div class="col">
               <!-- Phone number -->
-              <input
-                type="text"
-                id="defaultRegisterPhonePassword"
-                class="form-control"
-                formControlName="phone"
-                placeholder="Phone number"
-              />
+              <input type="text" id="defaultRegisterPhonePassword" class="form-control" formControlName="phone"
+                placeholder="Phone number" />
               <div class="form-row mb-4"></div>
             </div>
           </div>
@@ -88,27 +50,15 @@
             <!-- Photo -->
             <div class="col">
               <div class="custom-file mb-3 mt-3">
-                <input
-                  type="file"
-                  class="form-control custom-file-input"
-                  formControlName="image"
-                  id="customFile"
-                />
-                <label class="custom-file-label" for="customFile"
-                  >Choose picture</label
-                >
+                <input type="file" class="form-control custom-file-input" formControlName="image" id="customFile" />
+                <label class="custom-file-label" for="customFile">Choose picture</label>
               </div>
             </div>
             <!-- Website -->
             <div class="col">
               <div class="custom-file mb-3 mt-3">
-                <input
-                  type="url"
-                  placeholder="Add your website here"
-                  class="form-control"
-                  formControlName="website"
-                  id=""
-                />
+                <input type="url" placeholder="Add your website here" class="form-control" formControlName="website"
+                  id="" />
               </div>
             </div>
           </div>
@@ -116,41 +66,21 @@
           <div class="form-row mb-4">
             <!-- Street -->
             <div class="col">
-              <input
-                type="text"
-                class="form-control mb-4"
-                formControlName="street"
-                placeholder="Enter Street"
-              />
+              <input type="text" class="form-control mb-4" formControlName="street" placeholder="Enter Street" />
             </div>
             <!-- Postcode -->
             <div class="col">
-              <input
-                type="number"
-                class="form-control mb-4"
-                formControlName="zip_code"
-                placeholder="Enter Postcode"
-              />
+              <input type="number" class="form-control mb-4" formControlName="zip_code" placeholder="Enter Postcode" />
             </div>
           </div>
           <div class="form-row mb-4">
             <!-- City -->
             <div class="col">
-              <input
-                type="text"
-                class="form-control mb-4"
-                formControlName="city"
-                placeholder="Enter City"
-              />
+              <input type="text" class="form-control mb-4" formControlName="city" placeholder="Enter City" />
             </div>
             <!-- Country -->
             <div class="col">
-              <input
-                type="text"
-                class="form-control mb-4"
-                formControlName="country"
-                placeholder="Enter Country"
-              />
+              <input type="text" class="form-control mb-4" formControlName="country" placeholder="Enter Country" />
             </div>
           </div>
 
@@ -193,33 +123,20 @@
     <li [ngbNavItem]="2">
       <a ngbNavLink>Job offer</a>
       <ng-template ngbNavContent>
-        <form
-          class="text-center border border-light"
-          [formGroup]="formularioJobOffer"
-          (ngSubmit)="onSubmitJobOffer()"
-        >
+        <form class="text-center border border-light" [formGroup]="formularioJobOffer" (ngSubmit)="onSubmitJobOffer()">
           <h4>1st offer</h4>
 
           <div class="col">
             <!-- Function department -->
-            <input
-              type="text"
-              id="department"
-              class="form-control"
-              formControlName="function_department"
-              placeholder="Department"
-            />
+            <input type="text" id="department" class="form-control" formControlName="function_department"
+              placeholder="Department" />
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- responsabilities -->
               <label>Write your offer here</label>
-              <textarea
-                rows="10"
-                id="defaultTextProfile"
-                class="form-control"
-                formControlName="responsabilities"
-              ></textarea>
+              <textarea rows="10" id="defaultTextProfile" class="form-control"
+                formControlName="responsabilities"></textarea>
             </div>
           </div>
 
@@ -227,21 +144,11 @@
           <div class="form-row mb-4">
             <!-- City -->
             <div class="col">
-              <input
-                type="text"
-                class="form-control mb-4"
-                formControlName="city"
-                placeholder="Enter City"
-              />
+              <input type="text" class="form-control mb-4" formControlName="city" placeholder="Enter City" />
             </div>
             <!-- Country -->
             <div class="col">
-              <input
-                type="text"
-                class="form-control mb-4"
-                formControlName="country"
-                placeholder="Enter Country"
-              />
+              <input type="text" class="form-control mb-4" formControlName="country" placeholder="Enter Country" />
             </div>
           </div>
 
@@ -251,29 +158,16 @@
               <label for="starting_date">Starting date:</label>
               <hr />
 
-              <input
-                type="date"
-                id="start"
-                name="trip-start"
-                value="2018-07-22"
-                min="2018-01-01"
-                max="2025-12-31"
-                class="form-control"
-                formControlName="starting_date"
-              />
+              <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2025-12-31"
+                class="form-control" formControlName="starting_date" />
             </div>
           </div>
 
           <div class="form-row mb-4">
             <div class="col">
               <!-- Hour week -->
-              <input
-                type="number"
-                id="Hour_week"
-                class="form-control"
-                formControlName="hour_week"
-                placeholder="Hours per week"
-              />
+              <input type="number" id="Hour_week" class="form-control" formControlName="hour_week"
+                placeholder="Hours per week" />
             </div>
           </div>
           <!-- Save button -->
@@ -287,19 +181,11 @@
       <a ngbNavLink>Job offer - Skills</a>
 
       <ng-template ngbNavContent>
-        <form
-          class="text-center border border-light"
-          [formGroup]="formularioSkill"
-          (ngSubmit)="onSubmitSkill()"
-        >
+        <form class="text-center border border-light" [formGroup]="formularioSkill" (ngSubmit)="onSubmitSkill()">
           <div class="form-row">
-            <!-- Skils -->
+            <!-- Skills -->
             <div class="col">
-              <select
-                class="form-control skillsSelect"
-                formControlName="skill"
-                [(ngModel)]="newSkill"
-              >
+              <select class="form-control skillsSelect" formControlName="skill" [(ngModel)]="newSkill">
                 <option value="">Select your skills</option>
                 <option value="" *ngFor="let skill of skills">
                   {{ skill.skill }}
@@ -323,20 +209,12 @@
     <li [ngbNavItem]="4">
       <a ngbNavLink>Job offer - Languages</a>
       <ng-template ngbNavContent>
-        <form
-          class="text-center border border-light"
-          [formGroup]="formularioLanguage"
-          (ngSubmit)="onSubmitLanguage()"
-        >
+        <form class="text-center border border-light" [formGroup]="formularioLanguage" (ngSubmit)="onSubmitLanguage()">
           <div class="form-row">
             <!-- Languages -->
             <div class="col">
-              <select
-                class="form-control skillsSelect"
-                formControlName="language"
-                [(ngModel)]="newLanguage"
-                (change)="onClick($event)"
-              >
+              <select class="form-control skillsSelect" formControlName="language" [(ngModel)]="newLanguage"
+                (change)="onClick($event)">
                 <option value="">Select your languages</option>
                 <option value="" *ngFor="let language of languages">
                   {{ language.language }}
@@ -344,10 +222,7 @@
               </select>
             </div>
             <div class="col">
-              <div
-                class="languagesSelected"
-                *ngFor="let language of arrLanguages; let indice = index"
-              >
+              <div class="languagesSelected" *ngFor="let language of arrLanguages; let indice = index">
                 <p>{{ language.language }}</p>
               </div>
             </div>

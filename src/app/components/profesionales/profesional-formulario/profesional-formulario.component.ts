@@ -19,10 +19,12 @@ import { TbiSkillOfertasTrabajosService } from 'src/app/services/tbi-skill-ofert
   styleUrls: ['./profesional-formulario.component.scss'],
 })
 export class ProfesionalFormularioComponent implements OnInit {
+  //FORM GROUP
   formularioCompany: FormGroup;
   formularioJobOffer: FormGroup;
   formularioLanguage: FormGroup;
   formularioSkill: FormGroup;
+  //END FORM GROUP
 
   skills: Skill[];
   languages: Language[];
@@ -105,12 +107,15 @@ export class ProfesionalFormularioComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
+    //getAll() de skills en el select
     try {
       this.skills = await this.skillService.getAll();
       // console.log(this.skills);
     } catch (error) {
       console.log(error);
     }
+
+    //getAll() de languages en el select
     try {
       this.languages = await this.languageService.getAll();
       console.log(this.languages);
@@ -119,15 +124,10 @@ export class ProfesionalFormularioComponent implements OnInit {
     }
   }
 
+  /*                START
+  onSubmit de Company, JobOffer, Skills and Languages */
+
   async onSubmitCompany(): Promise<void> {
-    /*    if (company.detalle == true) {
-
-         update
-
-       } else {
-         create
-       } */
-
     /*   if (  = false) {
         const response = await this.companyService.create(
           this.formularioCompany.value
@@ -163,7 +163,12 @@ export class ProfesionalFormularioComponent implements OnInit {
     console.log(response);
   }
 
-  onClick(): void {
+  /*                  END
+  onSubmit de Company, JobOffer, Skills and Languages */
+
+  // onCLick del button +add Languages
+
+  onClick() {
     console.log(this.newLanguage);
 
     this.arrLanguages.push(this.newLanguage);
