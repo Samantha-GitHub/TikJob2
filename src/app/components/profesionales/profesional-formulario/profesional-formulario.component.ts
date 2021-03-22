@@ -12,6 +12,7 @@ import { SkillsService } from 'src/app/services/skills.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TbiSkillsUsuarioService } from 'src/app/services/tbi-skills-usuario.service';
 import { TbiSkillOfertasTrabajosService } from 'src/app/services/tbi-skill-ofertas-trabajos.service';
+import { TbiLanguageOfertasTrabajosService } from 'src/app/services/tbi-language-ofertas-trabajos.service';
 
 @Component({
   selector: 'app-profesional-formulario',
@@ -44,7 +45,8 @@ export class ProfesionalFormularioComponent implements OnInit {
     private companyService: ProfesionalesService,
     private jobOfferService: JobOfferService,
     private languageService: LanguagesService,
-    private tbi_ofertas_skill_Service: TbiSkillOfertasTrabajosService
+    private tbi_ofertas_skill_Service: TbiSkillOfertasTrabajosService,
+    private tbi_languages_ofertas_trabajosService: TbiLanguageOfertasTrabajosService
   ) {
     this.skills = [];
     this.languages = [];
@@ -157,28 +159,22 @@ export class ProfesionalFormularioComponent implements OnInit {
   }
 
   async onSubmitLanguage(): Promise<void> {
-    const response = await this.languageService.insert(
+
+
+    const response = await this.tbi_languages_ofertas_trabajosService.create(
       this.formularioLanguage.value
     );
+
     console.log(response);
   }
+
 
   /*                  END
   onSubmit de Company, JobOffer, Skills and Languages */
 
   // onCLick del button +add Languages
 
-  onClick() {
-    console.log(this.newLanguage);
 
-    this.arrLanguages.push(this.newLanguage);
-    const arrToString = JSON.stringify(this.arrLanguages);
-    localStorage.setItem('arrLanguages', arrToString);
-
-    console.log(this.arrLanguages);
-
-    /*   localStorage.setItem('arrLanguages', JSON.stringify(this.arrLanguages)); */
-  }
 
   active = 1;
 }
