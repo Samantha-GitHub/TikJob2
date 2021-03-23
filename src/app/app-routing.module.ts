@@ -21,32 +21,37 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'home', component: HeroComponent },
+  // ALL FREELANCERS
   { path: 'freelance', component: UsersComponent },
+  // VIEW FREELANCE BY ID
   { path: 'freelance/:idFreelance', component: UserViewComponent },
+  // LOGIN FREELANCER
   { path: 'loginfreelance', component: LoginfreelancerComponent },
-
+  // CREATE A FREELANCER
   { path: 'form_freelance', component: CreateFreelancerComponent },
+  // EDIT/ADD CONTENT TO A FREELANCER
   {
-    path: 'form_freelance/edit/:idFreelance',
+    path: 'freelance/edit/:idFreelance',
     component: UserFormularioComponent,
   },
 
-  { path: 'profesional', component: ProfesionalesComponent },
-
-  { path: 'form_freelance/:idFreelance', component: UserFormularioComponent },
-
+  // ALL COMPANIES
   { path: 'companies', component: ProfesionalesComponent },
+  // LOGIN COMPANY
+  { path: 'logincompany', component: LogincompanyComponent },
+  // CREATE A COMPANY
   { path: 'form_company', component: CreateCompanyComponent },
+  // EDIT/ADD CONTENT TO A COMPANY
   {
     path: 'company/edit/:idcompany',
     component: ProfesionalFormularioComponent,
   },
-
+  // ALL JOB OFFERS
   { path: 'job_offers', component: JobOffersComponent },
+  // SEARCH FOR JOB OFFERS
   { path: 'search/:data', component: JobOffersComponent },
-  { path: 'job_offers', component: JobOfferViewComponent },
+  // VIEW ONE JOB OFFER
   { path: 'job_offers/:idJobOffer', component: JobOfferViewComponent },
-  { path: 'logincompany', component: LogincompanyComponent },
   { path: 'contact', component: ContactComponent },
   { path: '**', component: NotFoundComponent },
 ];

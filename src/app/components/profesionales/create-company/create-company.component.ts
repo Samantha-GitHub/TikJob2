@@ -6,10 +6,9 @@ import { ProfesionalesService } from 'src/app/services/profesionales.service';
 @Component({
   selector: 'app-create-company',
   templateUrl: './create-company.component.html',
-  styleUrls: ['./create-company.component.scss']
+  styleUrls: ['./create-company.component.scss'],
 })
 export class CreateCompanyComponent implements OnInit {
-
   // FORM GROUP
   formularioCompany: FormGroup;
 
@@ -17,7 +16,6 @@ export class CreateCompanyComponent implements OnInit {
     private router: Router,
     private companyService: ProfesionalesService
   ) {
-
     // FORMULARIO company
     this.formularioCompany = new FormGroup({
       name_company: new FormControl(),
@@ -34,27 +32,20 @@ export class CreateCompanyComponent implements OnInit {
       year_founded: new FormControl(),
       username: new FormControl(),
       password: new FormControl(),
-    })
+    });
   }
 
-  ngOnInit(): void {
-
-
-  }
-  //Create new Company
+  ngOnInit(): void {}
+  // Create new Company
   async onSubmitCompany(): Promise<any> {
-
     const response = await this.companyService.create(
       this.formularioCompany.value
-
-
     );
 
-    this.router.navigate(['company/edit/', response.insertId])
-
+    this.router.navigate(['company/edit/', response.insertId]);
   }
 
-  //Voy a al perfil del usuario creado
+  // Voy a al perfil del usuario creado
 
   /*   getCompanyById(pId): any {
       this.router.navigate(['company/edit', pId]);

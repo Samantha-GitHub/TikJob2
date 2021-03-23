@@ -19,6 +19,7 @@ export class CreateFreelancerComponent implements OnInit {
   languages: Language[];
   formularioFreelancer: FormGroup;
   constructor(
+    private router: Router,
     private skillService: SkillsService,
     private languageService: LanguagesService,
     private freelancerService: UsersService
@@ -62,7 +63,7 @@ export class CreateFreelancerComponent implements OnInit {
   }
 
   async onSubmitFreelancer(): Promise<void> {
-    // console.log(this.formularioFreelancer.value);
+    console.log(this.formularioFreelancer.value);
     const { language, skill } = this.formularioFreelancer.value;
     // console.log(language);
     // console.log(skill);
@@ -74,12 +75,15 @@ export class CreateFreelancerComponent implements OnInit {
     );
     console.log(freelancer);
 
-    const lang = await this.freelancerService.create(language.id);
-    console.log(lang);
+    // const lang = await this.freelancerService.create(language.id);
+    // console.log(lang);
 
-    const ski = await this.freelancerService.create(skill.id);
-    console.log(ski);
+    // const ski = await this.freelancerService.create(skill.id);
+    // console.log(ski);
 
     // if id insert exists then i do the db intro
+
+    // ROUTING TO FORM
+    this.router.navigate(['freelance/edit/', freelancer.insertId]);
   }
 }
