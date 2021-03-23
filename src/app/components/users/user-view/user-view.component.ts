@@ -50,11 +50,6 @@ export class UserViewComponent implements OnInit {
       this.profesional_experience = await this.profesionalExperienceService.getProfesionalExperienceByIdFreelance(params.idFreelance);
       this.skills = await this.skillsService.getSkillsByIdFreelance(params.idFreelance);
 
-
-
-
-
-
     })
   }
 
