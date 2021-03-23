@@ -65,6 +65,8 @@ export class ProfesionalFormularioComponent implements OnInit {
       email: new FormControl(),
       employees_number: new FormControl(),
       year_founded: new FormControl(),
+      username: new FormControl(),
+      password: new FormControl(),
     });
 
     // FORMULARIO Job Offer
@@ -169,7 +171,7 @@ export class ProfesionalFormularioComponent implements OnInit {
   /*                  END
   onSubmit de Company, JobOffer, Skills and Languages */
 
-  // onCLick del button +add Languages
+
 
   active = 1;
 }

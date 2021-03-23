@@ -10,6 +10,19 @@
 
           <div class="form-row mb-4">
             <div class="col">
+              <!-- Username -->
+              <input type="text" id="defaultRegisterFormUserName" class="form-control" formControlName="username"
+                placeholder="Company name" />
+            </div>
+            <div class="col">
+              <!-- Password -->
+              <input type="password" id="defaultRegisterFormPassword" class="form-control" formControlName="password"
+                placeholder="password" />
+            </div>
+          </div>
+
+          <div class="form-row mb-4">
+            <div class="col">
               <!-- Company name -->
               <input type="text" id="defaultRegisterFormFirstName" class="form-control" formControlName="name_company"
                 placeholder="Company name" />
@@ -185,7 +198,7 @@
           <div class="form-row">
             <!-- Skills -->
             <div class="col">
-              <select class="form-control skillsSelect" formControlName="skill" [(ngModel)]="newSkill">
+              <select multiple class="form-control skillsSelect" formControlName="skill" [(ngModel)]="newSkill">
                 <option value="">Select your skills</option>
                 <option value="" *ngFor="let skill of skills">
                   {{ skill.skill }}
