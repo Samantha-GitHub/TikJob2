@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Course } from 'src/app/interfaces/course';
 import { Education } from 'src/app/interfaces/education';
+import { Freelance } from 'src/app/interfaces/freelance';
 import { Language } from 'src/app/interfaces/language';
 import { Skill } from 'src/app/interfaces/skill';
+import { ProfesionalExperience } from 'src/app/interfaces/professional-experience';
 import { CoursesService } from 'src/app/services/courses.service';
 import { EducationsService } from 'src/app/services/educations.service';
 import { LanguagesService } from 'src/app/services/languages.service';
 import { ProfesionalExperienceService } from 'src/app/services/profesional-experiences.service';
 import { SkillsService } from 'src/app/services/skills.service';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-user-formulario',
@@ -18,13 +21,22 @@ import { SkillsService } from 'src/app/services/skills.service';
   styleUrls: ['./user-formulario.component.scss'],
 })
 export class UserFormularioComponent implements OnInit {
+  // FORM GROUP
   formularioFreelancer: FormGroup;
-  formularioSkill: FormGroup;
-  formularioLanguage: FormGroup;
+  // formularioSkill: FormGroup;
+  // formularioLanguage: FormGroup;
   formularioCourse: FormGroup;
   formularioEducation: FormGroup;
   formularioProfesionalExperience: FormGroup;
 
+  freelancer: Freelance;
+  skill: Skill;
+  language: Language;
+  course: Course;
+  education: Education;
+  profesionalExperience: ProfesionalExperience;
+
+  profesionalExperiences: ProfesionalExperience[];
   skills: Skill[];
   languages: Language[];
   courses: Course[];
@@ -32,10 +44,12 @@ export class UserFormularioComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private freelancerService: UsersService,
     private skillService: SkillsService,
     private languageService: LanguagesService,
     private educationService: EducationsService,
-    private profesionalExperience: ProfesionalExperienceService,
+    private profesionalExperienceService: ProfesionalExperienceService,
     private coursesService: CoursesService
   ) {
     this.skills = [];
@@ -59,6 +73,8 @@ export class UserFormularioComponent implements OnInit {
       profile: new FormControl(),
       skill: new FormControl(),
       language: new FormControl(),
+      username: new FormControl(),
+      password: new FormControl(),
     });
 
     // FORMULARIO Course
@@ -108,6 +124,99 @@ export class UserFormularioComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
+
+    this.activatedRoute.params.subscribe(async (params) => {
+      // Get info freelancer by Id
+      this.freelancer = await this.freelancerService.getById(
+        params.idFreelance
+      );
+      // console.log('this is freelancers', this.freelancers);
+
+      // Get info course freelancer by Id
+      this.courses = await this.coursesService.getCoursesByIdFreelance(
+        params.idFreelance
+      );
+      console.log('this is courses', this.courses);
+
+      // Get info language freelancer by Id
+      this.languages = await this.languageService.getLanguagesByIdFreelance(
+        params.idFreelance
+      );
+      console.log('this is languages', this.languages);
+
+      // Get info education freelancer by Id
+      this.educations = await this.educationService.getEducationsByIdFreelance(
+        params.idFreelance
+      );
+      console.log('this is educations', this.educations);
+
+      // Get info experience freelancer by Id
+      this.profesionalExperiences = await this.profesionalExperienceService.getProfesionalExperienceByIdFreelance(
+        params.idFreelance
+      );
+      console.log('this is experience', this.profesionalExperiences);
+
+      // Get info skill freelancer by Id
+      this.skills = await this.skillService.getSkillsByIdFreelance(
+        params.idFreelance
+      );
+      console.log('this is skills', this.skills);
+
+      // FORM CONTENT
+      this.formularioFreelancer = new FormGroup({
+        firstname: new FormControl(this.freelancer.firstname),
+        lastname: new FormControl(this.freelancer.lastname),
+        email: new FormControl(this.freelancer.email),
+        phone: new FormControl(this.freelancer.phone),
+        gender: new FormControl(this.freelancer.gender),
+        country: new FormControl(this.freelancer.country),
+        city: new FormControl(this.freelancer.city),
+        zipcode: new FormControl(this.freelancer.zipcode),
+        streetName: new FormControl(this.freelancer.streetName),
+        website: new FormControl(this.freelancer.website),
+        image: new FormControl(),
+        video: new FormControl(),
+        job_title: new FormControl(this.freelancer.job_title),
+        profile: new FormControl(this.freelancer.profile),
+        username: new FormControl(this.freelancer.username),
+        password: new FormControl(this.freelancer.password),
+        skill: new FormControl(this.skill.skill),
+        language: new FormControl(this.language.language),
+      });
+
+      // FORMULARIO Course
+      this.formularioCourse = new FormGroup({
+        course_title: new FormControl(this.course.course_title),
+        institution: new FormControl(this.course.institution),
+        city: new FormControl(this.course.city),
+        country: new FormControl(this.course.country),
+        course_link: new FormControl(this.course.course_link),
+        start_date: new FormControl(this.course.start_date),
+        end_date: new FormControl(this.course.end_date),
+      });
+
+      // FORMULARIO Education
+      this.formularioEducation = new FormGroup({
+        degree: new FormControl(this.education.degree),
+        school: new FormControl(this.education.school),
+        city: new FormControl(this.education.city),
+        country: new FormControl(this.education.country),
+        start_date: new FormControl(this.education.start_date),
+        end_date: new FormControl(this.education.end_date),
+      });
+
+      // FORMULARIO Profesional Experience
+      this.formularioProfesionalExperience = new FormGroup({
+        employer: new FormControl(this.profesionalExperience.employer),
+        job_title: new FormControl(this.profesionalExperience.job_title),
+        city: new FormControl(this.profesionalExperience.city),
+        country: new FormControl(this.profesionalExperience.country),
+        start_date: new FormControl(this.profesionalExperience.start_date),
+        end_date: new FormControl(this.profesionalExperience.end_date),
+        company_link: new FormControl(this.profesionalExperience.company_link),
+        description: new FormControl(this.profesionalExperience.description),
+      });
+    });
   }
 
   async onSubmitFreelancer(): Promise<void> {

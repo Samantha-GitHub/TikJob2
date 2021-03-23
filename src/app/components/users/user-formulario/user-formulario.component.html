@@ -6,6 +6,8 @@
     [(activeId)]="active"
     class="nav-tabs justify-content-center"
   >
+    <!-- FREELANCER INFO -->
+
     <li [ngbNavItem]="1">
       <a ngbNavLink>Personal Details</a>
       <ng-template ngbNavContent>
@@ -22,8 +24,8 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Username"
                 formControlName="username"
+                [value]="freelancer?.username"
               />
             </div>
             <div class="col">
@@ -31,8 +33,8 @@
               <input
                 type="password"
                 class="form-control"
-                placeholder="Password"
                 formControlName="password"
+                [value]="freelancer?.password"
               />
             </div>
           </div>
@@ -42,8 +44,9 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="First name"
+                value="First name"
                 formControlName="firstname"
+                [value]="freelancer?.firstname"
               />
             </div>
             <div class="col">
@@ -51,8 +54,8 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Last name"
                 formControlName="lastname"
+                [value]="freelancer?.lastname"
               />
             </div>
           </div>
@@ -63,13 +66,18 @@
                 type="email"
                 id="defaultRegisterFormEmail"
                 class="form-control mb-4"
-                placeholder="E-mail"
+                value="E-mail"
                 formControlName="email"
+                [value]="freelancer?.email"
               />
             </div>
             <!-- SEXO -->
             <div class="col">
-              <select class="sexo-select" formControlName="gender">
+              <select
+                class="custom-select"
+                formControlName="gender"
+                [value]="freelancer?.gender"
+              >
                 <option selected>Select gender</option>
                 <option value="M">Man</option>
                 <option value="W">Woman</option>
@@ -81,21 +89,22 @@
             type="text"
             id="defaultRegisterPhonePassword"
             class="form-control"
-            placeholder="Phone number"
             aria-describedby="defaultRegisterFormPhoneHelpBlock"
             formControlName="phone"
+            [value]="freelancer?.phone"
           />
           <div class="form-row mb-4">
             <!-- Photo -->
             <div class="col">
               <div class="custom-file mb-3 mt-3">
-                <input type="file" class="custom-file-input" />
-                <label
-                  class="custom-file-label"
-                  for="customFile"
+                <input
+                  type="file"
+                  class="custom-file-input"
                   formControlName="image"
-                  >Choose picture</label
-                >
+                />
+                <label class="custom-file-label" for="customFile">{{
+                  freelancer?.image
+                }}</label>
               </div>
             </div>
             <!-- Video -->
@@ -106,9 +115,9 @@
                   class="custom-file-input"
                   formControlName="video"
                 />
-                <label class="custom-file-label" for="customFile"
-                  >Choose video</label
-                >
+                <label class="custom-file-label" for="customFile">{{
+                  freelancer?.video
+                }}</label>
               </div>
             </div>
           </div>
@@ -118,8 +127,8 @@
               <input
                 type="text"
                 class="form-control mb-4"
-                placeholder="Enter Street"
                 formControlName="streetName"
+                [value]="freelancer?.streetName"
               />
             </div>
             <!-- Postcode -->
@@ -127,8 +136,8 @@
               <input
                 type="number"
                 class="form-control mb-4"
-                placeholder="Enter Postcode"
                 formControlName="zipcode"
+                [value]="freelancer?.zipcode"
               />
             </div>
           </div>
@@ -138,8 +147,8 @@
               <input
                 type="text"
                 class="form-control mb-4"
-                placeholder="Enter City"
                 formControlName="city"
+                [value]="freelancer?.city"
               />
             </div>
             <!-- Country -->
@@ -147,8 +156,8 @@
               <input
                 type="text"
                 class="form-control mb-4"
-                placeholder="Enter Country"
                 formControlName="country"
+                [value]="freelancer?.country"
               />
             </div>
           </div>
@@ -158,8 +167,8 @@
             type="text"
             id="defaultJobTitle"
             class="form-control mb-4"
-            placeholder="Job Title"
             formControlName="job_title"
+            [value]="freelancer?.job_title"
           />
 
           <!-- LinkedIn -->
@@ -167,7 +176,7 @@
             type="url"
             id="defaultWebsite"
             class="form-control mb-4"
-            placeholder="Website"
+            [value]="freelancer?.website"
             formControlName="website"
           />
           <!-- Profile -->
@@ -180,6 +189,7 @@
                 rows="15"
                 id="defaultTextProfile"
                 class="form-control"
+                [value]="freelancer?.profile"
               >
               </textarea>
             </div>
@@ -188,7 +198,11 @@
           <h2>SKILLS</h2>
 
           <div class="col">
-            <select class="form-control skillsSelect" formControlName="skill">
+            <select
+              class="form-control skillsSelect"
+              formControlName="skill"
+              [value]="skill?.skill"
+            >
               <option value="">Select your skills</option>
               <option value="" *ngFor="let skill of skills">
                 {{ skill.skill }}
@@ -202,7 +216,8 @@
             <h2>Languages</h2>
             <select
               class="form-control skillsSelect"
-              formControlName="language "
+              formControlName="language"
+              [value]="language?.language"
             >
               <option value="">Select your languages</option>
               <option value="" *ngFor="let language of languages">
@@ -218,16 +233,8 @@
         </form>
       </ng-template>
     </li>
-    <!-- Profile -->
-    <li [ngbNavItem]="2">
-      <a ngbNavLink>Profile</a>
-      <ng-template ngbNavContent>
-        <form class="text-center border border-muted p-5">
-          <!-- Sign up button -->
-          <button class="btn btn-info" type="submit">Save</button>
-        </form>
-      </ng-template>
-    </li>
+    <!-- EDUCATION -->
+
     <li [ngbNavItem]="3">
       <a ngbNavLink>Education</a>
       <ng-template ngbNavContent>
@@ -237,13 +244,14 @@
           (ngSubmit)="onSubmitLanguage()"
         >
           <h2>EDUCATION</h2>
-          <div class="form-row mb-4">
+          <div class="form-row mb-4" *ngFor="let education of educations">
             <div class="col">
               <!-- Degree -->
               <input
                 type="text"
                 class="form-control"
-                placeholder="Degree"
+                [value]="education?.degree"
+                [placeholder]="education?.degree"
                 formControlName="degree"
               />
             </div>
@@ -252,7 +260,8 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="School"
+                [value]="education?.school"
+                [placeholder]="education?.school"
                 formControlName="school"
               />
             </div>
@@ -263,7 +272,8 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="City"
+                [value]="education?.city"
+                [placeholder]="education?.city"
                 formControlName="city"
               />
             </div>
@@ -272,7 +282,8 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Country"
+                [value]="education?.country"
+                [placeholder]="education?.country"
                 formControlName="country"
               />
             </div>
@@ -292,6 +303,7 @@
                 min="2018-01-01"
                 max="2018-12-31"
                 formControlName="start_date"
+                [value]="education?.start_date"
               />
             </div>
             <div class="col">
@@ -307,6 +319,7 @@
                 min="2018-01-01"
                 max="2018-12-31"
                 formControlName="end_date"
+                [value]="education?.end_date"
               />
             </div>
           </div>
@@ -329,6 +342,7 @@
           class="text-center border border-light p-5"
           [formGroup]="formularioCourse"
           (ngSubmit)="onSubmitCourse()"
+          *ngFor="let course of courses"
         >
           <h2>Course</h2>
           <div class="form-row mb-4">
@@ -337,8 +351,9 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Course title"
                 formControlName="course_title"
+                [value]="course?.course_title"
+                [placeholder]="course?.course_title"
               />
             </div>
             <div class="col">
@@ -346,8 +361,9 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Institution"
                 formControlName="institution"
+                [value]="course?.institution"
+                [placeholder]="course?.institution"
               />
             </div>
           </div>
@@ -357,8 +373,9 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="City"
                 formControlName="city"
+                [value]="course?.city"
+                [placeholder]="course?.city"
               />
             </div>
             <div class="col">
@@ -366,8 +383,9 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Country"
                 formControlName="country"
+                [value]="course?.country"
+                [placeholder]="course?.country"
               />
             </div>
           </div>
@@ -382,10 +400,10 @@
                 type="date"
                 id="start"
                 name="trip-start"
-                value="2018-07-22"
                 min="2018-01-01"
                 max="2018-12-31"
                 formControlName="start_date"
+                [value]="course?.start_date"
               />
             </div>
             <div class="col">
@@ -397,10 +415,10 @@
                 type="date"
                 id="end"
                 name="trip-start"
-                value="2018-07-22"
                 min="2018-01-01"
                 max="2018-12-31"
                 formControlName="end_date"
+                [value]="course?.end_date"
               />
             </div>
           </div>
@@ -410,8 +428,9 @@
             <input
               type="url"
               class="form-control"
-              placeholder="Course link"
+              value="Course link"
               formControlName="course_link"
+              [value]="course?.course_link"
             />
           </div>
 
@@ -433,6 +452,7 @@
           class="text-center border border-light p-5"
           [formGroup]="formularioProfesionalExperience"
           (ngSubmit)="onSubmitExperience()"
+          *ngFor="let experience of profesionalExperiences"
         >
           <h2>PROFESSIONAL EXPERIENCE</h2>
           <div class="form-row mb-4">
@@ -441,8 +461,9 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Employer"
                 formControlName="employer"
+                [value]="experience?.employer"
+                [placeholder]="experience?.employer"
               />
             </div>
             <div class="col">
@@ -450,8 +471,9 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Job Title"
                 formControlName="job_title"
+                [value]="experience?.job_title"
+                [placeholder]="experience?.job_title"
               />
             </div>
           </div>
@@ -461,8 +483,9 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="City"
                 formControlName="city"
+                [value]="experience?.city"
+                [placeholder]="experience?.city"
               />
             </div>
             <div class="col">
@@ -470,8 +493,9 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Country"
+                [placeholder]="experience?.country"
                 formControlName="country"
+                [value]="experience?.country"
               />
             </div>
           </div>
@@ -486,10 +510,10 @@
                 type="date"
                 id="start"
                 name="trip-start"
-                value="2018-07-22"
                 min="2018-01-01"
                 max="2018-12-31"
                 formControlName="start_date"
+                [value]="experience?.start_date"
               />
             </div>
             <div class="col">
@@ -501,10 +525,10 @@
                 type="date"
                 id="end"
                 name="trip-start"
-                value="2018-07-22"
                 min="2018-01-01"
                 max="2018-12-31"
                 formControlName="end_date"
+                [value]="experience?.end_date"
               />
             </div>
           </div>
@@ -512,13 +536,19 @@
           <input
             type="url"
             class="form-control"
-            placeholder="Company link"
+            value="Company link"
             formControlName="company_link"
+            [value]="experience?.company_link"
           />
           <!-- Jobs description -->
           <div class="mt-3 mb-3">
             <label> Description</label>
-            <textarea id="" class="form-control" formControlName="description">
+            <textarea
+              id=""
+              class="form-control"
+              formControlName="description"
+              [value]="experience?.description"
+            >
             </textarea>
           </div>
           <!-- Add button -->
