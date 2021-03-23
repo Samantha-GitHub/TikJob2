@@ -14,6 +14,7 @@ import { LanguagesService } from 'src/app/services/languages.service';
 import { ProfesionalExperienceService } from 'src/app/services/profesional-experiences.service';
 import { SkillsService } from 'src/app/services/skills.service';
 import { UsersService } from 'src/app/services/users.service';
+import { TbiSkillsUsuarioService } from 'src/app/services/tbi-skills-usuario.service';
 
 @Component({
   selector: 'app-user-formulario',
@@ -50,7 +51,8 @@ export class UserFormularioComponent implements OnInit {
     private languageService: LanguagesService,
     private educationService: EducationsService,
     private profesionalExperienceService: ProfesionalExperienceService,
-    private coursesService: CoursesService
+    private coursesService: CoursesService,
+    private tbiSkillFreelance: TbiSkillsUsuarioService;
   ) {
     this.skills = [];
     this.languages = [];
@@ -220,14 +222,35 @@ export class UserFormularioComponent implements OnInit {
   }
 
   async onSubmitFreelancer(): Promise<void> {
-    /*    if (company.detalle == true) {
+    // Destructuring llamaos la variable igual a la propriedad del objeto
+    const { language, skill } = this.formularioFreelancer.value;
 
-         update
+    // Envio los valores del form:
+    // a freelance
+    const freelance = await this.freelancerService.create(
+      this.formularioFreelancer.value
+    );
+    console.log(freelance);
 
-       } else {
-         create
-       } */
-    //   const response = await this.companyService.insert(this.formulario.value);
+    if (freelance.insertId) {
+      // A Language
+
+      language.forEach(async (oneLanguage) => {
+        const lang = await this.tbi_languages_ofertas_trabajosService.create({
+          language: oneLanguage,
+          job_offer: freelance.insertId,
+        });
+      });
+      // A skill
+
+      skill.forEach(async (oneSkill) => {
+        const ski = await this.tbi_ofertas_skill_Service.insert({
+          skill: oneSkill,
+          job_offer: freelance.insertId,
+        });
+        console.log(ski);
+      });
+    }
   }
 
   async onSubmitCourse(): Promise<void> {

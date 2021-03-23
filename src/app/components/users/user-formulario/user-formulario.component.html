@@ -181,12 +181,9 @@
           />
           <!-- Profile -->
           <div class="form-row mb-4">
-            <h2>PROFILE</h2>
             <div class="col">
-              <label>Write your profile here</label>
+              <h4>Write your <strong>profile</strong> here</h4>
               <textarea
-                cols="30"
-                rows="15"
                 id="defaultTextProfile"
                 class="form-control"
                 [value]="freelancer?.profile"
@@ -195,15 +192,11 @@
             </div>
           </div>
           <!-- Skils -->
-          <h2>SKILLS</h2>
+          <h4>SKILLS</h4>
 
-          <div class="col">
-            <select
-              class="form-control skillsSelect"
-              formControlName="skill"
-              [value]="skill?.skill"
-            >
-              <option value="">Select your skills</option>
+          <div class="col skills">
+            <select class="form-control skillsSelect" formControlName="skill">
+              <option>Select your skills</option>
               <option value="" *ngFor="let skill of skills">
                 {{ skill.skill }}
               </option>
@@ -212,8 +205,8 @@
 
           <!-- Languages -->
 
-          <div class="col">
-            <h2>Languages</h2>
+          <div class="col languages">
+            <h4>Languages</h4>
             <select
               class="form-control skillsSelect"
               formControlName="language"
@@ -566,5 +559,5 @@
 
   <div [ngbNavOutlet]="nav" class="mt-2"></div>
 
-  <pre>Active: {{ active }}</pre>
+  <!-- <pre>Active: {{ active }}</pre> -->
 </div>

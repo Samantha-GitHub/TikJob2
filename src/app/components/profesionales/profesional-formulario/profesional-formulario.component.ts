@@ -14,7 +14,6 @@ import { TbiSkillsUsuarioService } from 'src/app/services/tbi-skills-usuario.ser
 import { TbiSkillOfertasTrabajosService } from 'src/app/services/tbi-skill-ofertas-trabajos.service';
 import { TbiLanguageOfertasTrabajosService } from 'src/app/services/tbi-language-ofertas-trabajos.service';
 
-
 @Component({
   selector: 'app-profesional-formulario',
   templateUrl: './profesional-formulario.component.html',
@@ -32,7 +31,6 @@ export class ProfesionalFormularioComponent implements OnInit {
   languages: Language[];
   company: Company;
   jobOffers: Joboffer[];
-
 
   constructor(
     private router: Router,
@@ -76,7 +74,6 @@ export class ProfesionalFormularioComponent implements OnInit {
       skill: new FormControl(),
       language: new FormControl(),
     });
-
   }
 
   async ngOnInit(): Promise<void> {
@@ -96,10 +93,9 @@ export class ProfesionalFormularioComponent implements OnInit {
       console.log(error);
     }
 
-    //ActivatedRoute
+    // ActivatedRoute
 
-    this.activatedRoute.params.subscribe(async params => {
-
+    this.activatedRoute.params.subscribe(async (params) => {
       /* console.log(params.idcompany); */
 
       // get info company by Id
@@ -107,10 +103,7 @@ export class ProfesionalFormularioComponent implements OnInit {
       this.company = await this.companyService.getById(params.idcompany);
       /* console.log(this.company); */
 
-
-
       this.formularioCompany = new FormGroup({
-
         name_company: new FormControl(this.company.name_company),
         phone: new FormControl(this.company.phone),
         vat: new FormControl(this.company.vat),
@@ -124,10 +117,8 @@ export class ProfesionalFormularioComponent implements OnInit {
         employees_number: new FormControl(this.company.employees_number),
         year_founded: new FormControl(this.company.year_founded),
         username: new FormControl(this.company.username),
-        password: new FormControl(this.company.password)
-
+        password: new FormControl(this.company.password),
       });
-
     });
   }
 
@@ -135,48 +126,46 @@ export class ProfesionalFormularioComponent implements OnInit {
   onSubmit/Update de Company, JobOffer, Skills and Languages */
 
   async onSubmitCompany(): Promise<any> {
-    //AQUI va a ir el update de la company
-
+    // AQUI va a ir el update de la company
   }
 
   async onSubmitJobOffer(): Promise<any> {
-
-    //recibo datos del form
+    // recibo datos del form
     console.log(this.formularioJobOffer.value);
 
-    //Destructuring llamaos la variable igual a la propriedad del objeto
+    // Destructuring llamaos la variable igual a la propriedad del objeto
     const { language, skill } = this.formularioJobOffer.value;
 
-    //Envio los valores del form:
-    //a jobOffer
-    const ofertas = await this.jobOfferService.insert(this.formularioJobOffer.value);
+    // Envio los valores del form:
+    // a jobOffer
+    const ofertas = await this.jobOfferService.insert(
+      this.formularioJobOffer.value
+    );
     console.log(ofertas);
 
     if (ofertas.insertId) {
-      //A Languages
+      // A Language
 
-      language.forEach(async oneLanguage => {
-
-        const lang = await this.tbi_languages_ofertas_trabajosService.create({ "language": oneLanguage, "job_offer": ofertas.insertId })
+      language.forEach(async (oneLanguage) => {
+        const lang = await this.tbi_languages_ofertas_trabajosService.create({
+          language: oneLanguage,
+          job_offer: ofertas.insertId,
+        });
       });
-      //A skill
+      // A skill
 
-      skill.forEach(async oneSkill => {
-
-        const ski = await this.tbi_ofertas_skill_Service.insert({ "skill": oneSkill, "job_offer": ofertas.insertId });
+      skill.forEach(async (oneSkill) => {
+        const ski = await this.tbi_ofertas_skill_Service.insert({
+          skill: oneSkill,
+          job_offer: ofertas.insertId,
+        });
         console.log(ski);
-
       });
-
-
     }
-
   }
 
   /*                  END
   onSubmit de Company, JobOffer, Skills and Languages */
-
-
 
   active = 1;
 }
