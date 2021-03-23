@@ -1,4 +1,5 @@
 export interface Joboffer {
+  id: number;
   function_department: string;
   responsabilities: string;
   city: string;

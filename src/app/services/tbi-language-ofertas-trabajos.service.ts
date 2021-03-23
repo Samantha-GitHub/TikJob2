@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -33,4 +33,13 @@ export class TbiLanguageOfertasTrabajosService {
   /*                              END
                 Metodos CREATE, UPDATE y DELETE del tbi_languages_ofertas_trabajos
    */
+
+  createHeaders(): any {
+    return {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        // 'authorization': localStorage.getItem('token_gym')
+      }),
+    };
+  }
 }

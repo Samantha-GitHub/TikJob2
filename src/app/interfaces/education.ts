@@ -1,4 +1,5 @@
 export interface Education {
+  id: number;
   degree: string;
   school: string;
   city: string;

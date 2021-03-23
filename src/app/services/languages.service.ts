@@ -37,4 +37,13 @@ export class LanguagesService {
   insert(formValues) {
     return this.httpClient.post(this.baseUrl, formValues).toPromise();
   }
+
+  createHeaders(): any {
+    return {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        // 'authorization': localStorage.getItem('token_gym')
+      }),
+    };
+  }
 }

@@ -1,4 +1,5 @@
 export interface Company {
+  id: number;
   name_company: string;
   phone: string;
   vat: number;
@@ -11,4 +12,6 @@ export interface Company {
   email: string;
   employees_number: number;
   year_founded: string;
+  username: string;
+  password: string;
 }

@@ -24,7 +24,7 @@ import { UserViewComponent } from './components/users/user-view/user-view.compon
 import { JobOffersComponent } from './components/job-offers/job-offers.component';
 import { JobOfferViewComponent } from './components/job-offers/job-offer-view/job-offer-view.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { OfertasFormularioComponent } from './components/profesionales/ofertas-formulario/ofertas-formulario.component';
+import { CreateCompanyComponent } from './components/profesionales/create-company/create-company.component';
 
 import { CreateFreelancerComponent } from './components/users/create-freelancer/create-freelancer.component';
 
@@ -47,7 +47,7 @@ import { CreateFreelancerComponent } from './components/users/create-freelancer/
     UserViewComponent,
     JobOffersComponent,
     JobOfferViewComponent,
-    OfertasFormularioComponent,
+    CreateCompanyComponent,
     CreateFreelancerComponent,
   ],
   imports: [

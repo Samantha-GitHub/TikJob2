@@ -1,4 +1,5 @@
 export interface ProfesionalExperience {
+  id: number;
   employer: string;
   job_title: string;
   city: number;

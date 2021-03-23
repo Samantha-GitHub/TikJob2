@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogincompanyComponent implements OnInit {
   labels: string[];
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     const labels = document.querySelectorAll('.form-control label');

@@ -8,6 +8,7 @@ import { JobOffersComponent } from './components/job-offers/job-offers.component
 import { LogincompanyComponent } from './components/login/logincompany/logincompany.component';
 import { LoginfreelancerComponent } from './components/login/loginfreelancer/loginfreelancer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { CreateCompanyComponent } from './components/profesionales/create-company/create-company.component';
 import { ProfesionalFormularioComponent } from './components/profesionales/profesional-formulario/profesional-formulario.component';
 /* import { ProfesionalViewComponent } from './components/profesionales/profesional-view/profesional-view.component';*/
 import { ProfesionalesComponent } from './components/profesionales/profesionales.component';
@@ -31,16 +32,21 @@ const routes: Routes = [
   },
 
   { path: 'profesional', component: ProfesionalesComponent },
+
+  { path: 'form_freelance/:idFreelance', component: UserFormularioComponent },
+
+  { path: 'companies', component: ProfesionalesComponent },
+  { path: 'form_company', component: CreateCompanyComponent },
+  {
+    path: 'company/edit/:idcompany',
+    component: ProfesionalFormularioComponent,
+  },
+
   { path: 'job_offers', component: JobOffersComponent },
   { path: 'search/:data', component: JobOffersComponent },
   { path: 'job_offers', component: JobOfferViewComponent },
   { path: 'job_offers/:idJobOffer', component: JobOfferViewComponent },
   { path: 'logincompany', component: LogincompanyComponent },
-  { path: 'form_company', component: ProfesionalFormularioComponent },
-  {
-    path: 'form_company/:idCompany',
-    component: ProfesionalFormularioComponent,
-  },
   { path: 'contact', component: ContactComponent },
   { path: '**', component: NotFoundComponent },
 ];
