@@ -67,7 +67,7 @@ export class CreateFreelancerComponent implements OnInit {
     }
   }
 
-  async onSubmitFreelancer(): Promise<void> {
+  async onSubmitFreelancer(): Promise<any> {
     console.log(this.formularioFreelancer.value);
 
     this.formularioFreelancer.value.image = 'http';
