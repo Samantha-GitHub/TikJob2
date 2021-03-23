@@ -6,18 +6,18 @@ import { Injectable } from '@angular/core';
 })
 export class TbiSkillOfertasTrabajosService {
 
-  /*  baseUrl: string; */
+  baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
 
-    /*    this.baseUrl = 'http://localhost:3000/api/skills/tbi_ofertas_trabajos'; */
+    this.baseUrl = 'http://localhost:3000/api/tbi_ofertas_trabajos_skills';
 
   }
 
 
-  /*  insert(formValues) {
-     return this.httpClient.post(this.baseUrl, formValues).toPromise();
-   } */
+  insert(formValues) {
+    return this.httpClient.post(this.baseUrl, formValues, this.createHeaders()).toPromise();
+  }
 
   createHeaders(): any {
     return {

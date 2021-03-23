@@ -11,14 +11,14 @@
           <div class="form-row mb-4">
             <div class="col">
               <!-- Username -->
-              <input [placeholder]="company?.username" type="text" id="username" class="form-control"
+              <input [value]="company?.username" type="text" id="username" class="form-control"
                 formControlName="username" />
             </div>
 
             <div class="col">
               <!-- Password -->
-              <input [placeholder]="company?.password" type="password" id="defaultRegisterFormPassword"
-                class="form-control" formControlName="password" />
+              <input [value]="company?.password" type="password" id="defaultRegisterFormPassword" class="form-control"
+                formControlName="password" />
             </div>
           </div>
 
@@ -26,24 +26,24 @@
             <div class="col">
               <!-- Company name -->
               <input type="text" id="defaultRegisterFormFirstName" class="form-control" formControlName="name_company"
-                [placeholder]="company?.name_company" />
+                [value]="company?.name_company" />
             </div>
             <div class="col">
               <!-- Vat -->
               <input type="number" id="defaultRegisterFormLastName" class="form-control" formControlName="vat"
-                [placeholder]="company?.vat" />
+                [value]="company?.vat" />
             </div>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- E-mail -->
-              <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" [placeholder]="company?.email"
+              <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" [value]="company?.email"
                 formControlName="email" />
             </div>
             <!-- Employees number -->
             <div class="col">
               <input type="number" id="employeesNumber" class="form-control mb-4" formControlName="employees_number"
-                [placeholder]="company?.employees_number" />
+                [value]="company?.employees_number" />
             </div>
           </div>
 
@@ -51,12 +51,12 @@
             <div class="col">
               <!-- Year founded -->
               <input type="number" id="yearFounded" class="form-control mb-4" formControlName="year_founded"
-                [placeholder]="company?.year_founded" />
+                [value]="company?.year_founded" />
             </div>
             <div class="col">
               <!-- Phone number -->
               <input type="text" id="defaultRegisterPhonePassword" class="form-control" formControlName="phone"
-                [placeholder]="company?.phone" />
+                [value]="company?.phone" />
               <div class="form-row mb-4"></div>
             </div>
           </div>
@@ -71,8 +71,7 @@
             <!-- Website -->
             <div class="col">
               <div class="custom-file mb-3 mt-3">
-                <input type="url" [placeholder]="company?.website" class="form-control" formControlName="website"
-                  id="" />
+                <input type="url" [value]="company?.website" class="form-control" formControlName="website" id="" />
               </div>
             </div>
           </div>
@@ -80,22 +79,21 @@
           <div class="form-row mb-4">
             <!-- Street -->
             <div class="col">
-              <input type="text" class="form-control mb-4" formControlName="street" [placeholder]="company?.street" />
+              <input type="text" class="form-control mb-4" formControlName="street" [value]="company?.street" />
             </div>
             <!-- Postcode -->
             <div class="col">
-              <input type="number" class="form-control mb-4" formControlName="zip_code"
-                [placeholder]="company?.zip_code" />
+              <input type="number" class="form-control mb-4" formControlName="zip_code" [value]="company?.zip_code" />
             </div>
           </div>
           <div class="form-row mb-4">
             <!-- City -->
             <div class="col">
-              <input type="text" class="form-control mb-4" formControlName="city" [placeholder]="company?.city" />
+              <input type="text" class="form-control mb-4" formControlName="city" [value]="company?.city" />
             </div>
             <!-- Country -->
             <div class="col">
-              <input type="text" class="form-control mb-4" formControlName="country" [placeholder]="company?.country" />
+              <input type="text" class="form-control mb-4" formControlName="country" [value]="company?.country" />
             </div>
           </div>
 
@@ -166,7 +164,7 @@
               <select multiple class="form-control skillsSelect" formControlName="skill">
 
                 <option value="">Select your skills</option>
-                <option value="" *ngFor="let skill of skills">
+                <option [value]="skill.id" *ngFor="let skill of skills">
                   {{ skill.skill }}
                 </option>
               </select>
@@ -179,7 +177,7 @@
               <select multiple class="form-control skillsSelect" formControlName="language">
 
                 <option value="">Select your languages</option>
-                <option [value]="language" *ngFor="let language of languages">
+                <option [value]="language.id" *ngFor="let language of languages">
                   {{ language.language }}
                 </option>
               </select>
