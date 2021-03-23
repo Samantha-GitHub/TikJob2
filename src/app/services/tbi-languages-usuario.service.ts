@@ -4,14 +4,14 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class TbiSkillOfertasTrabajosService {
+export class TbiLanguagessUsuarioService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/tbi_ofertas_trabajos_skills';
+    this.baseUrl = 'http://localhost:3000/api/tbi_freelance_languages';
   }
 
-  insert(formValues): Promise<any> {
+  create(formValues): Promise<any> {
     return this.httpClient
       .post(this.baseUrl, formValues, this.createHeaders())
       .toPromise();

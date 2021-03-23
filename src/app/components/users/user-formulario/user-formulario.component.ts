@@ -15,6 +15,7 @@ import { ProfesionalExperienceService } from 'src/app/services/profesional-exper
 import { SkillsService } from 'src/app/services/skills.service';
 import { UsersService } from 'src/app/services/users.service';
 import { TbiSkillsUsuarioService } from 'src/app/services/tbi-skills-usuario.service';
+import { TbiLanguagessUsuarioService } from 'src/app/services/tbi-languages-usuario.service';
 
 @Component({
   selector: 'app-user-formulario',
@@ -52,7 +53,8 @@ export class UserFormularioComponent implements OnInit {
     private educationService: EducationsService,
     private profesionalExperienceService: ProfesionalExperienceService,
     private coursesService: CoursesService,
-    private tbiSkillFreelance: TbiSkillsUsuarioService;
+    private tbiSkillFreelance: TbiSkillsUsuarioService,
+    private tbiLanguageFreelance: TbiLanguagessUsuarioService
   ) {
     this.skills = [];
     this.languages = [];
@@ -138,31 +140,31 @@ export class UserFormularioComponent implements OnInit {
       this.courses = await this.coursesService.getCoursesByIdFreelance(
         params.idFreelance
       );
-      console.log('this is courses', this.courses);
+      // console.log('this is courses', this.courses);
 
       // Get info language freelancer by Id
       this.languages = await this.languageService.getLanguagesByIdFreelance(
         params.idFreelance
       );
-      console.log('this is languages', this.languages);
+      // console.log('this is languages', this.languages);
 
       // Get info education freelancer by Id
       this.educations = await this.educationService.getEducationsByIdFreelance(
         params.idFreelance
       );
-      console.log('this is educations', this.educations);
+      // console.log('this is educations', this.educations);
 
       // Get info experience freelancer by Id
       this.profesionalExperiences = await this.profesionalExperienceService.getProfesionalExperienceByIdFreelance(
         params.idFreelance
       );
-      console.log('this is experience', this.profesionalExperiences);
+      // console.log('this is experience', this.profesionalExperiences);
 
       // Get info skill freelancer by Id
       this.skills = await this.skillService.getSkillsByIdFreelance(
         params.idFreelance
       );
-      console.log('this is skills', this.skills);
+      // console.log('this is skills', this.skills);
 
       // FORM CONTENT
       this.formularioFreelancer = new FormGroup({
@@ -182,8 +184,8 @@ export class UserFormularioComponent implements OnInit {
         profile: new FormControl(this.freelancer.profile),
         username: new FormControl(this.freelancer.username),
         password: new FormControl(this.freelancer.password),
-        skill: new FormControl(this.skill.skill),
-        language: new FormControl(this.language.language),
+        skill: new FormControl(),
+        language: new FormControl(),
       });
 
       // FORMULARIO Course
@@ -236,17 +238,19 @@ export class UserFormularioComponent implements OnInit {
       // A Language
 
       language.forEach(async (oneLanguage) => {
-        const lang = await this.tbi_languages_ofertas_trabajosService.create({
+        const lang = await this.tbiLanguageFreelance.create({
           language: oneLanguage,
-          job_offer: freelance.insertId,
+          freelance: freelance.insertId,
         });
+        console.log(lang);
       });
+
       // A skill
 
       skill.forEach(async (oneSkill) => {
-        const ski = await this.tbi_ofertas_skill_Service.insert({
+        const ski = await this.tbiSkillFreelance.create({
           skill: oneSkill,
-          job_offer: freelance.insertId,
+          freelance: freelance.insertId,
         });
         console.log(ski);
       });

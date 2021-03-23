@@ -6,6 +6,8 @@ import { Language } from 'src/app/interfaces/language';
 import { Skill } from 'src/app/interfaces/skill';
 import { LanguagesService } from 'src/app/services/languages.service';
 import { SkillsService } from 'src/app/services/skills.service';
+import { TbiLanguagessUsuarioService } from 'src/app/services/tbi-languages-usuario.service';
+import { TbiSkillsUsuarioService } from 'src/app/services/tbi-skills-usuario.service';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -18,11 +20,14 @@ export class CreateFreelancerComponent implements OnInit {
   skills: Skill[];
   languages: Language[];
   formularioFreelancer: FormGroup;
+
   constructor(
     private router: Router,
     private skillService: SkillsService,
     private languageService: LanguagesService,
-    private freelancerService: UsersService
+    private freelancerService: UsersService,
+    private tbiSkillFreelance: TbiSkillsUsuarioService,
+    private tbiLanguageFreelance: TbiLanguagessUsuarioService
   ) {
     // FORMULARIO FREELANCER
     this.formularioFreelancer = new FormGroup({
@@ -64,26 +69,43 @@ export class CreateFreelancerComponent implements OnInit {
 
   async onSubmitFreelancer(): Promise<void> {
     console.log(this.formularioFreelancer.value);
-    const { language, skill } = this.formularioFreelancer.value;
-    // console.log(language);
-    // console.log(skill);
+
     this.formularioFreelancer.value.image = 'http';
     this.formularioFreelancer.value.video = 'http';
 
-    const freelancer = await this.freelancerService.create(
+    // Destructuring llamaos la variable igual a la propriedad del objeto
+    const { language, skill } = this.formularioFreelancer.value;
+
+    // Envio los valores del form:
+    // a freelance
+    const freelance = await this.freelancerService.create(
       this.formularioFreelancer.value
     );
-    console.log(freelancer);
+    console.log(freelance);
 
-    // const lang = await this.freelancerService.create(language.id);
-    // console.log(lang);
+    if (freelance.insertId) {
+      // A Language
 
-    // const ski = await this.freelancerService.create(skill.id);
-    // console.log(ski);
+      language.forEach(async (oneLanguage) => {
+        const lang = await this.tbiLanguageFreelance.create({
+          language: oneLanguage,
+          freelance: freelance.insertId,
+        });
+        console.log('yo this is lang', lang);
+      });
 
-    // if id insert exists then i do the db intro
+      // A skill
+
+      skill.forEach(async (oneSkill) => {
+        const ski = await this.tbiSkillFreelance.create({
+          skill: oneSkill,
+          freelance: freelance.insertId,
+        });
+        console.log('yo this is skills', ski);
+      });
+    }
 
     // ROUTING TO FORM
-    this.router.navigate(['freelance/edit/', freelancer.insertId]);
+    this.router.navigate(['freelance/edit/', freelance.insertId]);
   }
 }

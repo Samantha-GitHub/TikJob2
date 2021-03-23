@@ -28,6 +28,9 @@ export class UsersService {
   }
 
   create(formValues): Promise<any> {
+    formValues.image = 'http';
+    formValues.video = 'http';
+
     return this.httpClient
       .post<any>(this.baseUrl, formValues, this.createHeaders())
       .toPromise();
