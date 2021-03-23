@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Company } from 'src/app/interfaces/company';
 import { Joboffer } from 'src/app/interfaces/job_offer';
 import { Language } from 'src/app/interfaces/language';
@@ -32,15 +32,16 @@ export class ProfesionalFormularioComponent implements OnInit {
   company: Company;
   jobOffer: Joboffer[];
 
-  pId: number;
-  newLanguage: Language;
-  newSkill: Skill;
-
-  arrLanguages: Language[];
-  arrskills: Skill[];
+  /*   pId: number;
+    newLanguage: Language;
+    newSkill: Skill;
+  
+    arrLanguages: Language[];
+    arrskills: Skill[]; */
 
   constructor(
     private router: Router,
+    private activatedRoute: ActivatedRoute,
     private skillService: SkillsService,
     private companyService: ProfesionalesService,
     private jobOfferService: JobOfferService,
@@ -77,37 +78,31 @@ export class ProfesionalFormularioComponent implements OnInit {
       country: new FormControl(),
       starting_date: new FormControl(),
       hour_week: new FormControl(),
-    });
-
-    // FORMULARIO Skill
-    this.formularioSkill = new FormGroup({
       skill: new FormControl(),
-    });
-
-    // FORMULARIO Language
-    this.formularioLanguage = new FormGroup({
       language: new FormControl(),
     });
 
-    this.pId = null;
+
+
+
 
     // LocalStorage para arrLanguages
 
-    if (localStorage.getItem('arrLanguages')) {
-      const storageArray = localStorage.getItem('arrLanguages');
-      this.arrLanguages = JSON.parse(storageArray);
-    } else {
-      this.arrLanguages = new Array();
-    }
+    /*     if (localStorage.getItem('arrLanguages')) {
+          const storageArray = localStorage.getItem('arrLanguages');
+          this.arrLanguages = JSON.parse(storageArray);
+        } else {
+          this.arrLanguages = new Array();
+        } */
 
     // LocalStorage para arrSkills
 
-    if (localStorage.getItem('arrSkills')) {
-      const storageArray = localStorage.getItem('arrSkills');
-      this.arrskills = JSON.parse(storageArray);
-    } else {
-      this.arrskills = [];
-    }
+    /*    if (localStorage.getItem('arrSkills')) {
+         const storageArray = localStorage.getItem('arrSkills');
+         this.arrskills = JSON.parse(storageArray);
+       } else {
+         this.arrskills = [];
+       } */
   }
 
   async ngOnInit(): Promise<void> {
@@ -122,30 +117,56 @@ export class ProfesionalFormularioComponent implements OnInit {
     // getAll() de languages en el select
     try {
       this.languages = await this.languageService.getAll();
-      console.log(this.languages);
+      /* console.log(this.languages); */
     } catch (error) {
       console.log(error);
     }
+    this.activatedRoute.params.subscribe(async params => {
+
+      /* console.log(params.idcompany); */
+
+      // get info company by Id
+      this.company = await this.companyService.getById(params.idcompany);
+      /* console.log(this.company); */
+
+
+
+      this.formularioCompany = new FormGroup({
+
+        name_company: new FormControl(this.company.name_company),
+        phone: new FormControl(this.company.phone),
+        vat: new FormControl(this.company.vat),
+        street: new FormControl(this.company.street),
+        city: new FormControl(this.company.city),
+        zip_code: new FormControl(this.company.zip_code),
+        country: new FormControl(this.company.country),
+        website: new FormControl(this.company.website),
+        image: new FormControl(),
+        email: new FormControl(this.company.email),
+        employees_number: new FormControl(this.company.employees_number),
+        year_founded: new FormControl(this.company.year_founded),
+        username: new FormControl(this.company.username),
+        password: new FormControl(this.company.password)
+
+      });
+
+
+
+
+    });
+
+
+
+
+
   }
 
   /*                START
-  onSubmit de Company, JobOffer, Skills and Languages */
+  onSubmit/Update de Company, JobOffer, Skills and Languages */
 
   async onSubmitCompany(): Promise<any> {
-    /*   if (  = false) {
-        const response = await this.companyService.create(
-          this.formularioCompany.value
-        );
-        console.log(response);
-      } else {
-          const update = await this.companyService.update(this.pId, this.formularioCompany.value);
-          console.log(update);
-      } */
 
-    const response = await this.companyService.create(
-      this.formularioCompany.value
-    );
-    console.log(response);
+
   }
 
   async onSubmitJobOffer(): Promise<any> {
