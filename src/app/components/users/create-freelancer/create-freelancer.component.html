@@ -1,0 +1,235 @@
+<div class="servicesContainer justify-content-center mt-5">
+  <!-- collapse -->
+  <ul
+    ngbNav
+    #nav="ngbNav"
+    [(activeId)]="active"
+    class="nav-tabs justify-content-center mt-5"
+  >
+    <li [ngbNavItem]="1">
+      <a ngbNavLink>Freelancer Profile</a>
+      <ng-template ngbNavContent>
+        <form
+          class="text-center border border-light p-5"
+          [formGroup]="formularioFreelancer"
+          (ngSubmit)="onSubmitFreelancer()"
+        >
+          <h2>PERSONAL DETAILS</h2>
+
+          <div class="form-row mb-4">
+            <div class="col">
+              <!-- USERNAME -->
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Username"
+                formControlName="username"
+              />
+            </div>
+            <div class="col">
+              <!-- PASSWORD -->
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                formControlName="password"
+              />
+            </div>
+          </div>
+          <div class="form-row mb-4">
+            <div class="col">
+              <!-- First name -->
+              <input
+                type="text"
+                class="form-control"
+                placeholder="First name"
+                formControlName="firstname"
+              />
+            </div>
+            <div class="col">
+              <!-- Last name -->
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Last name"
+                formControlName="lastname"
+              />
+            </div>
+          </div>
+          <div class="form-row mb-4">
+            <div class="col">
+              <!-- E-mail -->
+              <input
+                type="email"
+                id="defaultRegisterFormEmail"
+                class="form-control mb-4"
+                placeholder="E-mail"
+                formControlName="email"
+              />
+            </div>
+            <!-- SEXO -->
+            <div class="col">
+              <select
+                class="form-control custom-select"
+                formControlName="gender"
+              >
+                <option selected>Select gender</option>
+                <option value="M">Man</option>
+                <option value="W">Woman</option>
+              </select>
+            </div>
+          </div>
+          <!-- Phone number -->
+          <input
+            type="text"
+            id="defaultRegisterPhonePassword"
+            class="form-control"
+            placeholder="Phone number"
+            aria-describedby="defaultRegisterFormPhoneHelpBlock"
+            formControlName="phone"
+          />
+          <div class="form-row mb-4">
+            <!-- Photo -->
+            <div class="col">
+              <div class="custom-file mb-3 mt-3">
+                <input
+                  type="file"
+                  class="custom-file-input form-control"
+                  formControlName="image"
+                />
+                <label class="custom-file-label" for="customFile"
+                  >Choose picture</label
+                >
+              </div>
+            </div>
+            <!-- Video -->
+            <div class="col">
+              <div class="form-control custom-file mb-3 mt-3">
+                <input
+                  type="file"
+                  class="custom-file-input form-control"
+                  formControlName="video"
+                />
+                <label class="custom-file-label" for="customFile"
+                  >Choose video</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="form-row mb-4">
+            <!-- Street -->
+            <div class="col">
+              <input
+                type="text"
+                class="form-control mb-4"
+                placeholder="Enter Street"
+                formControlName="streetName"
+              />
+            </div>
+            <!-- Postcode -->
+            <div class="col">
+              <input
+                type="number"
+                class="form-control mb-4"
+                placeholder="Enter Postcode"
+                formControlName="zipcode"
+              />
+            </div>
+          </div>
+          <div class="form-row mb-4">
+            <!-- City -->
+            <div class="col">
+              <input
+                type="text"
+                class="form-control mb-4"
+                placeholder="Enter City"
+                formControlName="city"
+              />
+            </div>
+            <!-- Country -->
+            <div class="col">
+              <input
+                type="text"
+                class="form-control mb-4"
+                placeholder="Enter Country"
+                formControlName="country"
+              />
+            </div>
+          </div>
+
+          <!-- JobTitle -->
+          <input
+            type="text"
+            id="defaultJobTitle"
+            class="form-control mb-4"
+            placeholder="Job Title"
+            formControlName="job_title"
+          />
+
+          <!-- LinkedIn -->
+          <input
+            type="url"
+            id="defaultWebsite"
+            class="form-control mb-4"
+            placeholder="Website"
+            formControlName="website"
+          />
+          <!-- Profile -->
+          <div class="form-row mb-4 justify-content-center text-center">
+            <div class="col">
+              <h4>Write your profile here</h4>
+              <textarea
+                cols="20"
+                rows="15"
+                id="defaultTextProfile"
+                class="form-control"
+                formControlName="profile"
+              >
+              </textarea>
+            </div>
+          </div>
+          <!-- Skils -->
+
+          <div class="col">
+            <h4>SKILLS</h4>
+            <select
+              multiple
+              class="form-control custom-select"
+              formControlName="skill"
+            >
+              <option value="">Select your skills</option>
+              <option [value]="skill.id" *ngFor="let skill of skills">
+                {{ skill.skill }}
+              </option>
+            </select>
+          </div>
+
+          <!-- Languages -->
+
+          <div class="col">
+            <h4>Languages</h4>
+            <select
+              multiple
+              class="form-control custom-select"
+              formControlName="language"
+            >
+              <option value="">Select your languages</option>
+              <option [value]="language.id" *ngFor="let language of languages">
+                {{ language.language }}
+              </option>
+            </select>
+          </div>
+
+          <!-- Save button -->
+          <button color="info" block="true" class="btn btn-info" type="submit">
+            Save
+          </button>
+        </form>
+      </ng-template>
+    </li>
+  </ul>
+
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+  <!-- <pre>Active: {{ active }}</pre> -->
+</div>

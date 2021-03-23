@@ -30,6 +30,7 @@ export class ProfesionalesService {
     return this.httpClient.post<Company>(this.baseUrl, formValues).toPromise();
   }
 
+  // UPDATE COMPANY
   update(data): Promise<any> {
     return this.httpClient
       .put<any>(`${this.baseUrl}`, data, this.createHeaders())

@@ -27,6 +27,22 @@ export class UsersService {
       .toPromise();
   }
 
+  create(formValues): Promise<any> {
+    const httpOptions = { headers: new HttpHeaders() };
+    return this.httpClient
+      .post<any>(this.baseUrl, formValues, this.createHeaders())
+      .toPromise();
+  }
+
+  createHeaders(): any {
+    return {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        // 'authorization': localStorage.getItem('token_gym')
+      }),
+    };
+  }
+
   // searchFreelanceByCountry(pName): Promise<Freelance[]> {
   //   return this.httpClient.get<Freelance[]>(`${this.baseUrl}/${pName}`).toPromise();
   // }

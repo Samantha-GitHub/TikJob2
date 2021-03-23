@@ -9,9 +9,33 @@
     <li [ngbNavItem]="1">
       <a ngbNavLink>Personal Details</a>
       <ng-template ngbNavContent>
-        <form class="text-center border border-light p-5">
+        <form
+          class="text-center border border-light p-5"
+          [formGroup]="formularioFreelancer"
+          (ngSubmit)="onSubmitFreelancer()"
+        >
           <h2>PERSONAL DETAILS</h2>
 
+          <div class="form-row mb-4">
+            <div class="col">
+              <!-- USERNAME -->
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Username"
+                formControlName="username"
+              />
+            </div>
+            <div class="col">
+              <!-- PASSWORD -->
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                formControlName="password"
+              />
+            </div>
+          </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- First name -->
@@ -19,11 +43,17 @@
                 type="text"
                 class="form-control"
                 placeholder="First name"
+                formControlName="firstname"
               />
             </div>
             <div class="col">
               <!-- Last name -->
-              <input type="text" class="form-control" placeholder="Last name" />
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Last name"
+                formControlName="lastname"
+              />
             </div>
           </div>
           <div class="form-row mb-4">
@@ -34,11 +64,12 @@
                 id="defaultRegisterFormEmail"
                 class="form-control mb-4"
                 placeholder="E-mail"
+                formControlName="email"
               />
             </div>
             <!-- SEXO -->
             <div class="col">
-              <select class="sexo-select">
+              <select class="sexo-select" formControlName="gender">
                 <option selected>Select gender</option>
                 <option value="M">Man</option>
                 <option value="W">Woman</option>
@@ -52,13 +83,17 @@
             class="form-control"
             placeholder="Phone number"
             aria-describedby="defaultRegisterFormPhoneHelpBlock"
+            formControlName="phone"
           />
           <div class="form-row mb-4">
             <!-- Photo -->
             <div class="col">
               <div class="custom-file mb-3 mt-3">
                 <input type="file" class="custom-file-input" />
-                <label class="custom-file-label" for="customFile"
+                <label
+                  class="custom-file-label"
+                  for="customFile"
+                  formControlName="image"
                   >Choose picture</label
                 >
               </div>
@@ -66,7 +101,11 @@
             <!-- Video -->
             <div class="col">
               <div class="custom-file mb-3 mt-3">
-                <input type="file" class="custom-file-input" />
+                <input
+                  type="file"
+                  class="custom-file-input"
+                  formControlName="video"
+                />
                 <label class="custom-file-label" for="customFile"
                   >Choose video</label
                 >
@@ -80,6 +119,7 @@
                 type="text"
                 class="form-control mb-4"
                 placeholder="Enter Street"
+                formControlName="streetName"
               />
             </div>
             <!-- Postcode -->
@@ -88,6 +128,7 @@
                 type="number"
                 class="form-control mb-4"
                 placeholder="Enter Postcode"
+                formControlName="zipcode"
               />
             </div>
           </div>
@@ -98,6 +139,7 @@
                 type="text"
                 class="form-control mb-4"
                 placeholder="Enter City"
+                formControlName="city"
               />
             </div>
             <!-- Country -->
@@ -106,17 +148,10 @@
                 type="text"
                 class="form-control mb-4"
                 placeholder="Enter Country"
+                formControlName="country"
               />
             </div>
           </div>
-
-          <!-- Nationality -->
-          <input
-            type="text"
-            id="defaultNationality"
-            class="form-control mb-4"
-            placeholder="Nationality"
-          />
 
           <!-- JobTitle -->
           <input
@@ -124,15 +159,8 @@
             id="defaultJobTitle"
             class="form-control mb-4"
             placeholder="Job Title"
+            formControlName="job_title"
           />
-
-          <!-- Website -->
-          <!-- <input
-            type="url"
-            id="defaultWebSite"
-            class="form-control mb-4"
-            placeholder="Enter your Website"
-          /> -->
 
           <!-- LinkedIn -->
           <input
@@ -140,7 +168,48 @@
             id="defaultWebsite"
             class="form-control mb-4"
             placeholder="Website"
+            formControlName="website"
           />
+          <!-- Profile -->
+          <div class="form-row mb-4">
+            <h2>PROFILE</h2>
+            <div class="col">
+              <label>Write your profile here</label>
+              <textarea
+                cols="30"
+                rows="15"
+                id="defaultTextProfile"
+                class="form-control"
+              >
+              </textarea>
+            </div>
+          </div>
+          <!-- Skils -->
+          <h2>SKILLS</h2>
+
+          <div class="col">
+            <select class="form-control skillsSelect" formControlName="skill">
+              <option value="">Select your skills</option>
+              <option value="" *ngFor="let skill of skills">
+                {{ skill.skill }}
+              </option>
+            </select>
+          </div>
+
+          <!-- Languages -->
+
+          <div class="col">
+            <h2>Languages</h2>
+            <select
+              class="form-control skillsSelect"
+              formControlName="language "
+            >
+              <option value="">Select your languages</option>
+              <option value="" *ngFor="let language of languages">
+                {{ language.language }}
+              </option>
+            </select>
+          </div>
 
           <!-- Save button -->
           <button color="info" block="true" class="btn btn-info" type="submit">
@@ -154,22 +223,6 @@
       <a ngbNavLink>Profile</a>
       <ng-template ngbNavContent>
         <form class="text-center border border-muted p-5">
-          <h2>PROFILE</h2>
-
-          <div class="form-row mb-4">
-            <div class="col">
-              <!-- First name -->
-              <label>Write your profile here</label>
-              <textarea
-                cols="30"
-                rows="15"
-                id="defaultTextProfile"
-                class="form-control"
-              >
-              </textarea>
-            </div>
-          </div>
-
           <!-- Sign up button -->
           <button class="btn btn-info" type="submit">Save</button>
         </form>
@@ -178,26 +231,50 @@
     <li [ngbNavItem]="3">
       <a ngbNavLink>Education</a>
       <ng-template ngbNavContent>
-        <form class="text-center border border-light p-5">
+        <form
+          class="text-center border border-light p-5"
+          [formGroup]="formularioEducation"
+          (ngSubmit)="onSubmitLanguage()"
+        >
           <h2>EDUCATION</h2>
           <div class="form-row mb-4">
             <div class="col">
               <!-- Degree -->
-              <input type="text" class="form-control" placeholder="Degree" />
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Degree"
+                formControlName="degree"
+              />
             </div>
             <div class="col">
               <!-- School -->
-              <input type="text" class="form-control" placeholder="School" />
+              <input
+                type="text"
+                class="form-control"
+                placeholder="School"
+                formControlName="school"
+              />
             </div>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- City -->
-              <input type="text" class="form-control" placeholder="City" />
+              <input
+                type="text"
+                class="form-control"
+                placeholder="City"
+                formControlName="city"
+              />
             </div>
             <div class="col">
               <!-- Country -->
-              <input type="text" class="form-control" placeholder="Country" />
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Country"
+                formControlName="country"
+              />
             </div>
           </div>
 
@@ -214,6 +291,7 @@
                 value="2018-07-22"
                 min="2018-01-01"
                 max="2018-12-31"
+                formControlName="start_date"
               />
             </div>
             <div class="col">
@@ -228,6 +306,7 @@
                 value="2018-07-22"
                 min="2018-01-01"
                 max="2018-12-31"
+                formControlName="end_date"
               />
             </div>
           </div>
@@ -246,7 +325,11 @@
     <li [ngbNavItem]="4">
       <a ngbNavLink>Courses</a>
       <ng-template ngbNavContent>
-        <form class="text-center border border-light p-5">
+        <form
+          class="text-center border border-light p-5"
+          [formGroup]="formularioCourse"
+          (ngSubmit)="onSubmitCourse()"
+        >
           <h2>Course</h2>
           <div class="form-row mb-4">
             <div class="col">
@@ -255,6 +338,7 @@
                 type="text"
                 class="form-control"
                 placeholder="Course title"
+                formControlName="course_title"
               />
             </div>
             <div class="col">
@@ -263,17 +347,28 @@
                 type="text"
                 class="form-control"
                 placeholder="Institution"
+                formControlName="institution"
               />
             </div>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- City -->
-              <input type="text" class="form-control" placeholder="City" />
+              <input
+                type="text"
+                class="form-control"
+                placeholder="City"
+                formControlName="city"
+              />
             </div>
             <div class="col">
               <!-- Country -->
-              <input type="text" class="form-control" placeholder="Country" />
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Country"
+                formControlName="country"
+              />
             </div>
           </div>
 
@@ -290,6 +385,7 @@
                 value="2018-07-22"
                 min="2018-01-01"
                 max="2018-12-31"
+                formControlName="start_date"
               />
             </div>
             <div class="col">
@@ -304,13 +400,19 @@
                 value="2018-07-22"
                 min="2018-01-01"
                 max="2018-12-31"
+                formControlName="end_date"
               />
             </div>
           </div>
 
           <div class="col">
             <!-- Course link -->
-            <input type="url" class="form-control" placeholder="Course link" />
+            <input
+              type="url"
+              class="form-control"
+              placeholder="Course link"
+              formControlName="course_link"
+            />
           </div>
 
           <!-- Add button -->
@@ -327,26 +429,50 @@
     <li [ngbNavItem]="5">
       <a ngbNavLink>Professional Experience</a>
       <ng-template ngbNavContent>
-        <form class="text-center border border-light p-5">
+        <form
+          class="text-center border border-light p-5"
+          [formGroup]="formularioProfesionalExperience"
+          (ngSubmit)="onSubmitExperience()"
+        >
           <h2>PROFESSIONAL EXPERIENCE</h2>
           <div class="form-row mb-4">
             <div class="col">
               <!-- Employer -->
-              <input type="text" class="form-control" placeholder="Employer" />
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Employer"
+                formControlName="employer"
+              />
             </div>
             <div class="col">
               <!-- Job Title -->
-              <input type="text" class="form-control" placeholder="Job Title" />
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Job Title"
+                formControlName="job_title"
+              />
             </div>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- City -->
-              <input type="text" class="form-control" placeholder="City" />
+              <input
+                type="text"
+                class="form-control"
+                placeholder="City"
+                formControlName="city"
+              />
             </div>
             <div class="col">
               <!-- Country -->
-              <input type="text" class="form-control" placeholder="Country" />
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Country"
+                formControlName="country"
+              />
             </div>
           </div>
 
@@ -363,6 +489,7 @@
                 value="2018-07-22"
                 min="2018-01-01"
                 max="2018-12-31"
+                formControlName="start_date"
               />
             </div>
             <div class="col">
@@ -377,70 +504,23 @@
                 value="2018-07-22"
                 min="2018-01-01"
                 max="2018-12-31"
+                formControlName="end_date"
               />
             </div>
           </div>
           <!-- Company link -->
-          <input type="url" class="form-control" placeholder="Company link" />
+          <input
+            type="url"
+            class="form-control"
+            placeholder="Company link"
+            formControlName="company_link"
+          />
           <!-- Jobs description -->
           <div class="mt-3 mb-3">
             <label> Description</label>
-            <textarea id="" class="form-control"> </textarea>
+            <textarea id="" class="form-control" formControlName="description">
+            </textarea>
           </div>
-          <!-- Add button -->
-          <button class="btn btn-info" type="submit">+ Add</button>
-
-          <!-- Delete button -->
-          <button class="btn btn-danger m-1" type="submit">- Delete</button>
-
-          <!-- Save button -->
-          <button class="btn btn-success" type="submit">Save</button>
-        </form>
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="6">
-      <a ngbNavLink>Skills</a>
-      <ng-template ngbNavContent>
-        <form class="text-center border border-light p-5">
-          <h2>SKILLS</h2>
-
-          <div class="col">
-            <!-- Skils -->
-            <select class="form-control skillsSelect">
-              <option value="">Select your skills</option>
-              <option value="" *ngFor="let skill of skills">
-                {{ skill.skill }}
-              </option>
-            </select>
-          </div>
-
-          <!-- Add button -->
-          <button class="btn btn-info" type="submit">+ Add</button>
-
-          <!-- Delete button -->
-          <button class="btn btn-danger m-1" type="submit">- Delete</button>
-
-          <!-- Save button -->
-          <button class="btn btn-success" type="submit">Save</button>
-        </form>
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="7">
-      <a ngbNavLink>Languages</a>
-      <ng-template ngbNavContent>
-        <form class="text-center border border-light p-5">
-          <h2>Languages</h2>
-
-          <div class="col">
-            <!-- Languages -->
-            <select class="form-control skillsSelect">
-              <option value="">Select your languages</option>
-              <option value="" *ngFor="let language of languages">
-                {{ language.language }}
-              </option>
-            </select>
-          </div>
-
           <!-- Add button -->
           <button class="btn btn-info" type="submit">+ Add</button>
 

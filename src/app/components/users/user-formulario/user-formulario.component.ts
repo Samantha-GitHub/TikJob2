@@ -57,15 +57,7 @@ export class UserFormularioComponent implements OnInit {
       video: new FormControl(),
       job_title: new FormControl(),
       profile: new FormControl(),
-    });
-
-    // FORMULARIO Skill
-    this.formularioSkill = new FormGroup({
       skill: new FormControl(),
-    });
-
-    // FORMULARIO Language
-    this.formularioLanguage = new FormGroup({
       language: new FormControl(),
     });
 
@@ -129,11 +121,14 @@ export class UserFormularioComponent implements OnInit {
     //   const response = await this.companyService.insert(this.formulario.value);
   }
 
-  async onSubmitSkill(): Promise<void> {
+  async onSubmitCourse(): Promise<void> {
     //   const response = await this.skillService.insert(this.formulario.value);
   }
 
   async onSubmitLanguage(): Promise<void> {
+    //   const response = await this.languageService.insert(this.formulario.value);
+  }
+  async onSubmitExperience(): Promise<void> {
     //   const response = await this.languageService.insert(this.formulario.value);
   }
 

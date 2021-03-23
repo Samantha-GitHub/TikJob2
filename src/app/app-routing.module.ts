@@ -11,6 +11,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProfesionalFormularioComponent } from './components/profesionales/profesional-formulario/profesional-formulario.component';
 /* import { ProfesionalViewComponent } from './components/profesionales/profesional-view/profesional-view.component';*/
 import { ProfesionalesComponent } from './components/profesionales/profesionales.component';
+import { CreateFreelancerComponent } from './components/users/create-freelancer/create-freelancer.component';
 import { UserFormularioComponent } from './components/users/user-formulario/user-formulario.component';
 import { UserViewComponent } from './components/users/user-view/user-view.component';
 import { UsersComponent } from './components/users/users.component';
@@ -22,15 +23,24 @@ const routes: Routes = [
   { path: 'freelance', component: UsersComponent },
   { path: 'freelance/:idFreelance', component: UserViewComponent },
   { path: 'loginfreelance', component: LoginfreelancerComponent },
-  { path: 'form_freelance', component: UserFormularioComponent },
-  { path: 'form_freelance/:idFreelance', component: UserFormularioComponent },
+
+  { path: 'form_freelance', component: CreateFreelancerComponent },
+  {
+    path: 'form_freelance/edit/:idFreelance',
+    component: UserFormularioComponent,
+  },
+
   { path: 'profesional', component: ProfesionalesComponent },
   { path: 'job_offers', component: JobOffersComponent },
   { path: 'search/:data', component: JobOffersComponent },
   { path: 'job_offers', component: JobOfferViewComponent },
   { path: 'job_offers/:idJobOffer', component: JobOfferViewComponent },
   { path: 'logincompany', component: LogincompanyComponent },
-  { path: 'form_profesional', component: ProfesionalFormularioComponent },
+  { path: 'form_company', component: ProfesionalFormularioComponent },
+  {
+    path: 'form_company/:idCompany',
+    component: ProfesionalFormularioComponent,
+  },
   { path: 'contact', component: ContactComponent },
   { path: '**', component: NotFoundComponent },
 ];

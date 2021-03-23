@@ -16,10 +16,9 @@ import { UsersService } from 'src/app/services/users.service';
 @Component({
   selector: 'app-user-view',
   templateUrl: './user-view.component.html',
-  styleUrls: ['./user-view.component.scss']
+  styleUrls: ['./user-view.component.scss'],
 })
 export class UserViewComponent implements OnInit {
-
   freelance: Freelance;
   courses: Course[];
   languages: Language[];
@@ -35,27 +34,26 @@ export class UserViewComponent implements OnInit {
     private profesionalExperienceService: ProfesionalExperienceService,
     private educationService: EducationsService,
     private skillsService: SkillsService
+  ) {}
 
-  ) { }
-
-  ngOnInit() {
-
-    this.activateRoute.params.subscribe(async params => {
-
-
+  ngOnInit(): void {
+    this.activateRoute.params.subscribe(async (params) => {
       this.freelance = await this.usersService.getById(params.idFreelance);
-      this.courses = await this.coursesService.getCoursesByIdFreelance(params.idFreelance);
-      this.languages = await this.languagesService.getLanguagesByIdFreelance(params.idFreelance);
-      this.educations = await this.educationService.getEducationsByIdFreelance(params.idFreelance);
-      this.profesional_experience = await this.profesionalExperienceService.getProfesionalExperienceByIdFreelance(params.idFreelance);
-      this.skills = await this.skillsService.getSkillsByIdFreelance(params.idFreelance);
-
-
-
-
-
-
-    })
+      this.courses = await this.coursesService.getCoursesByIdFreelance(
+        params.idFreelance
+      );
+      this.languages = await this.languagesService.getLanguagesByIdFreelance(
+        params.idFreelance
+      );
+      this.educations = await this.educationService.getEducationsByIdFreelance(
+        params.idFreelance
+      );
+      this.profesional_experience = await this.profesionalExperienceService.getProfesionalExperienceByIdFreelance(
+        params.idFreelance
+      );
+      this.skills = await this.skillsService.getSkillsByIdFreelance(
+        params.idFreelance
+      );
+    });
   }
-
 }

@@ -28,7 +28,7 @@ export class JobOfferService {
       .toPromise();
   }
 
-  insert(formValues) {
+  insert(formValues): any {
     return this.httpClient.post(this.baseUrl, formValues).toPromise();
   }
 
@@ -38,9 +38,19 @@ export class JobOfferService {
   //     .toPromise();
   // }
 
+  // SEARCH BY COUNTRY, CITY OR function_department
   searchData(pName): Promise<Joboffer[]> {
     return this.httpClient
       .get<Joboffer[]>(`${this.baseUrl}/joboffer/${pName}`)
       .toPromise();
+  }
+
+  createHeaders(): any {
+    return {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        // 'authorization': localStorage.getItem('token_gym')
+      }),
+    };
   }
 }
