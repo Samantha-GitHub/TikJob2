@@ -14,6 +14,7 @@ import { TbiSkillsUsuarioService } from 'src/app/services/tbi-skills-usuario.ser
 import { TbiSkillOfertasTrabajosService } from 'src/app/services/tbi-skill-ofertas-trabajos.service';
 import { TbiLanguageOfertasTrabajosService } from 'src/app/services/tbi-language-ofertas-trabajos.service';
 
+
 @Component({
   selector: 'app-profesional-formulario',
   templateUrl: './profesional-formulario.component.html',
@@ -30,14 +31,8 @@ export class ProfesionalFormularioComponent implements OnInit {
   skills: Skill[];
   languages: Language[];
   company: Company;
-  jobOffer: Joboffer[];
+  jobOffers: Joboffer[];
 
-  /*   pId: number;
-    newLanguage: Language;
-    newSkill: Skill;
-  
-    arrLanguages: Language[];
-    arrskills: Skill[]; */
 
   constructor(
     private router: Router,
@@ -82,27 +77,6 @@ export class ProfesionalFormularioComponent implements OnInit {
       language: new FormControl(),
     });
 
-
-
-
-
-    // LocalStorage para arrLanguages
-
-    /*     if (localStorage.getItem('arrLanguages')) {
-          const storageArray = localStorage.getItem('arrLanguages');
-          this.arrLanguages = JSON.parse(storageArray);
-        } else {
-          this.arrLanguages = new Array();
-        } */
-
-    // LocalStorage para arrSkills
-
-    /*    if (localStorage.getItem('arrSkills')) {
-         const storageArray = localStorage.getItem('arrSkills');
-         this.arrskills = JSON.parse(storageArray);
-       } else {
-         this.arrskills = [];
-       } */
   }
 
   async ngOnInit(): Promise<void> {
@@ -121,11 +95,15 @@ export class ProfesionalFormularioComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
+
+    //ActivatedRoute
+
     this.activatedRoute.params.subscribe(async params => {
 
       /* console.log(params.idcompany); */
 
       // get info company by Id
+
       this.company = await this.companyService.getById(params.idcompany);
       /* console.log(this.company); */
 
@@ -150,43 +128,49 @@ export class ProfesionalFormularioComponent implements OnInit {
 
       });
 
-
-
-
     });
-
-
-
-
-
   }
 
   /*                START
   onSubmit/Update de Company, JobOffer, Skills and Languages */
 
   async onSubmitCompany(): Promise<any> {
-
+    //AQUI va a ir el update de la company
 
   }
 
   async onSubmitJobOffer(): Promise<any> {
-    const response = await this.jobOfferService.insert(
-      this.formularioJobOffer.value
-    );
-    console.log(response);
-  }
 
-  async onSubmitSkill(): Promise<any> {
-    /* const response = await this.tbi_ofertas_skill_Service.insert(this.formularioSkill.value);
-    console.log(response); */
-  }
+    //recibo datos del form
+    console.log(this.formularioJobOffer.value);
 
-  async onSubmitLanguage(): Promise<any> {
-    const response = await this.tbi_languages_ofertas_trabajosService.create(
-      this.formularioLanguage.value
-    );
+    //Destructuring llamaos la variable igual a la propriedad del objeto
+    const { language, skill } = this.formularioJobOffer.value;
 
-    console.log(response);
+    //Envio los valores del form:
+    //a jobOffer
+    const ofertas = await this.jobOfferService.insert(this.formularioJobOffer.value);
+    console.log(ofertas);
+
+    if (ofertas.insertId) {
+      //A Languages
+
+      language.forEach(async oneLanguage => {
+
+        const lang = await this.tbi_languages_ofertas_trabajosService.create({ "language": oneLanguage, "job_offer": ofertas.insertId })
+      });
+      //A skill
+
+      skill.forEach(async oneSkill => {
+
+        const ski = await this.tbi_ofertas_skill_Service.insert({ "skill": oneSkill, "job_offer": ofertas.insertId });
+        console.log(ski);
+
+      });
+
+
+    }
+
   }
 
   /*                  END

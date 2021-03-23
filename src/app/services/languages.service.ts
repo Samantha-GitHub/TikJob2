@@ -21,21 +21,21 @@ export class LanguagesService {
   }
 
   getLanguagesByIdFreelance(pId): Promise<Language[]> {
-    const httpOptions = { headers: new HttpHeaders() };
+
     return this.httpClient
-      .get<Language[]>(`${this.baseUrl}/${pId}`, httpOptions)
+      .get<Language[]>(`${this.baseUrl}/${pId}`)
       .toPromise();
   }
 
   getLanguagesByIdJobsOffers(pId): Promise<Language[]> {
-    const httpOptions = { headers: new HttpHeaders() };
+
     return this.httpClient
-      .get<Language[]>(`${this.baseUrl}/${pId}`, httpOptions)
+      .get<Language[]>(`${this.baseUrl}/${pId}`)
       .toPromise();
   }
 
   insert(formValues) {
-    return this.httpClient.post(this.baseUrl, formValues).toPromise();
+    return this.httpClient.post(this.baseUrl, formValues, this.createHeaders()).toPromise();
   }
 
   createHeaders(): any {
