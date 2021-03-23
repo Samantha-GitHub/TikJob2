@@ -1,4 +1,5 @@
 export interface Freelance {
+  id: number;
   firstname: string;
   lastname: string;
   email: string;
@@ -13,4 +14,6 @@ export interface Freelance {
   video: string;
   job_title: string;
   profile: string;
+  username: string;
+  password: string;
 }
