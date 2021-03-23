@@ -26,4 +26,13 @@ export class ProfesionalExperienceService {
       .get<ProfesionalExperience[]>(`${this.baseUrl}/${pId}`, httpOptions)
       .toPromise();
   }
+
+  createHeaders(): any {
+    return {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        // 'authorization': localStorage.getItem('token_gym')
+      }),
+    };
+  }
 }

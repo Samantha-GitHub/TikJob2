@@ -43,4 +43,13 @@ export class JobOfferService {
       .get<Joboffer[]>(`${this.baseUrl}/joboffer/${pName}`)
       .toPromise();
   }
+
+  createHeaders(): any {
+    return {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        // 'authorization': localStorage.getItem('token_gym')
+      }),
+    };
+  }
 }

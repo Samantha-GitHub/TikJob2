@@ -34,4 +34,13 @@ export class UsersService {
   // searchFreelanceByEducation(pName): Promise<Freelance[]> {
   //   return this.httpClient.get<Freelance[]>(`${this.baseUrl}/${pName}`).toPromise();
   // }
+
+  createHeaders(): any {
+    return {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        // 'authorization': localStorage.getItem('token_gym')
+      }),
+    };
+  }
 }

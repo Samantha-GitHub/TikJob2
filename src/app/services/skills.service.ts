@@ -39,4 +39,13 @@ export class SkillsService {
   // searchByName(pName): Promise<Skill[]> {
   //   return this.httpClient.get<Skill[]>(`${this.baseUrl}/{pName}`).toPromise();
   // }
+
+  createHeaders(): any {
+    return {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        // 'authorization': localStorage.getItem('token_gym')
+      }),
+    };
+  }
 }
