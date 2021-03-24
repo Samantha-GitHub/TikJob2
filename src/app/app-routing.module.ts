@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: 'form_freelance', component: CreateFreelancerComponent },
   // EDIT/ADD CONTENT TO A FREELANCER
   {
-    path: 'freelance/edit/:idFreelance',
+    path: 'freelance/edit',
     component: UserFormularioComponent,
   },
 
@@ -60,4 +60,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
