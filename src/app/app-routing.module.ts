@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'form_freelance', component: CreateFreelancerComponent },
   // EDIT/ADD CONTENT TO A FREELANCER
   {
-    path: 'freelance/edit/:idFreelance',
+    path: 'freelance/profile',
     component: UserFormularioComponent,
   },
 
@@ -45,7 +45,8 @@ const routes: Routes = [
   // EDIT/ADD CONTENT TO A COMPANY
   {
     path: 'company/profile',
-    component: ProfesionalFormularioComponent, canActivate: [LoginGuard]
+    component: ProfesionalFormularioComponent,
+    canActivate: [LoginGuard],
   },
   // ALL JOB OFFERS
   { path: 'job_offers', component: JobOffersComponent },
@@ -61,4 +62,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

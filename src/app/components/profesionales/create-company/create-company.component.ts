@@ -9,6 +9,7 @@ import { ProfesionalesService } from 'src/app/services/profesionales.service';
   styleUrls: ['./create-company.component.scss'],
 })
 export class CreateCompanyComponent implements OnInit {
+  active = 1;
   // FORM GROUP
   formularioCompany: FormGroup;
 
@@ -35,10 +36,10 @@ export class CreateCompanyComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
+
   // Create new Company
   async onSubmitCompany(): Promise<any> {
-
     const response = await this.companyService.create(
       this.formularioCompany.value
     );
@@ -53,5 +54,4 @@ export class CreateCompanyComponent implements OnInit {
   /*   getCompanyById(pId): any {
       this.router.navigate(['company/edit', pId]);
     } */
-  active = 1;
 }

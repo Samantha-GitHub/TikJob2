@@ -3,7 +3,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProfesionalesService } from 'src/app/services/profesionales.service';
 
-
 @Component({
   selector: 'app-logincompany',
   templateUrl: './logincompany.component.html',
@@ -14,17 +13,19 @@ export class LogincompanyComponent implements OnInit {
   formulario: FormGroup;
   errorMessage: string;
 
-  constructor(private companyService: ProfesionalesService, private router: Router) {
+  constructor(
+    private companyService: ProfesionalesService,
+    private router: Router
+  ) {
     this.formulario = new FormGroup({
-
-      email: new FormControl,
-      password: new FormControl
+      email: new FormControl(),
+      password: new FormControl(),
     });
   }
 
   ngOnInit(): void {
     /*  const labels = document.querySelectorAll('.form-control label');
- 
+
      this.labels.forEach((label) => {
        label
          .split('')
@@ -37,19 +38,14 @@ export class LogincompanyComponent implements OnInit {
   }
 
   async onSubmit() {
-
     this.errorMessage = null;
 
     try {
-      const response = await this.companyService.login(this.formulario.value)
+      const response = await this.companyService.login(this.formulario.value);
       if (response['error']) {
-
-        setTimeout(() => this.errorMessage = response.error, 500);
+        setTimeout(() => (this.errorMessage = response.error), 500);
         this.errorMessage = response.error;
-
-
       } else {
-
         localStorage.setItem('token_tikjobs', response.token);
         console.log(response.token);
 
@@ -62,12 +58,9 @@ export class LogincompanyComponent implements OnInit {
 
         /* }); */
         this.errorMessage = null;
-
       }
     } catch (error) {
       console.log(error);
     }
-  };
-
-
+  }
 }

@@ -23,6 +23,7 @@ import { TbiLanguagessUsuarioService } from 'src/app/services/tbi-languages-usua
   styleUrls: ['./user-formulario.component.scss'],
 })
 export class UserFormularioComponent implements OnInit {
+  active = 1;
   // FORM GROUP
   formularioFreelancer: FormGroup;
   // formularioSkill: FormGroup;
@@ -229,7 +230,7 @@ export class UserFormularioComponent implements OnInit {
 
     // Envio los valores del form:
     // a freelance
-    const freelance = await this.freelancerService.create(
+    const freelance = await this.freelancerService.update(
       this.formularioFreelancer.value
     );
     console.log(freelance);
@@ -267,6 +268,4 @@ export class UserFormularioComponent implements OnInit {
   async onSubmitExperience(): Promise<void> {
     //   const response = await this.languageService.insert(this.formulario.value);
   }
-
-  active = 1;
 }
