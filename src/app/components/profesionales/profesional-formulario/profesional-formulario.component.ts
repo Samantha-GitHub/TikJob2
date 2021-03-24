@@ -126,7 +126,9 @@ export class ProfesionalFormularioComponent implements OnInit {
   onSubmit/Update de Company, JobOffer, Skills and Languages */
 
   async onSubmitCompany(): Promise<any> {
-    // AQUI va a ir el update de la company
+    const ofertas = await this.companyService.update(
+      this.formularioCompany.value
+    );
   }
 
   async onSubmitJobOffer(): Promise<any> {
