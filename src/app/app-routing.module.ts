@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'form_freelance', component: CreateFreelancerComponent },
   // EDIT/ADD CONTENT TO A FREELANCER
   {
-    path: 'freelance/edit/:idFreelance',
+    path: 'freelance/profile',
     component: UserFormularioComponent,
   },
 

@@ -7,12 +7,12 @@
           <p class="topLine">Best place to work!</p>
           <h1 class="heading">The remote work leader for over 20 years!</h1>
           <p class="subtitle">
-            Tikjob makes it fast, simple, and cost-effective to find, hire, work
+            Tikjobs makes it fast, simple, and cost-effective to find, hire, work
             with, and pay the best professionals anywhere, any time.
           </p>
-          <div class="btnWrap">
+          <!--     <div class="btnWrap">
             <button class="button"><a href="#!">Let's go!</a></button>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="column2">
@@ -26,21 +26,44 @@
 
 <div class="infoContainer">
   <div class="container">
-    <!-- TENDREMOS QUE HACER LOS NG FOR -->
 
-    <h2>Last offers</h2>
-    <a href="#">+ OFFERS</a>
+
+    <h2>Job offers</h2>
+    <a [routerLink]="['/job_offers']">+ OFFERS</a>
 
     <hr />
     <div class="grid">
-      <article>OFFER 1</article>
 
-      <article>OFFER 2</article>
+      <article *ngFor="let jobOffer of jobOffers.slice(0, 3)">
+        <p class="hidden">{{jobOffer.function_department}}</p>
 
-      <article>OFFER 3</article>
+        <figure>
 
-      <article>OFFER 4</article>
-      <article>OFFER 5</article>
+          <img src="../../../assets/images/svg-6.svg" alt="jobOffer" />
+        </figure>
+        <h3>{{jobOffer.responsabilities}}</h3>
+      </article>
+
+
+    </div>
+
+    <h2>Popular Freelancers</h2>
+    <a [routerLink]="['/freelance']">+ FREELANCERS</a>
+
+    <hr />
+    <div class="grid">
+
+      <article *ngFor="let freelance of freelancers.slice(0, 3)">
+        <p class="hidden">{{freelance.firstname}} : {{freelance.job_title}} </p>
+
+        <figure>
+
+          <img src="../../../assets/images/svg-3.svg" alt="jobOffer" />
+        </figure>
+        <h3>{{freelance.profile}}</h3>
+      </article>
+
+
     </div>
 
     <h2>Find by sector</h2>
