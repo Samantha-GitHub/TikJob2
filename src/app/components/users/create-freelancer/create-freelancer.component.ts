@@ -105,7 +105,7 @@ export class CreateFreelancerComponent implements OnInit {
       });
     }
 
-    // ROUTING TO FORM
-    this.router.navigate(['freelance/edit/', freelance.insertId]);
+    // ROUTING TO LOG IN
+    this.router.navigate(['/loginfreelance']);
   }
 }
