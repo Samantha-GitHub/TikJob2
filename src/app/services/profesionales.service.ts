@@ -29,10 +29,10 @@ export class ProfesionalesService {
   }
 
   getByIdToken(pId): Promise<Company> {
-    const httpOptions = { headers: new HttpHeaders() };
+
 
     return this.httpClient
-      .get<Company>(`${this.baseUrl}/edit/${pId}`, httpOptions)
+      .get<Company>(`${this.baseUrl}/edit`, this.createHeaders())
       .toPromise();
   }
 
@@ -58,11 +58,11 @@ export class ProfesionalesService {
       .toPromise();
   }
 
-  createHeaders(): any {
+  createHeaders() {
     return {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        // 'authorization': localStorage.getItem('token_gym')
+        'authorization': localStorage.getItem('token_tikjobs')
       }),
     };
   }
