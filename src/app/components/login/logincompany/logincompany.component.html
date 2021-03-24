@@ -1,23 +1,25 @@
 <body>
   <div class="login-box">
     <h2>Login Company</h2>
-    <form>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
       <div class="user-box">
-        <input type="text" name="" required="" />
-        <label>Username</label>
+        <input type="text" class="form-control" formControlName="email" />
+        <label>Email</label>
       </div>
       <div class="user-box">
-        <input type="password" name="" required="" />
+        <input type="text" class="form-control" formControlName="password" />
         <label>Password</label>
       </div>
-      <a href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Submit
-      </a>
-      <a [routerLink]="['/form_company']">Subcribe here !</a>
+      <input type="submit" placeholder="Submit">
+      <p *ngIf="errorMessage">{{errorMessage}}</p>
+
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+
+
+      <input [routerLink]="['/form_company']" placeholder="Subcribe here">
     </form>
   </div>
 </body>

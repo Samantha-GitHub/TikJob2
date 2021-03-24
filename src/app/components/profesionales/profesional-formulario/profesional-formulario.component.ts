@@ -100,7 +100,7 @@ export class ProfesionalFormularioComponent implements OnInit {
 
       // get info company by Id
 
-      this.company = await this.companyService.getById(params.idcompany);
+      this.company = await this.companyService.getByIdToken(params.idcompany);
       /* console.log(this.company); */
 
       this.formularioCompany = new FormGroup({

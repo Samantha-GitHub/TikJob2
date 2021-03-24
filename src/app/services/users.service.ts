@@ -45,6 +45,11 @@ export class UsersService {
     };
   }
 
+  login(formValues): Promise<any> {
+    return this.httpClient.post(`${this.baseUrl}/login`, formValues).toPromise();
+
+  };
+
   // searchFreelanceByCountry(pName): Promise<Freelance[]> {
   //   return this.httpClient.get<Freelance[]>(`${this.baseUrl}/${pName}`).toPromise();
   // }
