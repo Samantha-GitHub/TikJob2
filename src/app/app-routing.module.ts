@@ -43,7 +43,7 @@ const routes: Routes = [
   { path: 'form_company', component: CreateCompanyComponent },
   // EDIT/ADD CONTENT TO A COMPANY
   {
-    path: 'company/edit/:idcompany',
+    path: 'company/edit',
     component: ProfesionalFormularioComponent,
   },
   // ALL JOB OFFERS
@@ -60,4 +60,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

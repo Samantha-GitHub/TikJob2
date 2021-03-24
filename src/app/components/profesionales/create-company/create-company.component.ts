@@ -35,14 +35,17 @@ export class CreateCompanyComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   // Create new Company
   async onSubmitCompany(): Promise<any> {
+
     const response = await this.companyService.create(
       this.formularioCompany.value
     );
 
-    this.router.navigate(['company/edit/', response.insertId]);
+    /* this.router.navigate(['/logincompany', response.insertId]); */
+
+    this.router.navigate(['/logincompany']);
   }
 
   // Voy a al perfil del usuario creado

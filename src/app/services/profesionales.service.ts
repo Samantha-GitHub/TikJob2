@@ -8,6 +8,7 @@ import { Company } from '../interfaces/company';
 export class ProfesionalesService {
   baseUrl: string;
 
+
   constructor(private httpClient: HttpClient) {
     this.baseUrl = 'http://localhost:3000/api/companies';
   }
@@ -26,6 +27,15 @@ export class ProfesionalesService {
 
     return this.httpClient
       .get<Company>(`${this.baseUrl}/${pId}`, httpOptions)
+      .toPromise();
+  }
+
+
+  getByIdToken(pId): Promise<Company> {
+    const httpOptions = { headers: new HttpHeaders() };
+
+    return this.httpClient
+      .get<Company>(`${this.baseUrl}/edit/${pId}`, httpOptions)
       .toPromise();
   }
 
@@ -59,4 +69,9 @@ export class ProfesionalesService {
       }),
     };
   }
+
+  login(formValues): Promise<any> {
+    return this.httpClient.post(`${this.baseUrl}/login`, formValues).toPromise();
+
+  };
 }
