@@ -35,7 +35,7 @@ export class ProfesionalesService {
 
 
     return this.httpClient
-      .get<Company>(`${this.baseUrl}/edit`, this.createHeaders())
+      .get<Company>(`${this.baseUrl}/profile`, this.createHeaders())
       .toPromise();
   }
 
@@ -55,9 +55,10 @@ export class ProfesionalesService {
   }
 
   // UPDATE COMPANY
-  update(data): Promise<any> {
+  update(formValues): Promise<any> {
+    formValues.image = 'http';
     return this.httpClient
-      .put<any>(`${this.baseUrl}`, data, this.createHeaders())
+      .put<any>(`${this.baseUrl}/update`, formValues, this.createHeaders())
       .toPromise();
   }
 

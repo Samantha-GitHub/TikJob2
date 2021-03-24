@@ -16,6 +16,7 @@ import { CreateFreelancerComponent } from './components/users/create-freelancer/
 import { UserFormularioComponent } from './components/users/user-formulario/user-formulario.component';
 import { UserViewComponent } from './components/users/user-view/user-view.component';
 import { UsersComponent } from './components/users/users.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -43,8 +44,8 @@ const routes: Routes = [
   { path: 'form_company', component: CreateCompanyComponent },
   // EDIT/ADD CONTENT TO A COMPANY
   {
-    path: 'company/edit',
-    component: ProfesionalFormularioComponent,
+    path: 'company/profile',
+    component: ProfesionalFormularioComponent, canActivate: [LoginGuard]
   },
   // ALL JOB OFFERS
   { path: 'job_offers', component: JobOffersComponent },

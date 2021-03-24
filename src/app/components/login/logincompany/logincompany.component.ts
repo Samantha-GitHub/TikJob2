@@ -25,15 +25,15 @@ export class LogincompanyComponent implements OnInit {
   ngOnInit(): void {
     /*  const labels = document.querySelectorAll('.form-control label');
  
-        this.labels.forEach((label) => {
-           label
-             .split('')
-             .map(
-               (letter, idx) =>
-                 `<span style="transition-delay:${idx * 50}ms">${letter}</span>`
-             )
-             .join('');
-         });  */
+     this.labels.forEach((label) => {
+       label
+         .split('')
+         .map(
+           (letter, idx) =>
+             `<span style="transition-delay:${idx * 50}ms">${letter}</span>`
+         )
+         .join('');
+   }); */
   }
 
   async onSubmit() {
@@ -58,7 +58,7 @@ export class LogincompanyComponent implements OnInit {
 
         /* Inyectamos el router en el constructor para poder hacer una redireccion */
 
-        this.router.navigate(['/company/edit']);
+        this.router.navigate(['/company/profile']);
 
         /* }); */
         this.errorMessage = null;
