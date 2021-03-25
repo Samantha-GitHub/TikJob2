@@ -102,7 +102,19 @@
             Update
           </button>
         </form>
+        <hr>
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;" *ngFor="let jobOffer of jobOffers">
+          <div class="card-header">{{jobOffer.function_department}}</div>
+          <div class="card-body">
+            <h5 class="card-title">{{jobOffer.city}} / {{jobOffer.country}}</h5>
+            <p class="card-text">{{jobOffer.responsabilities}}
+            </p>
+          </div>
+        </div>
+        <div>hola</div>
+        <hr>
       </ng-template>
+
     </li>
 
     <!-- Job Offers -->
