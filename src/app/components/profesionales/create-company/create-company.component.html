@@ -1,118 +1,193 @@
 <div class="servicesContainer justify-content-center mt-5">
-    <!-- collapse -->
-    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs justify-content-center">
-        <li [ngbNavItem]="1">
-            <a ngbNavLink>Company Details</a>
-            <ng-template ngbNavContent>
-                <form class="text-center border border-light p-5" [formGroup]="formularioCompany"
-                    (ngSubmit)="onSubmitCompany()">
-                    <h2>COMPANY DETAILS</h2>
+  <!-- collapse -->
+  <ul
+    ngbNav
+    #nav="ngbNav"
+    [(activeId)]="active"
+    class="nav-tabs justify-content-center"
+  >
+    <li [ngbNavItem]="1">
+      <a ngbNavLink>Company Details</a>
+      <ng-template ngbNavContent>
+        <form
+          class="text-center border border-light p-5"
+          [formGroup]="formularioCompany"
+          (ngSubmit)="onSubmitCompany()"
+        >
+          <h2>COMPANY DETAILS</h2>
 
-                    <div class="form-row mb-4">
-                        <div class="col">
-                            <!-- Username -->
-                            <input type="text" id="defaultRegisterFormUserName" class="form-control"
-                                formControlName="username" placeholder="Company name" />
-                        </div>
-                        <div class="col">
-                            <!-- Password -->
-                            <input type="password" id="defaultRegisterFormPassword" class="form-control"
-                                formControlName="password" placeholder="password" />
-                        </div>
-                    </div>
+          <div class="form-row mb-4">
+            <div class="col">
+              <!-- Username -->
+              <input
+                type="text"
+                id="defaultRegisterFormUserName"
+                class="form-control"
+                formControlName="username"
+                placeholder="Company name"
+              />
+            </div>
+            <div class="col">
+              <!-- Password -->
+              <input
+                type="password"
+                id="defaultRegisterFormPassword"
+                class="form-control"
+                formControlName="password"
+                placeholder="password"
+              />
+            </div>
+          </div>
 
-                    <div class="form-row mb-4">
-                        <div class="col">
-                            <!-- Company name -->
-                            <input type="text" id="defaultRegisterFormFirstName" class="form-control"
-                                formControlName="name_company" placeholder="Company name" />
-                        </div>
-                        <div class="col">
-                            <!-- Vat -->
-                            <input type="number" id="defaultRegisterFormLastName" class="form-control"
-                                formControlName="vat" placeholder="Vat" />
-                        </div>
-                    </div>
-                    <div class="form-row mb-4">
-                        <div class="col">
-                            <!-- E-mail -->
-                            <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4"
-                                placeholder="E-mail" formControlName="email" />
-                        </div>
-                        <!-- Employees number -->
-                        <div class="col">
-                            <input type="number" id="employeesNumber" class="form-control mb-4"
-                                formControlName="employees_number" placeholder="Number of employees" />
-                        </div>
-                    </div>
+          <div class="form-row mb-4">
+            <div class="col">
+              <!-- Company name -->
+              <input
+                type="text"
+                id="defaultRegisterFormFirstName"
+                class="form-control"
+                formControlName="name_company"
+                placeholder="Company name"
+              />
+            </div>
+            <div class="col">
+              <!-- Vat -->
+              <input
+                type="number"
+                id="defaultRegisterFormLastName"
+                class="form-control"
+                formControlName="vat"
+                placeholder="Vat"
+              />
+            </div>
+          </div>
+          <div class="form-row mb-4">
+            <div class="col">
+              <!-- E-mail -->
+              <input
+                type="email"
+                id="defaultRegisterFormEmail"
+                class="form-control mb-4"
+                placeholder="E-mail"
+                formControlName="email"
+              />
+            </div>
+            <!-- Employees number -->
+            <div class="col">
+              <input
+                type="number"
+                id="employeesNumber"
+                class="form-control mb-4"
+                formControlName="employees_number"
+                placeholder="Number of employees"
+              />
+            </div>
+          </div>
 
-                    <div class="form-row mb-4">
-                        <div class="col">
-                            <!-- Year founded -->
-                            <input type="number" id="yearFounded" class="form-control mb-4"
-                                formControlName="year_founded" placeholder="Year Founded" />
-                        </div>
-                        <div class="col">
-                            <!-- Phone number -->
-                            <input type="text" id="defaultRegisterPhonePassword" class="form-control"
-                                formControlName="phone" placeholder="Phone number" />
-                            <div class="form-row mb-4"></div>
-                        </div>
-                    </div>
-                    <div class="form-row mb-4">
-                        <!-- Photo -->
-                        <div class="col">
-                            <div class="custom-file mb-3 mt-3">
-                                <input type="file" class="form-control custom-file-input" formControlName="image"
-                                    id="customFile" />
-                                <label class="custom-file-label" for="customFile">Choose picture</label>
-                            </div>
-                        </div>
-                        <!-- Website -->
-                        <div class="col">
-                            <div class="custom-file mb-3 mt-3">
-                                <input type="url" placeholder="Add your website here" class="form-control"
-                                    formControlName="website" id="" />
-                            </div>
-                        </div>
-                    </div>
+          <div class="form-row mb-4">
+            <div class="col">
+              <!-- Year founded -->
+              <input
+                type="number"
+                id="yearFounded"
+                class="form-control mb-4"
+                formControlName="year_founded"
+                placeholder="Year Founded"
+              />
+            </div>
+            <div class="col">
+              <!-- Phone number -->
+              <input
+                type="text"
+                id="defaultRegisterPhonePassword"
+                class="form-control"
+                formControlName="phone"
+                placeholder="Phone number"
+              />
+              <div class="form-row mb-4"></div>
+            </div>
+          </div>
+          <div class="form-row mb-4">
+            <!-- Photo -->
+            <div class="col">
+              <div class="custom-file mb-3 mt-3">
+                <input
+                  type="file"
+                  class="form-control custom-file-input"
+                  formControlName="image"
+                  id="customFile"
+                />
+                <label class="custom-file-label" for="customFile"
+                  >Choose picture</label
+                >
+              </div>
+            </div>
+            <!-- Website -->
+            <div class="col">
+              <div class="custom-file mb-3 mt-3">
+                <input
+                  type="url"
+                  placeholder="Add your website here"
+                  class="form-control"
+                  formControlName="website"
+                  id=""
+                />
+              </div>
+            </div>
+          </div>
 
-                    <div class="form-row mb-4">
-                        <!-- Street -->
-                        <div class="col">
-                            <input type="text" class="form-control mb-4" formControlName="street"
-                                placeholder="Enter Street" />
-                        </div>
-                        <!-- Postcode -->
-                        <div class="col">
-                            <input type="number" class="form-control mb-4" formControlName="zip_code"
-                                placeholder="Enter Postcode" />
-                        </div>
-                    </div>
-                    <div class="form-row mb-4">
-                        <!-- City -->
-                        <div class="col">
-                            <input type="text" class="form-control mb-4" formControlName="city"
-                                placeholder="Enter City" />
-                        </div>
-                        <!-- Country -->
-                        <div class="col">
-                            <input type="text" class="form-control mb-4" formControlName="country"
-                                placeholder="Enter Country" />
-                        </div>
-                    </div>
+          <div class="form-row mb-4">
+            <!-- Street -->
+            <div class="col">
+              <input
+                type="text"
+                class="form-control mb-4"
+                formControlName="street"
+                placeholder="Enter Street"
+              />
+            </div>
+            <!-- Postcode -->
+            <div class="col">
+              <input
+                type="number"
+                class="form-control mb-4"
+                formControlName="zip_code"
+                placeholder="Enter Postcode"
+              />
+            </div>
+          </div>
+          <div class="form-row mb-4">
+            <!-- City -->
+            <div class="col">
+              <input
+                type="text"
+                class="form-control mb-4"
+                formControlName="city"
+                placeholder="Enter City"
+              />
+            </div>
+            <!-- Country -->
+            <div class="col">
+              <input
+                type="text"
+                class="form-control mb-4"
+                formControlName="country"
+                placeholder="Enter Country"
+              />
+            </div>
+          </div>
 
-                    <!-- Save button -->
+          <!-- Save button -->
 
-                    <button color="info" block="true" class="btn btn-info" type="submit">
-                        Sign Up
-                    </button>
-                </form>
-            </ng-template>
-        </li>
-    </ul>
+          <button color="info" block="true" class="btn btn-info" type="submit">
+            Sign Up
+          </button>
+        </form>
+      </ng-template>
+    </li>
+  </ul>
 
-    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
 
-    <pre>Active: {{ active }}</pre>
+  <pre>Active: {{ active }}</pre>
 </div>
