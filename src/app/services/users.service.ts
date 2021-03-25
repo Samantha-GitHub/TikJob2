@@ -54,7 +54,8 @@ export class UsersService {
   createHeaders() {
     return {
       headers: new HttpHeaders({
-        authorization: localStorage.getItem('token_tikjobs'),
+        'Content-Type': 'application/json',
+        'authorization': localStorage.getItem('token_tikjobs')
       }),
     };
   }
