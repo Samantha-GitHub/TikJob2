@@ -46,7 +46,6 @@ const routes: Routes = [
   {
     path: 'company/profile',
     component: ProfesionalFormularioComponent,
-    canActivate: [LoginGuard],
   },
   // ALL JOB OFFERS
   { path: 'job_offers', component: JobOffersComponent },

@@ -81,7 +81,7 @@
           </div>
           <!-- Phone number -->
           <input
-            type="text"
+            type="number"
             id="defaultRegisterPhonePassword"
             class="form-control"
             placeholder="Phone number"
@@ -196,7 +196,7 @@
               formControlName="skill"
             >
               <option value="">Select your skills</option>
-              <option [value]="skill.id" *ngFor="let skill of skills">
+              <option *ngFor="let skill of skills">
                 {{ skill.skill }}
               </option>
             </select>
@@ -212,7 +212,7 @@
               formControlName="language"
             >
               <option value="">Select your languages</option>
-              <option [value]="language.id" *ngFor="let language of languages">
+              <option *ngFor="let language of languages">
                 {{ language.language }}
               </option>
             </select>

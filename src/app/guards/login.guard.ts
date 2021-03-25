@@ -24,8 +24,8 @@ export class LoginGuard implements CanActivate {
     if (localStorage.getItem('token_tikjobs')) {
       return true;
     } else {
-      this.router.navigate(['/company/edit/']);
-      this.router.navigate(['/freelance/edit/']);
+      this.router.navigate(['/company/profile/']);
+      this.router.navigate(['/freelance/profile/']);
       return false;
     }
   }

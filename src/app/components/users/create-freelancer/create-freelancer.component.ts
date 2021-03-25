@@ -68,41 +68,43 @@ export class CreateFreelancerComponent implements OnInit {
   }
 
   async onSubmitFreelancer(): Promise<any> {
-    console.log(this.formularioFreelancer.value);
+    try {
+      console.log(this.formularioFreelancer.value);
 
-    // this.formularioFreelancer.value.image = 'http';
-    // this.formularioFreelancer.value.video = 'http';
+      // Destructuring llamamos la variable igual a la propriedad del objeto
+      const { language, skill } = this.formularioFreelancer.value;
 
-    // Destructuring llamamos la variable igual a la propriedad del objeto
-    const { language, skill } = this.formularioFreelancer.value;
+      // Envio los valores del form:
+      // a freelance
 
-    // Envio los valores del form:
-    // a freelance
-    const freelance = await this.freelancerService.create(
-      this.formularioFreelancer.value
-    );
-    console.log(freelance);
+      const freelance = await this.freelancerService.create(
+        this.formularioFreelancer.value
+      );
+      console.log(freelance);
 
-    if (freelance.insertId) {
-      // A Language
-      language.forEach(async (oneLanguage) => {
-        const lang = await this.tbiLanguageFreelance.create({
-          language: oneLanguage,
-          freelance: freelance.insertId,
+      if (freelance.insertId) {
+        // A Language
+        language.forEach(async (oneLanguage) => {
+          const lang = await this.tbiLanguageFreelance.create({
+            language: oneLanguage,
+            freelance: freelance.insertId,
+          });
+          console.log('yo this is lang', lang);
         });
-        console.log('yo this is lang', lang);
-      });
 
-      // A skill
-      skill.forEach(async (oneSkill) => {
-        const ski = await this.tbiSkillFreelance.create({
-          skill: oneSkill,
-          freelance: freelance.insertId,
+        // A skill
+        skill.forEach(async (oneSkill) => {
+          const ski = await this.tbiSkillFreelance.create({
+            skill: oneSkill,
+            freelance: freelance.insertId,
+          });
+          console.log('yo this is skills', ski);
         });
-        console.log('yo this is skills', ski);
-      });
+      }
+      // ROUTING TO FORM
+    } catch (error) {
+      console.log(error);
     }
-    // ROUTING TO FORM
     this.router.navigate(['/loginfreelance']);
   }
 }
