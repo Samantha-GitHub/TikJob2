@@ -104,6 +104,8 @@ export class ProfesionalFormularioComponent implements OnInit {
       this.company = await this.companyService.getByIdToken(params.idcompany);
       console.log(this.company);
 
+
+
       this.formularioCompany = new FormGroup({
         name_company: new FormControl(this.company.name_company),
         phone: new FormControl(this.company.phone),
