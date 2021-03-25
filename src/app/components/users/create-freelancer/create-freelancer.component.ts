@@ -74,34 +74,37 @@ export class CreateFreelancerComponent implements OnInit {
       // Destructuring llamamos la variable igual a la propriedad del objeto
       const { language, skill } = this.formularioFreelancer.value;
 
-    // Destructuring llamamos la variable igual a la propriedad del objeto
-    // const { language, skill } = this.formularioFreelancer.value;
+      // Destructuring llamamos la variable igual a la propriedad del objeto
+      // const { language, skill } = this.formularioFreelancer.value;
 
       const freelance = await this.freelancerService.create(
         this.formularioFreelancer.value
       );
       console.log(freelance);
 
-    // if (freelance.insertId) {
-    //   // A Language
-    //   language.forEach(async (oneLanguage) => {
-    //     const lang = await this.tbiLanguageFreelance.create({
-    //       language: oneLanguage,
-    //       freelance: freelance.insertId,
-    //     });
-    //     console.log('yo this is lang', lang);
-    //   });
+      // if (freelance.insertId) {
+      //   // A Language
+      //   language.forEach(async (oneLanguage) => {
+      //     const lang = await this.tbiLanguageFreelance.create({
+      //       language: oneLanguage,
+      //       freelance: freelance.insertId,
+      //     });
+      //     console.log('yo this is lang', lang);
+      //   });
 
-    //   // A skill
-    //   skill.forEach(async (oneSkill) => {
-    //     const ski = await this.tbiSkillFreelance.create({
-    //       skill: oneSkill,
-    //       freelance: freelance.insertId,
-    //     });
-    //     console.log('yo this is skills', ski);
-    //   });
-    // }
-    // ROUTING TO FORM
-    this.router.navigate(['/loginfreelance']);
+      //   // A skill
+      //   skill.forEach(async (oneSkill) => {
+      //     const ski = await this.tbiSkillFreelance.create({
+      //       skill: oneSkill,
+      //       freelance: freelance.insertId,
+      //     });
+      //     console.log('yo this is skills', ski);
+      //   });
+      // }
+      // ROUTING TO FORM
+      this.router.navigate(['/loginfreelance']);
+    } catch (error) {
+      console.log(error);
+    }
   }
 }

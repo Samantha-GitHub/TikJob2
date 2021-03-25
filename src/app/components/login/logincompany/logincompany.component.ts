@@ -23,21 +23,9 @@ export class LogincompanyComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    /*  const labels = document.querySelectorAll('.form-control label');
+  ngOnInit(): void {}
 
-     this.labels.forEach((label) => {
-       label
-         .split('')
-         .map(
-           (letter, idx) =>
-             `<span style="transition-delay:${idx * 50}ms">${letter}</span>`
-         )
-         .join('');
-   }); */
-  }
-
-  async onSubmit() {
+  async onSubmit(): Promise<void> {
     this.errorMessage = null;
 
     try {

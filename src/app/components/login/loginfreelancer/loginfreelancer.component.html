@@ -1,7 +1,7 @@
 <body>
   <div class="wrapper">
     <form class="login" [formGroup]="formulario" (ngSubmit)="onSubmit()">
-      <p class="title">Log in</p>
+      <p class="title">Welcome, freelancer.</p>
       <input
         type="text"
         placeholder="Username"
@@ -26,6 +26,6 @@
       </button>
       <p *ngIf="errorMessage">{{ errorMessage }}</p>
     </form>
-    <footer><a target="blank" href="http://boudra.me/">tikjobs.com</a></footer>
+    <footer><a [routerLink]="['/home']">tikjobs.com</a></footer>
   </div>
 </body>
