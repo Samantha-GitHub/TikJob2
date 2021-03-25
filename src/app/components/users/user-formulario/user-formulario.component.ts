@@ -135,9 +135,13 @@ export class UserFormularioComponent implements OnInit {
       this.freelancer = await this.freelancerService.getByIdToken(
         params.idFreelance
       );
-      console.log('this is freelancers', this.freelancer);
+      // console.log('this is freelancers', this.freelancer);
+      this.educations = this.freelancer.educations;
+      this.profesionalExperiences = this.freelancer.profesionalExperiences;
       this.courses = this.freelancer.courses;
-      console.log(this.courses);
+      this.languages = this.freelancer.languages;
+      this.skills = this.freelancer.skills;
+      // console.log(this.courses);
 
       // Get info course freelancer by Id
       /*   this.courses = await this.coursesService.getCoursesByIdFreelance(
@@ -146,27 +150,27 @@ export class UserFormularioComponent implements OnInit {
       console.log('this is courses', this.courses); */
 
       // Get info language freelancer by Id
-      this.languages = await this.languageService.getLanguagesByIdFreelance(
-        params.idFreelance
-      );
-      console.log('this is languages', this.languages);
+      // this.languages = await this.languageService.getLanguagesByIdFreelance(
+      //   params.idFreelance
+      // );
+      // console.log('this is languages', this.languages);
 
       // Get info education freelancer by Id
-      this.educations = await this.educationService.getEducationsByIdFreelance(
-        params.idFreelance
-      );
-      console.log('this is educations', this.educations);
+      // this.educations = await this.educationService.getEducationsByIdFreelance(
+      //   params.idFreelance
+      // );
+      // console.log('this is educations', this.educations);
 
       // Get info experience freelancer by Id
-      this.profesionalExperiences = await this.profesionalExperienceService.getProfesionalExperienceByIdFreelance(
-        params.idFreelance
-      );
-      console.log('this is experience', this.profesionalExperiences);
+      // this.profesionalExperiences = await this.profesionalExperienceService.getProfesionalExperienceByIdFreelance(
+      //   params.idFreelance
+      // );
+      // console.log('this is experience', this.profesionalExperiences);
 
       // Get info skill freelancer by Id
-      this.skills = await this.skillService.getSkillsByIdFreelance(
-        params.idFreelance
-      );
+      // this.skills = await this.skillService.getSkillsByIdFreelance(
+      //   params.idFreelance
+      // );
       // console.log('this is skills', this.skills);
 
       // FORM CONTENT

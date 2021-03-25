@@ -106,9 +106,6 @@ export class ProfesionalFormularioComponent implements OnInit {
       this.jobOffers = this.company.jobOffer;
       console.log(this.jobOffers);
 
-
-
-
       this.formularioCompany = new FormGroup({
         name_company: new FormControl(this.company.name_company),
         phone: new FormControl(this.company.phone),
