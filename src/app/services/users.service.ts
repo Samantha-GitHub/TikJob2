@@ -27,6 +27,14 @@ export class UsersService {
       .toPromise();
   }
 
+  getByIdToken(pId): Promise<Freelance> {
+
+
+    return this.httpClient
+      .get<Freelance>(`${this.baseUrl}/profile`, this.createHeaders())
+      .toPromise();
+  }
+
   create(formValues): Promise<any> {
     formValues.image = 'http';
     formValues.video = 'http';
@@ -36,11 +44,11 @@ export class UsersService {
       .toPromise();
   }
 
-  createHeaders(): any {
+  createHeaders() {
     return {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        // 'authorization': localStorage.getItem('token_gym')
+        'authorization': localStorage.getItem('token_tikjobs')
       }),
     };
   }

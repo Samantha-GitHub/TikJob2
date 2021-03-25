@@ -50,7 +50,7 @@ export class ProfesionalesService {
     console.log(formValues.image);
 
     return this.httpClient
-      .post<any>(this.baseUrl, formValues, this.createHeaders())
+      .post<any>(this.baseUrl, formValues)
       .toPromise();
   }
 
