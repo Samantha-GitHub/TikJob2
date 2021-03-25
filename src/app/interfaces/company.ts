@@ -14,4 +14,5 @@ export interface Company {
   year_founded: string;
   username: string;
   password: string;
+  jobOffer: any[];
 }
