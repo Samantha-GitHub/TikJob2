@@ -24,17 +24,17 @@ const routes: Routes = [
   { path: 'home', component: HeroComponent },
   // ALL FREELANCERS
   { path: 'freelance', component: UsersComponent },
-  // VIEW FREELANCE BY ID
-  { path: 'freelance/:idFreelance', component: UserViewComponent },
-  // LOGIN FREELANCER
-  { path: 'loginfreelance', component: LoginfreelancerComponent },
-  // CREATE A FREELANCER
-  { path: 'form_freelance', component: CreateFreelancerComponent },
   // EDIT/ADD CONTENT TO A FREELANCER
   {
     path: 'freelance/profile',
     component: UserFormularioComponent,
   },
+  // LOGIN FREELANCER
+  { path: 'loginfreelance', component: LoginfreelancerComponent },
+  // CREATE A FREELANCER
+  { path: 'form_freelance', component: CreateFreelancerComponent },
+  // VIEW FREELANCE BY ID
+  { path: 'freelance/:idFreelance', component: UserViewComponent },
 
   // ALL COMPANIES
   { path: 'companies', component: ProfesionalesComponent },

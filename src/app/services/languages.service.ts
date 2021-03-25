@@ -12,6 +12,7 @@ export class LanguagesService {
     this.baseUrl = 'http://localhost:3000/api/languages';
   }
 
+  //  GET ALL LANGUAGES
   getAll(): Promise<Language[]> {
     const httpOptions = { headers: new HttpHeaders() };
 
@@ -19,30 +20,37 @@ export class LanguagesService {
       .get<Language[]>(this.baseUrl, httpOptions)
       .toPromise();
   }
-
+  //  GET BY FREELANCE
   getLanguagesByIdFreelance(pId): Promise<Language[]> {
-
+    return this.httpClient
+      .get<Language[]>(`${this.baseUrl}/${pId}`)
+      .toPromise();
+  }
+  //  GET BY FREELANCE
+  getLanguagesByIdJobsOffers(pId): Promise<Language[]> {
     return this.httpClient
       .get<Language[]>(`${this.baseUrl}/${pId}`)
       .toPromise();
   }
 
-  getLanguagesByIdJobsOffers(pId): Promise<Language[]> {
-
+  // GET BY TOKEN FREELANCER
+  getByIdToken(pId): Promise<Language[]> {
     return this.httpClient
-      .get<Language[]>(`${this.baseUrl}/${pId}`)
+      .get<Language[]>(`${this.baseUrl}/profile`, this.createHeaders())
       .toPromise();
   }
 
   insert(formValues) {
-    return this.httpClient.post(this.baseUrl, formValues, this.createHeaders()).toPromise();
+    return this.httpClient
+      .post(this.baseUrl, formValues, this.createHeaders())
+      .toPromise();
   }
 
-  createHeaders(): any {
+  createHeaders() {
     return {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        // 'authorization': localStorage.getItem('token_gym')
+        authorization: localStorage.getItem('token_gym'),
       }),
     };
   }

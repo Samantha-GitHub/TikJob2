@@ -16,4 +16,5 @@ export interface Freelance {
   profile: string;
   username: string;
   password: string;
+  courses: any[];
 }

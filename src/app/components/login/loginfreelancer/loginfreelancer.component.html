@@ -1,35 +1,31 @@
 <body>
-  <div class="login-box">
-    <h2>Login Freelance</h2>
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-      <div class="user-box">
-        <input
-          type="text"
-          class="form-control"
-          formControlName="email"
-          required
-        />
-        <label>Email</label>
-      </div>
-      <div class="user-box">
-        <input
-          type="password"
-          class="form-control"
-          formControlName="password"
-          required
-        />
-        <label>Password</label>
-      </div>
-      <input type="submit" placeholder="Submit" />
+  <div class="wrapper">
+    <form class="login" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <p class="title">Log in</p>
+      <input
+        type="text"
+        placeholder="Username"
+        class="form-control"
+        formControlName="email"
+        required
+        autofocus
+      />
+      <i class="fa fa-user"></i>
+      <input
+        type="password"
+        placeholder="Password"
+        class="form-control"
+        formControlName="password"
+        required
+      />
+      <i class="fa fa-key"></i>
+      <a [routerLink]="['/form_freelance']">Don't have an account?</a>
+      <button type="submit">
+        <i class="spinner"></i>
+        <span class="state">Log in</span>
+      </button>
       <p *ngIf="errorMessage">{{ errorMessage }}</p>
-
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-
-      <!-- <a [routerLink]="['/form_freelance']">Subcribe here !</a> -->
-      <input [routerLink]="['/form_freelance']" placeholder="Subcribe here" />
     </form>
+    <footer><a target="blank" href="http://boudra.me/">tikjobs.com</a></footer>
   </div>
 </body>

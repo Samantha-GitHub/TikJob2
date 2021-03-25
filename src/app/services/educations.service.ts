@@ -21,15 +21,23 @@ export class EducationsService {
 
   getEducationsByIdFreelance(pId): Promise<Education[]> {
     const httpOptions = { headers: new HttpHeaders() };
-    return this.httpClient.get<Education[]>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
-
+    return this.httpClient
+      .get<Education[]>(`${this.baseUrl}/${pId}`, httpOptions)
+      .toPromise();
   }
 
-  createHeaders(): any {
+  // GET BY TOKEN FREELANCER
+  getByIdToken(pId): Promise<Education[]> {
+    return this.httpClient
+      .get<Education[]>(`${this.baseUrl}/profile`, this.createHeaders())
+      .toPromise();
+  }
+
+  createHeaders() {
     return {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        // 'authorization': localStorage.getItem('token_gym')
+        'authorization': localStorage.getItem('token_gym')
       }),
     };
   }

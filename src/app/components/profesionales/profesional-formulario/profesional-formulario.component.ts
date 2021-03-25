@@ -97,7 +97,7 @@ export class ProfesionalFormularioComponent implements OnInit {
     // ActivatedRoute
 
     this.activatedRoute.params.subscribe(async (params) => {
-      /* console.log(params.idcompany); */
+      console.log(params.idcompany);
 
       // get info company by Id
 

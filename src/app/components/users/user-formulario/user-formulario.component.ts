@@ -132,34 +132,36 @@ export class UserFormularioComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(async (params) => {
       // Get info freelancer by Id
-      this.freelancer = await this.freelancerService.getById(
+      this.freelancer = await this.freelancerService.getByIdToken(
         params.idFreelance
       );
-      // console.log('this is freelancers', this.freelancers);
+      console.log('this is freelancers', this.freelancer);
+      this.courses = this.freelancer.courses;
+      console.log(this.courses);
 
       // Get info course freelancer by Id
-      this.courses = await this.coursesService.getCoursesByIdFreelance(
+      /*   this.courses = await this.coursesService.getCoursesByIdFreelance(
         params.idFreelance
       );
-      // console.log('this is courses', this.courses);
+      console.log('this is courses', this.courses); */
 
       // Get info language freelancer by Id
       this.languages = await this.languageService.getLanguagesByIdFreelance(
         params.idFreelance
       );
-      // console.log('this is languages', this.languages);
+      console.log('this is languages', this.languages);
 
       // Get info education freelancer by Id
       this.educations = await this.educationService.getEducationsByIdFreelance(
         params.idFreelance
       );
-      // console.log('this is educations', this.educations);
+      console.log('this is educations', this.educations);
 
       // Get info experience freelancer by Id
       this.profesionalExperiences = await this.profesionalExperienceService.getProfesionalExperienceByIdFreelance(
         params.idFreelance
       );
-      // console.log('this is experience', this.profesionalExperiences);
+      console.log('this is experience', this.profesionalExperiences);
 
       // Get info skill freelancer by Id
       this.skills = await this.skillService.getSkillsByIdFreelance(

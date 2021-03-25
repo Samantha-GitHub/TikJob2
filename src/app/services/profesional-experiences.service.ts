@@ -26,8 +26,16 @@ export class ProfesionalExperienceService {
       .get<ProfesionalExperience[]>(`${this.baseUrl}/${pId}`, httpOptions)
       .toPromise();
   }
-
-  createHeaders(): any {
+  // GET BY TOKEN FREELANCER
+  getByIdToken(pId): Promise<ProfesionalExperience[]> {
+    return this.httpClient
+      .get<ProfesionalExperience[]>(
+        `${this.baseUrl}/profile`,
+        this.createHeaders()
+      )
+      .toPromise();
+  }
+  createHeaders() {
     return {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',

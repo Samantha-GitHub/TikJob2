@@ -40,11 +40,18 @@ export class SkillsService {
   //   return this.httpClient.get<Skill[]>(`${this.baseUrl}/{pName}`).toPromise();
   // }
 
-  createHeaders(): any {
+  // GET BY TOKEN FREELANCER
+  getByIdToken(pId): Promise<Skill[]> {
+    return this.httpClient
+      .get<Skill[]>(`${this.baseUrl}/profile`, this.createHeaders())
+      .toPromise();
+  }
+
+  createHeaders() {
     return {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        // 'authorization': localStorage.getItem('token_gym')
+        'authorization': localStorage.getItem('token_gym')
       }),
     };
   }
