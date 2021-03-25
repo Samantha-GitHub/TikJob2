@@ -70,10 +70,10 @@ export class CreateFreelancerComponent implements OnInit {
   async onSubmitFreelancer(): Promise<any> {
     console.log(this.formularioFreelancer.value);
 
-    this.formularioFreelancer.value.image = 'http';
-    this.formularioFreelancer.value.video = 'http';
+    // this.formularioFreelancer.value.image = 'http';
+    // this.formularioFreelancer.value.video = 'http';
 
-    // Destructuring llamaos la variable igual a la propriedad del objeto
+    // Destructuring llamamos la variable igual a la propriedad del objeto
     const { language, skill } = this.formularioFreelancer.value;
 
     // Envio los valores del form:
@@ -85,7 +85,6 @@ export class CreateFreelancerComponent implements OnInit {
 
     if (freelance.insertId) {
       // A Language
-
       language.forEach(async (oneLanguage) => {
         const lang = await this.tbiLanguageFreelance.create({
           language: oneLanguage,
@@ -95,7 +94,6 @@ export class CreateFreelancerComponent implements OnInit {
       });
 
       // A skill
-
       skill.forEach(async (oneSkill) => {
         const ski = await this.tbiSkillFreelance.create({
           skill: oneSkill,
@@ -104,8 +102,7 @@ export class CreateFreelancerComponent implements OnInit {
         console.log('yo this is skills', ski);
       });
     }
-
-    // ROUTING TO LOG IN
+    // ROUTING TO FORM
     this.router.navigate(['/loginfreelance']);
   }
 }

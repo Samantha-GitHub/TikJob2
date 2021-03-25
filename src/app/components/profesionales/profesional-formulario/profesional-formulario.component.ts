@@ -20,6 +20,7 @@ import { TbiLanguageOfertasTrabajosService } from 'src/app/services/tbi-language
   styleUrls: ['./profesional-formulario.component.scss'],
 })
 export class ProfesionalFormularioComponent implements OnInit {
+  active = 1;
   // FORM GROUP
   formularioCompany: FormGroup;
   formularioJobOffer: FormGroup;
@@ -126,7 +127,9 @@ export class ProfesionalFormularioComponent implements OnInit {
   onSubmit/Update de Company, JobOffer, Skills and Languages */
 
   async onSubmitCompany(): Promise<any> {
-    // AQUI va a ir el update de la company
+    const company = await this.companyService.update(
+      this.formularioCompany.value
+    );
   }
 
   async onSubmitJobOffer(): Promise<any> {
@@ -166,6 +169,4 @@ export class ProfesionalFormularioComponent implements OnInit {
 
   /*                  END
   onSubmit de Company, JobOffer, Skills and Languages */
-
-  active = 1;
 }

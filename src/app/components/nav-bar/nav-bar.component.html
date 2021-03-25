@@ -2,12 +2,20 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top mb-5">
   <!-- fixed-top -->
   <!-- Navbar brand -->
-  <a class="navbar-brand logo" [routerLink]="['/home']"><strong>TikJobs</strong>
+  <a class="navbar-brand logo" [routerLink]="['/home']"
+    ><strong>TikJobs</strong>
   </a>
 
   <!-- Collapse button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#basicExampleNav"
+    aria-controls="basicExampleNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -16,50 +24,83 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link float-shadow" [routerLink]="['/home']">Home
+        <a class="nav-link float-shadow" [routerLink]="['/home']"
+          >Home
 
           <!-- <labeL>|</labeL> -->
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link float-shadow" [routerLink]="['/freelance']">Freelancers
+        <a class="nav-link float-shadow" [routerLink]="['/freelance']"
+          >Freelancers
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link float-shadow" [routerLink]="['/job_offers']">Jobs
+        <a class="nav-link float-shadow" [routerLink]="['/job_offers']"
+          >Jobs
         </a>
       </li>
 
       <!-- Dropdown Forms -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Forms</a>
-        <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink">
+        <a
+          class="nav-link dropdown-toggle"
+          id="navbarDropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Forms</a
+        >
+        <div
+          class="dropdown-menu dropdown-secondary"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
           <a class="dropdown-item" [routerLink]="['/form_company']"> Company</a>
 
           <a class="dropdown-item" [routerLink]="['/form_freelance']">
-            Freelancer</a>
-          <a class="dropdown-item" [routerLink]="['/312']">404</a>
+            Freelancer</a
+          >
         </div>
       </li>
 
       <!-- Dropdown Account -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Account</a>
-        <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" [routerLink]="['/company/edit']"> Company</a>
+        <a
+          class="nav-link dropdown-toggle"
+          id="navbarDropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Account</a
+        >
+        <div
+          class="dropdown-menu dropdown-secondary"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <a class="dropdown-item" [routerLink]="['/company/profile']">
+            Company</a
+          >
 
-          <a class="dropdown-item" [routerLink]="['/freelance/edit']"> Freelancer</a>
-
+          <a class="dropdown-item" [routerLink]="['/freelance/profile']">
+            Freelancer</a
+          >
         </div>
       </li>
       <!-- Dropdown Login -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Login</a>
-        <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink">
+        <a
+          class="nav-link dropdown-toggle"
+          id="navbarDropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Login</a
+        >
+        <div
+          class="dropdown-menu dropdown-secondary"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
           <a class="dropdown-item" [routerLink]="['/logincompany']">
             Company
           </a>
@@ -70,12 +111,25 @@
         </div>
       </li>
     </ul>
+
+    <div>
+      <button (click)="logOut()" class="btn-sm btn-danger mr-2">LOG OUT</button>
+    </div>
     <!-- Search BAR -->
 
     <div class="d-flex">
-      <input class="form-control me-2" type="text" placeholder="City / Freelance / Jobs" aria-label="Search"
-        [(ngModel)]="search" />
-      <button (click)="searchTitle()" class="btn btn-success ml-1" type="button">
+      <input
+        class="form-control me-2"
+        type="text"
+        placeholder="City / Freelance / Jobs"
+        aria-label="Search"
+        [(ngModel)]="search"
+      />
+      <button
+        (click)="searchTitle()"
+        class="btn btn-success ml-1"
+        type="button"
+      >
         Search
       </button>
     </div>

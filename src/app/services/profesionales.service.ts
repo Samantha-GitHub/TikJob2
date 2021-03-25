@@ -12,6 +12,7 @@ export class ProfesionalesService {
     this.baseUrl = 'http://localhost:3000/api/companies';
   }
 
+  // GET ALL COMPANIES
   getAll(): Promise<Company[]> {
     const httpOptions = { headers: new HttpHeaders() };
 
@@ -20,6 +21,7 @@ export class ProfesionalesService {
       .toPromise();
   }
 
+  // GET BY ID COMPANY
   getById(pId): Promise<Company> {
     const httpOptions = { headers: new HttpHeaders() };
 
@@ -28,11 +30,10 @@ export class ProfesionalesService {
       .toPromise();
   }
 
+  // GET BY COMPANY token
   getByIdToken(pId): Promise<Company> {
-
-
     return this.httpClient
-      .get<Company>(`${this.baseUrl}/edit`, this.createHeaders())
+      .get<Company>(`${this.baseUrl}/profile`, this.createHeaders())
       .toPromise();
   }
 
@@ -42,6 +43,7 @@ export class ProfesionalesService {
 
   } */
 
+  // CREATE A COMPANY
   create(formValues): Promise<any> {
     formValues.image = 'http';
     console.log(formValues.image);
@@ -52,9 +54,10 @@ export class ProfesionalesService {
   }
 
   // UPDATE COMPANY
-  update(data): Promise<any> {
+  update(formValues): Promise<any> {
+    formValues.image = 'http';
     return this.httpClient
-      .put<any>(`${this.baseUrl}`, data, this.createHeaders())
+      .put<any>(`${this.baseUrl}/update`, formValues, this.createHeaders())
       .toPromise();
   }
 
@@ -62,7 +65,7 @@ export class ProfesionalesService {
     return {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'authorization': localStorage.getItem('token_tikjobs')
+        authorization: localStorage.getItem('token_tikjobs'),
       }),
     };
   }
