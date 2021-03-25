@@ -82,25 +82,25 @@ export class CreateFreelancerComponent implements OnInit {
       );
       console.log(freelance);
 
-      // if (freelance.insertId) {
-      //   // A Language
-      //   language.forEach(async (oneLanguage) => {
-      //     const lang = await this.tbiLanguageFreelance.create({
-      //       language: oneLanguage,
-      //       freelance: freelance.insertId,
-      //     });
-      //     console.log('yo this is lang', lang);
-      //   });
+      if (freelance.insertId) {
+        // A Language
+        language.forEach(async (oneLanguage) => {
+          const lang = await this.tbiLanguageFreelance.create({
+            language: oneLanguage,
+            freelance: freelance.insertId,
+          });
+          console.log('yo this is lang', lang);
+        });
 
-      //   // A skill
-      //   skill.forEach(async (oneSkill) => {
-      //     const ski = await this.tbiSkillFreelance.create({
-      //       skill: oneSkill,
-      //       freelance: freelance.insertId,
-      //     });
-      //     console.log('yo this is skills', ski);
-      //   });
-      // }
+        // A skill
+        skill.forEach(async (oneSkill) => {
+          const ski = await this.tbiSkillFreelance.create({
+            skill: oneSkill,
+            freelance: freelance.insertId,
+          });
+          console.log('yo this is skills', ski);
+        });
+      }
       // ROUTING TO FORM
       this.router.navigate(['/loginfreelance']);
     } catch (error) {
