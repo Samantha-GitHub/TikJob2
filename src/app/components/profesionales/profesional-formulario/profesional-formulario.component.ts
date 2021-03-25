@@ -21,6 +21,7 @@ import { TbiLanguageOfertasTrabajosService } from 'src/app/services/tbi-language
 })
 export class ProfesionalFormularioComponent implements OnInit {
   active = 1;
+  public page: number;
   // FORM GROUP
   formularioCompany: FormGroup;
   formularioJobOffer: FormGroup;
