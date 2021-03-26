@@ -9,7 +9,7 @@
     <!-- FREELANCER INFO -->
 
     <li [ngbNavItem]="1">
-      <a ngbNavLink>Personal Details</a>
+      <a ngbNavLink> <i class="fa fa-user"></i> Personal Details</a>
       <ng-template ngbNavContent>
         <form
           class="text-center border border-light p-5"
@@ -191,34 +191,59 @@
               </textarea>
             </div>
           </div>
-          <!-- Skils -->
-          <h4>SKILLS</h4>
+          <div class="form-row mb-4">
+            <!-- Skils -->
+            <div class="col">
+              <h4>SKILLS</h4>
 
-          <div class="col skills">
+              <ul
+                class="list-group list-group-horizontal-lg"
+                *ngFor="let skill of skills"
+              >
+                <li class="list-group-item list-group-item-info">
+                  {{ skill.skill }}
+                </li>
+              </ul>
+            </div>
+
+            <!-- <div class="col skills">
             <select class="form-control skillsSelect" formControlName="skill">
               <option>Select your skills</option>
               <option value="" *ngFor="let skill of skills">
                 {{ skill.skill }}
               </option>
             </select>
+          </div> -->
+
+            <!-- Languages -->
+
+            <div class="col">
+              <h4>LANGUAGES</h4>
+
+              <ul
+                class="list-group list-group-horizontal-lg m-1"
+                *ngFor="let language of languages"
+              >
+                <li class="list-group-item list-group-item-info">
+                  {{ language.language }}
+                </li>
+              </ul>
+            </div>
+
+            <!-- <div class="col languages">
+              <h4>Languages</h4>
+              <select
+                class="form-control skillsSelect"
+                formControlName="language"
+                [value]="language?.language"
+              >
+                <option value="">Select your languages</option>
+                <option value="" *ngFor="let language of languages">
+                  {{ language.language }}
+                </option>
+              </select>
+            </div> -->
           </div>
-
-          <!-- Languages -->
-
-          <div class="col languages">
-            <h4>Languages</h4>
-            <select
-              class="form-control skillsSelect"
-              formControlName="language"
-              [value]="language?.language"
-            >
-              <option value="">Select your languages</option>
-              <option value="" *ngFor="let language of languages">
-                {{ language.language }}
-              </option>
-            </select>
-          </div>
-
           <!-- Save button -->
           <button color="info" block="true" class="btn btn-info" type="submit">
             Save
@@ -228,7 +253,7 @@
     </li>
     <!-- EDUCATION -->
 
-    <li [ngbNavItem]="3">
+    <li [ngbNavItem]="2">
       <a ngbNavLink>Education</a>
       <ng-template ngbNavContent>
         <form
@@ -243,8 +268,7 @@
               <input
                 type="text"
                 class="form-control"
-                [value]="education?.degree"
-                [placeholder]="education?.degree"
+                placeholder="Degree"
                 formControlName="degree"
               />
             </div>
@@ -253,8 +277,7 @@
               <input
                 type="text"
                 class="form-control"
-                [value]="education?.school"
-                [placeholder]="education?.school"
+                placeholder="School"
                 formControlName="school"
               />
             </div>
@@ -265,8 +288,7 @@
               <input
                 type="text"
                 class="form-control"
-                [value]="education?.city"
-                [placeholder]="education?.city"
+                placeholder="City"
                 formControlName="city"
               />
             </div>
@@ -275,8 +297,7 @@
               <input
                 type="text"
                 class="form-control"
-                [value]="education?.country"
-                [placeholder]="education?.country"
+                placeholder="Country"
                 formControlName="country"
               />
             </div>
@@ -296,7 +317,6 @@
                 min="2018-01-01"
                 max="2018-12-31"
                 formControlName="start_date"
-                [value]="education?.start_date"
               />
             </div>
             <div class="col">
@@ -312,23 +332,16 @@
                 min="2018-01-01"
                 max="2018-12-31"
                 formControlName="end_date"
-                [value]="education?.end_date"
               />
             </div>
           </div>
-
-          <!-- Add button -->
-          <button class="btn btn-info" type="submit">+ Add</button>
-
-          <!-- Delete button -->
-          <button class="btn btn-danger m-1" type="submit">- Delete</button>
 
           <!-- Save button -->
           <button class="btn btn-success" type="submit">Save</button>
         </form>
       </ng-template>
     </li>
-    <li [ngbNavItem]="4">
+    <li [ngbNavItem]="3">
       <a ngbNavLink>Courses</a>
       <ng-template ngbNavContent>
         <form
@@ -345,8 +358,7 @@
                 type="text"
                 class="form-control"
                 formControlName="course_title"
-                [value]="course?.course_title"
-                [placeholder]="course?.course_title"
+                placeholder="Course Name"
               />
             </div>
             <div class="col">
@@ -355,8 +367,7 @@
                 type="text"
                 class="form-control"
                 formControlName="institution"
-                [value]="course?.institution"
-                [placeholder]="course?.institution"
+                placeholder="Institution"
               />
             </div>
           </div>
@@ -367,8 +378,7 @@
                 type="text"
                 class="form-control"
                 formControlName="city"
-                [value]="course?.city"
-                [placeholder]="course?.city"
+                placeholder="City"
               />
             </div>
             <div class="col">
@@ -377,8 +387,7 @@
                 type="text"
                 class="form-control"
                 formControlName="country"
-                [value]="course?.country"
-                [placeholder]="course?.country"
+                placeholder="Country"
               />
             </div>
           </div>
@@ -396,7 +405,6 @@
                 min="2018-01-01"
                 max="2018-12-31"
                 formControlName="start_date"
-                [value]="course?.start_date"
               />
             </div>
             <div class="col">
@@ -411,7 +419,6 @@
                 min="2018-01-01"
                 max="2018-12-31"
                 formControlName="end_date"
-                [value]="course?.end_date"
               />
             </div>
           </div>
@@ -423,29 +430,22 @@
               class="form-control"
               value="Course link"
               formControlName="course_link"
-              [value]="course?.course_link"
+              placeholder="Course Link"
             />
           </div>
-
-          <!-- Add button -->
-          <button class="btn btn-info" type="submit">+ Add</button>
-
-          <!-- Delete button -->
-          <button class="btn btn-danger m-1" type="submit">- Delete</button>
 
           <!-- Save button -->
           <button class="btn btn-success" type="submit">Save</button>
         </form>
       </ng-template>
     </li>
-    <li [ngbNavItem]="5">
+    <li [ngbNavItem]="4">
       <a ngbNavLink>Professional Experience</a>
       <ng-template ngbNavContent>
         <form
           class="text-center border border-light p-5"
           [formGroup]="formularioProfesionalExperience"
           (ngSubmit)="onSubmitExperience()"
-          *ngFor="let experience of profesionalExperiences"
         >
           <h2>PROFESSIONAL EXPERIENCE</h2>
           <div class="form-row mb-4">
@@ -455,8 +455,7 @@
                 type="text"
                 class="form-control"
                 formControlName="employer"
-                [value]="experience?.employer"
-                [placeholder]="experience?.employer"
+                placeholder="Employer"
               />
             </div>
             <div class="col">
@@ -465,8 +464,7 @@
                 type="text"
                 class="form-control"
                 formControlName="job_title"
-                [value]="experience?.job_title"
-                [placeholder]="experience?.job_title"
+                placeholder="Job title"
               />
             </div>
           </div>
@@ -477,8 +475,7 @@
                 type="text"
                 class="form-control"
                 formControlName="city"
-                [value]="experience?.city"
-                [placeholder]="experience?.city"
+                placeholder="City"
               />
             </div>
             <div class="col">
@@ -486,9 +483,8 @@
               <input
                 type="text"
                 class="form-control"
-                [placeholder]="experience?.country"
+                placeholder="Country"
                 formControlName="country"
-                [value]="experience?.country"
               />
             </div>
           </div>
@@ -506,7 +502,6 @@
                 min="2018-01-01"
                 max="2018-12-31"
                 formControlName="start_date"
-                [value]="experience?.start_date"
               />
             </div>
             <div class="col">
@@ -521,7 +516,6 @@
                 min="2018-01-01"
                 max="2018-12-31"
                 formControlName="end_date"
-                [value]="experience?.end_date"
               />
             </div>
           </div>
@@ -531,24 +525,14 @@
             class="form-control"
             value="Company link"
             formControlName="company_link"
-            [value]="experience?.company_link"
+            placeholder="Company link"
           />
           <!-- Jobs description -->
           <div class="mt-3 mb-3">
             <label> Description</label>
-            <textarea
-              id=""
-              class="form-control"
-              formControlName="description"
-              [value]="experience?.description"
-            >
+            <textarea id="" class="form-control" formControlName="description">
             </textarea>
           </div>
-          <!-- Add button -->
-          <button class="btn btn-info" type="submit">+ Add</button>
-
-          <!-- Delete button -->
-          <button class="btn btn-danger m-1" type="submit">- Delete</button>
 
           <!-- Save button -->
           <button class="btn btn-success" type="submit">Save</button>

@@ -76,8 +76,8 @@ export class UserFormularioComponent implements OnInit {
       video: new FormControl(),
       job_title: new FormControl(),
       profile: new FormControl(),
-      skill: new FormControl(),
-      language: new FormControl(),
+      // skill: new FormControl(),
+      // language: new FormControl(),
       username: new FormControl(),
       password: new FormControl(),
     });
@@ -135,43 +135,13 @@ export class UserFormularioComponent implements OnInit {
       this.freelancer = await this.freelancerService.getByIdToken(
         params.idFreelance
       );
-      // console.log('this is freelancers', this.freelancer);
-      this.educations = this.freelancer.educations;
-      this.profesionalExperiences = this.freelancer.profesionalExperiences;
+      console.log('this is freelancers', this.freelancer);
       this.courses = this.freelancer.courses;
+      this.educations = this.freelancer.education;
+      this.profesionalExperiences = this.freelancer.profesional_experience;
       this.languages = this.freelancer.languages;
       this.skills = this.freelancer.skills;
       // console.log(this.courses);
-
-      // Get info course freelancer by Id
-      /*   this.courses = await this.coursesService.getCoursesByIdFreelance(
-        params.idFreelance
-      );
-      console.log('this is courses', this.courses); */
-
-      // Get info language freelancer by Id
-      // this.languages = await this.languageService.getLanguagesByIdFreelance(
-      //   params.idFreelance
-      // );
-      // console.log('this is languages', this.languages);
-
-      // Get info education freelancer by Id
-      // this.educations = await this.educationService.getEducationsByIdFreelance(
-      //   params.idFreelance
-      // );
-      // console.log('this is educations', this.educations);
-
-      // Get info experience freelancer by Id
-      // this.profesionalExperiences = await this.profesionalExperienceService.getProfesionalExperienceByIdFreelance(
-      //   params.idFreelance
-      // );
-      // console.log('this is experience', this.profesionalExperiences);
-
-      // Get info skill freelancer by Id
-      // this.skills = await this.skillService.getSkillsByIdFreelance(
-      //   params.idFreelance
-      // );
-      // console.log('this is skills', this.skills);
 
       // FORM CONTENT
       this.formularioFreelancer = new FormGroup({
@@ -195,7 +165,7 @@ export class UserFormularioComponent implements OnInit {
         language: new FormControl(),
       });
 
-      // FORMULARIO Course
+      /*  // FORMULARIO Course
       this.formularioCourse = new FormGroup({
         course_title: new FormControl(this.course.course_title),
         institution: new FormControl(this.course.institution),
@@ -226,7 +196,7 @@ export class UserFormularioComponent implements OnInit {
         end_date: new FormControl(this.profesionalExperience.end_date),
         company_link: new FormControl(this.profesionalExperience.company_link),
         description: new FormControl(this.profesionalExperience.description),
-      });
+      }); */
     });
   }
 

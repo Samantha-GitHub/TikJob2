@@ -17,8 +17,8 @@ export interface Freelance {
   username: string;
   password: string;
   courses: any[];
-  profesionalExperiences: any[];
+  profesional_experience: any[];
   skills: any[];
-  educations: any[];
+  education: any[];
   languages: any[];
 }
