@@ -104,7 +104,7 @@ export class ProfesionalFormularioComponent implements OnInit {
 
       this.company = await this.companyService.getByIdToken(params.idcompany);
       this.jobOffers = this.company.jobOffer;
-      console.log(this.jobOffers);
+      console.log('log de ofertas que se tienen que pintar', this.jobOffers);
 
       this.formularioCompany = new FormGroup({
         name_company: new FormControl(this.company.name_company),
@@ -136,7 +136,7 @@ export class ProfesionalFormularioComponent implements OnInit {
 
   async onSubmitJobOffer(): Promise<any> {
     // recibo datos del form
-    console.log(this.formularioJobOffer.value);
+    console.log('log value formularioJobOffer', this.formularioJobOffer.value);
 
     // Destructuring llamaos la variable igual a la propriedad del objeto
     const { language, skill } = this.formularioJobOffer.value;
@@ -146,7 +146,7 @@ export class ProfesionalFormularioComponent implements OnInit {
     const ofertas = await this.jobOfferService.insert(
       this.formularioJobOffer.value
     );
-    console.log(ofertas);
+    console.log('log de ofertas', ofertas);
 
     if (ofertas.insertId) {
       // A Language
