@@ -103,22 +103,6 @@
           </button>
           <hr>
         </form>
-        <h2 id="jobOffersPublished">Job Offers Published</h2>
-        <div class="grid">
-
-          <div class=" card text-white bg-primary mb-3" style="max-width: 18rem;"
-            *ngFor="let jobOffer of jobOffers | paginate: { itemsPerPage: 3, currentPage: page }">
-            <div class="card-header">{{jobOffer.function_department}}</div>
-            <div class="card-body">
-              <h5 class="card-title">{{jobOffer.city}} / {{jobOffer.country}}</h5>
-              <p class="card-text">{{jobOffer.responsabilities}}
-              </p>
-            </div>
-
-          </div>
-        </div>
-        <pagination-controls (pageChange)="page = $event" responsive=" true" previousLabel="Previous" nextLabel="Next">
-        </pagination-controls>
 
       </ng-template>
 
@@ -208,6 +192,25 @@
             Save
           </button>
         </form>
+
+        <h2 id="jobOffersPublished">Job Offers Published</h2>
+        <div class="grid">
+
+          <div class=" card text-white bg-primary mb-3" style="max-width: 18rem;"
+            *ngFor="let jobOffer of jobOffers | paginate: { itemsPerPage: 3, currentPage: page }">
+            <div class="card-header">{{jobOffer.function_department}}
+              <button class="btn btn-sm btn-danger ml-3">X</button>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{jobOffer.city}} / {{jobOffer.country}}</h5>
+              <p class="card-text">{{jobOffer.responsabilities}}
+              </p>
+            </div>
+
+          </div>
+        </div>
+        <pagination-controls (pageChange)="page = $event" responsive=" true" previousLabel="Previous" nextLabel="Next">
+        </pagination-controls>
       </ng-template>
     </li>
 
