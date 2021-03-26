@@ -198,8 +198,9 @@
 
           <div class=" card text-white bg-primary mb-3" style="max-width: 18rem;"
             *ngFor="let jobOffer of jobOffers | paginate: { itemsPerPage: 3, currentPage: page }">
-            <div class="card-header">{{jobOffer.function_department}}
-              <button class="btn btn-sm btn-danger ml-3">X</button>
+            <div class="card-header"><button
+                class="btn btn-sm btn-danger mr-3">X</button>{{jobOffer.function_department}}
+
             </div>
             <div class="card-body">
               <h5 class="card-title">{{jobOffer.city}} / {{jobOffer.country}}</h5>
