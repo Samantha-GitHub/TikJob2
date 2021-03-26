@@ -254,7 +254,7 @@
     <!-- EDUCATION -->
 
     <li [ngbNavItem]="2">
-      <a ngbNavLink>Education</a>
+      <a ngbNavLink> <i class="fas fa-graduation-cap"></i> Education</a>
       <ng-template ngbNavContent>
         <form
           class="text-center border border-light p-5"
@@ -262,7 +262,7 @@
           (ngSubmit)="onSubmitLanguage()"
         >
           <h2>EDUCATION</h2>
-          <div class="form-row mb-4" *ngFor="let education of educations">
+          <div class="form-row mb-4">
             <div class="col">
               <!-- Degree -->
               <input
@@ -336,19 +336,53 @@
             </div>
           </div>
 
+          <h2 id="jobOffersPublished">Your education</h2>
+          <div class="grid">
+            <div
+              class="card text-white bg-info mb-3"
+              style="max-width: 18rem"
+              *ngFor="
+                let education of educations
+                  | paginate: { itemsPerPage: 3, currentPage: page }
+              "
+            >
+              <div class="card-header">
+                <button class="btn btn-sm btn-danger mr-3">X</button>School:
+                <strong> {{ education.school }}</strong>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{ education.degree }}
+                </h5>
+                <p class="card-text">
+                  <strong> Location:</strong> {{ education.city }},
+                  <strong>{{ education.country }}</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+          <pagination-controls
+            (pageChange)="page = $event"
+            responsive=" true"
+            previousLabel="Previous"
+            nextLabel="Next"
+          >
+          </pagination-controls>
+
           <!-- Save button -->
           <button class="btn btn-success" type="submit">Save</button>
         </form>
       </ng-template>
     </li>
+    <!-- COURSE -->
+
     <li [ngbNavItem]="3">
-      <a ngbNavLink>Courses</a>
+      <a ngbNavLink><i class="fab fa-leanpub"></i> Courses</a>
       <ng-template ngbNavContent>
         <form
           class="text-center border border-light p-5"
           [formGroup]="formularioCourse"
           (ngSubmit)="onSubmitCourse()"
-          *ngFor="let course of courses"
         >
           <h2>Course</h2>
           <div class="form-row mb-4">
@@ -435,12 +469,45 @@
           </div>
 
           <!-- Save button -->
-          <button class="btn btn-success" type="submit">Save</button>
+          <button class="btn btn-success m-3" type="submit">Save</button>
+
+          <h2 id="jobOffersPublished">Your education</h2>
+          <div class="grid">
+            <div
+              class="card text-white bg-info mb-3"
+              style="max-width: 18rem"
+              *ngFor="
+                let course of courses
+                  | paginate: { itemsPerPage: 3, currentPage: page }
+              "
+            >
+              <div class="card-header">
+                <button class="btn btn-sm btn-danger mr-3">X</button>
+                School: <strong> {{ course.institution }}</strong>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">{{ course.course_title }}</h5>
+                <p class="card-text">
+                  Location: {{ course.city }},
+                  <strong>{{ course.country }}</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+          <pagination-controls
+            (pageChange)="page = $event"
+            responsive=" true"
+            previousLabel="Previous"
+            nextLabel="Next"
+          >
+          </pagination-controls>
         </form>
       </ng-template>
     </li>
+    <!-- EXPERIENCE -->
+
     <li [ngbNavItem]="4">
-      <a ngbNavLink>Professional Experience</a>
+      <a ngbNavLink><i class="fas fa-building"></i> Professional Experience</a>
       <ng-template ngbNavContent>
         <form
           class="text-center border border-light p-5"
@@ -536,6 +603,39 @@
 
           <!-- Save button -->
           <button class="btn btn-success" type="submit">Save</button>
+
+          <h2 id="jobOffersPublished">Your Professional Experience</h2>
+          <div class="grid">
+            <div
+              class="card text-white bg-info mb-3"
+              style="max-width: 18rem"
+              *ngFor="
+                let profesionalExperience of profesionalExperiences
+                  | paginate: { itemsPerPage: 3, currentPage: page }
+              "
+            >
+              <div class="card-header">
+                <button class="btn btn-sm btn-danger mr-3">X</button>Employer:
+                <strong> {{ profesionalExperience.employer }}</strong>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{ profesionalExperience.job_title }}
+                </h5>
+                <p class="card-text">
+                  <strong> Location:</strong> {{ profesionalExperience.city }},
+                  <strong>{{ profesionalExperience.country }}</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+          <pagination-controls
+            (pageChange)="page = $event"
+            responsive=" true"
+            previousLabel="Previous"
+            nextLabel="Next"
+          >
+          </pagination-controls>
         </form>
       </ng-template>
     </li>

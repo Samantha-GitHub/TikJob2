@@ -24,6 +24,7 @@ import { TbiLanguagessUsuarioService } from 'src/app/services/tbi-languages-usua
 })
 export class UserFormularioComponent implements OnInit {
   active = 1;
+  public page: number;
   // FORM GROUP
   formularioFreelancer: FormGroup;
   // formularioSkill: FormGroup;
