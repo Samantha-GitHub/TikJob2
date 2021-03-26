@@ -45,6 +45,14 @@ export class JobOfferService {
       .toPromise();
   }
 
+
+  //DELETE A JOB OFFER BY id jobOffer y id companyToken
+  deleteByIdToken() {
+
+    return this.httpClient.delete(this.baseUrl, this.createHeaders()).toPromise()
+
+  };
+
   createHeaders(): any {
     return {
       headers: new HttpHeaders({
