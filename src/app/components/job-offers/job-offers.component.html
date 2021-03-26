@@ -1,32 +1,22 @@
 <div class="servicesContainer mt-5">
   <div class="center servicesWrapper mt-5">
-    <div
-      class="card green"
-      *ngFor="
+    <div class="card green" *ngFor="
         let jobOffer of jobOffers
           | paginate: { itemsPerPage: 9, currentPage: page }
-      "
-    >
+      ">
       <div class="additional">
         <div class="user-card">
           <div class="level center">{{ jobOffer.starting_date | date }}</div>
           <div class="points center">{{ jobOffer.function_department }}</div>
 
-          <img
-            src="../../../../assets/images/svg-6.svg"
-            width="110"
-            height="110"
-            class="mt-5"
-          />
+          <img src="../../../../assets/images/svg-6.svg" width="110" height="110" class="mt-5" />
         </div>
         <div class="more-info">
           <h2 (click)="getJobOffer(jobOffer.id)">
             {{ jobOffer.function_department }}
           </h2>
           <div class="coords">
-            <span
-              ><strong>Date:</strong> {{ jobOffer.starting_date | date }}</span
-            >
+            <span><strong>Date:</strong> {{ jobOffer.starting_date | date }}</span>
           </div>
           <div class="coords">
             <span><strong>Hours:</strong> {{ jobOffer.hour_week }}</span>
@@ -36,65 +26,23 @@
           <!-- <div class="stats"> -->
           <div id="full-stars-example-two">
             <div class="rating-group">
-              <input
-                disabled
-                checked
-                class="rating__input rating__input--none"
-                name="rating3"
-                id="rating3-none"
-                value="0"
-                type="radio"
-              />
-              <label aria-label="1 star" class="rating__label" for="rating3-1"
-                ><i class="rating__icon rating__icon--star fa fa-star"></i
-              ></label>
-              <input
-                class="rating__input"
-                name="rating3"
-                id="rating3-1"
-                value="1"
-                type="radio"
-              />
-              <label aria-label="2 stars" class="rating__label" for="rating3-2"
-                ><i class="rating__icon rating__icon--star fa fa-star"></i
-              ></label>
-              <input
-                class="rating__input"
-                name="rating3"
-                id="rating3-2"
-                value="2"
-                type="radio"
-              />
-              <label aria-label="3 stars" class="rating__label" for="rating3-3"
-                ><i class="rating__icon rating__icon--star fa fa-star"></i
-              ></label>
-              <input
-                class="rating__input"
-                name="rating3"
-                id="rating3-3"
-                value="3"
-                type="radio"
-              />
-              <label aria-label="4 stars" class="rating__label" for="rating3-4"
-                ><i class="rating__icon rating__icon--star fa fa-star"></i
-              ></label>
-              <input
-                class="rating__input"
-                name="rating3"
-                id="rating3-4"
-                value="4"
-                type="radio"
-              />
-              <label aria-label="5 stars" class="rating__label" for="rating3-5"
-                ><i class="rating__icon rating__icon--star fa fa-star"></i
-              ></label>
-              <input
-                class="rating__input"
-                name="rating3"
-                id="rating3-5"
-                value="5"
-                type="radio"
-              />
+              <input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none"
+                value="0" type="radio" />
+              <label aria-label="1 star" class="rating__label" for="rating3-1"><i
+                  class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio" />
+              <label aria-label="2 stars" class="rating__label" for="rating3-2"><i
+                  class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio" />
+              <label aria-label="3 stars" class="rating__label" for="rating3-3"><i
+                  class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio" />
+              <label aria-label="4 stars" class="rating__label" for="rating3-4"><i
+                  class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio" />
+              <label aria-label="5 stars" class="rating__label" for="rating3-5"><i
+                  class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio" />
             </div>
           </div>
           <!-- </div> -->
@@ -103,17 +51,10 @@
       <div class="general">
         <h2>{{ jobOffer.function_department }}</h2>
         <p>{{ jobOffer.responsabilities }}</p>
-        <span class="more"
-          >{{ jobOffer.city }}, <strong>{{ jobOffer.country }}</strong></span
-        >
+        <span class="more">{{ jobOffer.city }}, <strong>{{ jobOffer.country }}</strong></span>
       </div>
     </div>
   </div>
 </div>
-<pagination-controls
-  (pageChange)="page = $event"
-  responsive=" true"
-  previousLabel="Previous"
-  nextLabel="Next"
->
+<pagination-controls (pageChange)="page = $event" responsive=" true" previousLabel="Previous" nextLabel="Next">
 </pagination-controls>
