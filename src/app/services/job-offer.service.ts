@@ -29,7 +29,9 @@ export class JobOfferService {
   }
 
   insert(formValues): any {
-    return this.httpClient.post(this.baseUrl, formValues, this.createHeaders()).toPromise();
+    return this.httpClient
+      .post(this.baseUrl, formValues, this.createHeaders())
+      .toPromise();
   }
 
   // searchJobByCountry(pName): Promise<Joboffer[]> {
@@ -48,7 +50,7 @@ export class JobOfferService {
   createHeaders(): any {
     return {
       headers: new HttpHeaders({
-        'authorization': localStorage.getItem('token_tikjobs')
+        authorization: localStorage.getItem('token_tikjobs'),
       }),
     };
   }

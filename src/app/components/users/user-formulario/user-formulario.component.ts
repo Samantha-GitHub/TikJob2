@@ -235,14 +235,27 @@ export class UserFormularioComponent implements OnInit {
     }
   }
 
-  async onSubmitCourse(): Promise<void> {
-    //   const response = await this.skillService.insert(this.formulario.value);
+  // CREATE COURSE
+  async onSubmitCourse(): Promise<any> {
+    const course = await this.coursesService.create(
+      this.formularioCourse.value
+    );
+    console.log(course);
   }
 
-  async onSubmitLanguage(): Promise<void> {
-    //   const response = await this.languageService.insert(this.formulario.value);
+  // CREATE EDUCATION
+  async onSubmiEducation(): Promise<any> {
+    const experience = await this.educationService.create(
+      this.formularioEducation.value
+    );
+    console.log(experience);
   }
-  async onSubmitExperience(): Promise<void> {
-    //   const response = await this.languageService.insert(this.formulario.value);
+
+  // CREATE EXPERIENCE
+  async onSubmitExperience(): Promise<any> {
+    const experience = await this.profesionalExperienceService.create(
+      this.formularioProfesionalExperience.value
+    );
+    console.log(experience);
   }
 }

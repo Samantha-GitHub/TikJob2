@@ -259,18 +259,30 @@
         <form
           class="text-center border border-light p-5"
           [formGroup]="formularioEducation"
-          (ngSubmit)="onSubmitLanguage()"
+          (ngSubmit)="onSubmiEducation()"
         >
           <h2>EDUCATION</h2>
           <div class="form-row mb-4">
             <div class="col">
               <!-- Degree -->
+
+              <select
+                class="form-control skillsSelect"
+                formControlName="degree"
+              >
+                <option>Select your Degree</option>
+                <option *ngFor="let education of educations">
+                  {{ education.degree }}
+                </option>
+              </select>
+
+              <!--
               <input
                 type="text"
                 class="form-control"
                 placeholder="Degree"
                 formControlName="degree"
-              />
+              /> -->
             </div>
             <div class="col">
               <!-- School -->
@@ -313,9 +325,6 @@
                 type="date"
                 id="start"
                 name="trip-start"
-                value="2018-07-22"
-                min="2018-01-01"
-                max="2018-12-31"
                 formControlName="start_date"
               />
             </div>
@@ -328,9 +337,6 @@
                 type="date"
                 id="end"
                 name="trip-start"
-                value="2018-07-22"
-                min="2018-01-01"
-                max="2018-12-31"
                 formControlName="end_date"
               />
             </div>
@@ -436,8 +442,6 @@
                 type="date"
                 id="start"
                 name="trip-start"
-                min="2018-01-01"
-                max="2018-12-31"
                 formControlName="start_date"
               />
             </div>
@@ -450,8 +454,6 @@
                 type="date"
                 id="end"
                 name="trip-start"
-                min="2018-01-01"
-                max="2018-12-31"
                 formControlName="end_date"
               />
             </div>
@@ -566,8 +568,6 @@
                 type="date"
                 id="start"
                 name="trip-start"
-                min="2018-01-01"
-                max="2018-12-31"
                 formControlName="start_date"
               />
             </div>
@@ -580,8 +580,6 @@
                 type="date"
                 id="end"
                 name="trip-start"
-                min="2018-01-01"
-                max="2018-12-31"
                 formControlName="end_date"
               />
             </div>

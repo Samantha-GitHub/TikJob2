@@ -35,11 +35,18 @@ export class ProfesionalExperienceService {
       )
       .toPromise();
   }
+
+  // CREATE prof experience
+  create(formValues): any {
+    return this.httpClient
+      .post(this.baseUrl, formValues, this.createHeaders())
+      .toPromise();
+  }
+
   createHeaders() {
     return {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        // 'authorization': localStorage.getItem('token_gym')
+        authorization: localStorage.getItem('token_tikjobs'),
       }),
     };
   }
