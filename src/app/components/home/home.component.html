@@ -53,7 +53,7 @@
     <hr />
     <div class="grid">
 
-      <article *ngFor="let freelance of freelancers.slice(0, 3)">
+      <article (click)="getFreelance(freelance.id)" *ngFor="let freelance of freelancers.slice(0, 3)">
         <p class="hidden">{{freelance.firstname}} : {{freelance.job_title}} </p>
 
         <figure>

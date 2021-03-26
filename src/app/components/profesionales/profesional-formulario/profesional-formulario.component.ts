@@ -95,6 +95,7 @@ export class ProfesionalFormularioComponent implements OnInit {
       console.log(error);
     }
 
+
     // ActivatedRoute
 
     this.activatedRoute.params.subscribe(async (params) => {
@@ -167,8 +168,18 @@ export class ProfesionalFormularioComponent implements OnInit {
         console.log(ski);
       });
     }
+
+
   }
 
   /*                  END
   onSubmit de Company, JobOffer, Skills and Languages */
+
+  //Delete job Offer
+
+  deleteJobOffer() {
+
+    this.jobOfferService.deleteByIdToken();
+
+  };
 }

@@ -38,4 +38,8 @@ export class HomeComponent implements OnInit {
   getJobOffer(pId): void {
     this.router.navigate(['job_offers', pId]);
   }
+
+  getFreelance(pId): any {
+    this.router.navigate(['freelance', pId]);
+  }
 }
