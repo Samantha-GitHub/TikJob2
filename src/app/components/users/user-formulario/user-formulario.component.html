@@ -26,17 +26,22 @@
                 class="form-control"
                 formControlName="username"
                 [value]="freelancer?.username"
+                placeholder="username"
               />
             </div>
-            <div class="col">
-              <!-- PASSWORD -->
-              <input
-                type="password"
-                class="form-control"
-                formControlName="password"
-                [value]="freelancer?.password"
-              />
-            </div>
+            <fieldset disabled>
+              <div class="col">
+                <!-- PASSWORD -->
+                <input
+                  type="password"
+                  id="disabledInput"
+                  class="form-control"
+                  formControlName="password"
+                  [value]="freelancer?.password"
+                  placeholder="password"
+                />
+              </div>
+            </fieldset>
           </div>
           <div class="form-row mb-4">
             <div class="col">

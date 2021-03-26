@@ -7,7 +7,7 @@
     class="nav-tabs justify-content-center mt-5"
   >
     <li [ngbNavItem]="1">
-      <a ngbNavLink>Freelancer Profile</a>
+      <a ngbNavLink>Freelancer Profile <i class="fas fa-id-card"></i></a>
       <ng-template ngbNavContent>
         <form
           class="text-center border border-light p-5"
@@ -29,11 +29,17 @@
             <div class="col">
               <!-- PASSWORD -->
               <input
+                id="inputPassword6"
+                aria-describedby="passwordHelpInline"
                 type="password"
                 class="form-control"
                 placeholder="Password"
                 formControlName="password"
+                required
               />
+              <small id="passwordHelpInline" class="text-muted">
+                Must be 8-20 characters long.
+              </small>
             </div>
           </div>
           <div class="form-row mb-4">
@@ -56,8 +62,8 @@
               />
             </div>
           </div>
-          <div class="form-row mb-4">
-            <div class="col">
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
               <!-- E-mail -->
               <input
                 type="email"
@@ -65,29 +71,33 @@
                 class="form-control mb-4"
                 placeholder="E-mail"
                 formControlName="email"
+                required
               />
             </div>
             <!-- SEXO -->
-            <div class="col">
+            <div class="col-md-3 mb-3">
               <select
                 class="form-control custom-select"
                 formControlName="gender"
+                placeholder="gender"
               >
-                <option selected>Select gender</option>
+                <option selected value="">Select gender</option>
                 <option value="M">Man</option>
                 <option value="W">Woman</option>
               </select>
             </div>
+            <!-- Phone number -->
+            <div class="col-md-3 mb-3">
+              <input
+                type="number"
+                id="defaultRegisterPhonePassword"
+                class="form-control"
+                placeholder="Phone number"
+                aria-describedby="defaultRegisterFormPhoneHelpBlock"
+                formControlName="phone"
+              />
+            </div>
           </div>
-          <!-- Phone number -->
-          <input
-            type="number"
-            id="defaultRegisterPhonePassword"
-            class="form-control"
-            placeholder="Phone number"
-            aria-describedby="defaultRegisterFormPhoneHelpBlock"
-            formControlName="phone"
-          />
           <div class="form-row mb-4">
             <!-- Photo -->
             <div class="col">
@@ -157,23 +167,28 @@
             </div>
           </div>
 
-          <!-- JobTitle -->
-          <input
-            type="text"
-            id="defaultJobTitle"
-            class="form-control mb-4"
-            placeholder="Job Title"
-            formControlName="job_title"
-          />
-
-          <!-- LinkedIn -->
-          <input
-            type="url"
-            id="defaultWebsite"
-            class="form-control mb-4"
-            placeholder="Website"
-            formControlName="website"
-          />
+          <div class="form-row mb-4">
+            <div class="col">
+              <!-- JobTitle -->
+              <input
+                type="text"
+                id="defaultJobTitle"
+                class="form-control mb-4"
+                placeholder="Job Title"
+                formControlName="job_title"
+              />
+            </div>
+            <div class="col">
+              <!-- LinkedIn -->
+              <input
+                type="url"
+                id="defaultWebsite"
+                class="form-control mb-4"
+                placeholder="Website"
+                formControlName="website"
+              />
+            </div>
+          </div>
           <!-- Profile -->
           <div class="form-row mb-4 justify-content-center text-center">
             <div class="col">
@@ -186,40 +201,44 @@
               </textarea>
             </div>
           </div>
-          <!--  Skils -->
 
-          <div class="col">
-            <h4>SKILLS</h4>
-            <select
-              multiple
-              class="form-control custom-select"
-              formControlName="skill"
-            >
-              <option value="">Select your skills</option>
-              <option *ngFor="let skill of skills">
-                {{ skill.skill }}
-              </option>
-            </select>
-          </div>
-          -->
+          <div class="form-row mb-4">
+            <!--  Skils -->
 
-          <!-- Languages -->
+            <div class="col">
+              <h4>SKILLS</h4>
+              <select
+                multiple
+                class="form-control custom-select"
+                formControlName="skill"
+                id="inputGroupSelect03"
+                aria-label="Example select with button addon"
+              >
+                <option value="">Select your skills</option>
+                <option *ngFor="let skill of skills">
+                  {{ skill.skill }}
+                </option>
+              </select>
+            </div>
 
-          <div class="col">
-            <h4>Languages</h4>
-            <select
-              multiple
-              class="form-control custom-select"
-              formControlName="language"
-            >
-              <option value="">Select your languages</option>
-              <option *ngFor="let language of languages">
-                {{ language.language }}
-              </option>
-            </select>
+            <!-- Languages -->
+
+            <div class="col">
+              <h4>Languages</h4>
+              <select
+                multiple
+                class="form-control custom-select"
+                formControlName="language"
+              >
+                <option value="">Select your languages</option>
+                <option *ngFor="let language of languages">
+                  {{ language.language }}
+                </option>
+              </select>
+            </div>
           </div>
           <!-- Save button -->
-          <button color="info" block="true" class="btn btn-info" type="submit">
+          <button block="true" class="btn btn-success m-5 p-2" type="submit">
             Sign Up
           </button>
         </form>
