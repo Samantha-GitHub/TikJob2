@@ -184,4 +184,8 @@ export class ProfesionalFormularioComponent implements OnInit {
     const deleteoffer = await this.companyService.delete();
     console.log(deleteoffer);
   }
+
+  refresh(): void {
+    window.location.reload();
+  }
 }
