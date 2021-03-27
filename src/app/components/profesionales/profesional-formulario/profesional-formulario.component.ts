@@ -95,34 +95,34 @@ export class ProfesionalFormularioComponent implements OnInit {
       console.log(error);
     }
 
-
     // ActivatedRoute
-
-    this.activatedRoute.params.subscribe(async (params) => {
-      console.log(params.idcompany);
+    /* this.activatedRoute.params.subscribe(async (params) => {
+      // doesnt work cuz this looks at the url and im asking for token
+      // console.log(params.idcompany);
 
       // get info company by Id
 
-      this.company = await this.companyService.getByIdToken(params.idcompany);
-      this.jobOffers = this.company.jobOffer;
-      console.log('log de ofertas que se tienen que pintar', this.jobOffers);
+    }); */
 
-      this.formularioCompany = new FormGroup({
-        name_company: new FormControl(this.company.name_company),
-        phone: new FormControl(this.company.phone),
-        vat: new FormControl(this.company.vat),
-        street: new FormControl(this.company.street),
-        city: new FormControl(this.company.city),
-        zip_code: new FormControl(this.company.zip_code),
-        country: new FormControl(this.company.country),
-        website: new FormControl(this.company.website),
-        image: new FormControl(),
-        email: new FormControl(this.company.email),
-        employees_number: new FormControl(this.company.employees_number),
-        year_founded: new FormControl(this.company.year_founded),
-        username: new FormControl(this.company.username),
-        password: new FormControl(this.company.password),
-      });
+    this.company = await this.companyService.getByIdToken();
+    this.jobOffers = this.company.jobOffer;
+    console.log('log de ofertas que se tienen que pintar', this.jobOffers);
+
+    this.formularioCompany = new FormGroup({
+      name_company: new FormControl(this.company.name_company),
+      phone: new FormControl(this.company.phone),
+      vat: new FormControl(this.company.vat),
+      street: new FormControl(this.company.street),
+      city: new FormControl(this.company.city),
+      zip_code: new FormControl(this.company.zip_code),
+      country: new FormControl(this.company.country),
+      website: new FormControl(this.company.website),
+      image: new FormControl(),
+      email: new FormControl(this.company.email),
+      employees_number: new FormControl(this.company.employees_number),
+      year_founded: new FormControl(this.company.year_founded),
+      username: new FormControl(this.company.username),
+      password: new FormControl(this.company.password),
     });
   }
 
@@ -168,18 +168,20 @@ export class ProfesionalFormularioComponent implements OnInit {
         console.log(ski);
       });
     }
-
-
   }
 
   /*                  END
   onSubmit de Company, JobOffer, Skills and Languages */
 
-  //Delete job Offer
+  // Delete job Offer
 
-  deleteJobOffer() {
+  async deleteJobOffer(): Promise<any> {
+    const deleteoffer = await this.jobOfferService.deleteByIdToken();
+    console.log(deleteoffer);
+  }
 
-    this.jobOfferService.deleteByIdToken();
-
-  };
+  async deleteCompany(): Promise<any> {
+    const deleteoffer = await this.companyService.delete();
+    console.log(deleteoffer);
+  }
 }

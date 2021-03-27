@@ -47,15 +47,14 @@ export class JobOfferService {
       .toPromise();
   }
 
+  // DELETE A JOB OFFER BY id jobOffer y id companyToken
+  deleteByIdToken(): Promise<Joboffer> {
+    return this.httpClient
+      .delete<Joboffer>(this.baseUrl, this.createHeaders())
+      .toPromise();
+  }
 
-  //DELETE A JOB OFFER BY id jobOffer y id companyToken
-  deleteByIdToken() {
-
-    return this.httpClient.delete(this.baseUrl, this.createHeaders()).toPromise()
-
-  };
-
-  createHeaders(): any {
+  createHeaders() {
     return {
       headers: new HttpHeaders({
         authorization: localStorage.getItem('token_tikjobs'),

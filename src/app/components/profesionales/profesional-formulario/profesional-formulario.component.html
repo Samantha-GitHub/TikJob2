@@ -1,62 +1,110 @@
 <div class="servicesContainer justify-content-center mt-5">
   <!-- collapse -->
-  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs justify-content-center">
+  <ul
+    ngbNav
+    #nav="ngbNav"
+    [(activeId)]="active"
+    class="nav-tabs justify-content-center"
+  >
     <li [ngbNavItem]="1">
       <a ngbNavLink>Company Details</a>
       <ng-template ngbNavContent>
-        <form class="text-center border border-light p-5" [formGroup]="formularioCompany"
-          (ngSubmit)="onSubmitCompany()">
+        <form
+          class="text-center border border-light p-5"
+          [formGroup]="formularioCompany"
+          (ngSubmit)="onSubmitCompany()"
+        >
           <h2>COMPANY DETAILS</h2>
 
           <div class="form-row mb-4">
             <div class="col">
               <!-- Username -->
-              <input [value]="company?.username" type="text" id="username" class="form-control"
-                formControlName="username" />
+              <input
+                [value]="company?.username"
+                type="text"
+                id="username"
+                class="form-control"
+                formControlName="username"
+              />
             </div>
 
             <div class="col">
               <!-- Password -->
-              <input [value]="company?.password" type="password" id="defaultRegisterFormPassword" class="form-control"
-                formControlName="password" />
+              <input
+                [value]="company?.password"
+                type="password"
+                id="defaultRegisterFormPassword"
+                class="form-control"
+                formControlName="password"
+              />
             </div>
           </div>
 
           <div class="form-row mb-4">
             <div class="col">
               <!-- Company name -->
-              <input type="text" id="defaultRegisterFormFirstName" class="form-control" formControlName="name_company"
-                [value]="company?.name_company" />
+              <input
+                type="text"
+                id="defaultRegisterFormFirstName"
+                class="form-control"
+                formControlName="name_company"
+                [value]="company?.name_company"
+              />
             </div>
             <div class="col">
               <!-- Vat -->
-              <input type="number" id="defaultRegisterFormLastName" class="form-control" formControlName="vat"
-                [value]="company?.vat" />
+              <input
+                type="number"
+                id="defaultRegisterFormLastName"
+                class="form-control"
+                formControlName="vat"
+                [value]="company?.vat"
+              />
             </div>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- E-mail -->
-              <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" [value]="company?.email"
-                formControlName="email" />
+              <input
+                type="email"
+                id="defaultRegisterFormEmail"
+                class="form-control mb-4"
+                [value]="company?.email"
+                formControlName="email"
+              />
             </div>
             <!-- Employees number -->
             <div class="col">
-              <input type="number" id="employeesNumber" class="form-control mb-4" formControlName="employees_number"
-                [value]="company?.employees_number" />
+              <input
+                type="number"
+                id="employeesNumber"
+                class="form-control mb-4"
+                formControlName="employees_number"
+                [value]="company?.employees_number"
+              />
             </div>
           </div>
 
           <div class="form-row mb-4">
             <div class="col">
               <!-- Year founded -->
-              <input type="number" id="yearFounded" class="form-control mb-4" formControlName="year_founded"
-                [value]="company?.year_founded" />
+              <input
+                type="number"
+                id="yearFounded"
+                class="form-control mb-4"
+                formControlName="year_founded"
+                [value]="company?.year_founded"
+              />
             </div>
             <div class="col">
               <!-- Phone number -->
-              <input type="text" id="defaultRegisterPhonePassword" class="form-control" formControlName="phone"
-                [value]="company?.phone" />
+              <input
+                type="text"
+                id="defaultRegisterPhonePassword"
+                class="form-control"
+                formControlName="phone"
+                [value]="company?.phone"
+              />
               <div class="form-row mb-4"></div>
             </div>
           </div>
@@ -64,14 +112,27 @@
             <!-- Photo -->
             <div class="col">
               <div class="custom-file mb-3 mt-3">
-                <input type="file" class="form-control custom-file-input" formControlName="image" id="customFile" />
-                <label class="custom-file-label" for="customFile">{{company?.image}}</label>
+                <input
+                  type="file"
+                  class="form-control custom-file-input"
+                  formControlName="image"
+                  id="customFile"
+                />
+                <label class="custom-file-label" for="customFile">{{
+                  company?.image
+                }}</label>
               </div>
             </div>
             <!-- Website -->
             <div class="col">
               <div class="custom-file mb-3 mt-3">
-                <input type="url" [value]="company?.website" class="form-control" formControlName="website" id="" />
+                <input
+                  type="url"
+                  [value]="company?.website"
+                  class="form-control"
+                  formControlName="website"
+                  id=""
+                />
               </div>
             </div>
           </div>
@@ -79,33 +140,66 @@
           <div class="form-row mb-4">
             <!-- Street -->
             <div class="col">
-              <input type="text" class="form-control mb-4" formControlName="street" [value]="company?.street" />
+              <input
+                type="text"
+                class="form-control mb-4"
+                formControlName="street"
+                [value]="company?.street"
+              />
             </div>
             <!-- Postcode -->
             <div class="col">
-              <input type="number" class="form-control mb-4" formControlName="zip_code" [value]="company?.zip_code" />
+              <input
+                type="number"
+                class="form-control mb-4"
+                formControlName="zip_code"
+                [value]="company?.zip_code"
+              />
             </div>
           </div>
           <div class="form-row mb-4">
             <!-- City -->
             <div class="col">
-              <input type="text" class="form-control mb-4" formControlName="city" [value]="company?.city" />
+              <input
+                type="text"
+                class="form-control mb-4"
+                formControlName="city"
+                [value]="company?.city"
+              />
             </div>
             <!-- Country -->
             <div class="col">
-              <input type="text" class="form-control mb-4" formControlName="country" [value]="company?.country" />
+              <input
+                type="text"
+                class="form-control mb-4"
+                formControlName="country"
+                [value]="company?.country"
+              />
             </div>
           </div>
 
           <!-- Save button -->
-          <button color="info" block="true" class="btn btn-info" type="submit">
+          <button
+            color="info"
+            block="true"
+            class="btn btn-info mr-3"
+            type="submit"
+          >
             Update
           </button>
-          <hr>
+          <!-- Save button -->
+          <button
+            color="info"
+            block="true"
+            class="btn btn-danger"
+            type="submit"
+            (click)="deleteCompany()"
+          >
+            Delete
+          </button>
+          <hr />
         </form>
-
       </ng-template>
-
     </li>
 
     <!-- Job Offers -->
@@ -113,20 +207,33 @@
     <li [ngbNavItem]="2">
       <a ngbNavLink>Job offer</a>
       <ng-template ngbNavContent>
-        <form class="text-center border border-light" [formGroup]="formularioJobOffer" (ngSubmit)="onSubmitJobOffer()">
+        <form
+          class="text-center border border-light"
+          [formGroup]="formularioJobOffer"
+          (ngSubmit)="onSubmitJobOffer()"
+        >
           <h4>1st offer</h4>
 
           <div class="col">
             <!-- Function department -->
-            <input type="text" id="department" class="form-control" formControlName="function_department"
-              placeholder="Department" />
+            <input
+              type="text"
+              id="department"
+              class="form-control"
+              formControlName="function_department"
+              placeholder="Department"
+            />
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- responsabilities -->
               <label>Write your offer here</label>
-              <textarea rows="10" id="defaultTextProfile" class="form-control"
-                formControlName="responsabilities"></textarea>
+              <textarea
+                rows="10"
+                id="defaultTextProfile"
+                class="form-control"
+                formControlName="responsabilities"
+              ></textarea>
             </div>
           </div>
 
@@ -134,11 +241,21 @@
           <div class="form-row mb-4">
             <!-- City -->
             <div class="col">
-              <input type="text" class="form-control mb-4" formControlName="city" placeholder="Enter City" />
+              <input
+                type="text"
+                class="form-control mb-4"
+                formControlName="city"
+                placeholder="Enter City"
+              />
             </div>
             <!-- Country -->
             <div class="col">
-              <input type="text" class="form-control mb-4" formControlName="country" placeholder="Enter Country" />
+              <input
+                type="text"
+                class="form-control mb-4"
+                formControlName="country"
+                placeholder="Enter Country"
+              />
             </div>
           </div>
 
@@ -148,24 +265,37 @@
               <label for="starting_date">Starting date:</label>
               <hr />
 
-              <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2025-12-31"
-                class="form-control" formControlName="starting_date" />
+              <input
+                type="date"
+                id="start"
+                name="trip-start"
+                class="form-control"
+                formControlName="starting_date"
+              />
             </div>
           </div>
 
           <div class="form-row mb-4">
             <div class="col">
               <!-- Hour week -->
-              <input type="number" id="Hour_week" class="form-control" formControlName="hour_week"
-                placeholder="Hours per week" />
+              <input
+                type="number"
+                id="Hour_week"
+                class="form-control"
+                formControlName="hour_week"
+                placeholder="Hours per week"
+              />
             </div>
           </div>
 
           <div class="form-row skills">
             <!-- Skills -->
             <div class="col">
-              <select multiple class="form-control skillsSelect" formControlName="skill">
-
+              <select
+                multiple
+                class="form-control skillsSelect"
+                formControlName="skill"
+              >
                 <option value="">Select your skills</option>
                 <option [value]="skill.id" *ngFor="let skill of skills">
                   {{ skill.skill }}
@@ -177,15 +307,20 @@
           <div class="form-row languages">
             <!-- Languages -->
             <div class="col">
-              <select multiple class="form-control skillsSelect" formControlName="language">
-
+              <select
+                multiple
+                class="form-control skillsSelect"
+                formControlName="language"
+              >
                 <option value="">Select your languages</option>
-                <option [value]="language.id" *ngFor="let language of languages">
+                <option
+                  [value]="language.id"
+                  *ngFor="let language of languages"
+                >
                   {{ language.language }}
                 </option>
               </select>
             </div>
-
           </div>
           <!-- Save button -->
           <button color="info" block="true" class="btn btn-info" type="submit">
@@ -195,27 +330,36 @@
 
         <h2 id="jobOffersPublished">Job Offers Published</h2>
         <div class="grid">
-
-          <div class=" card text-white bg-primary mb-3" style="max-width: 18rem;"
-            *ngFor="let jobOffer of jobOffers | paginate: { itemsPerPage: 3, currentPage: page }">
+          <div
+            class="card text-white bg-primary mb-3"
+            style="max-width: 18rem"
+            *ngFor="
+              let jobOffer of jobOffers
+                | paginate: { itemsPerPage: 3, currentPage: page }
+            "
+          >
             <div class="card-header">
-              <button class="btn btn-sm btn-danger mr-3"
-                (click)="deleteJobOffer()">X</button>{{jobOffer.function_department}}
-
+              <a class="btn btn-sm btn-danger mr-3" (click)="deleteJobOffer()">
+                X</a
+              >{{ jobOffer.function_department }}
             </div>
             <div class="card-body">
-              <h5 class="card-title">{{jobOffer.city}} / {{jobOffer.country}}</h5>
-              <p class="card-text">{{jobOffer.responsabilities}}
-              </p>
+              <h5 class="card-title">
+                {{ jobOffer.city }} / {{ jobOffer.country }}
+              </h5>
+              <p class="card-text">{{ jobOffer.responsabilities }}</p>
             </div>
-
           </div>
         </div>
-        <pagination-controls (pageChange)="page = $event" responsive=" true" previousLabel="Previous" nextLabel="Next">
+        <pagination-controls
+          (pageChange)="page = $event"
+          responsive=" true"
+          previousLabel="Previous"
+          nextLabel="Next"
+        >
         </pagination-controls>
       </ng-template>
     </li>
-
   </ul>
 
   <div [ngbNavOutlet]="nav" class="mt-2"></div>
