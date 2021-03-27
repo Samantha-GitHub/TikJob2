@@ -167,6 +167,7 @@ export class ProfesionalFormularioComponent implements OnInit {
         });
         console.log(ski);
       });
+
     }
   }
 
@@ -183,5 +184,9 @@ export class ProfesionalFormularioComponent implements OnInit {
   async deleteCompany(): Promise<any> {
     const deleteoffer = await this.companyService.delete();
     console.log(deleteoffer);
+  }
+
+  refresh(): void {
+    window.location.reload();
   }
 }

@@ -60,6 +60,7 @@ export class UserFormularioComponent implements OnInit {
   ) {
     this.skills = [];
     this.languages = [];
+    this.educations = [];
 
     // FORMULARIO FREELANCER
     this.formularioFreelancer = new FormGroup({
@@ -254,5 +255,9 @@ export class UserFormularioComponent implements OnInit {
       this.formularioProfesionalExperience.value
     );
     console.log(experience);
+  }
+  //REFRESH PAGE WHEN ADD COURS/EDUCATION
+  refresh(): void {
+    window.location.reload();
   }
 }
