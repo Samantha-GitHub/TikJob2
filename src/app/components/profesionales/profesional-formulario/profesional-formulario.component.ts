@@ -107,6 +107,8 @@ export class ProfesionalFormularioComponent implements OnInit {
     }); */
 
     this.company = await this.companyService.getByIdToken();
+    console.log('log de company', this.company);
+
     this.jobOffers = this.company.jobOffer;
     console.log('log de ofertas que se tienen que pintar', this.jobOffers);
 
@@ -178,7 +180,7 @@ export class ProfesionalFormularioComponent implements OnInit {
 
   // Delete job Offer
 
-  deleteJobOffer() {
+  deleteJobOffer(pJobOfferId) {
 
     Swal.fire({
       title: 'Are you sure?',
@@ -191,7 +193,7 @@ export class ProfesionalFormularioComponent implements OnInit {
     }).then(async (result) => {
       if (result.isConfirmed) {
 
-        const deleteoffer = await this.jobOfferService.deleteByIdToken();
+        const deleteoffer = await this.jobOfferService.deleteByIdToken(pJobOfferId);
         console.log(deleteoffer);
         Swal.fire(
           'Deleted!',
