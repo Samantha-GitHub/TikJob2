@@ -48,9 +48,11 @@ export class JobOfferService {
   }
 
   // DELETE A JOB OFFER BY id jobOffer y id companyToken
-  deleteByIdToken(): Promise<Joboffer> {
+  deleteByIdToken(pJobOfferId): Promise<any> {
+    console.log('log del piD', pJobOfferId);
+
     return this.httpClient
-      .delete<Joboffer>(this.baseUrl, this.createHeaders())
+      .delete<any>(`${this.baseUrl}/${pJobOfferId}`, this.createHeaders())
       .toPromise();
   }
 
