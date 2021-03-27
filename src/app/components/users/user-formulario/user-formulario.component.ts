@@ -77,10 +77,10 @@ export class UserFormularioComponent implements OnInit {
       video: new FormControl(),
       job_title: new FormControl(),
       profile: new FormControl(),
-      // skill: new FormControl(),
-      // language: new FormControl(),
       username: new FormControl(),
       password: new FormControl(),
+      // skill: new FormControl(),
+      // language: new FormControl(),
     });
 
     // FORMULARIO Course
@@ -159,8 +159,8 @@ export class UserFormularioComponent implements OnInit {
       profile: new FormControl(this.freelancer.profile),
       username: new FormControl(this.freelancer.username),
       password: new FormControl(this.freelancer.password),
-      skill: new FormControl(),
-      language: new FormControl(),
+      skill: new FormControl(this.freelancer.skills),
+      language: new FormControl(this.freelancer.languages),
     });
 
     /*  // FORMULARIO Course
@@ -206,8 +206,8 @@ export class UserFormularioComponent implements OnInit {
     const freelance = await this.freelancerService.update(
       this.formularioFreelancer.value
     );
-    console.log('this is update freelance', freelance);
-
+    console.log('this is updated freelance', freelance);
+    this.router.navigate(['/freelance/profile']);
     // if (freelance.insertId) {
     //   // A Language
 
