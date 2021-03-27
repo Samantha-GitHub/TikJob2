@@ -137,6 +137,9 @@ export class ProfesionalFormularioComponent implements OnInit {
     const company = await this.companyService.update(
       this.formularioCompany.value
     );
+
+    console.log('this is updated freelance', company);
+    this.router.navigate(['company/profile']);
   }
 
   async onSubmitJobOffer(): Promise<any> {

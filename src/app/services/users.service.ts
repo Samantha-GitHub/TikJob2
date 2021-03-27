@@ -48,7 +48,7 @@ export class UsersService {
     formValues.image = 'http';
     formValues.video = 'http';
     return this.httpClient
-      .put<any>(`${this.baseUrl}`, formValues, this.createHeaders())
+      .put<any>(this.baseUrl, formValues, this.createHeaders())
       .toPromise();
   }
 
