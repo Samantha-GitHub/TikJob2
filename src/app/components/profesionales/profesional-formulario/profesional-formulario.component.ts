@@ -14,6 +14,8 @@ import { TbiSkillsUsuarioService } from 'src/app/services/tbi-skills-usuario.ser
 import { TbiSkillOfertasTrabajosService } from 'src/app/services/tbi-skill-ofertas-trabajos.service';
 import { TbiLanguageOfertasTrabajosService } from 'src/app/services/tbi-language-ofertas-trabajos.service';
 
+declare var Swal;
+
 @Component({
   selector: 'app-profesional-formulario',
   templateUrl: './profesional-formulario.component.html',
@@ -176,9 +178,29 @@ export class ProfesionalFormularioComponent implements OnInit {
 
   // Delete job Offer
 
-  async deleteJobOffer(): Promise<any> {
-    const deleteoffer = await this.jobOfferService.deleteByIdToken();
-    console.log(deleteoffer);
+  deleteJobOffer() {
+
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+
+        const deleteoffer = await this.jobOfferService.deleteByIdToken();
+        console.log(deleteoffer);
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
+    })
+
   }
 
   async deleteCompany(): Promise<any> {
