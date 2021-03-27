@@ -200,7 +200,7 @@
                 | paginate: { itemsPerPage: 3, currentPage: page }
             ">
             <div class="card-header">
-              <a class="btn btn-sm btn-danger mr-3" (click)="deleteJobOffer()">
+              <a class="btn btn-sm btn-danger mr-3" (click)="deleteJobOffer(jobOffer.id)">
                 X</a>{{ jobOffer.function_department }}
             </div>
             <div class="card-body">
