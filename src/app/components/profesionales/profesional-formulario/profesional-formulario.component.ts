@@ -38,7 +38,7 @@ export class ProfesionalFormularioComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private activatedRoute: ActivatedRoute,
+
     private skillService: SkillsService,
     private companyService: ProfesionalesService,
     private jobOfferService: JobOfferService,
@@ -171,7 +171,6 @@ export class ProfesionalFormularioComponent implements OnInit {
         });
         console.log(ski);
       });
-
     }
   }
 
@@ -181,7 +180,6 @@ export class ProfesionalFormularioComponent implements OnInit {
   // Delete job Offer
 
   deleteJobOffer(pJobOfferId) {
-
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -189,20 +187,16 @@ export class ProfesionalFormularioComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonText: 'Yes, delete it!',
     }).then(async (result) => {
       if (result.isConfirmed) {
-
-        const deleteoffer = await this.jobOfferService.deleteByIdToken(pJobOfferId);
+        const deleteoffer = await this.jobOfferService.deleteByIdToken(
+          pJobOfferId
+        );
         console.log(deleteoffer);
-        Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
-        )
+        Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
       }
-    })
-
+    });
   }
 
   async deleteCompany(): Promise<any> {

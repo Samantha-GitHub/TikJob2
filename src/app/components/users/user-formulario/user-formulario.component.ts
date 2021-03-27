@@ -17,6 +17,8 @@ import { UsersService } from 'src/app/services/users.service';
 import { TbiSkillsUsuarioService } from 'src/app/services/tbi-skills-usuario.service';
 import { TbiLanguagessUsuarioService } from 'src/app/services/tbi-languages-usuario.service';
 
+declare var Swal;
+
 @Component({
   selector: 'app-user-formulario',
   templateUrl: './user-formulario.component.html',
@@ -48,7 +50,7 @@ export class UserFormularioComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private activatedRoute: ActivatedRoute,
+
     private freelancerService: UsersService,
     private skillService: SkillsService,
     private languageService: LanguagesService,
@@ -241,6 +243,26 @@ export class UserFormularioComponent implements OnInit {
     console.log(course);
   }
 
+  deleteCourse(courseId) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const deleteCourse = await this.coursesService.deleteByIdToken(
+          courseId
+        );
+        console.log(deleteCourse);
+        Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+      }
+    });
+  }
+
   // CREATE EDUCATION
   async onSubmiEducation(): Promise<any> {
     const experience = await this.educationService.create(
@@ -256,7 +278,7 @@ export class UserFormularioComponent implements OnInit {
     );
     console.log(experience);
   }
-  //REFRESH PAGE WHEN ADD COURS/EDUCATION
+  // REFRESH PAGE WHEN ADD COURS/EDUCATION
   refresh(): void {
     window.location.reload();
   }

@@ -41,6 +41,14 @@ export class CoursesService {
       .toPromise();
   }
 
+  // DELETE A COURSE BY id jobOffer y id companyToken
+  deleteByIdToken(idCourse): Promise<any> {
+    console.log('log del piD', idCourse);
+
+    return this.httpClient
+      .delete<any>(`${this.baseUrl}/${idCourse}`, this.createHeaders())
+      .toPromise();
+  }
   //  HEADERS
   createHeaders() {
     return {
