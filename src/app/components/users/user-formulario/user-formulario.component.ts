@@ -198,8 +198,8 @@ export class UserFormularioComponent implements OnInit {
       }); */
   }
 
-  async onSubmitFreelancer(): Promise<void> {
-    // Destructuring llamaos la variable igual a la propriedad del objeto
+  async onSubmitFreelancer(): Promise<any> {
+    // Destructuring llamamos la variable igual a la propriedad del objeto
     // const { language, skill } = this.formularioFreelancer.value;
 
     // Envio los valores del form:

@@ -55,7 +55,7 @@ export class ProfesionalesService {
   update(formValues): Promise<any> {
     formValues.image = 'http';
     return this.httpClient
-      .put<any>(`${this.baseUrl}/update`, formValues, this.createHeaders())
+      .put<any>(this.baseUrl, formValues, this.createHeaders())
       .toPromise();
   }
 
