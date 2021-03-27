@@ -167,6 +167,7 @@ export class ProfesionalFormularioComponent implements OnInit {
         });
         console.log(ski);
       });
+
     }
   }
 
