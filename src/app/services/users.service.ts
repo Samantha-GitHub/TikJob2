@@ -29,7 +29,7 @@ export class UsersService {
   }
 
   // GET BY TOKEN FREELANCER
-  getByIdToken(pId): Promise<Freelance> {
+  getByIdToken(): Promise<Freelance> {
     return this.httpClient
       .get<Freelance>(`${this.baseUrl}/profile`, this.createHeaders())
       .toPromise();
@@ -46,15 +46,16 @@ export class UsersService {
   // UPDATE FREELANCER
   update(formValues): Promise<any> {
     formValues.image = 'http';
+    formValues.video = 'http';
     return this.httpClient
-      .put<any>(`${this.baseUrl}/update`, formValues, this.createHeaders())
+      .put<any>(`${this.baseUrl}`, formValues, this.createHeaders())
       .toPromise();
   }
 
   createHeaders() {
     return {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
+        // 'Content-Type': 'application/json',
         authorization: localStorage.getItem('token_tikjobs'),
       }),
     };

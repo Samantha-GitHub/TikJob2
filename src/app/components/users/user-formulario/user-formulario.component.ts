@@ -131,42 +131,39 @@ export class UserFormularioComponent implements OnInit {
       console.log(error);
     }
 
-    this.activatedRoute.params.subscribe(async (params) => {
-      // Get info freelancer by Id
-      this.freelancer = await this.freelancerService.getByIdToken(
-        params.idFreelance
-      );
-      console.log('this is freelancers', this.freelancer);
-      this.courses = this.freelancer.courses;
-      this.educations = this.freelancer.education;
-      this.profesionalExperiences = this.freelancer.profesional_experience;
-      this.languages = this.freelancer.languages;
-      this.skills = this.freelancer.skills;
-      // console.log(this.courses);
+    // Get info freelancer by Id
+    this.freelancer = await this.freelancerService.getByIdToken();
+    console.log('this is freelancers', this.freelancer);
+    this.courses = this.freelancer.courses;
+    this.educations = this.freelancer.education;
+    this.profesionalExperiences = this.freelancer.profesional_experience;
+    this.languages = this.freelancer.languages;
+    this.skills = this.freelancer.skills;
+    // console.log(this.courses);
 
-      // FORM CONTENT
-      this.formularioFreelancer = new FormGroup({
-        firstname: new FormControl(this.freelancer.firstname),
-        lastname: new FormControl(this.freelancer.lastname),
-        email: new FormControl(this.freelancer.email),
-        phone: new FormControl(this.freelancer.phone),
-        gender: new FormControl(this.freelancer.gender),
-        country: new FormControl(this.freelancer.country),
-        city: new FormControl(this.freelancer.city),
-        zipcode: new FormControl(this.freelancer.zipcode),
-        streetName: new FormControl(this.freelancer.streetName),
-        website: new FormControl(this.freelancer.website),
-        image: new FormControl(),
-        video: new FormControl(),
-        job_title: new FormControl(this.freelancer.job_title),
-        profile: new FormControl(this.freelancer.profile),
-        username: new FormControl(this.freelancer.username),
-        password: new FormControl(this.freelancer.password),
-        skill: new FormControl(),
-        language: new FormControl(),
-      });
+    // FORM CONTENT
+    this.formularioFreelancer = new FormGroup({
+      firstname: new FormControl(this.freelancer.firstname),
+      lastname: new FormControl(this.freelancer.lastname),
+      email: new FormControl(this.freelancer.email),
+      phone: new FormControl(this.freelancer.phone),
+      gender: new FormControl(this.freelancer.gender),
+      country: new FormControl(this.freelancer.country),
+      city: new FormControl(this.freelancer.city),
+      zipcode: new FormControl(this.freelancer.zipcode),
+      streetName: new FormControl(this.freelancer.streetName),
+      website: new FormControl(this.freelancer.website),
+      image: new FormControl(),
+      video: new FormControl(),
+      job_title: new FormControl(this.freelancer.job_title),
+      profile: new FormControl(this.freelancer.profile),
+      username: new FormControl(this.freelancer.username),
+      password: new FormControl(this.freelancer.password),
+      skill: new FormControl(),
+      language: new FormControl(),
+    });
 
-      /*  // FORMULARIO Course
+    /*  // FORMULARIO Course
       this.formularioCourse = new FormGroup({
         course_title: new FormControl(this.course.course_title),
         institution: new FormControl(this.course.institution),
@@ -198,41 +195,40 @@ export class UserFormularioComponent implements OnInit {
         company_link: new FormControl(this.profesionalExperience.company_link),
         description: new FormControl(this.profesionalExperience.description),
       }); */
-    });
   }
 
   async onSubmitFreelancer(): Promise<void> {
     // Destructuring llamaos la variable igual a la propriedad del objeto
-    const { language, skill } = this.formularioFreelancer.value;
+    // const { language, skill } = this.formularioFreelancer.value;
 
     // Envio los valores del form:
     // a freelance
     const freelance = await this.freelancerService.update(
       this.formularioFreelancer.value
     );
-    console.log(freelance);
+    console.log('this is update freelance', freelance);
 
-    if (freelance.insertId) {
-      // A Language
+    // if (freelance.insertId) {
+    //   // A Language
 
-      language.forEach(async (oneLanguage) => {
-        const lang = await this.tbiLanguageFreelance.create({
-          language: oneLanguage,
-          freelance: freelance.insertId,
-        });
-        console.log(lang);
-      });
+    //   language.forEach(async (oneLanguage) => {
+    //     const lang = await this.tbiLanguageFreelance.create({
+    //       language: oneLanguage,
+    //       freelance: freelance.insertId,
+    //     });
+    //     console.log(lang);
+    //   });
 
-      // A skill
+    //   // A skill
 
-      skill.forEach(async (oneSkill) => {
-        const ski = await this.tbiSkillFreelance.create({
-          skill: oneSkill,
-          freelance: freelance.insertId,
-        });
-        console.log(ski);
-      });
-    }
+    //   skill.forEach(async (oneSkill) => {
+    //     const ski = await this.tbiSkillFreelance.create({
+    //       skill: oneSkill,
+    //       freelance: freelance.insertId,
+    //     });
+    //     console.log(ski);
+    //   });
+    // }
   }
 
   // CREATE COURSE
@@ -240,6 +236,7 @@ export class UserFormularioComponent implements OnInit {
     const course = await this.coursesService.create(
       this.formularioCourse.value
     );
+
     console.log(course);
   }
 
