@@ -270,6 +270,26 @@ export class UserFormularioComponent implements OnInit {
     );
     console.log(experience);
   }
+  //  delete one education
+  deleteEducation(courseId) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const deleteEducation = await this.educationService.deleteByIdToken(
+          courseId
+        );
+        console.log(deleteEducation);
+        Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+      }
+    });
+  }
 
   // CREATE EXPERIENCE
   async onSubmitExperience(): Promise<any> {
@@ -281,5 +301,26 @@ export class UserFormularioComponent implements OnInit {
   // REFRESH PAGE WHEN ADD COURS/EDUCATION
   refresh(): void {
     window.location.reload();
+  }
+
+  //  delete one education
+  deleteExperience(idProfesionalExperience) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const deleteEducation = await this.profesionalExperienceService.deleteByIdToken(
+          idProfesionalExperience
+        );
+        console.log(deleteEducation);
+        Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+      }
+    });
   }
 }

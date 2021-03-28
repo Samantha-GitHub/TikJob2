@@ -43,6 +43,18 @@ export class ProfesionalExperienceService {
       .toPromise();
   }
 
+  // DELETE A experience BY id experience y id usertoken
+  deleteByIdToken(idProfesionalExperience): Promise<any> {
+    console.log('log del piD', idProfesionalExperience);
+
+    return this.httpClient
+      .delete<any>(
+        `${this.baseUrl}/${idProfesionalExperience}`,
+        this.createHeaders()
+      )
+      .toPromise();
+  }
+
   createHeaders() {
     return {
       headers: new HttpHeaders({
