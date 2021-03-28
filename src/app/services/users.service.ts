@@ -74,4 +74,11 @@ export class UsersService {
   // searchFreelanceByEducation(pName): Promise<Freelance[]> {
   //   return this.httpClient.get<Freelance[]>(`${this.baseUrl}/${pName}`).toPromise();
   // }
+
+  // SEARCH BY COUNTRY, CITY OR function_department
+  searchData(pName): Promise<Freelance[]> {
+    return this.httpClient
+      .get<Freelance[]>(`${this.baseUrl}/search/${pName}`)
+      .toPromise();
+  }
 }

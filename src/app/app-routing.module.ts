@@ -49,8 +49,13 @@ const routes: Routes = [
   },
   // ALL JOB OFFERS
   { path: 'job_offers', component: JobOffersComponent },
-  // SEARCH FOR JOB OFFERS
+
+  // SEARCH FOR JOB OFFERS / FREELANCER
+
   { path: 'search/:data', component: JobOffersComponent },
+
+
+
   // VIEW ONE JOB OFFER
   { path: 'job_offers/:idJobOffer', component: JobOfferViewComponent },
   { path: 'contact', component: ContactComponent },
@@ -61,4 +66,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

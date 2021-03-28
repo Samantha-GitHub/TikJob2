@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Freelance } from '../../interfaces/freelance';
 import { UsersService } from '../../services/users.service';
 
@@ -13,17 +13,27 @@ export class UsersComponent implements OnInit {
 
   allFreelancers: Freelance[];
 
-  constructor(private usersService: UsersService, private router: Router) {
+  constructor(private usersService: UsersService, private router: Router, private activatedRoute: ActivatedRoute,) {
     this.allFreelancers = [];
   }
 
   async ngOnInit(): Promise<void> {
-    try {
-      this.allFreelancers = await this.usersService.getAll();
-      console.log(this.allFreelancers);
-    } catch (error) {
-      console.log(error);
-    }
+
+    this.activatedRoute.params.subscribe(async (params) => {
+      console.log(params);
+
+      if (Object.entries(params).length > 0) {
+        this.allFreelancers = await this.usersService.searchData(params.data);
+        console.log(params);
+      } else {
+        try {
+          this.allFreelancers = await this.usersService.getAll();
+          console.log(this.allFreelancers);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    });
   }
 
   getFreelance(pId): any {
