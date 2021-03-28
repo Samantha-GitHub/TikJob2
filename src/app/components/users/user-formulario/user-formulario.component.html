@@ -364,7 +364,12 @@
               "
             >
               <div class="card-header">
-                <button class="btn btn-sm btn-danger mr-3">X</button>School:
+                <button
+                  class="btn btn-sm btn-danger mr-3"
+                  (click)="deleteEducation(education.id)"
+                >
+                  X</button
+                >School:
                 <strong> {{ education.school }}</strong>
               </div>
               <div class="card-body">
@@ -635,7 +640,12 @@
               "
             >
               <div class="card-header">
-                <button class="btn btn-sm btn-danger mr-3">X</button>Employer:
+                <button
+                  class="btn btn-sm btn-danger mr-3"
+                  (click)="deleteExperience(profesionalExperience.id)"
+                >
+                  X</button
+                >Employer:
                 <strong> {{ profesionalExperience.employer }}</strong>
               </div>
               <div class="card-body">

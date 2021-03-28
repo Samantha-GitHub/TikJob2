@@ -10,7 +10,7 @@ export class EducationsService {
   constructor(private httpClient: HttpClient) {
     this.baseUrl = 'http://localhost:3000/api/educations';
   }
-
+  //  GET ALL EDUCATIONS
   getAll(): Promise<Education[]> {
     const httpOptions = { headers: new HttpHeaders() };
 
@@ -37,6 +37,14 @@ export class EducationsService {
   create(formValues): any {
     return this.httpClient
       .post(this.baseUrl, formValues, this.createHeaders())
+      .toPromise();
+  }
+  // DELETE A COURSE BY id education y id userToken
+  deleteByIdToken(idEducation): Promise<any> {
+    console.log('log del piD', idEducation);
+
+    return this.httpClient
+      .delete<any>(`${this.baseUrl}/${idEducation}`, this.createHeaders())
       .toPromise();
   }
 
