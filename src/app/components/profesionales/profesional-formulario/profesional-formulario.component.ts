@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Company } from 'src/app/interfaces/company';
 import { Joboffer } from 'src/app/interfaces/job_offer';
 import { Language } from 'src/app/interfaces/language';
@@ -9,8 +9,6 @@ import { JobOfferService } from 'src/app/services/job-offer.service';
 import { LanguagesService } from 'src/app/services/languages.service';
 import { ProfesionalesService } from 'src/app/services/profesionales.service';
 import { SkillsService } from 'src/app/services/skills.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { TbiSkillsUsuarioService } from 'src/app/services/tbi-skills-usuario.service';
 import { TbiSkillOfertasTrabajosService } from 'src/app/services/tbi-skill-ofertas-trabajos.service';
 import { TbiLanguageOfertasTrabajosService } from 'src/app/services/tbi-language-ofertas-trabajos.service';
 
@@ -97,15 +95,6 @@ export class ProfesionalFormularioComponent implements OnInit {
       console.log(error);
     }
 
-    // ActivatedRoute
-    /* this.activatedRoute.params.subscribe(async (params) => {
-      // doesnt work cuz this looks at the url and im asking for token
-      // console.log(params.idcompany);
-
-      // get info company by Id
-
-    }); */
-
     this.company = await this.companyService.getByIdToken();
     console.log('log de company', this.company);
 
@@ -146,11 +135,10 @@ export class ProfesionalFormularioComponent implements OnInit {
     // recibo datos del form
     console.log('log value formularioJobOffer', this.formularioJobOffer.value);
 
-    // Destructuring llamaos la variable igual a la propriedad del objeto
+    // Destructuring llamamos la variable igual a la propriedad del objeto
     const { language, skill } = this.formularioJobOffer.value;
 
-    // Envio los valores del form:
-    // a jobOffer
+    // Envio los valores del form a jobOffer
     const ofertas = await this.jobOfferService.insert(
       this.formularioJobOffer.value
     );
