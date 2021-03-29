@@ -75,10 +75,10 @@ export class UsersService {
   //   return this.httpClient.get<Freelance[]>(`${this.baseUrl}/${pName}`).toPromise();
   // }
 
-  // SEARCH BY COUNTRY, CITY OR function_department
-  searchData(pName): Promise<Freelance[]> {
+  // SEARCH BY EDUCATION
+  searchFreelanceEducation(pName): Promise<any[]> {
     return this.httpClient
-      .get<Freelance[]>(`${this.baseUrl}/search/${pName}`)
+      .get<any[]>(`${this.baseUrl}/search/${pName}`)
       .toPromise();
   }
 }

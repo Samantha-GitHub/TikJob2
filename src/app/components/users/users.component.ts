@@ -11,24 +11,29 @@ import { UsersService } from '../../services/users.service';
 export class UsersComponent implements OnInit {
   public page: number;
 
-  allFreelancers: Freelance[];
+  freelancers: Freelance[];
+  searchFreelanceEducation: any;
 
   constructor(private usersService: UsersService, private router: Router, private activatedRoute: ActivatedRoute,) {
-    this.allFreelancers = [];
+
+    this.freelancers = [];
+    this.searchFreelanceEducation = [];
   }
 
   async ngOnInit(): Promise<void> {
 
     this.activatedRoute.params.subscribe(async (params) => {
-      console.log(params);
+      console.log('log desde users', params);
 
       if (Object.entries(params).length > 0) {
-        this.allFreelancers = await this.usersService.searchData(params.data);
-        console.log(params);
+
+        this.freelancers = await this.usersService.searchFreelanceEducation(params.data);
+
       } else {
+
         try {
-          this.allFreelancers = await this.usersService.getAll();
-          console.log(this.allFreelancers);
+          this.freelancers = await this.usersService.getAll();
+          console.log(this.freelancers);
         } catch (error) {
           console.log(error);
         }

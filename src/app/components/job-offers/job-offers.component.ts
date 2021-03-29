@@ -30,10 +30,17 @@ export class JobOffersComponent implements OnInit {
     this.searchJob = [];
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+
+    try {
+      this.jobOffers = await this.jobOfferService.getAll();
+    } catch (error) {
+      console.log(error);
+    }
 
 
-    this.activatedRoute.params.subscribe(async (params) => {
+
+    /* this.activatedRoute.params.subscribe(async (params) => {
       console.log('log desde job-offer', params);
 
       if (Object.entries(params).length > 0) {
@@ -49,7 +56,7 @@ export class JobOffersComponent implements OnInit {
           console.log(error);
         }
       }
-    });
+    }); */
   }
 
   getJobOffer(pId): void {

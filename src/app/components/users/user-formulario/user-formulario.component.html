@@ -177,10 +177,13 @@
               <!-- Degree -->
 
               <select class="form-control skillsSelect" formControlName="degree">
-                <option>Select your Degree</option>
-                <option *ngFor="let education of educations">
-                  {{ education.degree }}
-                </option>
+                <option selected>Select your Degree</option>
+                <option value="Graduate Certificate">Graduate Certificate</option>
+                <option value="Certificate / Diplome">Certificate / Diplome</option>
+                <option value="Doctorate">Doctorate</option>
+                <option value="Master">Master</option>
+                <option value="Bachelor">Bachelor</option>
+                <option value="Other">Other</option>
               </select>
 
               <!--

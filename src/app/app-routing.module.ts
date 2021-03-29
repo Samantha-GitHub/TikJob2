@@ -52,7 +52,7 @@ const routes: Routes = [
 
   // SEARCH FOR JOB OFFERS / FREELANCER
 
-  { path: 'search/:data', component: JobOffersComponent },
+  { path: 'search/:data', component: UsersComponent },
 
 
 

@@ -1,14 +1,10 @@
 <div class="servicesContainer">
   <!-- <h2>Freelancers</h2> -->
   <div class="center servicesWrapper">
-    <div
-      class="card"
-      *ngFor="
-        let freelance of allFreelancers
+    <div class="card" *ngFor="
+        let freelance of freelancers
           | paginate: { itemsPerPage: 9, currentPage: page }
-      "
-      (click)="getFreelance(freelance.id)"
-    >
+      " (click)="getFreelance(freelance.id)">
       <div class="additional">
         <div class="user-card">
           <!-- <div class="level center">Level 13</div> -->
@@ -53,17 +49,10 @@
       <div class="general">
         <h1>{{ freelance.firstname }}</h1>
         <p>{{ freelance.profile }}</p>
-        <span class="more"
-          >{{ freelance.city }}, <strong>{{ freelance.country }}</strong></span
-        >
+        <span class="more">{{ freelance.city }}, <strong>{{ freelance.country }}</strong></span>
       </div>
     </div>
   </div>
 </div>
-<pagination-controls
-  (pageChange)="page = $event"
-  responsive=" true"
-  previousLabel="Previous"
-  nextLabel="Next"
->
+<pagination-controls (pageChange)="page = $event" responsive=" true" previousLabel="Previous" nextLabel="Next">
 </pagination-controls>

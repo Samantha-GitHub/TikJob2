@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 import { Course } from 'src/app/interfaces/course';
 import { Education } from 'src/app/interfaces/education';
 import { Freelance } from 'src/app/interfaces/freelance';
@@ -47,6 +46,8 @@ export class UserFormularioComponent implements OnInit {
   languages: Language[];
   courses: Course[];
   educations: Education[];
+  degree: Education[];
+
 
   constructor(
     private router: Router,
@@ -63,6 +64,7 @@ export class UserFormularioComponent implements OnInit {
     this.skills = [];
     this.languages = [];
     this.educations = [];
+    this.degree = [];
 
     // FORMULARIO FREELANCER
     this.formularioFreelancer = new FormGroup({
@@ -119,6 +121,7 @@ export class UserFormularioComponent implements OnInit {
       description: new FormControl(),
     });
   }
+
 
   async ngOnInit(): Promise<void> {
     try {
@@ -201,37 +204,13 @@ export class UserFormularioComponent implements OnInit {
   }
 
   async onSubmitFreelancer(): Promise<any> {
-    // Destructuring llamamos la variable igual a la propriedad del objeto
-    // const { language, skill } = this.formularioFreelancer.value;
 
-    // Envio los valores del form:
-    // a freelance
+    //UPDATE FREELANCE  Envio los valores del form: a freelance
     const freelance = await this.freelancerService.update(
       this.formularioFreelancer.value
     );
     console.log('this is updated freelance', freelance);
     this.router.navigate(['/freelance/profile']);
-    // if (freelance.insertId) {
-    //   // A Language
-
-    //   language.forEach(async (oneLanguage) => {
-    //     const lang = await this.tbiLanguageFreelance.create({
-    //       language: oneLanguage,
-    //       freelance: freelance.insertId,
-    //     });
-    //     console.log(lang);
-    //   });
-
-    //   // A skill
-
-    //   skill.forEach(async (oneSkill) => {
-    //     const ski = await this.tbiSkillFreelance.create({
-    //       skill: oneSkill,
-    //       freelance: freelance.insertId,
-    //     });
-    //     console.log(ski);
-    //   });
-    // }
   }
 
   // CREATE COURSE
@@ -270,6 +249,7 @@ export class UserFormularioComponent implements OnInit {
     );
     console.log(experience);
   }
+
   //  delete one education
   deleteEducation(courseId) {
     Swal.fire({
@@ -303,7 +283,7 @@ export class UserFormularioComponent implements OnInit {
     window.location.reload();
   }
 
-  //  delete one education
+  //  delete one experience
   deleteExperience(idProfesionalExperience) {
     Swal.fire({
       title: 'Are you sure?',
