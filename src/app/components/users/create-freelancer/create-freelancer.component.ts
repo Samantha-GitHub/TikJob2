@@ -85,6 +85,7 @@ export class CreateFreelancerComponent implements OnInit {
       if (freelance.insertId) {
         // A Language
         language.forEach(async (oneLanguage) => {
+
           const lang = await this.tbiLanguageFreelance.create({
             language: oneLanguage,
             freelance: freelance.insertId,
