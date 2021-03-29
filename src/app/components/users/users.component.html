@@ -1,6 +1,7 @@
 <div class="servicesContainer">
   <!-- <h2>Freelancers</h2> -->
   <div class="center servicesWrapper">
+
     <div class="card" *ngFor="
         let freelance of freelancers
           | paginate: { itemsPerPage: 9, currentPage: page }
@@ -22,7 +23,7 @@
             <span>Job: {{ freelance.job_title }}</span>
             <span>Mail: {{ freelance.email }}</span>
           </div>
-          <div class="stats">
+          <!-- <div class="stats">
             <div>
               <div class="title">Awards</div>
               <i class="fa fa-trophy"></i>
@@ -43,7 +44,7 @@
               <i class="fa fa-coffee"></i>
               <div class="value infinity">∞</div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="general">
