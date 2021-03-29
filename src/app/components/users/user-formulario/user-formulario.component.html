@@ -223,7 +223,10 @@
               <input type="date" id="end" name="trip-start" formControlName="end_date" />
             </div>
           </div>
-
+          <!-- Save button -->
+          <button class="btn btn-success" type="submit" (click)="refresh()">
+            Save
+          </button>
           <h2 id="jobOffersPublished">Your education</h2>
           <div class="grid">
             <div class="card text-white bg-info mb-3" style="max-width: 18rem" *ngFor="
@@ -249,11 +252,6 @@
           <pagination-controls (pageChange)="page = $event" responsive=" true" previousLabel="Previous"
             nextLabel="Next">
           </pagination-controls>
-
-          <!-- Save button -->
-          <button class="btn btn-success" type="submit" (click)="refresh()">
-            Save
-          </button>
         </form>
       </ng-template>
     </li>

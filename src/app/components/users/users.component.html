@@ -1,16 +1,20 @@
 <div class="servicesContainer">
-  <h2>Freelancers</h2>
+  <!-- <h2>Freelancers</h2> -->
   <div class="center servicesWrapper">
-    <div class="card" *ngFor="
+    <div
+      class="card"
+      *ngFor="
         let freelance of allFreelancers
           | paginate: { itemsPerPage: 9, currentPage: page }
-      " (click)="getFreelance(freelance.id)">
+      "
+      (click)="getFreelance(freelance.id)"
+    >
       <div class="additional">
         <div class="user-card">
           <!-- <div class="level center">Level 13</div> -->
           <div class="points center">{{ freelance.job_title }}</div>
 
-          <img src="../../../../assets/images/svg-1.svg" width="110" height="110" class="mt-5" />
+          <img [src]="freelance.image" class="mt-5 rounded" />
         </div>
         <div class="more-info">
           <h1>{{ freelance.lastname }}</h1>
@@ -49,10 +53,17 @@
       <div class="general">
         <h1>{{ freelance.firstname }}</h1>
         <p>{{ freelance.profile }}</p>
-        <span class="more">{{ freelance.city }}, <strong>{{ freelance.country }}</strong></span>
+        <span class="more"
+          >{{ freelance.city }}, <strong>{{ freelance.country }}</strong></span
+        >
       </div>
     </div>
   </div>
 </div>
-<pagination-controls (pageChange)="page = $event" responsive=" true" previousLabel="Previous" nextLabel="Next">
+<pagination-controls
+  (pageChange)="page = $event"
+  responsive=" true"
+  previousLabel="Previous"
+  nextLabel="Next"
+>
 </pagination-controls>

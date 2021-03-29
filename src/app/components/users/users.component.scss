@@ -15,7 +15,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-
 }
 
 .servicesCard {
@@ -37,9 +36,13 @@
 }
 
 .servicesIcon {
-  height: 160px;
-  width: 160px;
-  margin-bottom: 10px;
+  // height: 160px;
+  // width: 160px;
+  // margin-bottom: 10px;
+  // border-radius: 50%;
+  width: 110;
+  height: 110;
+  border-radius: 50%;
 }
 
 .servicesH1 {
