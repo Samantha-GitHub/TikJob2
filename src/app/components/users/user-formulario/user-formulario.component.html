@@ -1,88 +1,49 @@
 <div class="servicesContainer justify-content-center mt-5">
   <!-- collapse -->
-  <ul
-    ngbNav
-    #nav="ngbNav"
-    [(activeId)]="active"
-    class="nav-tabs justify-content-center"
-  >
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs justify-content-center">
     <!-- FREELANCER INFO -->
 
     <li [ngbNavItem]="1">
       <a ngbNavLink> <i class="fa fa-user"></i> Personal Details</a>
       <ng-template ngbNavContent>
-        <form
-          class="text-center border border-light p-5"
-          [formGroup]="formularioFreelancer"
-          (ngSubmit)="onSubmitFreelancer()"
-        >
+        <form class="text-center border border-light p-5" [formGroup]="formularioFreelancer"
+          (ngSubmit)="onSubmitFreelancer()">
           <h2>PERSONAL DETAILS</h2>
 
           <div class="form-row mb-4">
             <div class="col">
               <!-- USERNAME -->
-              <input
-                type="text"
-                class="form-control"
-                formControlName="username"
-                [value]="freelancer?.username"
-                placeholder="username"
-              />
+              <input type="text" class="form-control" formControlName="username" [value]="freelancer?.username"
+                placeholder="username" />
             </div>
             <fieldset disabled>
               <div class="col">
                 <!-- PASSWORD -->
-                <input
-                  type="password"
-                  id="disabledInput"
-                  class="form-control"
-                  formControlName="password"
-                  [value]="freelancer?.password"
-                  placeholder="password"
-                />
+                <input type="password" id="disabledInput" class="form-control" formControlName="password"
+                  [value]="freelancer?.password" placeholder="password" />
               </div>
             </fieldset>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- First name -->
-              <input
-                type="text"
-                class="form-control"
-                value="First name"
-                formControlName="firstname"
-                [value]="freelancer?.firstname"
-              />
+              <input type="text" class="form-control" value="First name" formControlName="firstname"
+                [value]="freelancer?.firstname" />
             </div>
             <div class="col">
               <!-- Last name -->
-              <input
-                type="text"
-                class="form-control"
-                formControlName="lastname"
-                [value]="freelancer?.lastname"
-              />
+              <input type="text" class="form-control" formControlName="lastname" [value]="freelancer?.lastname" />
             </div>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- E-mail -->
-              <input
-                type="email"
-                id="defaultRegisterFormEmail"
-                class="form-control mb-4"
-                value="E-mail"
-                formControlName="email"
-                [value]="freelancer?.email"
-              />
+              <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" value="E-mail"
+                formControlName="email" [value]="freelancer?.email" />
             </div>
             <!-- SEXO -->
             <div class="col">
-              <select
-                class="custom-select"
-                formControlName="gender"
-                [value]="freelancer?.gender"
-              >
+              <select class="custom-select" formControlName="gender" [value]="freelancer?.gender">
                 <option selected>Select gender</option>
                 <option value="M">Man</option>
                 <option value="W">Woman</option>
@@ -90,109 +51,62 @@
             </div>
           </div>
           <!-- Phone number -->
-          <input
-            type="text"
-            id="defaultRegisterPhonePassword"
-            class="form-control"
-            aria-describedby="defaultRegisterFormPhoneHelpBlock"
-            formControlName="phone"
-            [value]="freelancer?.phone"
-          />
+          <input type="text" id="defaultRegisterPhonePassword" class="form-control"
+            aria-describedby="defaultRegisterFormPhoneHelpBlock" formControlName="phone" [value]="freelancer?.phone" />
           <div class="form-row mb-4">
             <!-- Photo -->
             <div class="col">
               <div class="custom-file mb-3 mt-3">
-                <input
-                  type="file"
-                  class="custom-file-input"
-                  formControlName="image"
-                />
+                <input type="file" class="custom-file-input" formControlName="image" />
                 <label class="custom-file-label" for="customFile">{{
                   freelancer?.image
-                }}</label>
+                  }}</label>
               </div>
             </div>
             <!-- Video -->
             <div class="col">
               <div class="custom-file mb-3 mt-3">
-                <input
-                  type="file"
-                  class="custom-file-input"
-                  formControlName="video"
-                />
+                <input type="file" class="custom-file-input" formControlName="video" />
                 <label class="custom-file-label" for="customFile">{{
                   freelancer?.video
-                }}</label>
+                  }}</label>
               </div>
             </div>
           </div>
           <div class="form-row mb-4">
             <!-- Street -->
             <div class="col">
-              <input
-                type="text"
-                class="form-control mb-4"
-                formControlName="streetName"
-                [value]="freelancer?.streetName"
-              />
+              <input type="text" class="form-control mb-4" formControlName="streetName"
+                [value]="freelancer?.streetName" />
             </div>
             <!-- Postcode -->
             <div class="col">
-              <input
-                type="number"
-                class="form-control mb-4"
-                formControlName="zipcode"
-                [value]="freelancer?.zipcode"
-              />
+              <input type="number" class="form-control mb-4" formControlName="zipcode" [value]="freelancer?.zipcode" />
             </div>
           </div>
           <div class="form-row mb-4">
             <!-- City -->
             <div class="col">
-              <input
-                type="text"
-                class="form-control mb-4"
-                formControlName="city"
-                [value]="freelancer?.city"
-              />
+              <input type="text" class="form-control mb-4" formControlName="city" [value]="freelancer?.city" />
             </div>
             <!-- Country -->
             <div class="col">
-              <input
-                type="text"
-                class="form-control mb-4"
-                formControlName="country"
-                [value]="freelancer?.country"
-              />
+              <input type="text" class="form-control mb-4" formControlName="country" [value]="freelancer?.country" />
             </div>
           </div>
 
           <!-- JobTitle -->
-          <input
-            type="text"
-            id="defaultJobTitle"
-            class="form-control mb-4"
-            formControlName="job_title"
-            [value]="freelancer?.job_title"
-          />
+          <input type="text" id="defaultJobTitle" class="form-control mb-4" formControlName="job_title"
+            [value]="freelancer?.job_title" />
 
           <!-- LinkedIn -->
-          <input
-            type="url"
-            id="defaultWebsite"
-            class="form-control mb-4"
-            [value]="freelancer?.website"
-            formControlName="website"
-          />
+          <input type="url" id="defaultWebsite" class="form-control mb-4" [value]="freelancer?.website"
+            formControlName="website" />
           <!-- Profile -->
           <div class="form-row mb-4">
             <div class="col">
               <h4>Write your <strong>profile</strong> here</h4>
-              <textarea
-                id="defaultTextProfile"
-                class="form-control"
-                [value]="freelancer?.profile"
-              >
+              <textarea id="defaultTextProfile" class="form-control" [value]="freelancer?.profile">
               </textarea>
             </div>
           </div>
@@ -201,10 +115,7 @@
             <div class="col">
               <h4>SKILLS</h4>
 
-              <ul
-                class="list-group list-group-horizontal-lg"
-                *ngFor="let skill of skills"
-              >
+              <ul class="list-group list-group-horizontal-lg" *ngFor="let skill of skills">
                 <li class="list-group-item list-group-item-info">
                   {{ skill.skill }}
                 </li>
@@ -225,10 +136,7 @@
             <div class="col">
               <h4>LANGUAGES</h4>
 
-              <ul
-                class="list-group list-group-horizontal-lg m-1"
-                *ngFor="let language of languages"
-              >
+              <ul class="list-group list-group-horizontal-lg m-1" *ngFor="let language of languages">
                 <li class="list-group-item list-group-item-info">
                   {{ language.language }}
                 </li>
@@ -250,13 +158,7 @@
             </div> -->
           </div>
           <!-- Save button -->
-          <button
-            color="info"
-            block="true"
-            class="btn btn-info"
-            type="submit"
-            (click)="refresh()"
-          >
+          <button color="info" block="true" class="btn btn-info" type="submit" (click)="refresh()">
             Save
           </button>
         </form>
@@ -267,24 +169,21 @@
     <li [ngbNavItem]="2">
       <a ngbNavLink> <i class="fas fa-graduation-cap"></i> Education</a>
       <ng-template ngbNavContent>
-        <form
-          class="text-center border border-light p-5"
-          [formGroup]="formularioEducation"
-          (ngSubmit)="onSubmiEducation()"
-        >
+        <form class="text-center border border-light p-5" [formGroup]="formularioEducation"
+          (ngSubmit)="onSubmiEducation()">
           <h2>EDUCATION</h2>
           <div class="form-row mb-4">
             <div class="col">
               <!-- Degree -->
 
-              <select
-                class="form-control skillsSelect"
-                formControlName="degree"
-              >
-                <option>Select your Degree</option>
-                <option *ngFor="let education of educations">
-                  {{ education.degree }}
-                </option>
+              <select class="form-control skillsSelect" formControlName="degree">
+                <option selected>Select your Degree</option>
+                <option value="Graduate Certificate">Graduate Certificate</option>
+                <option value="Certificate / Diplome">Certificate / Diplome</option>
+                <option value="Doctorate">Doctorate</option>
+                <option value="Master">Master</option>
+                <option value="Bachelor">Bachelor</option>
+                <option value="Other">Other</option>
               </select>
 
               <!--
@@ -297,32 +196,17 @@
             </div>
             <div class="col">
               <!-- School -->
-              <input
-                type="text"
-                class="form-control"
-                placeholder="School"
-                formControlName="school"
-              />
+              <input type="text" class="form-control" placeholder="School" formControlName="school" />
             </div>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- City -->
-              <input
-                type="text"
-                class="form-control"
-                placeholder="City"
-                formControlName="city"
-              />
+              <input type="text" class="form-control" placeholder="City" formControlName="city" />
             </div>
             <div class="col">
               <!-- Country -->
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Country"
-                formControlName="country"
-              />
+              <input type="text" class="form-control" placeholder="Country" formControlName="country" />
             </div>
           </div>
 
@@ -332,24 +216,14 @@
               <label for="start">Start date:</label>
               <hr />
 
-              <input
-                type="date"
-                id="start"
-                name="trip-start"
-                formControlName="start_date"
-              />
+              <input type="date" id="start" name="trip-start" formControlName="start_date" />
             </div>
             <div class="col">
               <!-- End Date -->
               <label for="start">End date:</label>
               <hr />
 
-              <input
-                type="date"
-                id="end"
-                name="trip-start"
-                formControlName="end_date"
-              />
+              <input type="date" id="end" name="trip-start" formControlName="end_date" />
             </div>
           </div>
           <!-- Save button -->
@@ -358,21 +232,13 @@
           </button>
           <h2 id="jobOffersPublished">Your education</h2>
           <div class="grid">
-            <div
-              class="card text-white bg-info mb-3"
-              style="max-width: 18rem"
-              *ngFor="
+            <div class="card text-white bg-info mb-3" style="max-width: 18rem" *ngFor="
                 let education of educations
                   | paginate: { itemsPerPage: 3, currentPage: page }
-              "
-            >
+              ">
               <div class="card-header">
-                <button
-                  class="btn btn-sm btn-danger mr-3"
-                  (click)="deleteEducation(education.id)"
-                >
-                  X</button
-                >School:
+                <button class="btn btn-sm btn-danger mr-3" (click)="deleteEducation(education.id)">
+                  X</button>School:
                 <strong> {{ education.school }}</strong>
               </div>
               <div class="card-body">
@@ -386,12 +252,8 @@
               </div>
             </div>
           </div>
-          <pagination-controls
-            (pageChange)="page = $event"
-            responsive=" true"
-            previousLabel="Previous"
-            nextLabel="Next"
-          >
+          <pagination-controls (pageChange)="page = $event" responsive=" true" previousLabel="Previous"
+            nextLabel="Next">
           </pagination-controls>
         </form>
       </ng-template>
@@ -401,50 +263,26 @@
     <li [ngbNavItem]="3">
       <a ngbNavLink><i class="fab fa-leanpub"></i> Courses</a>
       <ng-template ngbNavContent>
-        <form
-          class="text-center border border-light p-5"
-          [formGroup]="formularioCourse"
-          (ngSubmit)="onSubmitCourse()"
-        >
+        <form class="text-center border border-light p-5" [formGroup]="formularioCourse" (ngSubmit)="onSubmitCourse()">
           <h2>Course</h2>
           <div class="form-row mb-4">
             <div class="col">
               <!-- Title -->
-              <input
-                type="text"
-                class="form-control"
-                formControlName="course_title"
-                placeholder="Course Name"
-              />
+              <input type="text" class="form-control" formControlName="course_title" placeholder="Course Name" />
             </div>
             <div class="col">
               <!-- Institution -->
-              <input
-                type="text"
-                class="form-control"
-                formControlName="institution"
-                placeholder="Institution"
-              />
+              <input type="text" class="form-control" formControlName="institution" placeholder="Institution" />
             </div>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- City -->
-              <input
-                type="text"
-                class="form-control"
-                formControlName="city"
-                placeholder="City"
-              />
+              <input type="text" class="form-control" formControlName="city" placeholder="City" />
             </div>
             <div class="col">
               <!-- Country -->
-              <input
-                type="text"
-                class="form-control"
-                formControlName="country"
-                placeholder="Country"
-              />
+              <input type="text" class="form-control" formControlName="country" placeholder="Country" />
             </div>
           </div>
 
@@ -454,36 +292,21 @@
               <label for="start">Start date:</label>
               <hr />
 
-              <input
-                type="date"
-                id="start"
-                name="trip-start"
-                formControlName="start_date"
-              />
+              <input type="date" id="start" name="trip-start" formControlName="start_date" />
             </div>
             <div class="col">
               <!-- End Date -->
               <label for="start">End date:</label>
               <hr />
 
-              <input
-                type="date"
-                id="end"
-                name="trip-start"
-                formControlName="end_date"
-              />
+              <input type="date" id="end" name="trip-start" formControlName="end_date" />
             </div>
           </div>
 
           <div class="col">
             <!-- Course link -->
-            <input
-              type="url"
-              class="form-control"
-              value="Course link"
-              formControlName="course_link"
-              placeholder="Course Link"
-            />
+            <input type="url" class="form-control" value="Course link" formControlName="course_link"
+              placeholder="Course Link" />
           </div>
 
           <!-- Save button -->
@@ -493,19 +316,12 @@
 
           <h2 id="jobOffersPublished">Your education</h2>
           <div class="grid">
-            <div
-              class="card text-white bg-info mb-3"
-              style="max-width: 18rem"
-              *ngFor="
+            <div class="card text-white bg-info mb-3" style="max-width: 18rem" *ngFor="
                 let course of courses
                   | paginate: { itemsPerPage: 3, currentPage: page }
-              "
-            >
+              ">
               <div class="card-header">
-                <a
-                  class="btn btn-sm btn-danger mr-3"
-                  (click)="deleteCourse(course.id)"
-                >
+                <a class="btn btn-sm btn-danger mr-3" (click)="deleteCourse(course.id)">
                   X
                 </a>
                 School: <strong> {{ course.institution }}</strong>
@@ -519,12 +335,8 @@
               </div>
             </div>
           </div>
-          <pagination-controls
-            (pageChange)="page = $event"
-            responsive=" true"
-            previousLabel="Previous"
-            nextLabel="Next"
-          >
+          <pagination-controls (pageChange)="page = $event" responsive=" true" previousLabel="Previous"
+            nextLabel="Next">
           </pagination-controls>
         </form>
       </ng-template>
@@ -534,50 +346,27 @@
     <li [ngbNavItem]="4">
       <a ngbNavLink><i class="fas fa-building"></i> Professional Experience</a>
       <ng-template ngbNavContent>
-        <form
-          class="text-center border border-light p-5"
-          [formGroup]="formularioProfesionalExperience"
-          (ngSubmit)="onSubmitExperience()"
-        >
+        <form class="text-center border border-light p-5" [formGroup]="formularioProfesionalExperience"
+          (ngSubmit)="onSubmitExperience()">
           <h2>PROFESSIONAL EXPERIENCE</h2>
           <div class="form-row mb-4">
             <div class="col">
               <!-- Employer -->
-              <input
-                type="text"
-                class="form-control"
-                formControlName="employer"
-                placeholder="Employer"
-              />
+              <input type="text" class="form-control" formControlName="employer" placeholder="Employer" />
             </div>
             <div class="col">
               <!-- Job Title -->
-              <input
-                type="text"
-                class="form-control"
-                formControlName="job_title"
-                placeholder="Job title"
-              />
+              <input type="text" class="form-control" formControlName="job_title" placeholder="Job title" />
             </div>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- City -->
-              <input
-                type="text"
-                class="form-control"
-                formControlName="city"
-                placeholder="City"
-              />
+              <input type="text" class="form-control" formControlName="city" placeholder="City" />
             </div>
             <div class="col">
               <!-- Country -->
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Country"
-                formControlName="country"
-              />
+              <input type="text" class="form-control" placeholder="Country" formControlName="country" />
             </div>
           </div>
 
@@ -587,34 +376,19 @@
               <label for="start">Start date:</label>
               <hr />
 
-              <input
-                type="date"
-                id="start"
-                name="trip-start"
-                formControlName="start_date"
-              />
+              <input type="date" id="start" name="trip-start" formControlName="start_date" />
             </div>
             <div class="col">
               <!-- End Date -->
               <label for="start">End date:</label>
               <hr />
 
-              <input
-                type="date"
-                id="end"
-                name="trip-start"
-                formControlName="end_date"
-              />
+              <input type="date" id="end" name="trip-start" formControlName="end_date" />
             </div>
           </div>
           <!-- Company link -->
-          <input
-            type="url"
-            class="form-control"
-            value="Company link"
-            formControlName="company_link"
-            placeholder="Company link"
-          />
+          <input type="url" class="form-control" value="Company link" formControlName="company_link"
+            placeholder="Company link" />
           <!-- Jobs description -->
           <div class="mt-3 mb-3">
             <label> Description</label>
@@ -629,21 +403,13 @@
 
           <h2 id="jobOffersPublished">Your Professional Experience</h2>
           <div class="grid">
-            <div
-              class="card text-white bg-info mb-3"
-              style="max-width: 18rem"
-              *ngFor="
+            <div class="card text-white bg-info mb-3" style="max-width: 18rem" *ngFor="
                 let profesionalExperience of profesionalExperiences
                   | paginate: { itemsPerPage: 3, currentPage: page }
-              "
-            >
+              ">
               <div class="card-header">
-                <button
-                  class="btn btn-sm btn-danger mr-3"
-                  (click)="deleteExperience(profesionalExperience.id)"
-                >
-                  X</button
-                >Employer:
+                <button class="btn btn-sm btn-danger mr-3" (click)="deleteExperience(profesionalExperience.id)">
+                  X</button>Employer:
                 <strong> {{ profesionalExperience.employer }}</strong>
               </div>
               <div class="card-body">
@@ -657,12 +423,8 @@
               </div>
             </div>
           </div>
-          <pagination-controls
-            (pageChange)="page = $event"
-            responsive=" true"
-            previousLabel="Previous"
-            nextLabel="Next"
-          >
+          <pagination-controls (pageChange)="page = $event" responsive=" true" previousLabel="Previous"
+            nextLabel="Next">
           </pagination-controls>
         </form>
       </ng-template>

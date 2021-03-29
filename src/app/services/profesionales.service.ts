@@ -59,7 +59,7 @@ export class ProfesionalesService {
       .toPromise();
   }
 
-  // UPDATE COMPANY
+  // DELETE COMPANY
   delete(): Promise<any> {
     return this.httpClient
       .put<any>(`${this.baseUrl}`, this.createHeaders())

@@ -40,10 +40,10 @@ export class JobOfferService {
   //     .toPromise();
   // }
 
-  // SEARCH BY COUNTRY, CITY OR function_department
-  searchData(pName): Promise<Joboffer[]> {
+  // SEARCH BY COUNTRY, CITY,  function_department / FREELANCE / EDUCATION Freelance
+  searchData(pName): Promise<any[]> {
     return this.httpClient
-      .get<Joboffer[]>(`${this.baseUrl}/joboffer/${pName}`)
+      .get<any[]>(`${this.baseUrl}/search/${pName}`)
       .toPromise();
   }
 
