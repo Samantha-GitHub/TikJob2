@@ -63,4 +63,4 @@ import { CreateFreelancerComponent } from './components/users/create-freelancer/
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

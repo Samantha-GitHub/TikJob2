@@ -13,8 +13,12 @@ import { ProfesionalesService } from 'src/app/services/profesionales.service';
 export class JobOffersComponent implements OnInit {
   public page: number;
 
-  jobOffers: Joboffer[];
+  jobOffers: any;
   companies: Company[];
+  searchJob: any;
+
+
+
 
   constructor(
     private jobOfferService: JobOfferService,
@@ -23,19 +27,23 @@ export class JobOffersComponent implements OnInit {
     private companyService: ProfesionalesService
   ) {
     this.jobOffers = [];
+    this.searchJob = [];
   }
 
   ngOnInit(): void {
+
+
     this.activatedRoute.params.subscribe(async (params) => {
-      console.log(params);
+      console.log('log desde job-offer', params);
 
       if (Object.entries(params).length > 0) {
-        this.jobOffers = await this.jobOfferService.searchData(params.data);
-        console.log(params);
+        this.searchJob = await this.jobOfferService.searchData(params.data);
+        console.log(this.searchJob);
+        this.jobOffers = this.searchJob.job
       } else {
+
         try {
           this.jobOffers = await this.jobOfferService.getAll();
-          this.companies = await this.companyService.getAll();
           // console.log(this.jobOffers);
         } catch (error) {
           console.log(error);

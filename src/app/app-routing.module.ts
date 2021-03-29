@@ -56,6 +56,7 @@ const routes: Routes = [
 
 
 
+
   // VIEW ONE JOB OFFER
   { path: 'job_offers/:idJobOffer', component: JobOfferViewComponent },
   { path: 'contact', component: ContactComponent },
