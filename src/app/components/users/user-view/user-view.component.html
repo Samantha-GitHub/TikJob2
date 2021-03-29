@@ -17,10 +17,11 @@
 
                                 <div class="col-lg-5">
                                     <div class="">
-                                        <article>
-                                            <video autoplay loop type="video/mp4">
-                                                <source [src]="freelance?.video" type="video/mp4" />
-                                            </video>
+                                        <article class="video">
+                                            <iframe width="450" height="320" [src]="freelance.video"
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
                                         </article>
                                     </div>
                                 </div>
