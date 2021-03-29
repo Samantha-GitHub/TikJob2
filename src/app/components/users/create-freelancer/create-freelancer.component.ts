@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { Language } from 'src/app/interfaces/language';
@@ -31,22 +31,85 @@ export class CreateFreelancerComponent implements OnInit {
   ) {
     // FORMULARIO FREELANCER
     this.formularioFreelancer = new FormGroup({
-      username: new FormControl(),
-      password: new FormControl(),
-      firstname: new FormControl(),
-      lastname: new FormControl(),
-      email: new FormControl(),
-      phone: new FormControl(),
+      username: new FormControl(
+        '',
+        [
+          Validators.required,
+
+        ]
+      ),
+      password: new FormControl(
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,12}$/)
+
+        ]
+      ),
+      firstname: new FormControl(
+        '',
+        [
+          Validators.required,
+
+        ]
+      ),
+      lastname: new FormControl(
+        '',
+        [
+          Validators.required,
+
+        ]
+      ),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,4}$/)
+      ]),
+      phone: new FormControl('',
+        [
+          Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(100)
+
+        ]),
       gender: new FormControl(),
-      country: new FormControl(),
-      city: new FormControl(),
-      zipcode: new FormControl(),
+      country: new FormControl(
+        '',
+        [
+          Validators.required,
+
+        ]
+      ),
+      city: new FormControl(
+        '',
+        [
+          Validators.required,
+
+        ]
+      ),
+      zipcode: new FormControl(
+        '',
+        [
+          Validators.required,
+
+        ]
+      ),
       streetName: new FormControl(),
       website: new FormControl(),
       image: new FormControl(),
       video: new FormControl(),
-      job_title: new FormControl(),
-      profile: new FormControl(),
+      job_title: new FormControl(
+        '',
+        [
+          Validators.required,
+
+        ]
+      ),
+      profile: new FormControl('',
+        [
+          Validators.minLength(10),
+          Validators.maxLength(100)
+
+        ]),
       skill: new FormControl(),
       language: new FormControl(),
     });
