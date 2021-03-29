@@ -4,23 +4,44 @@
             <div class="content">
                 <div class="contact-me">
                     <div class="me">
-                        <div class="name">
-                            <h1>{{freelance.firstname}} {{freelance.lastname}}</h1>
-                            <h3>{{freelance.job_title}}</h3>
+                        <div class="container">
+                            <div class="row">
+                                <div class="name col-lg-5">
+                                    <h1>{{freelance.firstname}} {{freelance.lastname}}</h1>
+                                    <h3>{{freelance.job_title}}</h3>
+                                    <figure>
+                                        <img [src]="freelance?.image" alt="profile picture">
+                                    </figure>
 
+                                </div>
+
+                                <div class="col-lg-5">
+                                    <div class="">
+                                        <article>
+                                            <video autoplay loop type="video/mp4">
+                                                <source [src]="freelance?.video" type="video/mp4" />
+                                            </video>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="contact col-lg-12">
+                                    <h3><i class="fas fa-phone-square-alt"></i> {{freelance.phone}}</h3>
+                                    <h3 class="email"><i class="fas fa-envelope-open-text"></i> {{freelance.email}}</h3>
+                                    <h3><i class="fas fa-link"></i> {{freelance?.website}} </h3>
+                                    <h3><i class="fas fa-map-marker-alt"></i> {{freelance.streetName}} -
+                                        {{freelance.zipcode}}
+                                    </h3>
+                                    <h3>{{freelance.city}} , {{freelance.country}}</h3>
+
+
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact">
-                        <h3>Phone Number: {{freelance.phone}}</h3>
-                        <h3 class="email">Email: {{freelance.email}}</h3>
-                        <h3>{{freelance.streetName}}</h3>
-                        <h3>ZipCode: {{freelance.zipcode}} </h3>
-                        <h3>City: {{freelance.city}}</h3>
-                        <h3>Country: {{freelance.country}} </h3>
-                        <h3>Website : {{freelance?.website}} </h3>
-                        <h3>Image: {{freelance.image}} </h3>
-                        <h3>Video: {{freelance?.video}} </h3>
-                    </div>
+
+
+
+
                 </div>
             </div>
         </div>

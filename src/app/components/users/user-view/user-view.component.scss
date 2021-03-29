@@ -8,6 +8,7 @@
   margin: auto;
 }
 
+
 .body {
   background-color: #f3f4ed;
   margin: auto;
@@ -42,7 +43,6 @@ h4 {
 .upper-quarter {
    background-image: url("https://omniburo.fr/wp-content/uploads/2019/05/Bani%C3%A8re-architecture-r%C3%A9seau.png"); 
   background-repeat: no-repeat;
-  /* background-size:cover; */
   background-attachment: fixed;
   height: 450px;
   background-position: 25% 0;
@@ -69,10 +69,24 @@ h4 {
 
   .me {
     display: inline-block;
-    width: 350px;
+    width: 80%;
+    text-align: center;
   }
+
+
+}
+img{
+  width: 205px;
+  border-radius: 20%;
+  margin: 0 auto;
 }
 
+video{
+  width: 500px;
+  margin: 0 auto;
+  background-color: #0070ef;
+
+}
 
 
 .logo {
@@ -146,7 +160,6 @@ h4 {
 .left-column {
   width: 100%;
   margin-left: 3.75%;
-  /* display: inline-block; */
   position: relative;
   top: -90px;
 }
@@ -191,7 +204,7 @@ h4 {
 
 .experience {
   border: 2px solid #0070ef;
-  margin-top: 150px;
+  margin-top: 300px;
   margin-bottom: 25px;
   background-color: #f2f2f2;
   -webkit-box-shadow: 0px 22px 87px -24px rgba(0, 0, 0, 0.75);
@@ -297,8 +310,6 @@ h4 {
 }
 
 .waya-text {
- /*  display: inline-block;
-  float: right; */
   padding-top: 35px;
   padding-right: 10%;
 }
@@ -311,12 +322,9 @@ h4 {
   padding: 25px 25px;
   width: 10%;
   height: 10%;
-/*   display: inline-block;
- */}
+}
 
 .fpgc-text {
- /*  display: inline-block;
-  float: right; */
   padding-top: 35px;
   padding-right: 10%;
 }
@@ -325,14 +333,7 @@ h4 {
 
  
   width: 100%;
-  /*  margin-right: 3.75%;
-
-   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
- display: inline-block; */
   
- 
 }
 
 .right-column header {
@@ -363,7 +364,6 @@ h4 {
   padding-left: 10px;
   padding-bottom: 0px;
   padding-top: 20px;
- /*  display: inline-block; */
 }
 
 .ed-info {
@@ -373,9 +373,6 @@ h4 {
 }
 
 .info {
- /* width: 65%;
-   display: inline-block;
-  float: right; */
   padding-top: 45px;
   padding-right: 55px;
 }
