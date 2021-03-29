@@ -50,7 +50,7 @@ const routes: Routes = [
   // ALL JOB OFFERS
   { path: 'job_offers', component: JobOffersComponent },
   // SEARCH FOR JOB OFFERS
-  { path: 'search/:data', component: JobOffersComponent },
+  { path: 'search/:data', component: UsersComponent },
   // VIEW ONE JOB OFFER
   { path: 'job_offers/:idJobOffer', component: JobOfferViewComponent },
   { path: 'contact', component: ContactComponent },

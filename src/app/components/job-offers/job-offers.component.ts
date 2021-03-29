@@ -25,8 +25,11 @@ export class JobOffersComponent implements OnInit {
     this.jobOffers = [];
   }
 
-  ngOnInit(): void {
-    this.activatedRoute.params.subscribe(async (params) => {
+  async ngOnInit(): Promise<void> {
+    try {
+      this.jobOffers = await this.jobOfferService.getAll();
+    } catch (error) {}
+    /*   this.activatedRoute.params.subscribe(async (params) => {
       console.log(params);
 
       if (Object.entries(params).length > 0) {
@@ -35,13 +38,13 @@ export class JobOffersComponent implements OnInit {
       } else {
         try {
           this.jobOffers = await this.jobOfferService.getAll();
-          this.companies = await this.companyService.getAll();
+          // this.companies = await this.companyService.getAll();
           // console.log(this.jobOffers);
         } catch (error) {
           console.log(error);
         }
       }
-    });
+    }); */
   }
 
   getJobOffer(pId): void {

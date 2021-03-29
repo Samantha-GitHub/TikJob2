@@ -52,6 +52,13 @@ export class UsersService {
       .toPromise();
   }
 
+  // SEARCH BY EDUCATION
+  searchFreelanceEducation(pName): Promise<any[]> {
+    return this.httpClient
+      .get<any[]>(`${this.baseUrl}/search/${pName}`)
+      .toPromise();
+  }
+
   createHeaders() {
     return {
       headers: new HttpHeaders({

@@ -4,7 +4,7 @@
     <div
       class="card"
       *ngFor="
-        let freelance of allFreelancers
+        let freelance of freelancers
           | paginate: { itemsPerPage: 9, currentPage: page }
       "
       (click)="getFreelance(freelance.id)"
