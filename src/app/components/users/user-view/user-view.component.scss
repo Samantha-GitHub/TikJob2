@@ -3,6 +3,26 @@
   padding-left: 50%;
 }
 
+.HeroBg img {
+  float: right;
+  height: 300px;
+  width: 300px;
+  margin-right: 30rem;
+  margin-top: 2rem;
+  border-radius: 50%;
+  justify-content: center;
+  background-color: white;
+}
+.HeroBg img {
+  border-radius: 50%;
+}
+
+iframe {
+  // z-index: 3;
+  margin-left: 20rem;
+  // margin-bottom: 1rem;
+}
+
 .header li {
   display: inline;
   margin: auto;
@@ -40,7 +60,7 @@ h4 {
 }
 
 .upper-quarter {
-   background-image: url("https://omniburo.fr/wp-content/uploads/2019/05/Bani%C3%A8re-architecture-r%C3%A9seau.png"); 
+  background-image: url("https://omniburo.fr/wp-content/uploads/2019/05/Bani%C3%A8re-architecture-r%C3%A9seau.png");
   background-repeat: no-repeat;
   /* background-size:cover; */
   background-attachment: fixed;
@@ -73,8 +93,6 @@ h4 {
   }
 }
 
-
-
 .logo {
   width: 55px;
   height: 55px;
@@ -89,7 +107,6 @@ h4 {
   padding-left: 10px;
   padding-bottom: 2px;
   background-color: #0070ef;
-
 }
 
 .name h3 {
@@ -109,7 +126,6 @@ h4 {
   padding: 15px 15px;
   width: 300px;
   background-color: #0070ef;
-
 }
 
 .contact h3 {
@@ -120,12 +136,11 @@ h4 {
   padding-top: 5px;
 }
 
-.columns{
-   flex-basis: 100%;
+.columns {
+  flex-basis: 100%;
 }
 
 .lower-three-quarters {
-
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -133,8 +148,6 @@ h4 {
   margin: auto;
   padding-bottom: 60px;
 }
-
-
 
 .lower-three-quarters h3 {
   font-family: "Open Sans";
@@ -297,7 +310,7 @@ h4 {
 }
 
 .waya-text {
- /*  display: inline-block;
+  /*  display: inline-block;
   float: right; */
   padding-top: 35px;
   padding-right: 10%;
@@ -311,19 +324,18 @@ h4 {
   padding: 25px 25px;
   width: 10%;
   height: 10%;
-/*   display: inline-block;
- */}
+  /*   display: inline-block;
+ */
+}
 
 .fpgc-text {
- /*  display: inline-block;
+  /*  display: inline-block;
   float: right; */
   padding-top: 35px;
   padding-right: 10%;
 }
 
 .right-column {
-
- 
   width: 100%;
   /*  margin-right: 3.75%;
 
@@ -331,8 +343,6 @@ h4 {
   flex-direction: row;
   flex-wrap: wrap;
  display: inline-block; */
-  
- 
 }
 
 .right-column header {
@@ -363,7 +373,7 @@ h4 {
   padding-left: 10px;
   padding-bottom: 0px;
   padding-top: 20px;
- /*  display: inline-block; */
+  /*  display: inline-block; */
 }
 
 .ed-info {
@@ -373,7 +383,7 @@ h4 {
 }
 
 .info {
- /* width: 65%;
+  /* width: 65%;
    display: inline-block;
   float: right; */
   padding-top: 45px;
@@ -408,7 +418,7 @@ h4 {
 
 .left {
   margin-left: 23px;
- 
+
   background-color: #f2f2f2;
   margin-bottom: 25px;
 }
@@ -593,14 +603,12 @@ h4 {
            background-size: 220%;
            height: 390px;
         }
-      }  
-    }  
+      }
+    }
   }
 }
  */
-  
 
-.body{
+.body {
   margin-top: 80px;
- 
 }

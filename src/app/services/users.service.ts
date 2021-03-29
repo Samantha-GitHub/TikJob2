@@ -38,15 +38,12 @@ export class UsersService {
   // NEW FREELANCER
   create(formValues): Promise<any> {
     formValues.image = 'http';
-    formValues.video = 'http';
 
     return this.httpClient.post<any>(this.baseUrl, formValues).toPromise();
   }
   // NEW FREELANCER with pic
-  createPic(fd: FormData, formValues): Promise<any> {
-    formValues.video = 'http';
-
-    return this.httpClient.post<any>(this.baseUrl, fd, formValues).toPromise();
+  createPic(fd: FormData): Promise<any> {
+    return this.httpClient.post<any>(this.baseUrl, fd).toPromise();
   }
 
   // UPDATE FREELANCER

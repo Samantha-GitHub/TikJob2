@@ -68,7 +68,7 @@ export class CreateFreelancerComponent implements OnInit {
     }
   }
 
-  async onSubmitFreelancer(): Promise<any> {
+  /*   async onSubmitFreelancer(): Promise<any> {
     try {
       console.log(this.formularioFreelancer.value);
 
@@ -107,27 +107,40 @@ export class CreateFreelancerComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
-  }
+  } */
 
   // HANDLE FILES
+  onSubmitFreelancer(): void {
+    // Creación del objeto donde incluimos todos los campos del formulario y además la imagen
+    let fd: FormData = new FormData();
+    fd.append('image', this.files[0]);
+    fd.append('username', this.formularioFreelancer.value.username);
+    fd.append('password', this.formularioFreelancer.value.password);
+    fd.append('firstname', this.formularioFreelancer.value.firstname);
+    fd.append('lastname', this.formularioFreelancer.value.lastname);
+    fd.append('email', this.formularioFreelancer.value.lastname);
+    fd.append('phone', this.formularioFreelancer.value.lastname);
+    fd.append('gender', this.formularioFreelancer.value.lastname);
+    fd.append('country', this.formularioFreelancer.value.lastname);
+    fd.append('city', this.formularioFreelancer.value.lastname);
+    fd.append('zipcode', this.formularioFreelancer.value.lastname);
+    fd.append('streetName', this.formularioFreelancer.value.lastname);
+    fd.append('website', this.formularioFreelancer.value.lastname);
+    fd.append('video', this.formularioFreelancer.value.lastname);
+    fd.append('job_title', this.formularioFreelancer.value.lastname);
+    fd.append('profile', this.formularioFreelancer.value.lastname);
+    // fd.append('skill', this.formularioFreelancer.value.lastname);
+    // fd.append('language', this.formularioFreelancer.value.lastname);
 
-  /*  onSubmit() {
-    let fd = new FormData();
-    fd.append('imagen', this.files[0]);
-
-
-
-    this.fotografoService.createImage(fd).then(result => {
-      this.router.navigate(['fotografo/portfolio'])
-      console.log('navigate', result);
-
-
-    })
-
+    // Delegamos el envío del formulario en el servicio
+    this.freelancerService.createPic(fd).then((result) => {
+      this.router.navigate(['']);
+      console.log(result);
+    });
   }
-  onChange($event) {
-    this.files = $event.target.files;
-    console.log('$event', $event.target.files)
 
-  } */
+  onChange($event): void {
+    this.files = $event.target.files;
+    console.log('$event', $event.target.files);
+  }
 }
