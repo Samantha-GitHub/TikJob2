@@ -17,6 +17,7 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class CreateFreelancerComponent implements OnInit {
   active = 1;
+  files;
   skills: Skill[];
   languages: Language[];
   formularioFreelancer: FormGroup;
@@ -85,7 +86,6 @@ export class CreateFreelancerComponent implements OnInit {
       if (freelance.insertId) {
         // A Language
         language.forEach(async (oneLanguage) => {
-
           const lang = await this.tbiLanguageFreelance.create({
             language: oneLanguage,
             freelance: freelance.insertId,
@@ -108,4 +108,26 @@ export class CreateFreelancerComponent implements OnInit {
       console.log(error);
     }
   }
+
+  // HANDLE FILES
+
+  /*  onSubmit() {
+    let fd = new FormData();
+    fd.append('imagen', this.files[0]);
+
+
+
+    this.fotografoService.createImage(fd).then(result => {
+      this.router.navigate(['fotografo/portfolio'])
+      console.log('navigate', result);
+
+
+    })
+
+  }
+  onChange($event) {
+    this.files = $event.target.files;
+    console.log('$event', $event.target.files)
+
+  } */
 }
