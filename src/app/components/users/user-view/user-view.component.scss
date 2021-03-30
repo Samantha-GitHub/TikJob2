@@ -8,6 +8,7 @@
   margin: auto;
 }
 
+
 .body {
   background-color: #f3f4ed;
   margin: auto;
@@ -41,8 +42,8 @@ h4 {
 
 .upper-quarter {
    background-image: url("https://omniburo.fr/wp-content/uploads/2019/05/Bani%C3%A8re-architecture-r%C3%A9seau.png"); 
+   background-size:contain;
   background-repeat: no-repeat;
-  /* background-size:cover; */
   background-attachment: fixed;
   height: 450px;
   background-position: 25% 0;
@@ -69,8 +70,16 @@ h4 {
 
   .me {
     display: inline-block;
-    width: 350px;
+    width: 80%;
+    text-align: center;
   }
+
+
+}
+img{
+  width: 205px;
+  border-radius: 20%;
+  margin: 0 auto;
 }
 
 
@@ -89,6 +98,7 @@ h4 {
   padding-left: 10px;
   padding-bottom: 2px;
   background-color: #0070ef;
+  border-radius: 10%;
 
 }
 
@@ -109,6 +119,7 @@ h4 {
   padding: 15px 15px;
   width: 300px;
   background-color: #0070ef;
+    border-radius: 15px;
 
 }
 
@@ -146,14 +157,15 @@ h4 {
 .left-column {
   width: 100%;
   margin-left: 3.75%;
-  /* display: inline-block; */
   position: relative;
   top: -90px;
 }
 
 .left-column header {
   background-color: #0070ef;
+    border-radius: 15px;
   padding: 10px;
+ 
 }
 
 .left-column h2 {
@@ -190,13 +202,15 @@ h4 {
 }
 
 .experience {
-  border: 2px solid #0070ef;
-  margin-top: 150px;
+  
+  margin-top: 300px;
   margin-bottom: 25px;
   background-color: #f2f2f2;
   -webkit-box-shadow: 0px 22px 87px -24px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 22px 87px -24px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 22px 87px -24px rgba(0, 0, 0, 0.75);
+border-radius: 15px;
+
 }
 
 .riser {
@@ -297,8 +311,6 @@ h4 {
 }
 
 .waya-text {
- /*  display: inline-block;
-  float: right; */
   padding-top: 35px;
   padding-right: 10%;
 }
@@ -311,12 +323,9 @@ h4 {
   padding: 25px 25px;
   width: 10%;
   height: 10%;
-/*   display: inline-block;
- */}
+}
 
 .fpgc-text {
- /*  display: inline-block;
-  float: right; */
   padding-top: 35px;
   padding-right: 10%;
 }
@@ -325,14 +334,7 @@ h4 {
 
  
   width: 100%;
-  /*  margin-right: 3.75%;
-
-   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
- display: inline-block; */
   
- 
 }
 
 .right-column header {
@@ -363,7 +365,6 @@ h4 {
   padding-left: 10px;
   padding-bottom: 0px;
   padding-top: 20px;
- /*  display: inline-block; */
 }
 
 .ed-info {
@@ -373,9 +374,6 @@ h4 {
 }
 
 .info {
- /* width: 65%;
-   display: inline-block;
-  float: right; */
   padding-top: 45px;
   padding-right: 55px;
 }
@@ -498,6 +496,210 @@ h4 {
   padding-top: 5px;
   display: inline-block;
 }
+
+// RATING
+
+#full-stars-example {
+  /* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */
+  .rating-group {
+    display: inline-flex;
+  }
+
+  /* make hover effect work properly in IE */
+  .rating__icon {
+    pointer-events: none;
+  }
+
+  /* hide radio inputs */
+  .rating__input {
+    position: absolute !important;
+    left: -9999px !important;
+  }
+
+  /* set icon padding and size */
+  .rating__label {
+    cursor: pointer;
+    padding: 0 0.1em;
+    font-size: 2rem;
+  }
+
+  /* set default star color */
+  .rating__icon--star {
+    color: orange;
+  }
+
+  /* set color of none icon when unchecked */
+  .rating__icon--none {
+    color: #eee;
+  }
+
+  /* if none icon is checked, make it red */
+  .rating__input--none:checked + .rating__label .rating__icon--none {
+    color: red;
+  }
+
+  /* if any input is checked, make its following siblings grey */
+  .rating__input:checked ~ .rating__label .rating__icon--star {
+    color: #ddd;
+  }
+
+  /* make all stars orange on rating group hover */
+  .rating-group:hover .rating__label .rating__icon--star {
+    color: orange;
+  }
+
+  /* make hovered input's following siblings grey on hover */
+  .rating__input:hover ~ .rating__label .rating__icon--star {
+    color: #ddd;
+  }
+
+  /* make none icon grey on rating group hover */
+  .rating-group:hover
+    .rating__input--none:not(:hover)
+    + .rating__label
+    .rating__icon--none {
+    color: #eee;
+  }
+
+  /* make none icon red on hover */
+  .rating__input--none:hover + .rating__label .rating__icon--none {
+    color: red;
+  }
+}
+
+#half-stars-example {
+  /* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */
+  .rating-group {
+    display: inline-flex;
+  }
+
+  /* make hover effect work properly in IE */
+  .rating__icon {
+    pointer-events: none;
+  }
+
+  /* hide radio inputs */
+  .rating__input {
+    position: absolute !important;
+    left: -9999px !important;
+  }
+
+  /* set icon padding and size */
+  .rating__label {
+    cursor: pointer;
+    /* if you change the left/right padding, update the margin-right property of .rating__label--half as well. */
+    padding: 0 0.1em;
+    font-size: 2rem;
+  }
+
+  /* add padding and positioning to half star labels */
+  .rating__label--half {
+    padding-right: 0;
+    margin-right: -0.6em;
+    z-index: 2;
+  }
+
+  /* set default star color */
+  .rating__icon--star {
+    color: orange;
+  }
+
+  /* set color of none icon when unchecked */
+  .rating__icon--none {
+    color: #eee;
+  }
+
+  /* if none icon is checked, make it red */
+  .rating__input--none:checked + .rating__label .rating__icon--none {
+    color: red;
+  }
+
+  /* if any input is checked, make its following siblings grey */
+  .rating__input:checked ~ .rating__label .rating__icon--star {
+    color: #ddd;
+  }
+
+  /* make all stars orange on rating group hover */
+  .rating-group:hover .rating__label .rating__icon--star,
+  .rating-group:hover .rating__label--half .rating__icon--star {
+    color: orange;
+  }
+
+  /* make hovered input's following siblings grey on hover */
+  .rating__input:hover ~ .rating__label .rating__icon--star,
+  .rating__input:hover ~ .rating__label--half .rating__icon--star {
+    color: #ddd;
+  }
+
+  /* make none icon grey on rating group hover */
+  .rating-group:hover
+    .rating__input--none:not(:hover)
+    + .rating__label
+    .rating__icon--none {
+    color: #eee;
+  }
+
+  /* make none icon red on hover */
+  .rating__input--none:hover + .rating__label .rating__icon--none {
+    color: red;
+  }
+}
+
+#full-stars-example-two {
+  /* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */
+  .rating-group {
+    display: inline-flex;
+  }
+
+  /* make hover effect work properly in IE */
+  .rating__icon {
+    pointer-events: none;
+  }
+
+  /* hide radio inputs */
+  .rating__input {
+    position: absolute !important;
+    left: -9999px !important;
+  }
+
+  /* hide 'none' input from screenreaders */
+  .rating__input--none {
+    display: none;
+  }
+
+  /* set icon padding and size */
+  .rating__label {
+    cursor: pointer;
+    padding: 0 0.1em;
+    font-size: 1rem;
+  }
+
+  /* set default star color */
+  .rating__icon--star {
+    color: orange;
+  }
+
+  /* if any input is checked, make its following siblings grey */
+  .rating__input:checked ~ .rating__label .rating__icon--star {
+    color: #ddd;
+  }
+
+  /* make all stars orange on rating group hover */
+  .rating-group:hover .rating__label .rating__icon--star {
+    color: orange;
+  }
+
+  /* make hovered input's following siblings grey on hover */
+  .rating__input:hover ~ .rating__label .rating__icon--star {
+    color: #ddd;
+  }
+}
+
+body {
+  padding: 1rem;
+  text-align: center;
+}
+
 
 /* @media only screen and (max-width: 1649px) {
   .page {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Company } from 'src/app/interfaces/company';
 import { Joboffer } from 'src/app/interfaces/job_offer';
@@ -49,30 +49,100 @@ export class ProfesionalFormularioComponent implements OnInit {
 
     // FORMULARIO company
     this.formularioCompany = new FormGroup({
-      name_company: new FormControl(),
-      phone: new FormControl(),
-      vat: new FormControl(),
-      street: new FormControl(),
-      city: new FormControl(),
-      zip_code: new FormControl(),
-      country: new FormControl(),
-      website: new FormControl(),
+      name_company: new FormControl('',
+        [
+          Validators.required,
+
+        ]),
+      phone: new FormControl('',
+        [
+          Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(100)
+
+        ]),
+      vat: new FormControl('',
+        [
+          Validators.required,
+
+        ]),
+      street: new FormControl('',
+        [
+          Validators.required,
+
+        ]),
+      city: new FormControl('',
+        [
+          Validators.required,
+
+        ]),
+      zip_code: new FormControl('',
+        [
+          Validators.required,
+
+        ]),
+      country: new FormControl('',
+        [
+          Validators.required,
+
+        ]),
+      website: new FormControl('',
+        [
+          Validators.required,
+
+        ]),
       image: new FormControl(),
-      email: new FormControl(),
-      employees_number: new FormControl(),
+      email: new FormControl('',
+        [
+          Validators.required,
+
+        ]),
+      employees_number: new FormControl('',
+        [
+          Validators.required,
+
+        ]),
       year_founded: new FormControl(),
-      username: new FormControl(),
+      username: new FormControl('',
+        [
+          Validators.required,
+
+        ]),
       password: new FormControl(),
     });
 
     // FORMULARIO Job Offer
     this.formularioJobOffer = new FormGroup({
-      function_department: new FormControl(),
-      responsabilities: new FormControl(),
-      city: new FormControl(),
-      country: new FormControl(),
-      starting_date: new FormControl(),
-      hour_week: new FormControl(),
+      function_department: new FormControl('',
+        [
+          Validators.required,
+
+        ]),
+      responsabilities: new FormControl('',
+        [
+          Validators.required,
+
+        ]),
+      city: new FormControl('',
+        [
+          Validators.required,
+
+        ]),
+      country: new FormControl('',
+        [
+          Validators.required,
+
+        ]),
+      starting_date: new FormControl('',
+        [
+          Validators.required,
+
+        ]),
+      hour_week: new FormControl('',
+        [
+          Validators.required,
+
+        ]),
       skill: new FormControl(),
       language: new FormControl(),
     });
