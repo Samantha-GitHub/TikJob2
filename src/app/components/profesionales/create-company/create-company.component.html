@@ -1,139 +1,109 @@
 <div class="servicesContainer justify-content-center mt-5">
   <!-- collapse -->
-  <ul
-    ngbNav
-    #nav="ngbNav"
-    [(activeId)]="active"
-    class="nav-tabs justify-content-center"
-  >
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs justify-content-center">
     <li [ngbNavItem]="1">
       <a ngbNavLink>Company Details</a>
       <ng-template ngbNavContent>
-        <form
-          class="text-center border border-light p-5"
-          [formGroup]="formularioCompany"
-          (ngSubmit)="onSubmitCompany()"
-        >
+        <form class="text-center border border-light p-5" [formGroup]="formularioCompany"
+          (ngSubmit)="onSubmitCompany()">
           <h2>COMPANY DETAILS</h2>
 
           <div class="form-row mb-4">
             <div class="col">
               <!-- Username -->
-              <input
-                type="text"
-                id="defaultRegisterFormUserName"
-                class="form-control"
-                formControlName="username"
-                placeholder="Company name"
-              />
+              <input type="text" id="defaultRegisterFormUserName" class="form-control" formControlName="username"
+                placeholder="Company name" />
+              <p class="error"
+                *ngIf="formularioCompany.get('username').hasError('required') && formularioCompany.get('username').touched">
+                Username is required
+              </p>
             </div>
             <div class="col">
               <!-- Password -->
-              <input
-                type="password"
-                id="defaultRegisterFormPassword"
-                class="form-control"
-                formControlName="password"
-                placeholder="password"
-                required
-              />
+              <input type="password" id="defaultRegisterFormPassword" class="form-control" formControlName="password"
+                placeholder="password" required />
+              <p class="error"
+                *ngIf="formularioCompany.get('password').hasError('required') && formularioCompany.get('password').touched">
+                Password is required
+              </p>
+              <small id="passwordHelpInline" class="text-muted">
+                Must contain at least 1 uppercase character and special sign.
+              </small>
             </div>
           </div>
 
           <div class="form-row mb-4">
             <div class="col">
               <!-- Company name -->
-              <input
-                type="text"
-                id="defaultRegisterFormFirstName"
-                class="form-control"
-                formControlName="name_company"
-                placeholder="Company name"
-              />
+              <input type="text" id="defaultRegisterFormFirstName" class="form-control" formControlName="name_company"
+                placeholder="Company name" />
+              <p class="error"
+                *ngIf="formularioCompany.get('name_company').hasError('required') && formularioCompany.get('name_company').touched">
+                Company name is required
+              </p>
             </div>
             <div class="col">
               <!-- Vat -->
-              <input
-                type="number"
-                id="defaultRegisterFormLastName"
-                class="form-control"
-                formControlName="vat"
-                placeholder="Vat"
-              />
+              <input type="number" id="defaultRegisterFormLastName" class="form-control" formControlName="vat"
+                placeholder="Vat" />
+              <p class="error"
+                *ngIf="formularioCompany.get('vat').hasError('required') && formularioCompany.get('vat').touched">
+                VAT is required
+              </p>
             </div>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- E-mail -->
-              <input
-                type="email"
-                id="defaultRegisterFormEmail"
-                class="form-control mb-4"
-                placeholder="E-mail"
-                formControlName="email"
-              />
+              <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail"
+                formControlName="email" />
+              <small id="passwordHelpInline" class="text-muted">
+                Email example: test@test.com
+              </small>
+              <p class="error"
+                *ngIf="formularioCompany.get('email').hasError('required') && formularioCompany.get('email').touched">
+                Email is required
+              </p>
+
             </div>
             <!-- Employees number -->
             <div class="col">
-              <input
-                type="number"
-                id="employeesNumber"
-                class="form-control mb-4"
-                formControlName="employees_number"
-                placeholder="Number of employees"
-              />
+              <input type="number" id="employeesNumber" class="form-control mb-4" formControlName="employees_number"
+                placeholder="Number of employees" />
             </div>
           </div>
 
           <div class="form-row mb-4">
             <div class="col">
               <!-- Year founded -->
-              <input
-                type="number"
-                id="yearFounded"
-                class="form-control mb-4"
-                formControlName="year_founded"
-                placeholder="Year Founded"
-              />
+              <input type="number" id="yearFounded" class="form-control mb-4" formControlName="year_founded"
+                placeholder="Year Founded" />
             </div>
             <div class="col">
               <!-- Phone number -->
-              <input
-                type="text"
-                id="defaultRegisterPhonePassword"
-                class="form-control"
-                formControlName="phone"
-                placeholder="Phone number"
-              />
-              <div class="form-row mb-4"></div>
+              <input type="text" id="defaultRegisterPhonePassword" class="form-control" formControlName="phone"
+                placeholder="Phone number" />
+              <p class="error"
+                *ngIf="formularioCompany.get('phone').hasError('required') && formularioCompany.get('phone').touched">
+                Phone number is required
+              </p>
+
             </div>
           </div>
           <div class="form-row mb-4">
             <!-- Photo -->
             <div class="col">
               <div class="custom-file mb-3 mt-3">
-                <input
-                  type="file"
-                  class="form-control custom-file-input"
-                  formControlName="image"
-                  id="customFile"
-                  (change)="onChange($event)"
-                />
-                <label class="custom-file-label" for="customFile"
-                  >Choose picture</label
-                >
+                <input type="file" class="form-control custom-file-input" formControlName="image" id="customFile"
+                  (change)="onChange($event)" />
+                <label class="custom-file-label" for="customFile">Choose picture</label>
               </div>
             </div>
             <!-- Website -->
             <div class="col">
               <div class="custom-file mb-3 mt-3">
-                <input
-                  type="url"
-                  placeholder="Add your website here"
-                  class="form-control"
-                  formControlName="website"
-                  id=""
-                />
+                <input type="url" placeholder="Add your website here" class="form-control" formControlName="website" />
+
               </div>
             </div>
           </div>
@@ -141,41 +111,33 @@
           <div class="form-row mb-4">
             <!-- Street -->
             <div class="col">
-              <input
-                type="text"
-                class="form-control mb-4"
-                formControlName="street"
-                placeholder="Enter Street"
-              />
+              <input type="text" class="form-control mb-4" formControlName="street" placeholder="Enter Street" />
             </div>
             <!-- Postcode -->
             <div class="col">
-              <input
-                type="number"
-                class="form-control mb-4"
-                formControlName="zip_code"
-                placeholder="Enter Postcode"
-              />
+              <input type="number" class="form-control mb-4" formControlName="zip_code" placeholder="Enter Postcode" />
+              <p class="error"
+                *ngIf="formularioCompany.get('zip_code').hasError('required') && formularioCompany.get('zip_code').touched">
+                Postcode is required
+              </p>
             </div>
           </div>
           <div class="form-row mb-4">
             <!-- City -->
             <div class="col">
-              <input
-                type="text"
-                class="form-control mb-4"
-                formControlName="city"
-                placeholder="Enter City"
-              />
+              <input type="text" class="form-control mb-4" formControlName="city" placeholder="Enter City" />
+              <p class="error"
+                *ngIf="formularioCompany.get('city').hasError('required') && formularioCompany.get('city').touched">
+                City is required
+              </p>
             </div>
             <!-- Country -->
             <div class="col">
-              <input
-                type="text"
-                class="form-control mb-4"
-                formControlName="country"
-                placeholder="Enter Country"
-              />
+              <input type="text" class="form-control mb-4" formControlName="country" placeholder="Enter Country" />
+              <p class="error"
+                *ngIf="formularioCompany.get('country').hasError('required') && formularioCompany.get('country').touched">
+                Country is required
+              </p>
             </div>
           </div>
 

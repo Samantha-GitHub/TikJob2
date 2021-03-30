@@ -27,11 +27,11 @@ export class CreateCompanyComponent implements OnInit {
         Validators.maxLength(100),
       ]),
       vat: new FormControl('', [Validators.required]),
-      street: new FormControl('', [Validators.required]),
+      street: new FormControl(),
       city: new FormControl('', [Validators.required]),
       zip_code: new FormControl('', [Validators.required]),
       country: new FormControl('', [Validators.required]),
-      website: new FormControl('', [Validators.required]),
+      website: new FormControl(),
       image: new FormControl(),
       email: new FormControl('', [
         Validators.required,
