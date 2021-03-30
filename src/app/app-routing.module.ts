@@ -16,6 +16,7 @@ import { UserFormularioComponent } from './components/users/user-formulario/user
 import { UserViewComponent } from './components/users/user-view/user-view.component';
 import { UsersComponent } from './components/users/users.component';
 import { LoginGuard } from './guards/login.guard';
+import { LoginGuardCompany } from './guards/login.freelance.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -26,7 +27,7 @@ const routes: Routes = [
   // EDIT/ADD CONTENT TO A FREELANCER
   {
     path: 'freelance/profile',
-    component: UserFormularioComponent,
+    component: UserFormularioComponent, canActivate: [LoginGuard]
   },
   // LOGIN FREELANCER
   { path: 'loginfreelance', component: LoginfreelancerComponent },
@@ -44,7 +45,7 @@ const routes: Routes = [
   // EDIT/ADD CONTENT TO A COMPANY
   {
     path: 'company/profile',
-    component: ProfesionalFormularioComponent,
+    component: ProfesionalFormularioComponent, canActivate: [LoginGuard]
   },
   // ALL JOB OFFERS
   { path: 'job_offers', component: JobOffersComponent },

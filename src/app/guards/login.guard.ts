@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class LoginGuard implements CanActivate {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -23,9 +23,9 @@ export class LoginGuard implements CanActivate {
     | UrlTree {
     if (localStorage.getItem('token_tikjobs')) {
       return true;
+
     } else {
-      this.router.navigate(['/company/profile/']);
-      this.router.navigate(['/freelance/profile/']);
+      this.router.navigate(['/home']);
       return false;
     }
   }
