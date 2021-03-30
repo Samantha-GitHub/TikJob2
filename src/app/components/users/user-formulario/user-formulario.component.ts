@@ -68,71 +68,31 @@ export class UserFormularioComponent implements OnInit {
 
     // FORMULARIO FREELANCER
     this.formularioFreelancer = new FormGroup({
-      firstname: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      lastname: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
+      firstname: new FormControl('', [Validators.required]),
+      lastname: new FormControl('', [Validators.required]),
       email: new FormControl('', [
         Validators.required,
-        Validators.pattern(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,4}$/)
+        Validators.pattern(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,4}$/),
       ]),
-      phone: new FormControl('',
-        [
-          Validators.required,
-          Validators.minLength(10),
-          Validators.maxLength(100)
-
-        ]),
-      gender: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      country: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      city: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      zipcode: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      streetName: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
+      phone: new FormControl('', [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(100),
+      ]),
+      gender: new FormControl('', [Validators.required]),
+      country: new FormControl('', [Validators.required]),
+      city: new FormControl('', [Validators.required]),
+      zipcode: new FormControl('', [Validators.required]),
+      streetName: new FormControl('', [Validators.required]),
       website: new FormControl(),
       image: new FormControl(),
       video: new FormControl(),
-      job_title: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      profile: new FormControl('',
-        [
-          Validators.minLength(10),
-          Validators.maxLength(100)
-
-        ]),
-      username: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
+      job_title: new FormControl('', [Validators.required]),
+      profile: new FormControl('', [
+        Validators.minLength(10),
+        Validators.maxLength(100),
+      ]),
+      username: new FormControl('', [Validators.required]),
       password: new FormControl(),
       // skill: new FormControl(),
       // language: new FormControl(),
@@ -151,81 +111,27 @@ export class UserFormularioComponent implements OnInit {
 
     // FORMULARIO Education
     this.formularioEducation = new FormGroup({
-      degree: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      school: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      city: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      country: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      start_date: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      end_date: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
+      degree: new FormControl('', [Validators.required]),
+      school: new FormControl('', [Validators.required]),
+      city: new FormControl('', [Validators.required]),
+      country: new FormControl('', [Validators.required]),
+      start_date: new FormControl('', [Validators.required]),
+      end_date: new FormControl('', [Validators.required]),
     });
 
     // FORMULARIO Profesional Experience
     this.formularioProfesionalExperience = new FormGroup({
-      employer: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      job_title: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      city: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      country: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      start_date: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      end_date: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      company_link: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      description: new FormControl('',
-        [
-          Validators.minLength(10),
-          Validators.maxLength(300)
-
-        ]),
+      employer: new FormControl('', [Validators.required]),
+      job_title: new FormControl('', [Validators.required]),
+      city: new FormControl('', [Validators.required]),
+      country: new FormControl('', [Validators.required]),
+      start_date: new FormControl('', [Validators.required]),
+      end_date: new FormControl('', [Validators.required]),
+      company_link: new FormControl('', [Validators.required]),
+      description: new FormControl('', [
+        Validators.minLength(10),
+        Validators.maxLength(300),
+      ]),
     });
   }
 
@@ -439,8 +345,6 @@ export class UserFormularioComponent implements OnInit {
         );
         console.log(deleteEducation);
         Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
-
-
       }
     });
   }

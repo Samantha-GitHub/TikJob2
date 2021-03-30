@@ -1,8 +1,3 @@
-<div class="HeroBg">
-  <figure>
-    <img [src]="'http://localhost:3000/images/' + freelance.image" alt="" />
-  </figure>
-</div>
 <div class="body">
   <div class="page">
     <div class="upper-quarter">
@@ -15,7 +10,10 @@
                   <h1>{{ freelance.firstname }} {{ freelance.lastname }}</h1>
                   <h3>{{ freelance.job_title }}</h3>
                   <figure>
-                    <img [src]="freelance?.image" alt="profile picture" />
+                    <img
+                      [src]="'http://localhost:3000/images/' + freelance.image"
+                      alt="profile picture"
+                    />
                   </figure>
                   <div id="full-stars-example-two">
                     <div class="rating-group">
@@ -169,45 +167,7 @@
             <h4>{{ experience?.city }} / {{ experience?.country }}</h4>
             <p>{{ experience.description }}</p>
           </div>
-
-          <div class="contact">
-            <h3>Phone Number: {{ freelance.phone }}</h3>
-            <h3 class="email">Email: {{ freelance.email }}</h3>
-            <h3>{{ freelance.streetName }}</h3>
-            <h3>ZipCode: {{ freelance.zipcode }}</h3>
-            <h3>City: {{ freelance.city }}</h3>
-            <h3>Country: {{ freelance.country }}</h3>
-            <h3>Website : {{ freelance?.website }}</h3>
-          </div>
         </div>
-      </div>
-    </div>
-    <div class="lower-three-quarters">
-      <div class="left-column">
-        <div class="experience">
-          <header>
-            <h2>Profesional Experience</h2>
-          </header>
-          <div class="riser" *ngFor="let experience of profesional_experience">
-            <!-- bold -->
-            <h3>{{ experience.job_title }}</h3>
-            <h3>{{ experience.employer }}</h3>
-            <h4>{{ experience?.company_link }}</h4>
-            <h4>{{ experience.start_date }} / {{ experience.end_date }}</h4>
-            <h4>{{ experience?.city }} / {{ experience?.country }}</h4>
-            <p>{{ experience.description }}</p>
-          </div>
-        </div>
-        <iframe
-          width="420"
-          height="315"
-          start="75"
-          src="https://www.youtube.com/embed/TlNMvL53tT0?start=82"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
       </div>
 
       <div class="container">
