@@ -16,7 +16,6 @@ import { UserFormularioComponent } from './components/users/user-formulario/user
 import { UserViewComponent } from './components/users/user-view/user-view.component';
 import { UsersComponent } from './components/users/users.component';
 import { LoginGuard } from './guards/login.guard';
-import { LoginGuardCompany } from './guards/login.freelance.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
