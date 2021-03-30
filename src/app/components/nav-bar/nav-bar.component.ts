@@ -32,11 +32,7 @@ export class NavBarComponent implements OnInit {
   //   );
   // }
 
-  logOut() {
-    localStorage.removeItem('token_tikjobs');
-    this.router.navigate(['/']);
 
-  };
 
   searchTitle(): void {
     this.router.navigate(['search', this.search]);
