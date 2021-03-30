@@ -210,7 +210,7 @@ export class ProfesionalFormularioComponent implements OnInit {
       if (result.isConfirmed) {
         const deleteoffer = await this.jobOfferService.deleteByIdToken(
           pJobOfferId
-        );
+        ); window.location.reload();
         console.log(deleteoffer);
         Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
       }

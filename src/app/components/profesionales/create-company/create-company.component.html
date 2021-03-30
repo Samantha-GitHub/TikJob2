@@ -12,7 +12,7 @@
             <div class="col">
               <!-- Username -->
               <input type="text" id="defaultRegisterFormUserName" class="form-control" formControlName="username"
-                placeholder="Company name" />
+                placeholder="Username" />
               <p class="error"
                 *ngIf="formularioCompany.get('username').hasError('required') && formularioCompany.get('username').touched">
                 Username is required
@@ -87,6 +87,9 @@
                 *ngIf="formularioCompany.get('phone').hasError('required') && formularioCompany.get('phone').touched">
                 Phone number is required
               </p>
+              <small id="passwordHelpInline" class="text-muted">
+                Don't forget to add your country indicator. For example 0034 123456789
+              </small>
 
             </div>
           </div>
@@ -97,6 +100,10 @@
                 <input type="file" class="form-control custom-file-input" formControlName="image" id="customFile"
                   (change)="onChange($event)" />
                 <label class="custom-file-label" for="customFile">Choose picture</label>
+                <p class="error"
+                  *ngIf="formularioCompany.get('image').hasError('required') && formularioCompany.get('image').touched">
+                  Picture is required
+                </p>
               </div>
             </div>
             <!-- Website -->

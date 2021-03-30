@@ -125,7 +125,7 @@ export class UserFormularioComponent implements OnInit {
       end_date: new FormControl(),
       company_link: new FormControl(),
       description: new FormControl('', [
-        Validators.minLength(10),
+
         Validators.maxLength(300),
       ]),
     });
@@ -198,6 +198,7 @@ export class UserFormularioComponent implements OnInit {
     fd.append('video', this.formularioFreelancer.value.video);
     fd.append('job_title', this.formularioFreelancer.value.job_title);
     fd.append('profile', this.formularioFreelancer.value.profile);
+
     // UPDATE FREELANCE  Envio los valores del form: a freelance
     const freelancer = this.freelancerService.update(fd).then((result) => {
       console.log(result);
