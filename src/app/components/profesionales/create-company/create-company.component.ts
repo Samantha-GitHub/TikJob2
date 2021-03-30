@@ -24,10 +24,11 @@ export class CreateCompanyComponent implements OnInit {
           Validators.required,
 
         ]),
-      phone: new FormControl(
-        '',
+      phone: new FormControl('',
         [
           Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(100)
 
         ]
       ),
