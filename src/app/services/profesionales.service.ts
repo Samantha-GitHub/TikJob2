@@ -44,11 +44,8 @@ export class ProfesionalesService {
   } */
 
   // CREATE A COMPANY
-  create(formValues): Promise<any> {
-    formValues.image = 'http';
-    // console.log(formValues.image);
-
-    return this.httpClient.post<any>(this.baseUrl, formValues).toPromise();
+  create(fd: FormData): Promise<any> {
+    return this.httpClient.post<any>(this.baseUrl, fd).toPromise();
   }
 
   // UPDATE COMPANY

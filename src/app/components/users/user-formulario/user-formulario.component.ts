@@ -25,6 +25,7 @@ declare var Swal;
 })
 export class UserFormularioComponent implements OnInit {
   active = 1;
+  files;
   public page: number;
   // FORM GROUP
   formularioFreelancer: FormGroup;
@@ -47,7 +48,6 @@ export class UserFormularioComponent implements OnInit {
   courses: Course[];
   educations: Education[];
   degree: Education[];
-
 
   constructor(
     private router: Router,
@@ -122,7 +122,6 @@ export class UserFormularioComponent implements OnInit {
     });
   }
 
-
   async ngOnInit(): Promise<void> {
     try {
       this.skills = await this.skillService.getAll();
@@ -159,8 +158,8 @@ export class UserFormularioComponent implements OnInit {
       zipcode: new FormControl(this.freelancer.zipcode),
       streetName: new FormControl(this.freelancer.streetName),
       website: new FormControl(this.freelancer.website),
-      image: new FormControl(),
-      video: new FormControl(),
+      image: new FormControl(this.freelancer.image),
+      video: new FormControl(this.freelancer.video),
       job_title: new FormControl(this.freelancer.job_title),
       profile: new FormControl(this.freelancer.profile),
       username: new FormControl(this.freelancer.username),
@@ -203,14 +202,47 @@ export class UserFormularioComponent implements OnInit {
       }); */
   }
 
-  async onSubmitFreelancer(): Promise<any> {
-
-    //UPDATE FREELANCE  Envio los valores del form: a freelance
+  /*   async onSubmitFreelancer(): Promise<any> {
+    // UPDATE FREELANCE  Envio los valores del form: a freelance
     const freelance = await this.freelancerService.update(
       this.formularioFreelancer.value
     );
     console.log('this is updated freelance', freelance);
     this.router.navigate(['/freelance/profile']);
+  } */
+
+  onSubmitFreelancer() {
+    // Creación del objeto donde incluimos todos los campos del formulario y además la imagen
+    let fd: FormData = new FormData();
+    fd.append('image', this.files[0]);
+    fd.append('username', this.formularioFreelancer.value.username);
+    // fd.append('password', this.formularioFreelancer.value.password);
+    fd.append('firstname', this.formularioFreelancer.value.firstname);
+    fd.append('lastname', this.formularioFreelancer.value.lastname);
+    fd.append('email', this.formularioFreelancer.value.email);
+    fd.append('phone', this.formularioFreelancer.value.phone);
+    fd.append('gender', this.formularioFreelancer.value.gender);
+    fd.append('country', this.formularioFreelancer.value.country);
+    fd.append('city', this.formularioFreelancer.value.city);
+    fd.append('zipcode', this.formularioFreelancer.value.zipcode);
+    fd.append('streetName', this.formularioFreelancer.value.streetName);
+    fd.append('website', this.formularioFreelancer.value.website);
+    fd.append('video', this.formularioFreelancer.value.video);
+    fd.append('job_title', this.formularioFreelancer.value.job_title);
+    fd.append('profile', this.formularioFreelancer.value.profile);
+    // UPDATE FREELANCE  Envio los valores del form: a freelance
+    // Delegamos el envío del formulario en el servicio
+    const freelancer = this.freelancerService.update(fd).then((result) => {
+      // this.router.navigate(['']);
+      console.log(result);
+    });
+    console.log('this is updated freelance', freelancer);
+    // this.router.navigate(['/freelance/profile']);
+  }
+
+  onChange($event): void {
+    this.files = $event.target.files;
+    console.log('$event', $event.target.files);
   }
 
   // CREATE COURSE

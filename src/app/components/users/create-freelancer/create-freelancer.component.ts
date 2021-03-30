@@ -68,7 +68,7 @@ export class CreateFreelancerComponent implements OnInit {
     }
   }
 
-  /*   async onSubmitFreelancer(): Promise<any> {
+  async onSubmitFreelancer(): Promise<any> {
     try {
       console.log(this.formularioFreelancer.value);
 
@@ -107,9 +107,9 @@ export class CreateFreelancerComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
-  } */
+  }
 
-  // HANDLE FILES
+  /* // HANDLE FILES
   onSubmitFreelancer(): void {
     // Creación del objeto donde incluimos todos los campos del formulario y además la imagen
     let fd: FormData = new FormData();
@@ -118,17 +118,17 @@ export class CreateFreelancerComponent implements OnInit {
     fd.append('password', this.formularioFreelancer.value.password);
     fd.append('firstname', this.formularioFreelancer.value.firstname);
     fd.append('lastname', this.formularioFreelancer.value.lastname);
-    fd.append('email', this.formularioFreelancer.value.lastname);
-    fd.append('phone', this.formularioFreelancer.value.lastname);
-    fd.append('gender', this.formularioFreelancer.value.lastname);
-    fd.append('country', this.formularioFreelancer.value.lastname);
-    fd.append('city', this.formularioFreelancer.value.lastname);
-    fd.append('zipcode', this.formularioFreelancer.value.lastname);
-    fd.append('streetName', this.formularioFreelancer.value.lastname);
-    fd.append('website', this.formularioFreelancer.value.lastname);
-    fd.append('video', this.formularioFreelancer.value.lastname);
-    fd.append('job_title', this.formularioFreelancer.value.lastname);
-    fd.append('profile', this.formularioFreelancer.value.lastname);
+    fd.append('email', this.formularioFreelancer.value.email);
+    fd.append('phone', this.formularioFreelancer.value.phone);
+    fd.append('gender', this.formularioFreelancer.value.gender);
+    fd.append('country', this.formularioFreelancer.value.country);
+    fd.append('city', this.formularioFreelancer.value.city);
+    fd.append('zipcode', this.formularioFreelancer.value.zipcode);
+    fd.append('streetName', this.formularioFreelancer.value.streetName);
+    fd.append('website', this.formularioFreelancer.value.website);
+    fd.append('video', this.formularioFreelancer.value.video);
+    fd.append('job_title', this.formularioFreelancer.value.job_title);
+    fd.append('profile', this.formularioFreelancer.value.profile);
     // fd.append('skill', this.formularioFreelancer.value.lastname);
     // fd.append('language', this.formularioFreelancer.value.lastname);
 
@@ -142,5 +142,5 @@ export class CreateFreelancerComponent implements OnInit {
   onChange($event): void {
     this.files = $event.target.files;
     console.log('$event', $event.target.files);
-  }
+  } */
 }
