@@ -47,22 +47,10 @@ export class CreateCompanyComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
-
-  // Create new Company
-  // async onSubmitCompany(): Promise<any> {
-  //   const response = await this.companyService.create(
-  //     this.formularioCompany.value
-  //   );
-
-  //   /* this.router.navigate(['/logincompany', response.insertId]); */
-
-  //   this.router.navigate(['/logincompany']);
-  // }
+  ngOnInit(): void { }
 
   // HANDLE FILES
   onSubmitCompany(): void {
-    // Creación del objeto donde incluimos todos los campos del formulario y además la imagen
     let fd: FormData = new FormData();
     fd.append('image', this.files[0]);
     fd.append('name_company', this.formularioCompany.value.name_company);
@@ -82,7 +70,6 @@ export class CreateCompanyComponent implements OnInit {
     fd.append('username', this.formularioCompany.value.username);
     fd.append('password', this.formularioCompany.value.password);
 
-    // Delegamos el envío del formulario en el servicio
     this.companyService.create(fd).then((result) => {
       this.router.navigate(['']);
       console.log(result);

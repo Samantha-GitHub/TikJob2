@@ -10,7 +10,6 @@ import { LoginfreelancerComponent } from './components/login/loginfreelancer/log
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CreateCompanyComponent } from './components/profesionales/create-company/create-company.component';
 import { ProfesionalFormularioComponent } from './components/profesionales/profesional-formulario/profesional-formulario.component';
-/* import { ProfesionalViewComponent } from './components/profesionales/profesional-view/profesional-view.component';*/
 import { ProfesionalesComponent } from './components/profesionales/profesionales.component';
 import { CreateFreelancerComponent } from './components/users/create-freelancer/create-freelancer.component';
 import { UserFormularioComponent } from './components/users/user-formulario/user-formulario.component';
@@ -61,4 +60,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

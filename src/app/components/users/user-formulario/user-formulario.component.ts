@@ -29,8 +29,6 @@ export class UserFormularioComponent implements OnInit {
   public page: number;
   // FORM GROUP
   formularioFreelancer: FormGroup;
-  // formularioSkill: FormGroup;
-  // formularioLanguage: FormGroup;
   formularioCourse: FormGroup;
   formularioEducation: FormGroup;
   formularioProfesionalExperience: FormGroup;
@@ -94,8 +92,6 @@ export class UserFormularioComponent implements OnInit {
       ]),
       username: new FormControl('', [Validators.required]),
       password: new FormControl(),
-      // skill: new FormControl(),
-      // language: new FormControl(),
     });
 
     // FORMULARIO Course
@@ -180,49 +176,8 @@ export class UserFormularioComponent implements OnInit {
       skill: new FormControl(this.freelancer.skills),
       language: new FormControl(this.freelancer.languages),
     });
-
-    /*  // FORMULARIO Course
-      this.formularioCourse = new FormGroup({
-        course_title: new FormControl(this.course.course_title),
-        institution: new FormControl(this.course.institution),
-        city: new FormControl(this.course.city),
-        country: new FormControl(this.course.country),
-        course_link: new FormControl(this.course.course_link),
-        start_date: new FormControl(this.course.start_date),
-        end_date: new FormControl(this.course.end_date),
-      });
-
-      // FORMULARIO Education
-      this.formularioEducation = new FormGroup({
-        degree: new FormControl(this.education.degree),
-        school: new FormControl(this.education.school),
-        city: new FormControl(this.education.city),
-        country: new FormControl(this.education.country),
-        start_date: new FormControl(this.education.start_date),
-        end_date: new FormControl(this.education.end_date),
-      });
-
-      // FORMULARIO Profesional Experience
-      this.formularioProfesionalExperience = new FormGroup({
-        employer: new FormControl(this.profesionalExperience.employer),
-        job_title: new FormControl(this.profesionalExperience.job_title),
-        city: new FormControl(this.profesionalExperience.city),
-        country: new FormControl(this.profesionalExperience.country),
-        start_date: new FormControl(this.profesionalExperience.start_date),
-        end_date: new FormControl(this.profesionalExperience.end_date),
-        company_link: new FormControl(this.profesionalExperience.company_link),
-        description: new FormControl(this.profesionalExperience.description),
-      }); */
   }
 
-  /*   async onSubmitFreelancer(): Promise<any> {
-    // UPDATE FREELANCE  Envio los valores del form: a freelance
-    const freelance = await this.freelancerService.update(
-      this.formularioFreelancer.value
-    );
-    console.log('this is updated freelance', freelance);
-    this.router.navigate(['/freelance/profile']);
-  } */
 
   onSubmitFreelancer() {
     // Creación del objeto donde incluimos todos los campos del formulario y además la imagen
@@ -244,13 +199,10 @@ export class UserFormularioComponent implements OnInit {
     fd.append('job_title', this.formularioFreelancer.value.job_title);
     fd.append('profile', this.formularioFreelancer.value.profile);
     // UPDATE FREELANCE  Envio los valores del form: a freelance
-    // Delegamos el envío del formulario en el servicio
     const freelancer = this.freelancerService.update(fd).then((result) => {
-      // this.router.navigate(['']);
       console.log(result);
     });
     console.log('this is updated freelance', freelancer);
-    // this.router.navigate(['/freelance/profile']);
   }
 
   onChange($event): void {

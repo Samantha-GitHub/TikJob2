@@ -127,15 +127,6 @@ export class ProfesionalFormularioComponent implements OnInit {
   /*                START
   onSubmit/Update de Company, JobOffer, Skills and Languages */
 
-  /*   async onSubmitCompany(): Promise<any> {
-    const company = await this.companyService.update(
-      this.formularioCompany.value
-    );
-
-    console.log('this is updated freelance', company);
-    this.router.navigate(['company/profile']);
-  } */
-
   // update company with MULTER
   async onSubmitCompany(): Promise<any> {
     let fd: FormData = new FormData();
@@ -157,7 +148,6 @@ export class ProfesionalFormularioComponent implements OnInit {
     fd.append('username', this.formularioCompany.value.username);
     fd.append('password', this.formularioCompany.value.password);
 
-    // Delegamos el envío del formulario en el servicio
     const company = await this.companyService.update(fd).then((result) => {
       this.router.navigate(['']);
       console.log(result);
@@ -172,13 +162,10 @@ export class ProfesionalFormularioComponent implements OnInit {
   }
 
   async onSubmitJobOffer(): Promise<any> {
-    // recibo datos del form
     console.log('log value formularioJobOffer', this.formularioJobOffer.value);
 
-    // Destructuring llamamos la variable igual a la propriedad del objeto
     const { language, skill } = this.formularioJobOffer.value;
 
-    // Envio los valores del form a jobOffer
     const ofertas = await this.jobOfferService.insert(
       this.formularioJobOffer.value
     );

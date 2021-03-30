@@ -33,24 +33,6 @@ export class JobOffersComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
-
-    /* this.activatedRoute.params.subscribe(async (params) => {
-      console.log('log desde job-offer', params);
-
-      if (Object.entries(params).length > 0) {
-        this.searchJob = await this.jobOfferService.searchData(params.data);
-        console.log(this.searchJob);
-        this.jobOffers = this.searchJob.job
-      } else {
-
-        try {
-          this.jobOffers = await this.jobOfferService.getAll();
-          // console.log(this.jobOffers);
-        } catch (error) {
-          console.log(error);
-        }
-      }
-    }); */
   }
 
   getJobOffer(pId): void {

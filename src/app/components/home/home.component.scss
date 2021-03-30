@@ -1,7 +1,6 @@
 .infoContainer {
   color: #fff;
   background: linear-gradient(to right, #e0eafc, #cfdef3);
-  //   background: #010606;
 }
 
 .infoWrapper {
@@ -168,10 +167,7 @@ img {
         padding-top: 150px;
         font-weight: 600;
         margin-left: -360px;
-        transition: 1s;
-
-      /* $h3Hover:'true'; */
-      
+        transition: 1s;      
     }
     &:hover h3{
       margin-left: 0px;
@@ -179,17 +175,6 @@ img {
     }
   }  
 }
-
-/*  .hidden{
-
-  @if $h3Hover = true{
-
-    visibility: hidden
-  }
-
-  }; */
-
-
 
 
 

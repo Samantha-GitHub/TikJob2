@@ -21,7 +21,7 @@ export class LoginfreelancerComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   async onSubmit(): Promise<void> {
     this.errorMessage = null;
@@ -35,14 +35,9 @@ export class LoginfreelancerComponent implements OnInit {
         localStorage.setItem('token_tikjobs', response.token);
         console.log(response.token);
 
-        /* Swal.fire('Login correcto', 'Has accedido correctamente', 'success')
-          .then(result => { */
-
-        /* Inyectamos el router en el constructor para poder hacer una redireccion */
-
         this.router.navigate(['/freelance/profile']);
 
-        /* }); */
+
         this.errorMessage = null;
       }
     } catch (error) {

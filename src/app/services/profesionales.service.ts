@@ -38,11 +38,7 @@ export class ProfesionalesService {
       .toPromise();
   }
 
-  /* getCompanyDetailByJobOffer(pId): Promise<Company> {
-    const httpOptions = { headers: new HttpHeaders() };
-    return this.httpClient.get<Company>(`${this.baseUrl}/${pId}`, httpOptions).toPromise();
 
-  } */
 
   // CREATE A COMPANY
   create(fd: FormData): Promise<any> {

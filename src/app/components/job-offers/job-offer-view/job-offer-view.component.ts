@@ -26,7 +26,7 @@ export class JobOfferViewComponent implements OnInit {
     private skillsService: SkillsService,
     private languageService: LanguagesService,
     private companyService: ProfesionalesService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(async (params) => {
@@ -37,8 +37,7 @@ export class JobOfferViewComponent implements OnInit {
         (this.languages = await this.languageService.getLanguagesByIdJobsOffers(
           params.idJobOffer
         ));
-      /* this.company = await this.companyService.getCompanyDetailByJobOffer(params.idJobOffer),
-      console.log(this.company); */
+
     });
   }
 }

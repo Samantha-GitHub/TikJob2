@@ -123,15 +123,6 @@
               </ul>
             </div>
 
-            <!-- <div class="col skills">
-            <select class="form-control skillsSelect" formControlName="skill">
-              <option>Select your skills</option>
-              <option value="" *ngFor="let skill of skills">
-                {{ skill.skill }}
-              </option>
-            </select>
-          </div> -->
-
             <!-- Languages -->
 
             <div class="col">
@@ -144,19 +135,7 @@
               </ul>
             </div>
 
-            <!-- <div class="col languages">
-              <h4>Languages</h4>
-              <select
-                class="form-control skillsSelect"
-                formControlName="language"
-                [value]="language?.language"
-              >
-                <option value="">Select your languages</option>
-                <option value="" *ngFor="let language of languages">
-                  {{ language.language }}
-                </option>
-              </select>
-            </div> -->
+
           </div>
           <!-- Save button -->
           <button color="info" block="true" class="btn btn-info" type="submit">
@@ -191,13 +170,6 @@
                 <option value="Other">Other</option>
               </select>
 
-              <!--
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Degree"
-                formControlName="degree"
-              /> -->
             </div>
             <div class="col">
               <!-- School -->
@@ -438,5 +410,4 @@
 
   <div [ngbNavOutlet]="nav" class="mt-2"></div>
 
-  <!-- <pre>Active: {{ active }}</pre> -->
 </div>

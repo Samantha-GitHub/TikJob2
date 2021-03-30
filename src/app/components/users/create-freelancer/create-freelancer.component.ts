@@ -85,11 +85,8 @@ export class CreateFreelancerComponent implements OnInit {
     try {
       console.log(this.formularioFreelancer.value);
 
-      // Destructuring llamamos la variable igual a la propriedad del objeto
       const { language, skill } = this.formularioFreelancer.value;
 
-      // Destructuring llamamos la variable igual a la propriedad del objeto
-      // const { language, skill } = this.formularioFreelancer.value;
 
       const freelance = await this.freelancerService.create(
         this.formularioFreelancer.value
@@ -122,38 +119,5 @@ export class CreateFreelancerComponent implements OnInit {
     }
   }
 
-  /* // HANDLE FILES
-  onSubmitFreelancer(): void {
-    // Creación del objeto donde incluimos todos los campos del formulario y además la imagen
-    let fd: FormData = new FormData();
-    fd.append('image', this.files[0]);
-    fd.append('username', this.formularioFreelancer.value.username);
-    fd.append('password', this.formularioFreelancer.value.password);
-    fd.append('firstname', this.formularioFreelancer.value.firstname);
-    fd.append('lastname', this.formularioFreelancer.value.lastname);
-    fd.append('email', this.formularioFreelancer.value.email);
-    fd.append('phone', this.formularioFreelancer.value.phone);
-    fd.append('gender', this.formularioFreelancer.value.gender);
-    fd.append('country', this.formularioFreelancer.value.country);
-    fd.append('city', this.formularioFreelancer.value.city);
-    fd.append('zipcode', this.formularioFreelancer.value.zipcode);
-    fd.append('streetName', this.formularioFreelancer.value.streetName);
-    fd.append('website', this.formularioFreelancer.value.website);
-    fd.append('video', this.formularioFreelancer.value.video);
-    fd.append('job_title', this.formularioFreelancer.value.job_title);
-    fd.append('profile', this.formularioFreelancer.value.profile);
-    // fd.append('skill', this.formularioFreelancer.value.lastname);
-    // fd.append('language', this.formularioFreelancer.value.lastname);
 
-    // Delegamos el envío del formulario en el servicio
-    this.freelancerService.createPic(fd).then((result) => {
-      this.router.navigate(['']);
-      console.log(result);
-    });
-  }
-
-  onChange($event): void {
-    this.files = $event.target.files;
-    console.log('$event', $event.target.files);
-  } */
 }

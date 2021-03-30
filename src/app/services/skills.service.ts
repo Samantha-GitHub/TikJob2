@@ -36,9 +36,6 @@ export class SkillsService {
     return this.httpClient.post(this.baseUrl, formValues).toPromise();
   }
 
-  // searchByName(pName): Promise<Skill[]> {
-  //   return this.httpClient.get<Skill[]>(`${this.baseUrl}/{pName}`).toPromise();
-  // }
 
   // GET BY TOKEN FREELANCER
   getByIdToken(pId): Promise<Skill[]> {
