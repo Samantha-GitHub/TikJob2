@@ -151,75 +151,23 @@ export class UserFormularioComponent implements OnInit {
 
     // FORMULARIO Education
     this.formularioEducation = new FormGroup({
-      degree: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      school: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      city: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      country: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      start_date: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      end_date: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
+      degree: new FormControl(),
+      school: new FormControl(),
+      city: new FormControl(),
+      country: new FormControl(),
+      start_date: new FormControl(),
+      end_date: new FormControl(),
     });
 
     // FORMULARIO Profesional Experience
     this.formularioProfesionalExperience = new FormGroup({
-      employer: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      job_title: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      city: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      country: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      start_date: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      end_date: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      company_link: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
+      employer: new FormControl(),
+      job_title: new FormControl(),
+      city: new FormControl(),
+      country: new FormControl(),
+      start_date: new FormControl(),
+      end_date: new FormControl(),
+      company_link: new FormControl(),
       description: new FormControl('',
         [
           Validators.minLength(10),
@@ -340,9 +288,8 @@ export class UserFormularioComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const deleteCourse = await this.coursesService.deleteByIdToken(
-          courseId
-        );
+
+        const deleteCourse = await this.coursesService.deleteByIdToken(courseId); window.location.reload();
         console.log(deleteCourse);
         Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
       }
@@ -358,7 +305,7 @@ export class UserFormularioComponent implements OnInit {
   }
 
   //  delete one education
-  deleteEducation(courseId) {
+  deleteEducation(educationId) {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -369,9 +316,7 @@ export class UserFormularioComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const deleteEducation = await this.educationService.deleteByIdToken(
-          courseId
-        );
+        const deleteEducation = await this.educationService.deleteByIdToken(educationId); window.location.reload();
         console.log(deleteEducation);
         Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
       }
@@ -402,9 +347,7 @@ export class UserFormularioComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const deleteEducation = await this.profesionalExperienceService.deleteByIdToken(
-          idProfesionalExperience
-        );
+        const deleteEducation = await this.profesionalExperienceService.deleteByIdToken(idProfesionalExperience); window.location.reload();
         console.log(deleteEducation);
         Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
 
