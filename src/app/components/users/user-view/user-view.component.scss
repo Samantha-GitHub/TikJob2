@@ -104,6 +104,7 @@ img{
   padding-left: 10px;
   padding-bottom: 2px;
   background-color: #0070ef;
+  border-radius: 10%;
 
 }
 
@@ -124,6 +125,7 @@ img{
   padding: 15px 15px;
   width: 300px;
   background-color: #0070ef;
+    border-radius: 15px;
 
 }
 
@@ -167,7 +169,9 @@ img{
 
 .left-column header {
   background-color: #0070ef;
+    border-radius: 15px;
   padding: 10px;
+ 
 }
 
 .left-column h2 {
@@ -204,7 +208,7 @@ img{
 }
 
 .experience {
-  border: 2px solid #0070ef;
+  
   margin-top: 300px;
   margin-bottom: 25px;
   background-color: #f2f2f2;
