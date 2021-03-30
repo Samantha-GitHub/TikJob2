@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Course } from 'src/app/interfaces/course';
 import { Education } from 'src/app/interfaces/education';
@@ -33,8 +34,9 @@ export class UserViewComponent implements OnInit {
     private languagesService: LanguagesService,
     private profesionalExperienceService: ProfesionalExperienceService,
     private educationService: EducationsService,
-    private skillsService: SkillsService
-  ) {}
+    private skillsService: SkillsService,
+    public domSanitizer: DomSanitizer
+  ) { }
 
   ngOnInit(): void {
     this.activateRoute.params.subscribe(async (params) => {

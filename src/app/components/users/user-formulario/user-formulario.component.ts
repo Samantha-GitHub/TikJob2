@@ -407,6 +407,8 @@ export class UserFormularioComponent implements OnInit {
         );
         console.log(deleteEducation);
         Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+
+
       }
     });
   }
