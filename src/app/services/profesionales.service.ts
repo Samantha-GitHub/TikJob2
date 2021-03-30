@@ -38,8 +38,6 @@ export class ProfesionalesService {
       .toPromise();
   }
 
-
-
   // CREATE A COMPANY
   create(fd: FormData): Promise<any> {
     return this.httpClient.post<any>(this.baseUrl, fd).toPromise();

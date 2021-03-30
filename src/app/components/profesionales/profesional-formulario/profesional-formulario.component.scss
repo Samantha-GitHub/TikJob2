@@ -2,8 +2,10 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  height: 160vh;
+  // height: 160vh;
   width: 1200px;
+  padding-top: 70px;
+  padding-bottom: 50px;
 
   .dark-modal .modal-content {
     background-color: #292b2c;
@@ -17,7 +19,7 @@
   }
 
   form {
-    height: 100vh;
+    height: 90vh;
   }
 
   .skills {
