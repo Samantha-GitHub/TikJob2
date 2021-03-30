@@ -30,20 +30,20 @@
       </li>
       <!-- Dropdown Login -->
       <li class="nav-item dropdown mr-2">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <a class="nav-link dropdown-toggle float-shadow" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"><i class="fas fa-sign-in-alt"></i> Login</a>
         <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" [routerLink]="['/logincompany']">
+          <a class="dropdown-item float-shadow" [routerLink]="['/logincompany']">
             Company
           </a>
 
-          <a class="dropdown-item" [routerLink]="['/loginfreelance']">
+          <a class="dropdown-item float-shadow" [routerLink]="['/loginfreelance']">
             Freelancer
           </a>
         </div>
       </li>
       <!-- Dropdown Forms -->
-      <li class="nav-item dropdown ml-5">
+      <!--     <li class="nav-item dropdown ml-5">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">Forms</a>
         <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink">
@@ -52,17 +52,17 @@
           <a class="dropdown-item" [routerLink]="['/form_freelance']">
             Freelancer</a>
         </div>
-      </li>
+      </li> -->
 
       <!-- Dropdown Account -->
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Account</a>
+          aria-expanded="false">My Account</a>
         <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" [routerLink]="['/company/profile']">
+          <a class="dropdown-item float-shadow" [routerLink]="['/company/profile']">
             Company</a>
 
-          <a class="dropdown-item" [routerLink]="['/freelance/profile']">
+          <a class="dropdown-item float-shadow" [routerLink]="['/freelance/profile']">
             Freelancer</a>
         </div>
       </li>

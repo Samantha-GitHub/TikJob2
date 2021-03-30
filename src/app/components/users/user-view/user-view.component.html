@@ -18,7 +18,7 @@
                                 <div class="col-lg-5">
                                     <div class="">
                                         <article class="video">
-                                            <iframe width="450" height="320" [src]="freelance.video"
+                                            <iframe width="450" height="320" [src]="'freelance.video'"
                                                 title="YouTube video player" frameborder="0"
                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                                 allowfullscreen></iframe>
@@ -53,7 +53,6 @@
                         <h2>Profesional Experience</h2>
                     </header>
                     <div class="riser" *ngFor="let experience of profesional_experience">
-                        <!-- <img class="ac-logo" src="https://i.imgur.com/rZ06QuQ.png" /> -->
                         <!-- bold -->
                         <h3>{{experience.job_title}}</h3>
                         <h3>{{experience.employer}} </h3>
