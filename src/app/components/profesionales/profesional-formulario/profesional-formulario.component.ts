@@ -21,6 +21,7 @@ declare var Swal;
 })
 export class ProfesionalFormularioComponent implements OnInit {
   active = 1;
+  files;
   public page: number;
   // FORM GROUP
   formularioCompany: FormGroup;
@@ -49,100 +50,34 @@ export class ProfesionalFormularioComponent implements OnInit {
 
     // FORMULARIO company
     this.formularioCompany = new FormGroup({
-      name_company: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      phone: new FormControl('',
-        [
-          Validators.required,
-          Validators.minLength(10),
-          Validators.maxLength(100)
-
-        ]),
-      vat: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      street: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      city: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      zip_code: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      country: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      website: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
+      name_company: new FormControl('', [Validators.required]),
+      phone: new FormControl('', [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(100),
+      ]),
+      vat: new FormControl('', [Validators.required]),
+      street: new FormControl('', [Validators.required]),
+      city: new FormControl('', [Validators.required]),
+      zip_code: new FormControl('', [Validators.required]),
+      country: new FormControl('', [Validators.required]),
+      website: new FormControl('', [Validators.required]),
       image: new FormControl(),
-      email: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      employees_number: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
+      email: new FormControl('', [Validators.required]),
+      employees_number: new FormControl('', [Validators.required]),
       year_founded: new FormControl(),
-      username: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
+      username: new FormControl('', [Validators.required]),
       password: new FormControl(),
     });
 
     // FORMULARIO Job Offer
     this.formularioJobOffer = new FormGroup({
-      function_department: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      responsabilities: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      city: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      country: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      starting_date: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
-      hour_week: new FormControl('',
-        [
-          Validators.required,
-
-        ]),
+      function_department: new FormControl('', [Validators.required]),
+      responsabilities: new FormControl('', [Validators.required]),
+      city: new FormControl('', [Validators.required]),
+      country: new FormControl('', [Validators.required]),
+      starting_date: new FormControl('', [Validators.required]),
+      hour_week: new FormControl('', [Validators.required]),
       skill: new FormControl(),
       language: new FormControl(),
     });
@@ -192,13 +127,48 @@ export class ProfesionalFormularioComponent implements OnInit {
   /*                START
   onSubmit/Update de Company, JobOffer, Skills and Languages */
 
-  async onSubmitCompany(): Promise<any> {
+  /*   async onSubmitCompany(): Promise<any> {
     const company = await this.companyService.update(
       this.formularioCompany.value
     );
 
     console.log('this is updated freelance', company);
     this.router.navigate(['company/profile']);
+  } */
+
+  // update company with MULTER
+  async onSubmitCompany(): Promise<any> {
+    let fd: FormData = new FormData();
+    fd.append('image', this.files[0]);
+    fd.append('name_company', this.formularioCompany.value.name_company);
+    fd.append('phone', this.formularioCompany.value.phone);
+    fd.append('vat', this.formularioCompany.value.vat);
+    fd.append('street', this.formularioCompany.value.street);
+    fd.append('city', this.formularioCompany.value.city);
+    fd.append('zip_code', this.formularioCompany.value.zip_code);
+    fd.append('website', this.formularioCompany.value.website);
+    fd.append('country', this.formularioCompany.value.country);
+    fd.append('email', this.formularioCompany.value.email);
+    fd.append(
+      'employees_number',
+      this.formularioCompany.value.employees_number
+    );
+    fd.append('year_founded', this.formularioCompany.value.year_founded);
+    fd.append('username', this.formularioCompany.value.username);
+    fd.append('password', this.formularioCompany.value.password);
+
+    // Delegamos el envío del formulario en el servicio
+    const company = await this.companyService.update(fd).then((result) => {
+      this.router.navigate(['']);
+      console.log(result);
+    });
+    console.log('this is updated freelance', company);
+    this.router.navigate(['company/profile']);
+  }
+
+  onChange($event): void {
+    this.files = $event.target.files;
+    console.log('$event', $event.target.files);
   }
 
   async onSubmitJobOffer(): Promise<any> {

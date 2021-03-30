@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Company } from '../interfaces/company';
 
 @Injectable({
@@ -49,10 +50,9 @@ export class ProfesionalesService {
   }
 
   // UPDATE COMPANY
-  update(formValues): Promise<any> {
-    formValues.image = 'http';
+  update(fd: FormData): Promise<any> {
     return this.httpClient
-      .put<any>(this.baseUrl, formValues, this.createHeaders())
+      .put<any>(this.baseUrl, fd, this.createHeaders())
       .toPromise();
   }
 

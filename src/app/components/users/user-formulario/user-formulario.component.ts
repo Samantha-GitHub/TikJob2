@@ -229,7 +229,7 @@ export class UserFormularioComponent implements OnInit {
     let fd: FormData = new FormData();
     fd.append('image', this.files[0]);
     fd.append('username', this.formularioFreelancer.value.username);
-    // fd.append('password', this.formularioFreelancer.value.password);
+    fd.append('password', this.formularioFreelancer.value.password);
     fd.append('firstname', this.formularioFreelancer.value.firstname);
     fd.append('lastname', this.formularioFreelancer.value.lastname);
     fd.append('email', this.formularioFreelancer.value.email);
