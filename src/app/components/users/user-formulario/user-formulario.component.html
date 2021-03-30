@@ -56,15 +56,27 @@
           <!-- Phone number -->
           <input type="text" id="defaultRegisterPhonePassword" class="form-control"
             aria-describedby="defaultRegisterFormPhoneHelpBlock" formControlName="phone" [value]="freelancer?.phone" />
-          <div class="form-row mb-4">
-            <!-- Photo -->
+          <!-- Photo -->
+          <div class="form-row m-2">
             <div class="col">
-              <div class="custom-file mb-3 mt-3">
-                <input type="file" class="custom-file-input form-control" formControlName="image"
-                  (change)="onChange($event)" />
+              <!-- <div class="mb-3 mt-3">
+                <input
+                  type="file"
+                  class="form-control"
+                  formControlName="image"
+                  (change)="onChange($event)"
+                />
                 <label class="custom-file-label" for="customFile">{{
                   freelancer?.image
-                  }}</label>
+                }}</label>
+              </div> -->
+              <div class="input-group mb-3">
+                <div class="custom-file mt-3">
+                  <input type="file" class="custom-file-input" id="inputGroupFile02" name="image"
+                    (change)="onChange($event)" />
+                  <label class="custom-file-label" for="inputGroupFile02"
+                    aria-describedby="inputGroupFileAddon02">Choose file</label>
+                </div>
               </div>
             </div>
             <!-- Video -->
@@ -377,14 +389,13 @@
 
           <h2 id="jobOffersPublished">Your Professional Experience</h2>
 
-          <div class="grid card">
-            <div class="card text-white bg-info mb-3 button wobble-horizontal" style="max-width: 18rem" *ngFor="
+          <div class="grid">
+            <div class="text-white bg-info mb-3 wobble-horizontal" style="max-width: 18rem" *ngFor="
                 let profesionalExperience of profesionalExperiences
                   | paginate: { itemsPerPage: 3, currentPage: page }
               ">
               <div class="card-header front">
-                <button type="button" class="btn btn-outline-danger mr-3"
-                  (click)="deleteExperience(profesionalExperience.id)">
+                <button class="btn btn-outline-danger mr-3" (click)="deleteExperience(profesionalExperience.id)">
                   X</button>Employer:
                 <strong> {{ profesionalExperience.employer }}</strong>
               </div>
