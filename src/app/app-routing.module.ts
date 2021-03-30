@@ -26,7 +26,7 @@ const routes: Routes = [
   // EDIT/ADD CONTENT TO A FREELANCER
   {
     path: 'freelance/profile',
-    component: UserFormularioComponent,
+    component: UserFormularioComponent, canActivate: [LoginGuard]
   },
   // LOGIN FREELANCER
   { path: 'loginfreelance', component: LoginfreelancerComponent },
@@ -44,7 +44,7 @@ const routes: Routes = [
   // EDIT/ADD CONTENT TO A COMPANY
   {
     path: 'company/profile',
-    component: ProfesionalFormularioComponent,
+    component: ProfesionalFormularioComponent, canActivate: [LoginGuard]
   },
   // ALL JOB OFFERS
   { path: 'job_offers', component: JobOffersComponent },

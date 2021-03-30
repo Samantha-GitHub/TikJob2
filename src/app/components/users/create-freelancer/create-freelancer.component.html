@@ -1,86 +1,71 @@
 <div class="servicesContainer justify-content-center mt-5">
   <!-- collapse -->
-  <ul
-    ngbNav
-    #nav="ngbNav"
-    [(activeId)]="active"
-    class="nav-tabs justify-content-center mt-5"
-  >
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs justify-content-center mt-5">
     <li [ngbNavItem]="1">
       <a ngbNavLink>Freelancer Profile <i class="fas fa-id-card"></i></a>
       <ng-template ngbNavContent>
-        <form
-          class="text-center border border-light p-5"
-          [formGroup]="formularioFreelancer"
-          (ngSubmit)="onSubmitFreelancer()"
-        >
+        <form class="text-center border border-light p-5 " [formGroup]="formularioFreelancer"
+          (ngSubmit)="onSubmitFreelancer()">
           <h2>PERSONAL DETAILS</h2>
 
-          <div class="form-row mb-4">
+          <div class="form-row mb-4 ">
             <div class="col">
               <!-- USERNAME -->
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Username"
-                formControlName="username"
-              />
+              <input type="text" class="form-control " id="validationTextarea" placeholder="Username"
+                formControlName="username" />
+              <p class="error"
+                *ngIf="formularioFreelancer.get('username').hasError('required') && formularioFreelancer.get('username').touched">
+                Username is required
+              </p>
             </div>
             <div class="col">
               <!-- PASSWORD -->
-              <input
-                id="inputPassword6"
-                aria-describedby="passwordHelpInline"
-                type="password"
-                class="form-control"
-                placeholder="Password"
-                formControlName="password"
-                required
-              />
+              <input id="inputPassword6" aria-describedby="passwordHelpInline" type="password" class="form-control"
+                placeholder="Password" formControlName="password" required />
+              <p class="error"
+                *ngIf="formularioFreelancer.get('password').hasError('required') && formularioFreelancer.get('password').touched">
+                Password is required
+              </p>
               <small id="passwordHelpInline" class="text-muted">
-                Must be 8-20 characters long.
+                Must contain at least 1 uppercase character and special sign.
               </small>
+
             </div>
           </div>
           <div class="form-row mb-4">
             <div class="col">
               <!-- First name -->
-              <input
-                type="text"
-                class="form-control"
-                placeholder="First name"
-                formControlName="firstname"
-              />
+              <input type="text" class="form-control" placeholder="First name" formControlName="firstname" />
+              <p class="error"
+                *ngIf="formularioFreelancer.get('firstname').hasError('required') && formularioFreelancer.get('firstname').touched">
+                Firstname is required
+              </p>
             </div>
             <div class="col">
               <!-- Last name -->
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Last name"
-                formControlName="lastname"
-              />
+              <input type="text" class="form-control" placeholder="Last name" formControlName="lastname" />
+              <p class="error"
+                *ngIf="formularioFreelancer.get('lastname').hasError('required') && formularioFreelancer.get('lastname').touched">
+                Lastname is required
+              </p>
             </div>
           </div>
           <div class="form-row">
             <div class="col-md-6 mb-3">
               <!-- E-mail -->
-              <input
-                type="email"
-                id="defaultRegisterFormEmail"
-                class="form-control mb-4"
-                placeholder="E-mail"
-                formControlName="email"
-                required
-              />
+              <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mai
+              l" formControlName="email" required />
+              <p class="error"
+                *ngIf="formularioFreelancer.get('email').hasError('required') && formularioFreelancer.get('email').touched">
+                Email is required
+              </p>
+              <small id="passwordHelpInline" class="text-muted">
+                Email example: test@test.com
+              </small>
             </div>
             <!-- SEXO -->
             <div class="col-md-3 mb-3">
-              <select
-                class="form-control custom-select"
-                formControlName="gender"
-                placeholder="gender"
-              >
+              <select class="form-control custom-select" formControlName="gender" placeholder="gender">
                 <option selected value="">Select gender</option>
                 <option value="M">Man</option>
                 <option value="W">Woman</option>
@@ -88,115 +73,84 @@
             </div>
             <!-- Phone number -->
             <div class="col-md-3 mb-3">
-              <input
-                type="number"
-                id="defaultRegisterPhonePassword"
-                class="form-control"
-                placeholder="Phone number"
-                aria-describedby="defaultRegisterFormPhoneHelpBlock"
-                formControlName="phone"
-              />
+              <input type="number" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number"
+                aria-describedby="defaultRegisterFormPhoneHelpBlock" formControlName="phone" />
+              <p class="error"
+                *ngIf="formularioFreelancer.get('phone').hasError('required') && formularioFreelancer.get('phone').touched">
+                Phone number is required
+              </p>
             </div>
           </div>
           <div class="form-row mb-4">
             <!-- Photo -->
             <div class="col">
               <div class="custom-file mb-3 mt-3">
-                <input
-                  type="file"
-                  class="custom-file-input form-control"
-                  formControlName="image"
-                />
-                <label class="custom-file-label" for="customFile"
-                  >Choose picture</label
-                >
+                <input type="file" class="custom-file-input form-control" formControlName="image" />
+                <label class="custom-file-label" for="customFile">Choose picture</label>
               </div>
             </div>
             <!-- Video -->
             <div class="col">
               <div class="mb-3 mt-3">
-                <input
-                  type="URL"
-                  class="form-control"
-                  formControlName="video"
-                  placeholder="Introduce yourself in a video! (URL)"
-                />
+                <input type="URL" class="form-control" formControlName="video"
+                  placeholder="Introduce yourself in a video! (URL)" />
               </div>
             </div>
           </div>
           <div class="form-row mb-4">
             <!-- Street -->
             <div class="col">
-              <input
-                type="text"
-                class="form-control mb-4"
-                placeholder="Enter Street"
-                formControlName="streetName"
-              />
+              <input type="text" class="form-control mb-4" placeholder="Enter Street" formControlName="streetName" />
             </div>
             <!-- Postcode -->
             <div class="col">
-              <input
-                type="number"
-                class="form-control mb-4"
-                placeholder="Enter Postcode"
-                formControlName="zipcode"
-              />
+              <input type="number" class="form-control mb-4" placeholder="Enter Postcode" formControlName="zipcode" />
+              <p class="error"
+                *ngIf="formularioFreelancer.get('zipcode').hasError('required') && formularioFreelancer.get('zipcode').touched">
+                Postcode is required
+              </p>
             </div>
           </div>
           <div class="form-row mb-4">
             <!-- City -->
             <div class="col">
-              <input
-                type="text"
-                class="form-control mb-4"
-                placeholder="Enter City"
-                formControlName="city"
-              />
+              <input type="text" class="form-control mb-4" placeholder="Enter City" formControlName="city" />
+              <p class="error"
+                *ngIf="formularioFreelancer.get('city').hasError('required') && formularioFreelancer.get('city').touched">
+                City is required
+              </p>
             </div>
             <!-- Country -->
             <div class="col">
-              <input
-                type="text"
-                class="form-control mb-4"
-                placeholder="Enter Country"
-                formControlName="country"
-              />
+              <input type="text" class="form-control mb-4" placeholder="Enter Country" formControlName="country" />
+              <p class="error"
+                *ngIf="formularioFreelancer.get('country').hasError('required') && formularioFreelancer.get('country').touched">
+                Country is required
+              </p>
             </div>
           </div>
 
           <div class="form-row mb-4">
             <div class="col">
               <!-- JobTitle -->
-              <input
-                type="text"
-                id="defaultJobTitle"
-                class="form-control mb-4"
-                placeholder="Job Title"
-                formControlName="job_title"
-              />
+              <input type="text" id="defaultJobTitle" class="form-control mb-4" placeholder="Job Title"
+                formControlName="job_title" />
             </div>
             <div class="col">
               <!-- LinkedIn -->
-              <input
-                type="url"
-                id="defaultWebsite"
-                class="form-control mb-4"
-                placeholder="Website"
-                formControlName="website"
-              />
+              <input type="url" id="defaultWebsite" class="form-control mb-4" placeholder="Website"
+                formControlName="website" />
             </div>
           </div>
           <!-- Profile -->
           <div class="form-row mb-4 justify-content-center text-center">
             <div class="col">
               <h4>Write your profile here</h4>
-              <textarea
-                id="defaultTextProfile"
-                class="form-control"
-                formControlName="profile"
-              >
+              <textarea id="defaultTextProfile" class="form-control" formControlName="profile">
               </textarea>
+              <small id="passwordHelpInline" class="text-muted">
+                Between 10 and 100 charaters
+              </small>
             </div>
           </div>
 
@@ -205,13 +159,8 @@
 
             <div class="col">
               <h4>SKILLS</h4>
-              <select
-                multiple
-                class="form-control custom-select"
-                formControlName="skill"
-                id="inputGroupSelect03"
-                aria-label="Example select with button addon"
-              >
+              <select multiple class="form-control custom-select" formControlName="skill" id="inputGroupSelect03"
+                aria-label="Example select with button addon">
                 <option value="">Select your skills</option>
                 <option [value]="skill.id" *ngFor="let skill of skills">
                   {{ skill.skill }}
@@ -223,16 +172,9 @@
 
             <div class="col">
               <h4>Languages</h4>
-              <select
-                multiple
-                class="form-control custom-select"
-                formControlName="language"
-              >
+              <select multiple class="form-control custom-select" formControlName="language">
                 <option value="">Select your languages</option>
-                <option
-                  [value]="language.id"
-                  *ngFor="let language of languages"
-                >
+                <option [value]="language.id" *ngFor="let language of languages">
                   {{ language.language }}
                 </option>
               </select>
