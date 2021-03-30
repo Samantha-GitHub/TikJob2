@@ -45,10 +45,6 @@ export class JobOffersComponent implements OnInit {
 
         try {
           this.jobOffers = await this.jobOfferService.getAll();
-<<<<<<< HEAD
-          // this.companies = await this.companyService.getAll();
-=======
->>>>>>> develop
           // console.log(this.jobOffers);
         } catch (error) {
           console.log(error);

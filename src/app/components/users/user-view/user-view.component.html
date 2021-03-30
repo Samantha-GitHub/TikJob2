@@ -1,167 +1,278 @@
+<div class="HeroBg">
+  <figure>
+    <img [src]="'http://localhost:3000/images/' + freelance.image" alt="" />
+  </figure>
+</div>
 <div class="body">
-    <div class="page">
-        <div class="upper-quarter">
-            <div class="content">
-                <div class="contact-me">
-                    <div class="me">
-                        <div class="container">
-                            <div class="row">
-                                <div class="name col-lg-5">
-                                    <h1>{{freelance.firstname}} {{freelance.lastname}}</h1>
-                                    <h3>{{freelance.job_title}}</h3>
-                                    <figure>
-                                        <img [src]="freelance?.image" alt="profile picture">
-                                    </figure>
-                                    <div id="full-stars-example-two">
-                                        <div class="rating-group">
-                                            <input disabled checked class="rating__input rating__input--none"
-                                                name="rating3" id="rating3-none" value="0" type="radio" />
-
-                                            <label aria-label="1 star" class="rating__label" for="rating3-1"><i
-                                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
-                                            <input class="rating__input" name="rating3" id="rating3-1" value="1"
-                                                type="radio" />
-
-                                            <label aria-label="2 stars" class="rating__label" for="rating3-2"><i
-                                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
-                                            <input class="rating__input" name="rating3" id="rating3-2" value="2"
-                                                type="radio" />
-
-                                            <label aria-label="3 stars" class="rating__label" for="rating3-3"><i
-                                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
-                                            <input class="rating__input" name="rating3" id="rating3-3" value="3"
-                                                type="radio" />
-
-                                            <label aria-label="4 stars" class="rating__label" for="rating3-4"><i
-                                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
-                                            <input class="rating__input" name="rating3" id="rating3-4" value="4"
-                                                type="radio" />
-
-                                            <label aria-label="5 stars" class="rating__label" for="rating3-5"><i
-                                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
-                                            <input class="rating__input" name="rating3" id="rating3-5" value="5"
-                                                type="radio" />
-
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="col-lg-5">
-                                    <div class="">
-                                        <article class="video">
-                                            <iframe width="450" height="320"
-                                                [src]="domSanitizer.bypassSecurityTrustResourceUrl(freelance.video)"
-                                                title=" YouTube video player" frameborder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                allowfullscreen></iframe>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div class="contact col-lg-12">
-                                    <h3><i class="fas fa-phone-square-alt"></i> {{freelance.phone}}</h3>
-                                    <h3 class="email"><i class="fas fa-envelope-open-text"></i> {{freelance.email}}</h3>
-                                    <h3><i class="fas fa-link"></i> {{freelance?.website}} </h3>
-                                    <h3><i class="fas fa-map-marker-alt"></i> {{freelance.streetName}} -
-                                        {{freelance.zipcode}}
-                                    </h3>
-                                    <h3>{{freelance.city}} , {{freelance.country}}</h3>
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                </div>
-            </div>
-        </div>
-        <div class="lower-three-quarters ">
-            <div class="left-column">
-                <div class="experience">
-                    <header>
-                        <h2>Profesional Experience</h2>
-                    </header>
-                    <div class="riser" *ngFor="let experience of profesional_experience">
-                        <!-- bold -->
-                        <h3>{{experience.job_title}}</h3>
-                        <h3>{{experience.employer}} </h3>
-                        <h4>{{experience?.company_link}} </h4>
-                        <h4>{{experience.start_date}} / {{experience.end_date}}</h4>
-                        <h4>{{experience?.city}} / {{experience?.country}}</h4>
-                        <p>{{experience.description}}</p>
-                    </div>
-
-                </div>
-
-            </div>
-
+  <div class="page">
+    <div class="upper-quarter">
+      <div class="content">
+        <div class="contact-me">
+          <div class="me">
             <div class="container">
+              <div class="row">
+                <div class="name col-lg-5">
+                  <h1>{{ freelance.firstname }} {{ freelance.lastname }}</h1>
+                  <h3>{{ freelance.job_title }}</h3>
+                  <figure>
+                    <img [src]="freelance?.image" alt="profile picture" />
+                  </figure>
+                  <div id="full-stars-example-two">
+                    <div class="rating-group">
+                      <input
+                        disabled
+                        checked
+                        class="rating__input rating__input--none"
+                        name="rating3"
+                        id="rating3-none"
+                        value="0"
+                        type="radio"
+                      />
 
-                <div class="right-column row justify-content-between">
-                    <div class="education col-lg-5">
-                        <header>
-                            <h2>Education</h2>
-                        </header>
-                        <div class="ed-info">
-                            <img src="https://i.imgur.com/2JdJghU.png" />
-                            <div class="info" *ngFor="let education of educations">
-                                <h3>{{education.degree}}</h3>
-                                <h4>{{education.school}}</h4>
-                                <h4>Start date: {{education.start_date}} / End date: {{education.end_date}}</h4>
-                                <h4>{{education.city}}</h4>
-                                <h4>{{education.country}}</h4>
-                            </div>
-                        </div>
+                      <label
+                        aria-label="1 star"
+                        class="rating__label"
+                        for="rating3-1"
+                        ><i
+                          class="rating__icon rating__icon--star fa fa-star"
+                        ></i
+                      ></label>
+                      <input
+                        class="rating__input"
+                        name="rating3"
+                        id="rating3-1"
+                        value="1"
+                        type="radio"
+                      />
+
+                      <label
+                        aria-label="2 stars"
+                        class="rating__label"
+                        for="rating3-2"
+                        ><i
+                          class="rating__icon rating__icon--star fa fa-star"
+                        ></i
+                      ></label>
+                      <input
+                        class="rating__input"
+                        name="rating3"
+                        id="rating3-2"
+                        value="2"
+                        type="radio"
+                      />
+
+                      <label
+                        aria-label="3 stars"
+                        class="rating__label"
+                        for="rating3-3"
+                        ><i
+                          class="rating__icon rating__icon--star fa fa-star"
+                        ></i
+                      ></label>
+                      <input
+                        class="rating__input"
+                        name="rating3"
+                        id="rating3-3"
+                        value="3"
+                        type="radio"
+                      />
+
+                      <label
+                        aria-label="4 stars"
+                        class="rating__label"
+                        for="rating3-4"
+                        ><i
+                          class="rating__icon rating__icon--star fa fa-star"
+                        ></i
+                      ></label>
+                      <input
+                        class="rating__input"
+                        name="rating3"
+                        id="rating3-4"
+                        value="4"
+                        type="radio"
+                      />
+
+                      <label
+                        aria-label="5 stars"
+                        class="rating__label"
+                        for="rating3-5"
+                        ><i
+                          class="rating__icon rating__icon--star fa fa-star"
+                        ></i
+                      ></label>
+                      <input
+                        class="rating__input"
+                        name="rating3"
+                        id="rating3-5"
+                        value="5"
+                        type="radio"
+                      />
                     </div>
-
-                    <div class="education col-lg-5">
-                        <header>
-                            <h2>Courses</h2>
-                        </header>
-                        <div class="ed-info">
-                            <img src="https://i.imgur.com/2JdJghU.png" />
-                            <div class="info" *ngFor="let course of courses">
-                                <h3>{{course.course_title}}</h3>
-                                <h3>{{course.institution}} </h3>
-                                <h4>Start date:{{course.start_date}}/ End date: {{course.end_date}} </h4>
-                                <h4>{{course.city}} / {{course.country}} </h4>
-                                <h4>{{course?.course_link}} </h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="education col-lg-5">
-                        <header>
-                            <h2>Languages</h2>
-                        </header>
-                        <div class="ed-info">
-                            <div class="info" *ngFor="let language of languages">
-                                <h3>{{language.language}} </h3>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skills col-lg-5">
-                        <header>
-                            <h2>Skills</h2>
-                        </header>
-                        <div class="skill-lists container" *ngFor="let skill of skills">
-                            <ul class="left row">
-                                <li class="col-4">{{skill.skill}}</li>
-
-                            </ul>
-                        </div>
-                    </div>
-
+                  </div>
                 </div>
 
-
+                <div class="col-lg-5">
+                  <div class="">
+                    <article class="video">
+                      <iframe
+                        width="450"
+                        height="320"
+                        [src]="
+                          domSanitizer.bypassSecurityTrustResourceUrl(
+                            freelance.video
+                          )
+                        "
+                        title=" YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                      ></iframe>
+                    </article>
+                  </div>
+                </div>
+                <div class="contact col-lg-12">
+                  <h3>
+                    <i class="fas fa-phone-square-alt"></i>
+                    {{ freelance.phone }}
+                  </h3>
+                  <h3 class="email">
+                    <i class="fas fa-envelope-open-text"></i>
+                    {{ freelance.email }}
+                  </h3>
+                  <h3><i class="fas fa-link"></i> {{ freelance?.website }}</h3>
+                  <h3>
+                    <i class="fas fa-map-marker-alt"></i>
+                    {{ freelance.streetName }} -
+                    {{ freelance.zipcode }}
+                  </h3>
+                  <h3>{{ freelance.city }} , {{ freelance.country }}</h3>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+    <div class="lower-three-quarters">
+      <div class="left-column">
+        <div class="experience">
+          <header>
+            <h2>Profesional Experience</h2>
+          </header>
+          <div class="riser" *ngFor="let experience of profesional_experience">
+            <!-- bold -->
+            <h3>{{ experience.job_title }}</h3>
+            <h3>{{ experience.employer }}</h3>
+            <h4>{{ experience?.company_link }}</h4>
+            <h4>{{ experience.start_date }} / {{ experience.end_date }}</h4>
+            <h4>{{ experience?.city }} / {{ experience?.country }}</h4>
+            <p>{{ experience.description }}</p>
+          </div>
+
+          <div class="contact">
+            <h3>Phone Number: {{ freelance.phone }}</h3>
+            <h3 class="email">Email: {{ freelance.email }}</h3>
+            <h3>{{ freelance.streetName }}</h3>
+            <h3>ZipCode: {{ freelance.zipcode }}</h3>
+            <h3>City: {{ freelance.city }}</h3>
+            <h3>Country: {{ freelance.country }}</h3>
+            <h3>Website : {{ freelance?.website }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lower-three-quarters">
+      <div class="left-column">
+        <div class="experience">
+          <header>
+            <h2>Profesional Experience</h2>
+          </header>
+          <div class="riser" *ngFor="let experience of profesional_experience">
+            <!-- bold -->
+            <h3>{{ experience.job_title }}</h3>
+            <h3>{{ experience.employer }}</h3>
+            <h4>{{ experience?.company_link }}</h4>
+            <h4>{{ experience.start_date }} / {{ experience.end_date }}</h4>
+            <h4>{{ experience?.city }} / {{ experience?.country }}</h4>
+            <p>{{ experience.description }}</p>
+          </div>
+        </div>
+        <iframe
+          width="420"
+          height="315"
+          start="75"
+          src="https://www.youtube.com/embed/TlNMvL53tT0?start=82"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="container">
+        <div class="right-column row justify-content-between">
+          <div class="education col-lg-5">
+            <header>
+              <h2>Education</h2>
+            </header>
+            <div class="ed-info">
+              <img src="https://i.imgur.com/2JdJghU.png" />
+              <div class="info" *ngFor="let education of educations">
+                <h3>{{ education.degree }}</h3>
+                <h4>{{ education.school }}</h4>
+                <h4>
+                  Start date: {{ education.start_date }} / End date:
+                  {{ education.end_date }}
+                </h4>
+                <h4>{{ education.city }}</h4>
+                <h4>{{ education.country }}</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="education col-lg-5">
+            <header>
+              <h2>Courses</h2>
+            </header>
+            <div class="ed-info">
+              <img src="https://i.imgur.com/2JdJghU.png" />
+              <div class="info" *ngFor="let course of courses">
+                <h3>{{ course.course_title }}</h3>
+                <h3>{{ course.institution }}</h3>
+                <h4>
+                  Start date:{{ course.start_date }}/ End date:
+                  {{ course.end_date }}
+                </h4>
+                <h4>{{ course.city }} / {{ course.country }}</h4>
+                <h4>{{ course?.course_link }}</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="education col-lg-5">
+            <header>
+              <h2>Languages</h2>
+            </header>
+            <div class="ed-info">
+              <div class="info" *ngFor="let language of languages">
+                <h3>{{ language.language }}</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills col-lg-5">
+            <header>
+              <h2>Skills</h2>
+            </header>
+            <div class="skill-lists container" *ngFor="let skill of skills">
+              <ul class="left row">
+                <li class="col-4">{{ skill.skill }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

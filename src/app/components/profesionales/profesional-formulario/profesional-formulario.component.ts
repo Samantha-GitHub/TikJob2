@@ -180,7 +180,7 @@ export class ProfesionalFormularioComponent implements OnInit {
       zip_code: new FormControl(this.company.zip_code),
       country: new FormControl(this.company.country),
       website: new FormControl(this.company.website),
-      image: new FormControl(),
+      image: new FormControl(this.company.image),
       email: new FormControl(this.company.email),
       employees_number: new FormControl(this.company.employees_number),
       year_founded: new FormControl(this.company.year_founded),

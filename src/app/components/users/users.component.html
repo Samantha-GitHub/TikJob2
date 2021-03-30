@@ -14,7 +14,10 @@
           <!-- <div class="level center">Level 13</div> -->
           <div class="points center">{{ freelance.job_title }}</div>
 
-          <img [src]="freelance.image" class="mt-5 rounded" />
+          <img
+            [src]="'http://localhost:3000/images/' + freelance.image"
+            class="mt-5 rounded"
+          />
         </div>
         <div class="more-info">
           <h1>{{ freelance.lastname }}</h1>

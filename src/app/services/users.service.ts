@@ -38,23 +38,19 @@ export class UsersService {
   // NEW FREELANCER
   create(formValues): Promise<any> {
     formValues.image = 'http';
-    formValues.video = 'http';
 
     return this.httpClient.post<any>(this.baseUrl, formValues).toPromise();
   }
-  // NEW FREELANCER with pic
-  createPic(fd: FormData, formValues): Promise<any> {
-    formValues.video = 'http';
 
-    return this.httpClient.post<any>(this.baseUrl, fd, formValues).toPromise();
+  // NEW FREELANCER with pic
+  createPic(fd: FormData): Promise<any> {
+    return this.httpClient.post<any>(this.baseUrl, fd).toPromise();
   }
 
-  // UPDATE FREELANCER
-  update(formValues): Promise<any> {
-    formValues.image = 'http';
-    formValues.video = 'http';
+  // UPDATE FREELANCER with multer
+  update(fd: FormData): Promise<any> {
     return this.httpClient
-      .put<any>(this.baseUrl, formValues, this.createHeaders())
+      .put<any>(this.baseUrl, fd, this.createHeaders())
       .toPromise();
   }
 
