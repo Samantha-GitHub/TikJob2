@@ -23,7 +23,7 @@ export class CreateCompanyComponent implements OnInit {
       name_company: new FormControl('', [Validators.required]),
       phone: new FormControl('', [
         Validators.required,
-        Validators.minLength(10),
+        Validators.minLength(9),
         Validators.maxLength(100),
       ]),
       vat: new FormControl('', [Validators.required]),
