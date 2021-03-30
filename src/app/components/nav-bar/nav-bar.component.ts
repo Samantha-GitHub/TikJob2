@@ -11,9 +11,9 @@ import { Joboffer } from 'src/app/interfaces/job_offer';
 export class NavBarComponent implements OnInit {
   search: string;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   // searchValue() {
   //   const reasch = this.router.navigate(['search', this.search]);
@@ -32,10 +32,6 @@ export class NavBarComponent implements OnInit {
   //   );
   // }
 
-  logOut() {
-    localStorage.removeItem('token_tikjobs');
-    this.router.navigate(['/']);
-  }
 
   searchTitle(): void {
     this.router.navigate(['search', this.search]);
