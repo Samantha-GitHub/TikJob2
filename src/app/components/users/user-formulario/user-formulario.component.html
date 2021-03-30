@@ -124,11 +124,12 @@
             </div>
           </div>
           <div class="form-row mb-4">
-            <!-- Skils -->
+
+            <!-- Skills -->
             <div class="col">
               <h4>SKILLS</h4>
 
-              <ul class="list-group list-group-horizontal-lg" *ngFor="let skill of skills">
+              <ul class="list-group list-group-vertical-lg" *ngFor="let skill of skills">
                 <li class="list-group-item list-group-item-info">
                   {{ skill.skill }}
                 </li>
@@ -140,7 +141,7 @@
             <div class="col">
               <h4>LANGUAGES</h4>
 
-              <ul class="list-group list-group-horizontal-lg m-1" *ngFor="let language of languages">
+              <ul class="list-group list-group-vertical-lg m-1" *ngFor="let language of languages">
                 <li class="list-group-item list-group-item-info">
                   {{ language.language }}
                 </li>

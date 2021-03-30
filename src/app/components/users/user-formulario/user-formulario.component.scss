@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: 100px 0 200px 0;
   width: 1200px;
   padding-top: 100px;
   padding-bottom: 50px;
@@ -19,7 +18,7 @@
   }
 
   form {
-    height: 100vh;
+      padding: 10px 0 10px 0;
   }
 
   .skills {
@@ -167,3 +166,5 @@
 .buttons {
   isolation: isolate;
 }
+
+
