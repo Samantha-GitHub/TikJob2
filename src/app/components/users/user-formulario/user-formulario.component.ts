@@ -351,4 +351,10 @@ export class UserFormularioComponent implements OnInit {
       }
     });
   }
+
+  //Log Out
+  logOut() {
+    localStorage.removeItem('token_tikjobs');
+    this.router.navigate(['/']);
+  };
 }

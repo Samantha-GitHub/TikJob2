@@ -268,4 +268,11 @@ export class ProfesionalFormularioComponent implements OnInit {
   refresh(): void {
     window.location.reload();
   }
+
+  //LOG OUT
+
+  logOut() {
+    localStorage.removeItem('token_tikjobs');
+    this.router.navigate(['/']);
+  };
 }
