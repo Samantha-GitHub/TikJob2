@@ -9,7 +9,7 @@ export class TbiSkillsUsuarioService {
 
   constructor(private httpClient: HttpClient) {
     /* this.baseUrl = 'http://localhost:3000/api/tbi_freelance_skills'; */
-    this.baseUrl = 'https://git.heroku.com/tikjobs.git/api/tbi_freelance_skills';
+    this.baseUrl = 'https://tikjobs.herokuapp.com/api/tbi_freelance_skills';
 
   }
 

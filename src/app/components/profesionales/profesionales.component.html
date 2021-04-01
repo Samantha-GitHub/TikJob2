@@ -5,7 +5,7 @@
         let company of allCompanies
           | paginate: { itemsPerPage: 4, currentPage: page }
       ">
-      <img [src]="'https://git.heroku.com/tikjobs.git/images/' + company.image" class="servicesIcon" />
+      <img [src]="'https://tikjobs.herokuapp.com/images/' + company.image" class="servicesIcon" />
       <h2 class="servicesH2">{{ company.name_company }}</h2>
       <p class="serviceP">
         {{ company.city }}

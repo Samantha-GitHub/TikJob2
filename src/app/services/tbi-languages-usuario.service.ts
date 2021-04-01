@@ -9,7 +9,7 @@ export class TbiLanguagessUsuarioService {
 
   constructor(private httpClient: HttpClient) {
     /* this.baseUrl = 'http://localhost:3000/api/tbi_freelance_languages'; */
-    this.baseUrl = 'https://git.heroku.com/tikjobs.git/api/tbi_freelance_languages';
+    this.baseUrl = 'https://tikjobs.herokuapp.com/api/tbi_freelance_languages';
 
   }
 
