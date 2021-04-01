@@ -9,7 +9,9 @@ export class CoursesService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/courses';
+    /* this.baseUrl = 'http://localhost:3000/api/courses'; */
+    this.baseUrl = 'https://git.heroku.com/tikjobs.git/api/courses';
+
   }
 
   // GET ALL COURSES

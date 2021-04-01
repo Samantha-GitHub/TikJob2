@@ -9,7 +9,9 @@ export class ProfesionalExperienceService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/profesional_experience';
+    /* this.baseUrl = 'http://localhost:3000/api/profesional_experience'; */
+    this.baseUrl = 'https://git.heroku.com/tikjobs.git/api/profesional_experience';
+
   }
 
   getAll(): Promise<ProfesionalExperience[]> {

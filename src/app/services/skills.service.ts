@@ -9,7 +9,9 @@ export class SkillsService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/skills';
+    /* this.baseUrl = 'http://localhost:3000/api/skills'; */
+    this.baseUrl = 'https://git.heroku.com/tikjobs.git/api/skills';
+
   }
 
   getAll(): Promise<Skill[]> {

@@ -10,7 +10,9 @@ export class ProfesionalesService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/companies';
+    /* this.baseUrl = 'http://localhost:3000/api/companies'; */
+    this.baseUrl = 'https://git.heroku.com/tikjobs.git/api/companies';
+
   }
 
   // GET ALL COMPANIES

@@ -8,7 +8,9 @@ export class TbiLanguageOfertasTrabajosService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/tbi_ofertas_trabajos_languages';
+    /* this.baseUrl = 'http://localhost:3000/api/tbi_ofertas_trabajos_languages'; */
+    this.baseUrl = 'https://git.heroku.com/tikjobs.git/api/tbi_ofertas_trabajos_languages';
+
   }
 
 

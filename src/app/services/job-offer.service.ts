@@ -9,7 +9,9 @@ export class JobOfferService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/job_offers';
+    /* this.baseUrl = 'http://localhost:3000/api/job_offers'; */
+    this.baseUrl = 'https://git.heroku.com/tikjobs.git/api/job_offers';
+
   }
 
   getAll(): Promise<Joboffer[]> {
