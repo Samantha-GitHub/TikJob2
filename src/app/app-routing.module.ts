@@ -7,6 +7,7 @@ import { JobOfferViewComponent } from './components/job-offers/job-offer-view/jo
 import { JobOffersComponent } from './components/job-offers/job-offers.component';
 import { LogincompanyComponent } from './components/login/logincompany/logincompany.component';
 import { LoginfreelancerComponent } from './components/login/loginfreelancer/loginfreelancer.component';
+import { ConstructionComponent } from './components/not-found/construction/construction.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CreateCompanyComponent } from './components/profesionales/create-company/create-company.component';
 import { ProfesionalFormularioComponent } from './components/profesionales/profesional-formulario/profesional-formulario.component';
@@ -53,6 +54,7 @@ const routes: Routes = [
   // VIEW ONE JOB OFFER
   { path: 'job_offers/:idJobOffer', component: JobOfferViewComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'construction', component: ConstructionComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

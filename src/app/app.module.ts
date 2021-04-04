@@ -27,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateCompanyComponent } from './components/profesionales/create-company/create-company.component';
 
 import { CreateFreelancerComponent } from './components/users/create-freelancer/create-freelancer.component';
+import { ConstructionComponent } from './components/not-found/construction/construction.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { CreateFreelancerComponent } from './components/users/create-freelancer/
     JobOfferViewComponent,
     CreateCompanyComponent,
     CreateFreelancerComponent,
+    ConstructionComponent,
   ],
   imports: [
     BrowserModule,
