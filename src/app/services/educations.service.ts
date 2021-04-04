@@ -8,7 +8,7 @@ import { Education } from '../interfaces/education';
 export class EducationsService {
   baseUrl: string;
   constructor(private httpClient: HttpClient) {
-    /*     this.baseUrl = 'http://localhost:3000/api/educations';*/
+    /* this.baseUrl = 'http://localhost:3000/api/educations'; */
     this.baseUrl = 'https://tikjobs.herokuapp.com/api/educations';
   }
   //  GET ALL EDUCATIONS
