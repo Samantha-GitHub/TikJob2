@@ -71,7 +71,7 @@ export class CreateCompanyComponent implements OnInit {
     fd.append('password', this.formularioCompany.value.password);
 
     this.companyService.create(fd).then((result) => {
-      this.router.navigate(['']);
+      this.router.navigate(['/logincompany']);
       console.log(result);
     });
   }
