@@ -9,8 +9,8 @@ export class CoursesService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    /* this.baseUrl = 'http://localhost:3000/api/courses'; */
-    this.baseUrl = 'https://tikjobs.herokuapp.com/api/courses';
+/*     this.baseUrl = 'http://localhost:3000/api/courses';
+ */        this.baseUrl = 'https://tikjobs.herokuapp.com/api/courses';
 
   }
 

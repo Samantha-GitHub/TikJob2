@@ -9,8 +9,8 @@ export class JobOfferService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    /* this.baseUrl = 'http://localhost:3000/api/job_offers'; */
-    this.baseUrl = 'https://tikjobs.herokuapp.com/api/job_offers';
+/*     this.baseUrl = 'http://localhost:3000/api/job_offers';
+ */    this.baseUrl = 'https://tikjobs.herokuapp.com/api/job_offers';
 
   }
 

@@ -9,8 +9,8 @@ export class UsersService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    /* this.baseUrl = 'http://localhost:3000/api/freelancers'; */
-    this.baseUrl = 'https://tikjobs.herokuapp.com/api/freelancers';
+/*     this.baseUrl = 'http://localhost:3000/api/freelancers';
+ */        this.baseUrl = 'https://tikjobs.herokuapp.com/api/freelancers';
 
   }
   // GET ALL FREELANCERS
